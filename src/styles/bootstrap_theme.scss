@@ -1,0 +1,46 @@
+/**
+Override Base Theme variables with Custom Theme variables.
+Will be loaded into View-Components to get access to theming variables
+*/
+// Bootstraps Sass functions
+@import '../../node_modules/bootstrap/scss/functions';
+// Custom Bootstrap theme variables
+@import 'variables/bootstrap_custom_theme';
+// Base Theme provided by core application - uses !default values
+@import 'variables/bootstrap_base_theme';
+// Import custom components
+
+:export {
+  primary: $primary;
+  secondary: $secondary;
+  primaryLight: $primary-light;
+  primaryDark: $primary-dark;
+  success: $success;
+  info: $info;
+  warning: $warning;
+  danger: $danger;
+  light: $light;
+  dark: $dark;
+}
+
+$custom-control-indicator-disabled-bg: #e9ecef;
+$custom-control-description-disabled-color: #868e96;
+//
+// These variables can be used to customize the switch component.
+//
+$switch-height: calc(#{$input-height} * .8) !default;
+$switch-height-sm: calc(#{$input-height-sm} * .8) !default;
+$switch-height-lg: calc(#{$input-height-lg} * .8) !default;
+$switch-border-radius: $switch-height !default;
+$switch-bg: map-get($theme-colors, 'primary');
+$switch-checked-bg: map-get($theme-colors, 'primary');
+$switch-disabled-bg: map-get($theme-colors, 'primary');
+$switch-disabled-color: $custom-control-description-disabled-color !default;
+$switch-thumb-bg: $white !default;
+$switch-thumb-border-radius: 50% !default;
+$switch-thumb-padding: 2px !default;
+$switch-focus-box-shadow: 0 0 0 $input-btn-focus-width rgba(map-get($theme-colors, 'primary'), .25);
+$switch-transition: .2s all !default;
+@import 'utils/switch-button';
+
+@value primary: $primary;

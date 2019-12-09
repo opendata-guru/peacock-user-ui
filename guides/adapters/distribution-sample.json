@@ -1,0 +1,11 @@
+{
+  accessUrl: 'www.mock.com',
+  format: 'nice-format',
+  description: 'nice description for dist1',
+  id: 'dist1',
+  modificationDate: '2010-01-01T00:00:00-0800',
+  releaseDate: '2000-01-01T00:00:00-0800',
+  title: 'Distribution 1',
+  url: 'www.mock.com',
+  urlType: 'no type',
+}

@@ -1,0 +1,36 @@
+.DS_Store
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+test/unit/coverage
+test/e2e/reports
+selenium-debug.log
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Configuration files of the user
+#user-config/i18n/i18n.json
+#user-config/custom_theme.scss
+#user-config/glue-config.js
+
+config/user-configs.js
+
+docs/_build
+
+src/components/user/*
+!src/components/user/*.sample.vue
+
+# src/components/user/*
+# !src/components/user/*.sample.vue
+
+# visual code config
+~/.vscode-root
+.vscode
+
+jsconfig.json

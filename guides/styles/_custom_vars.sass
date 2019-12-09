@@ -1,0 +1,152 @@
+/**
+ * @author Dennis ritter
+ * @created 06.07.17
+ * @description Defines variables for customization purposes.
+                The defined variables in this file should not be named after Bulma variables.
+                But you can use Bulma variables to define your variables values.
+                Link to Bulma Documentation: http://bulma.io/documentation/overview/start/
+ */
+
+$primary-dark: darken($primary, 6)
+$primary-light: lighten($primary, 6)
+
+$secondary: $white
+$secondary-invert: $dark
+
+/**
+ Exclusive Variables for specific components are named by the following Pattern:
+    <COMPONENT>-<COMPONENT/ELEMENT>--<STATE/DEVICE>_<PROPERTY>
+    @example: $home-text-box--mobile--hover_background-color
+    Component: Home.vue
+    Item(s): Text-boxes
+    Device: Mobile
+    State: Hover
+    Style Property: background-color
+ */
+
+$topbar_height: 64px
+$topbar_background-color: $primary
+$topbar_background-color-invert: $secondary
+
+$navbar_background-color: $secondary
+$navbar_background-color-invert: invert($navbar-background-color)
+$navbar-nav-item_background_color: $secondary
+$navbar-nav-item_color: $primary
+$navbar-nav-item--hover_background_color: darken($navbar-background-color, 6)
+$navbar-nav-item--active_color: $primary
+$navbar-nav-item--hover_border-color: $primary
+$navbar-nav-item--active_border-color: $primary
+$navbar_background-color--mobile: $primary
+$navbar_color--mobile: $secondary
+$navbar-nav-toggle--hover--mobile: darken($navbar_background-color--mobile, 6)
+
+$datasets_padding: 1.5rem 0 0 0
+$datasets-dataset_background-color: $white
+// Add border transparent in normal state to avoid bumps when adding it on hover
+$datasets-dataset_border-top: none
+$datasets-dataset_border-right: none
+$datasets-dataset_border-bottom: none
+$datasets-dataset_border-left: 3px solid transparent
+$datasets-dataset_border-radius: 0
+$datasets-dataset_box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
+$datasets-dataset_color: $dark
+$datasets-dataset_margin: 1rem auto auto auto
+$datasets-dataset_padding: 1rem 1rem 1rem 1rem
+$datasets-dataset_transition: all 0.3s cubic-bezier(.25, .8, .25, 1)
+// Setup border-size and line-style in $datasets-dataset_border-top/right/bottom/left. Only change transparent to any color here.
+$datasets-dataset--hover_border-color: $primary
+$datasets-dataset--hover_box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25), 0 4px 8px rgba(0, 0, 0, 0.22)
+$datasets-dataset--hover_cursor: pointer
+$datasets-dataset-metadata-list_font-size: $size-small
+$datasets-dataset-metadata-list-keys_font-weight: bold
+$datasets-dataset-tag_background-color: $dark
+$datasets-dataset-tag_color: $dark-invert
+$datasets-dataset-tag_margin: .5em .5em auto auto
+$datasets-dataset-title_color: auto
+$datasets-dataset-title_font-size: auto
+$datasets-dataset-title_font-weight: bold
+$datasets-searchbar_border-radius: 0
+$datasets-searchbar_padding: 1rem 1rem 1rem 1rem
+$datasets-searchbar--mobile_background-color: $primary-dark
+
+$datasetfacets_background-color: $white
+$datasetfacets_border-top: 0
+$datasetfacets_border-right: 0
+$datasetfacets_border-bottom: 0
+$datasetfacets_border-left: 0
+$datasetfacets_border-radius: 0
+$datasetfacets_box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
+$datasetfacets-facet-field-headlines_color: $dark
+$datasetfacets-facet-field-headlines_font-size: auto
+$datasetfacets-facet-field-headlines_font-weight: normal
+$datasetfacets-facet-field-show-more-button_background-color: transparent
+$datasetfacets-facet-field-show-more-button_border: none
+$datasetfacets-facet-field-show-more-button_color: $primary
+$datasetfacets-facet-field-show-more-button-icon_font-size: 2rem
+$datasetfacets-facet-field-show-more-button_height: 2rem
+$datasetfacets-facet_border-radius: 0
+$datasetfacets-facet_border-top: solid 1px rgba(0, 0, 0, .12)
+$datasetfacets-facet_border-right: none
+$datasetfacets-facet_border-bottom: none
+$datasetfacets-facet_border-left: none
+$datasetfacets-facet_color: $dark
+$datasetfacets-facet_min-height: 2rem
+$datasetfacets-facet_padding: 0 1rem 0 1rem
+$datasetfacets-facet--hover_background-color: $primary
+$datasetfacets-facet--hover_border-top: 1px solid $primary
+$datasetfacets-facet--hover_border-right: 0
+$datasetfacets-facet--hover_border-bottom: 0
+$datasetfacets-facet--hover_border-left: 0
+$datasetfacets-facet--hover_box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.22)
+$datasetfacets-facet--hover_color: $primary-invert
+$datasetfacets-facet--hover_cursor: pointer
+$datasetfacets-facet--hover_transition: all 0.2s cubic-bezier(.25, .8, .25, 1)
+$datasetfacets-facet--checked_background-color: $primary
+$datasetfacets-facet--checked_border-top: solid 1px $primary
+$datasetfacets-facet--checked_border-right: none
+$datasetfacets-facet--checked_border-bottom: none
+$datasetfacets-facet--checked_border-left: none
+$datasetfacets-facet--checked_color: $primary-invert
+$datasetfacets-facet-count_display: block
+
+$datasetdetails_padding: 1.5rem 0 0 0
+$datasetdetails-box_box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
+$datasetdetails-card-title_background-color: auto
+$datasetdetails-card-title_color: auto
+$datasetdetails-card-title_font-size: auto
+$datasetdetails-card-title_font-weight: auto
+$datasetdetails-card-title_padding: 1rem 1rem 1rem 1rem
+$datasetdetails-card-content_background-color: auto
+$datasetdetails-card-content_color: auto
+$datasetdetails-card-content_font-size: auto
+$datasetdetails-card-content_font-weight: auto
+$datasetdetails-card-content_padding: 1rem 1rem 1rem 1rem
+$datasetdetails-metadata-list_background-color: auto
+$datasetdetails-metadata-list_color: auto
+$datasetdetails-metadata-list_font-size: auto
+$datasetdetails-metadata-list_padding: 1rem 1rem 1rem 1rem
+$datasetdetails-metadata-list-key_font-weight: bold
+$datasetdetails-metadata-list-key_margin: .5rem 0 0 0
+$datasetdetails-metadata-list-tag_border-radius: 3px
+$datasetdetails-metadata-list-tag_margin: .5rem .5rem 0 0
+
+$distributiondetails_padding: 1.5rem 0 0 0
+$distributiondetails-box_box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
+$distributiondetails-card-title_background-color: auto
+$distributiondetails-card-title_color: auto
+$distributiondetails-card-title_font-size: auto
+$distributiondetails-card-title_font-weight: auto
+$distributiondetails-card-title_padding: 1rem 1rem 1rem 1rem
+$distributiondetails-card-content_background-color: auto
+$distributiondetails-card-content_color: auto
+$distributiondetails-card-content_font-size: auto
+$distributiondetails-card-content_font-weight: auto
+$distributiondetails-card-content_padding: 1rem 1rem 1rem 1rem
+$distributiondetails-metadata-list_background-color: auto
+$distributiondetails-metadata-list_color: auto
+$distributiondetails-metadata-list_font-size: auto
+$distributiondetails-metadata-list_padding: 1rem 1rem 1rem 1rem
+$distributiondetails-metadata-list-key_font-weight: bold
+$distributiondetails-metadata-list-key_margin: .5rem 0 0 0
+$distributiondetails-metadata-list-tag_border-radius: 3px
+$distributiondetails-metadata-list-tag_margin: .5rem .5rem 0 0
