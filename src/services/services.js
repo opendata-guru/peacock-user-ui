@@ -1,12 +1,17 @@
 /**
  * @author Dennis ritter
  * @description Register services and constants in the injector.
+ * @license Copyright 2019 Fraunhofer FOKUS
+ *          Modifications copyright 2021 Thomas Tursics
+ *          SPDX-License-Identifier: Apache-2.0
  */
+
 
 // import vue-inject
 import injector from 'vue-inject';
 
 // Import glue-config.js
+/* eslint-disable-next-line */
 import { glueConfig as GLUE_CONFIG } from '../../config/user-configs';
 // import impressumComp
 

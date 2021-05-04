@@ -1,3 +1,9 @@
+/**
+ * @license Copyright 2019 Fraunhofer FOKUS
+ *          Modifications copyright 2021 Thomas Tursics
+ *          SPDX-License-Identifier: Apache-2.0
+ */
+
 /* eslint-disable import/first,import/newline-after-import,no-undef */
 // import IE Promise polyfill
 import '@babel/polyfill';
@@ -41,6 +47,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 // import main user configurations (glueConfig) and i18n configurations
+/* eslint-disable-next-line */
 import { glueConfig as GLUE_CONFIG, i18n as I18N_CONFIG } from '../config/user-configs';
 // import vue-router
 import router from './router';

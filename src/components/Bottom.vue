@@ -1,3 +1,8 @@
+<!-- @license Copyright 2019 Fraunhofer FOKUS
+              Modifications copyright 2021 Thomas Tursics
+              SPDX-License-Identifier: Apache-2.0
+-->
+
 <!-- A component to wrap all components that should be present in the HTML-footer -->
 
 <template>
@@ -26,6 +31,7 @@
 </template>
 
 <script>
+/* eslint-disable-next-line */
 import { glueConfig as GLUE_CONFIG } from '../../config/user-configs';
 import AppLink from './AppLink';
 
