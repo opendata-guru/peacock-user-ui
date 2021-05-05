@@ -1,3 +1,9 @@
+**
+ * @license Copyright 2019 Fraunhofer FOKUS
+ *          Modifications copyright 2021 Thomas Tursics
+ *          SPDX-License-Identifier: Apache-2.0
+ */
+
 import Vue from 'vue';
 import Router from 'vue-router';
 import VueHead from 'vue-head';
@@ -40,7 +46,6 @@ const router = new Router({
         if (to.hash && to.hash.startsWith('#/')) {
           // Backward compatibility with Hash mode URLs
           // Redirect to History mode URL by removing the hashtag
-          // Fixes https://gitlab.fokus.fraunhofer.de/viaduct/organisation/issues/432
           let url = document.createElement("a");
           url.href = `${window.location.protocol}//${window.location.host}${to.hash.slice(1)}`
 
@@ -195,7 +200,6 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   // Hash mode backward-compatibility
-  // Fixes https://gitlab.fokus.fraunhofer.de/viaduct/organisation/issues/432
 
   if (to.matched.some(record => record.meta.requiresAuth)) {
     const auth = store.state.auth.auth;

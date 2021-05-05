@@ -1,3 +1,8 @@
+<!-- @license Copyright 2019 Fraunhofer FOKUS
+              Modifications copyright 2021 Thomas Tursics
+              SPDX-License-Identifier: Apache-2.0
+-->
+
 <template>
   <select class="custom-select-sm language-selector mt-1 d-none d-sm-block" v-model="locale">
     <option v-for="lang in Object.keys(languages)" :key="lang" :value="lang">
@@ -53,7 +58,6 @@
           this.$i18n.locale = locale;
           // Wait until router is ready before changing it
           // Necessary when routing to lazy-loaded components
-          // Fixes https://gitlab.fokus.fraunhofer.de/viaduct/viaduct-ui/issues/210
           this.$router.onReady(() => {
             if (locale !== this.$route.query.locale) {
               this.$router.push({ query: Object.assign({}, this.$route.query, { locale }) });

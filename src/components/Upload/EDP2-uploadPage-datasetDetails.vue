@@ -1,3 +1,8 @@
+<!-- @license Copyright 2019 Fraunhofer FOKUS
+              Modifications copyright 2021 Thomas Tursics
+              SPDX-License-Identifier: Apache-2.0
+-->
+
 <template>
   <div class="col-12">
     <!-- DATASET -->
@@ -348,7 +353,7 @@
       },
       getCatalogs(jwtObj) {
         // get the allowed catalogue to create datased
-        // update permission can create dataset https://gitlab.fokus.fraunhofer.de/viaduct/organisation/issues/137
+        // update permission can create dataset
         jwtObj.authorization.permissions.forEach((permission) => {
           permission.scopes.forEach((scope) => {
             if (scope === 'update') {
