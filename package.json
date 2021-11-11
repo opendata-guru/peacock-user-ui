@@ -1,9 +1,10 @@
 {
-  "name": "Peacock User UI",
+  "name": "peacock-user-ui",
   "version": "1.0.0",
   "description": "A Single-Page-Application base to realize Open Data Frontends.",
-  "author": "Dennis Ritter (dennis.ritter@fokus.fraunhofer.de)",
-  "private": true,
+  "author": "Thomas Tursics <thomas@tursics.de> (https://www.tursics.de)",
+  "readme": "README.md",
+  "license": "Apache-2.0",
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=development node build/dev-server.js",

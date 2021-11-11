@@ -3,7 +3,25 @@
 This project provide a HTML user portal for view open data datasets.
 ## Project Setup
 
-Install [Node.js v10.15.0+ and NPM 6.7.0+](https://nodejs.org/en/) on your system
+Prepare your system and [install nvm](https://github.com/nvm-sh/nvm/blob/master/README.md#installing-and-updating), the version manager for node.js.
+
+Install [Node.js v10.15.0+ and NPM 6.7.0+](https://nodejs.org/en/) on your system. Yes, this repo use older version of node.js. You are welcome to drop a merge request with updated packages.
+
+```
+$ nvm use 10
+Now using node v10.15.0 (npm v6.7.0)
+$ node -v
+v10.15.0
+```
+
+Older versions of node.js on M1 macOS doesn't work well except. node@10 build does not work. If you using node@12 built on arm64 architecture, it may be crashed on some scripts (like this repo). [more infos here](https://stackoverflow.com/questions/65856300/wasm-code-commit-allocation-failed-process-out-of-memory) First working version is node@15 build
+
+```
+$ nvm use 15
+Now using node v15.14.0 (npm v7.7.6)
+$ node -v
+v15.14.0
+```
 
 Clone or download the code:
 
