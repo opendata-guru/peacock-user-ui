@@ -6,8 +6,10 @@
 
 // Import Adapters for data requests
 import datasetService from '../src/viaduct-ui-adapter-vhub/datasets';
+import datasetServiceCKAN from '../guides/adapters/datasets-adapter-ckan';
 import catalogueService from '../src/viaduct-ui-adapter-vhub/catalogues';
 import distributionService from '../src/viaduct-ui-adapter-vhub/distributions';
+import distributionServiceCKAN from '../guides/adapters/distributions-adapter-ckan';
 import datastoreService from '../src/viaduct-ui-adapter-vhub/datastore';
 import gazetteerService from '../src/viaduct-ui-adapter-vhub/gazetteer';
 import uploadService from '../src/services/uploads';
@@ -55,8 +57,10 @@ export default {
   fallbackLocale: 'en',
   services: {
     catalogueService,
-    datasetService,
-    distributionService,
+//    datasetService,
+    datasetService: datasetServiceCKAN,
+//    distributionService,
+    distributionService: distributionServiceCKAN,
     datastoreService,
     gazetteerService,
     uploadService,

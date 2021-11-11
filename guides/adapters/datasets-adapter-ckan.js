@@ -35,7 +35,7 @@ export default class Datasets {
         },
       })
         .then((response) => {
-          const dataset = response.data.result;
+          const dataset = response.data.contents.result;
           /**
            * @property dataset
            * @type JSON
@@ -57,6 +57,7 @@ export default class Datasets {
          * }
            */
           const ds = {};
+          ds.catalog = 'foo bar';
           ds.categories = [];
           ds.description = dataset.notes;
           ds.distributions = [];
@@ -153,13 +154,14 @@ export default class Datasets {
            *    title: 'tags',
            *  }, {..}]
            */
+console.log(response);
           const resData = {
             availableFacets: [],
-            datasetsCount: response.data.result.count,
+            datasetsCount: response.data.contents.result.count,
             datasets: [],
           };
           // Transform Facets Data model
-          const searchFacets = response.data.result.search_facets;
+          const searchFacets = response.data.contents.result.search_facets;
           Object.keys(searchFacets).forEach((field) => {
             if (searchFacets[field].items.length > 0) {
               const newField = {};
@@ -176,7 +178,7 @@ export default class Datasets {
             }
           });
           // Transform Datasets Data model
-          const datasets = response.data.result.results;
+          const datasets = response.data.contents.result.results;
           for (const dataset of datasets) {
             /**
              * @property dataset
