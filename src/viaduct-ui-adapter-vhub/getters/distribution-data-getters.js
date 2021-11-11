@@ -1,3 +1,9 @@
+/**
+ * @license Copyright 2019 Fraunhofer FOKUS
+ *          Modifications copyright 2021 Thomas Tursics
+ *          SPDX-License-Identifier: Apache-2.0
+ */
+
 import { has, isNil, isArray, isString, isObject } from 'lodash';
 
 const getters = {
@@ -50,7 +56,7 @@ const getters = {
         };
         // Check if necessary keys present and not Nil. Replace default value with real value if check passed.
         if (has(parent, 'format.id') && !isNil(parent.format.id)) format.id = parent.format.id;
-        if (has(parent, 'format.title') && !isNil(parent.format.title)) format.title = parent.format.title;
+        if (has(parent, 'format.label') && !isNil(parent.format.label)) format.title = parent.format.label;
         return format;
     },
     getId: (parent) => {
@@ -81,11 +87,11 @@ const getters = {
             la_url: undefined,
         };
         // Check if necessary keys present and not Nil. Replace default value with real value if check passed.
-        if (has(parent, 'licence.id') && !isNil(parent.licence.id)) licence.id = parent.licence.id;
-        if (has(parent, 'licence.title') && !isNil(parent.licence.title)) licence.title = parent.licence.title;
-        if (has(parent, 'licence.resource') && !isNil(parent.licence.resource)) licence.resource = parent.licence.resource;
-        if (has(parent, 'licence.description') && !isNil(parent.licence.description)) licence.description = parent.licence.description;
-        if (has(parent, 'licence.la_url') && !isNil(parent.licence.la_url)) licence.la_url = parent.licence.la_url;
+        if (has(parent, 'license.id') && !isNil(parent.license.id)) licence.id = parent.license.id;
+        if (has(parent, 'license.label') && !isNil(parent.license.label)) licence.title = parent.license.label;
+        if (has(parent, 'license.resource') && !isNil(parent.license.resource)) licence.resource = parent.license.resource;
+        if (has(parent, 'license.description') && !isNil(parent.license.description)) licence.description = parent.license.description;
+        if (has(parent, 'license.la_url') && !isNil(parent.license.la_url)) licence.la_url = parent.license.la_url;
         return licence;
     },
     getModificationDate: (parent) => {

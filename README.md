@@ -50,7 +50,8 @@ Configurations
 =====================
 
 **glue-config.js**
-<br>The glue-config.js file is located at `peacock-user-ui/user-config/glue-config.js` by default. It is the main project configuration file. The following table and example file shortly describes the configurable values.
+
+The glue-config.js file is located at `peacock-user-ui/user-config/glue-config.js` by default. It is the main project configuration file. The following table and example file shortly describes the configurable values.
 
 <details>
 <summary>Open glue-config.js Example File</summary>

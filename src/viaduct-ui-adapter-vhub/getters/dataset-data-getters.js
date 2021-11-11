@@ -1,3 +1,9 @@
+/**
+ * @license Copyright 2019 Fraunhofer FOKUS
+ *          Modifications copyright 2021 Thomas Tursics
+ *          SPDX-License-Identifier: Apache-2.0
+ */
+
 import { has, isNil, isArray, isString, isObject } from 'lodash';
 
 const getters = {
@@ -63,9 +69,9 @@ const getters = {
         // Default Array
         let contactPoints = [];
         // Return default array if key not present in parent
-        if (!has(parent, 'contact_points')) return [];
-        if (!isArray(parent.contact_points)) return [];
-        for (let c of parent.contact_points) {
+        if (!has(parent, 'contact_point')) return [];
+        if (!isArray(parent.contact_point)) return [];
+        for (let c of parent.contact_point) {
             let contactPoint = {
                 type: undefined,
                 name: undefined,
@@ -162,9 +168,9 @@ const getters = {
         // Default Array
         let identifiers = [];
         // Return default array if key not present in parent
-        if (!has(parent, 'identifiers')) return [];
-        if (!isArray(parent.identifiers)) return [];
-        for (let i of parent.identifiers) {
+        if (!has(parent, 'identifier')) return [];
+        if (!isArray(parent.identifier)) return [];
+        for (let i of parent.identifier) {
             let identifier = undefined;
             // Check if value not Nil. Replace default value with real value if check passed.
             if (!isNil(i) && isString(i)) identifier = i;
@@ -194,9 +200,9 @@ const getters = {
             };
             // Check if necessary keys present and not Nil. Replace default value with real value if check passed.
             if (has(k, 'id') && !isNil(k.id)) keyword.id = k.id;
-            if (has(k, 'title') && !isNil(k.title)) keyword.title = k.title;
+            if (has(k, 'label') && !isNil(k.label)) keyword.title = k.label;
             // If all values inside the object are undefined or null, do not add the object to the displayed array and continue
-            if (isNil(k.id) && isNil(k.title)) {
+            if (isNil(k.id) && isNil(k.label)) {
                 continue;
             }
     	    keywords.push(keyword);
@@ -239,7 +245,7 @@ const getters = {
         // Default date
         let modificationDate = undefined;
         // Check if necessary keys present and not Nil. Replace default value with real value if check passed.
-        if (has(parent, 'modification_date') && !isNil(parent.modification_date)) modificationDate = parent.modification_date;
+        if (has(parent, 'modified') && !isNil(parent.modified)) modificationDate = parent.modified;
         return modificationDate;
     },
     getOriginalLanguage: (parent) => {
@@ -326,7 +332,7 @@ const getters = {
         // Default date
         let releaseDate = undefined;
         // Check if necessary keys present and not Nil. Replace default value with real value if check passed.
-        if (has(parent, 'release_date') && !isNil(parent.release_date)) releaseDate = parent.release_date;
+        if (has(parent, 'issued') && !isNil(parent.issued)) releaseDate = parent.issued;
         return releaseDate;
     },
     getSources: (parent) => {

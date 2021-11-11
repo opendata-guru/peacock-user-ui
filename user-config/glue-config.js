@@ -2,6 +2,9 @@
  * @author Dennis ritter
  * @created 25.07.17
  * @description User configuration for viaduct-ui.
+ * @license Copyright 2019 Fraunhofer FOKUS
+ *          Modifications copyright 2021 Thomas Tursics
+ *          SPDX-License-Identifier: Apache-2.0
  */
 
 // Import Adapters for data requests
@@ -15,7 +18,7 @@ import authService from '../src/auth/authService';
 
 // Export Config-Object
 export default {
-  title: 'Piveau',
+  title: 'Peacock',
   api: {
     baseUrl: 'http://localhost:8081/',
     gazetteerBaseUrl: 'http://localhost:8081/gazetteer/',

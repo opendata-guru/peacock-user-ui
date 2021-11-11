@@ -33,7 +33,7 @@ const NotFound = () => import(/* webpackChunkName: "notFound" */'@/components/No
 Vue.use(Router);
 Vue.use(VueHead);
 
-const title = 'Piveau'; // GLUE_CONFIG.title || 'Viaduct UI';
+const title = GLUE_CONFIG.title;
 
 const router = new Router({
   base: GLUE_CONFIG.routerOptions.base,
