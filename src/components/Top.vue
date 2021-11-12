@@ -27,12 +27,12 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <app-link class="nav-link" :to="{ path: '/datasets'}">
-                Datasets
+                {{ $t('message.header.navigation.data.datasets') }}
               </app-link>
             </li>
             <li class="nav-item">
               <app-link class="nav-link" :to="{ path: '/catalogues'}">
-                Catalogues
+                {{ $t('message.header.navigation.data.catalogues') }}
               </app-link>
             </li>
           </ul>
