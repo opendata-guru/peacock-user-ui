@@ -15,5 +15,8 @@ glueConfig.api.baseUrl = 'https://data.europa.eu/api/hub/search/';
 glueConfig.api.gazetteerBaseUrl = 'https://www.europeandataportal.eu/data/search/gazetteer/';
 glueConfig.api.uploadBaseUrl = 'https://www.europeandataportal.eu/data/api/';
 glueConfig.locale = 'de';
+glueConfig.enable.dataset.categories = false;
+glueConfig.enable.dataset.similarDatasets = false;
+glueConfig.enable.dataset.feedback = false;
 
 export { glueConfig, i18n };

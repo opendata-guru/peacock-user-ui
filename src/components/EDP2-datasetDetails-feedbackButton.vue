@@ -20,6 +20,7 @@ import { has } from 'lodash';
 import { getTranslationFor } from '../utils/helpers';
 // Import components used in template
 import AppLink from './AppLink';
+import GLUE_CONFIG from '../../user-config/glue-config';
 
 export default {
   name: 'EDP2-datasetDetailsFeedbackButton',
@@ -45,6 +46,9 @@ export default {
     getTranslationFor,
     // Creates the query string for the feedback URL of the dataset
     getFeedbackQuery(id, titles) {
+      if (!GLUE_CONFIG.enable.dataset.feedback) {
+        return false;
+      }
       if (!id || !titles || (typeof titles !== 'object')) return false;
       // Get translated title
       let title = this.getTranslationFor(titles, this.$i18n.locale, this.getLanguages);

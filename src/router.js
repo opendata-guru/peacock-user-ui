@@ -13,7 +13,7 @@ import Datasets from '@/components/Datasets';
 import DatasetDetailsDataset from '@/components/EDP2-datasetDetails-dataset';
 import DatasetDetailsCategories from '@/components/EDP2-datasetDetails-categories';
 import DatasetDetailsSimilarDatasets from '@/components/EDP2-datasetDetails-similarDatasets';
-// import DatasetDetailsActivityStream from './EDP2-datasetDetails-activityStream';
+import DatasetDetailsActivityStream from '@/components/EDP2-datasetDetails-activityStream';
 // import DistributionDetails from '@/components/DistributionDetails';
 import Imprint from '@/components/Imprint';
 import PrivacyPolicy from '@/components/PrivacyPolicy';
@@ -35,7 +35,7 @@ Vue.use(VueHead);
 
 const title = GLUE_CONFIG.title;
 
-const router = new Router({
+let router = new Router({
   base: GLUE_CONFIG.routerOptions.base,
   mode: GLUE_CONFIG.routerOptions.mode,
   linkActiveClass: 'active',
@@ -66,63 +66,6 @@ const router = new Router({
         title,
       },
       // props: { infiniteScrolling: false, pagination: true },
-    },
-    {
-      path: '/datasets/:ds_id',
-      component: DatasetDetails,
-      children: [
-        {
-          path: '',
-          name: 'DatasetDetailsDataset',
-          components: {
-            datasetDetailsSubpages: DatasetDetailsDataset,
-          },
-          meta: {
-            title,
-          },
-        },
-        {
-          path: 'categories',
-          name: 'DatasetDetailsCategories',
-          components: {
-            datasetDetailsSubpages: DatasetDetailsCategories,
-          },
-          meta: {
-            title,
-          },
-        },
-        {
-          path: 'similarDatasets',
-          name: 'DatasetDetailsSimilarDatasets',
-          components: {
-            datasetDetailsSubpages: DatasetDetailsSimilarDatasets,
-          },
-          meta: {
-            title,
-          },
-        },
-        // {
-        //   path: 'activityStream',
-        //   name: 'DatasetDetailsActivityStream',
-        //   component: {
-        //     datasetDetailsSubpages: DatasetDetailsActivityStream,
-        //   },
-        //   meta: {
-        //     title,
-        //   },
-        // },
-        // {
-        //   path: 'distributions/:dist_id',
-        //   name: 'DistributionDetails',
-        //   component: DistributionDetails,
-        //   meta: {
-        //     title,
-        //   },
-        // },
-      ],
-      meta: {
-        title,
-      },
     },
     {
       path: '/catalogues',
@@ -197,6 +140,71 @@ const router = new Router({
     return savedPosition || { x: 0, y: 0 };
   },
 });
+
+let routeDataset = {
+  path: '/datasets/:ds_id',
+  component: DatasetDetails,
+  children: [
+    {
+      path: '',
+      name: 'DatasetDetailsDataset',
+      components: {
+        datasetDetailsSubpages: DatasetDetailsDataset,
+      },
+      meta: {
+        title,
+      },
+    },
+  // {
+  //   path: 'distributions/:dist_id',
+  //   name: 'DistributionDetails',
+  //   component: DistributionDetails,
+  //   meta: {
+  //     title,
+  //   },
+  // },
+  ],
+  meta: {
+    title,
+  },
+};
+if (GLUE_CONFIG.enable.dataset.categories) {
+  routeDataset.children.push({
+    path: 'categories',
+    name: 'DatasetDetailsCategories',
+    components: {
+      datasetDetailsSubpages: DatasetDetailsCategories,
+    },
+    meta: {
+      title,
+    },
+  });
+}
+if (GLUE_CONFIG.enable.dataset.similarDatasets) {
+  routeDataset.children.push({
+    path: 'similarDatasets',
+    name: 'DatasetDetailsSimilarDatasets',
+    components: {
+      datasetDetailsSubpages: DatasetDetailsSimilarDatasets,
+    },
+    meta: {
+      title,
+    },
+  });
+}
+if (GLUE_CONFIG.enable.dataset.activityStream) {
+  routeDataset.children.push({
+    path: 'activityStream',
+    name: 'DatasetDetailsActivityStream',
+    component: {
+      datasetDetailsSubpages: DatasetDetailsActivityStream,
+    },
+    meta: {
+      title,
+    },
+  });
+}
+router.addRoutes([routeDataset]);
 
 router.beforeEach((to, from, next) => {
   // Hash mode backward-compatibility

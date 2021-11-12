@@ -26,6 +26,14 @@ export default {
     matomoUrl: 'https://matomo',
     authToken: '',
   },
+  enable: {
+    dataset: {
+      categories: true,
+      similarDatasets: true,
+      activityStream: false,
+      feedback: true,
+    },
+  },
   keycloak: {
     enableLogin: true,
     realm: 'edp',
