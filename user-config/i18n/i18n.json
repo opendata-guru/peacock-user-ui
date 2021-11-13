@@ -5265,7 +5265,11 @@
           "categories": "Kategorien",
           "licences": "Lizenzen",
           "countries": "Länder",
-          "tags": "Tags"
+          "tags": "Tags",
+          "data scope": "Datenraum",
+          "provenance": "Herkunft",
+          "scoring": "Metadaten-Qualität",
+          "licenses": "Lizenzen"
         },
         "title": "Filter",
         "operator": "Operator",

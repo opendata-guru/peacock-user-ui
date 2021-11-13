@@ -135,7 +135,7 @@
                 v-if="isExpanded(field.title) ? (index <= limits.max) : (index <= limits.min - 1)"
                 :class="{active: facetIsSelected(field.id, facet.id)}"
                 @click="facetClicked(field.id, facet.id)">
-                <span class="text-truncate">{{facet.title}}</span>
+                <span class="text-truncate">{{facet.title.de || facet.title}}</span>
                 <span class="facet-count badge">{{facet.count | formatNumber}}</span>
               </button>
               <button class="d-none d-md-block btn btn-primary" v-if="field.items.length > limits.min"
