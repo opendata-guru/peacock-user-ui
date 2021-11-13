@@ -12,7 +12,7 @@ import i18n from '../user-config/i18n/i18n.json';
 
 glueConfig.title = 'My Data Portal';
 glueConfig.api.baseUrl = 'https://data.europa.eu/api/hub/search/';
-glueConfig.api.gazetteerBaseUrl = 'https://www.europeandataportal.eu/data/search/gazetteer/';
+glueConfig.api.gazetteerBaseUrl = 'https://data.europa.eu/api/hub/search/gazetteer/';
 glueConfig.api.uploadBaseUrl = 'https://www.europeandataportal.eu/data/api/';
 glueConfig.locale = 'de';
 glueConfig.enable.dataset.categories = false;
