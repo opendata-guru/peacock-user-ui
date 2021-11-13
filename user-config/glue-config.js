@@ -55,14 +55,14 @@ export default {
   },
   images: {
     headerLogos: [
-      {
+      /* {
         src: 'https://i.imgur.com/lgtG4zB.png',
         // href: 'https://my-url.de'(optional)
         // target: '_blank'(optional)
         description: 'Logo',
         height: '60px',
         width: 'auto',
-      },
+      }, */
     ],
     footerLogos: [],
   },

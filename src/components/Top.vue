@@ -7,8 +7,9 @@
     <nav class="navbar-container navbar-dark bg-primary mb-3 border-bottom">
       <div class="content-wrapper navbar navbar-expand-sm">
         <app-link class="navbar-brand d-inline-block" :to="{ path: '/'}">
-          <div class="project-title-container">                    
-            <img src="@/assets/img/piveau-logo-white.svg" class="piveau-logo">
+          <div v-for="(image, imageIndex) in images" class="project-title-container">
+            <img v-if="image.src" :src="image.src" class="piveau-logo" :title="image.description" :key="imageIndex">
+            <span v-if="image.text">{{image.text}}</span>
           </div>
         </app-link>
         <button
@@ -45,11 +46,17 @@
 
 <script>
 import AppLink from './AppLink';
+import GLUE_CONFIG from '../../user-config/glue-config';
 
 export default {
   name: 'top',
   components: {
     appLink: AppLink,
+  },
+  data() {
+    return {
+      images: GLUE_CONFIG.images.headerLogos,
+    };
   },
 };
 </script>

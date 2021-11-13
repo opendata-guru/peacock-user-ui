@@ -21,4 +21,10 @@ glueConfig.enable.dataset.feedback = false;
 glueConfig.enable.filter.gazetteer = false;
 glueConfig.enable.filter.operator = false;
 
+glueConfig.images.headerLogos.push({
+//    src: 'https://i.imgur.com/lgtG4zB.png',
+//    description: 'Logo',
+    text: 'My Data Portal',
+});
+    
 export { glueConfig, i18n };
