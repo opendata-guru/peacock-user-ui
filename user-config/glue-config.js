@@ -33,6 +33,10 @@ export default {
       activityStream: false,
       feedback: true,
     },
+    filter: {
+      gazetteer: true,
+      operator: true,
+    },
   },
   keycloak: {
     enableLogin: true,

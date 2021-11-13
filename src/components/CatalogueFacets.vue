@@ -2,10 +2,10 @@
   <div class="container catalogue-facets">
     <div class="row mx-3 mr-md-0">
       <div class="col">
-        <div class="row facet-field mb-3">
+        <div class="row facet-field mb-3" v-if="showOperator">
           <div class="col list-group pr-0">
             <a class="list-group-item facet-header-item">
-              <span class="facet-title">{{ $t('message.datasetFacets.settings') }}</span class="facet-title">
+              <span class="facet-title">{{ $t('message.datasetFacets.settings') }}</span>
             </a>
             <div class="form-group list-group-item list-group-item-action d-flex justify-content-between align-items-center">
               {{ $t('message.datasetFacets.operator') }}
@@ -34,7 +34,7 @@
              v-if="field.items.length > 0 && field.title === 'Countries'">
           <div class="col list-group pr-0">
             <a class="list-group-item facet-header-item">
-              <span class="facet-title">{{ $t(`message.datasetFacets.facets.${field.title.toLowerCase()}`) }}</span class="facet-title">
+              <span class="facet-title">{{ $t(`message.datasetFacets.facets.${field.title.toLowerCase()}`) }}</span>
             </a>
             <button
               class="facet list-group-item list-group-item-action d-flex justify-content-between align-items-center"
@@ -68,6 +68,7 @@
     isNil,
   } from 'lodash';
   import { getTranslationFor, getCountryFlagImg } from '../utils/helpers';
+  import GLUE_CONFIG from '../../user-config/glue-config';
   /* The minimum amount of facets to show for one category before hiding results */
   const MIN_FACET_LIMIT = 50;
   /* The maximum amount of facets to show for one category */
@@ -89,6 +90,7 @@
         facetOperators: FACET_OPERATORS,
         expanded: [],
         showCatalogueDetails: false,
+        showOperator: GLUE_CONFIG.enable.filter.operator,
         catalogue: {},
         // Browser detection source: https://stackoverflow.com/a/9851769/6369868
         browser: {

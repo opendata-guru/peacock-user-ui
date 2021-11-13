@@ -3,7 +3,7 @@
     <div class="row mx-3 mr-md-0">
       <div class="col">
         <!-- Location suggestions and Map START-->
-        <div class="row" v-if="!showCatalogueDetails">
+        <div class="row" v-if="showGazetteer && !showCatalogueDetails">
           <div class="input-group suggestion-input-group mb-2">
             <input type="text" class="form-control suggestion-input"
                    :aria-label="$t('message.datasets.findLocation')"
@@ -30,7 +30,7 @@
             </div>
           </div>
         </div>
-        <div class="row position-relative mb-3" v-if="!showCatalogueDetails">
+        <div class="row position-relative mb-3" v-if="showGazetteer && !showCatalogueDetails">
           <mapboundsreceiver class="border-secondary map" width="100%" :bounds-id="geoBoundsId" ref="mapReceiver"/>
           <Button class="btn btn-highlight reset-bounds-button" v-if="getGeoBoundsById(geoBoundsId)" @click="resetBoundsFor(geoBoundsId)">Reset Bounds</Button>
           <Button class="btn btn-sm btn-secondary map-modal-button" data-toggle="modal" data-target=".map-modal" @click="triggerResize()">
@@ -86,7 +86,7 @@
         </div>
         <!-- Catalogue Details END -->
         <!--Facet settings-->
-        <div class="row facet-field mb-3" v-if="!showCatalogueDetails">
+        <div class="row facet-field mb-3" v-if="showOperator && !showCatalogueDetails">
           <div class="col list-group pr-0">
             <a class="facet-header-item list-group-item">
               <span class="facet-title">{{ $t('message.datasetFacets.settings') }}</span>
@@ -190,6 +190,7 @@
   import MapBoundsSender from './MapBoundsSender';
   import MapBoundsReceiver from './MapBoundsReceiver';
   import { getTranslationFor, getCountryFlagImg } from '../utils/helpers';
+  import GLUE_CONFIG from '../../user-config/glue-config';
   /* The minimum amount of facets to show for one category before hiding results */
   const MIN_FACET_LIMIT = 10;
   /* The maximum amount of facets to show for one category */
@@ -222,6 +223,8 @@
         },
         geoBoundsId: 'ds-search-bounds',
         showCatalogueDetails: false,
+        showGazetteer: GLUE_CONFIG.enable.filter.gazetteer,
+        showOperator: GLUE_CONFIG.enable.filter.operator,
         catalogue: {},
         // Browser detection source: https://stackoverflow.com/a/9851769/6369868
         browser: {

@@ -18,5 +18,7 @@ glueConfig.locale = 'de';
 glueConfig.enable.dataset.categories = false;
 glueConfig.enable.dataset.similarDatasets = false;
 glueConfig.enable.dataset.feedback = false;
+glueConfig.enable.filter.gazetteer = false;
+glueConfig.enable.filter.operator = false;
 
 export { glueConfig, i18n };
