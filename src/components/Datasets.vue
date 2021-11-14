@@ -134,7 +134,7 @@
         v-if="getFacets"
         :selected-facets="getFacets"/>
         <data-info-box class="dataset" v-if="!getLoading" v-for="dataset in getDatasets" :key="dataset.id"
-                       :link-to="`datasets/${dataset.id}`"
+                       :link-to="`datasets/${dataset.id ? dataset.id : dataset.idName}`"
                        :title="getTranslationFor(dataset.title, $i18n.locale, dataset.languages) || dataset.id"
                        :description="getTranslationFor(dataset.description, $i18n.locale, dataset.languages)"
                        :description-length="300"

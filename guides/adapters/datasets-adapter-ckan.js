@@ -190,19 +190,17 @@ export default class Datasets {
    */
   get(q, facets, limit, page = 0 /* , sort = 'relevance+asc, last_modified+asc, name+asc', facetOperator = "AND", facetGroupOperator = "AND", geoBounds */) {
     // The request parameters
-    const params = {
-      q: buildQueryString(q, facets),
-      // sort: searchParams.sort,
-      rows: limit,
-      start: page - 1,
-      'facet.field': '["tags", "groups"]',
-    };
+    const params = `q=${buildQueryString(q, facets)}`
+      // + `&sort=${ searchParams.sort }`
+      + `&rows=${limit}`
+      + `&start=${page - 1}`
+      + '&facet.field=["tags", "groups"]';
 
     return new Promise((resolve, reject) => {
       const endpoint = 'package_search';
-      const reqStr = `${this.baseUrl}${endpoint}`;
+      const reqStr = `${this.baseUrl}${endpoint}?${params}`;
       axios.get(reqStr, {
-        params,
+        params: {},
       })
         .then((response) => {
           /**
