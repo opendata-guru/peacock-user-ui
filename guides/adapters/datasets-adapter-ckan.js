@@ -16,6 +16,133 @@ function buildQueryString(query, facets) {
   return queryString;
 }
 
+const getCommonResponseData = (dataset) => {
+  const ds = {};
+
+  ds.catalog = {
+    id: 0,
+    title: 'Default Catalog',
+    description: 'CKAN does not define a catalog',
+  };
+  ds.categories = [];
+  for (const group of dataset.groups) {
+    ds.categories.push({
+      id: group.id ? group.id : 0,
+      title: group.display_name,
+      resource: undefined,
+    });
+  }
+  // ds.categories = datasetGetters.getCategories(dataset);
+  ds.country = {
+    id: 'de',
+    title: 'Irgendwas',
+  };
+  ds.distributions = [];
+  ds.distributionFormats = [];
+  for (const dist of dataset.resources) {
+    const distribution = {};
+    distribution.accessUrl = dist.access_url;
+    if (dist.description) {
+      distribution.description = {
+        de: dist.description,
+      };
+    } else {
+      distribution.description = {
+        en: 'No description given',
+      };
+    }
+    distribution.downloadUrl = [];
+    distribution.downloadUrl.push(dist.url);
+    const formats = dist.format.split('/');
+    distribution.format = {
+      id: formats[formats.length - 1],
+      title: formats[formats.length - 1],
+    };
+    distribution.id = dist.id;
+    distribution.licence = {
+      id: undefined,
+      title: dist.license ? dist.license : undefined,
+      resource: undefined,
+      description: undefined,
+      la_url: undefined,
+    };
+    distribution.modificationDate = dist.last_modified;
+    distribution.releaseDate = dist.created;
+    distribution.title = {
+      de: dist.name,
+    };
+    ds.distributions.push(distribution);
+    ds.distributionFormats.push(distribution.format);
+  }
+  ds.id = dataset.id;
+  ds.idName = dataset.name;
+  ds.keywords = [];
+  for (const tag of dataset.tags) {
+    ds.keywords.push({
+      id: tag.id,
+      title: tag.display_name,
+    });
+  }
+  ds.languages = [];
+  if (dataset.language) ds.languages.push(dataset.language);
+  ds.licences = [];
+  if (dataset.license_title) ds.licences.push(dataset.license_title);
+  ds.modificationDate = dataset.metadata_modified;
+  ds.publisher = {
+    type: dataset.organization.type,
+    name: dataset.organization.title,
+    email: undefined,
+    resource: undefined,
+  };
+  ds.releaseDate = dataset.metadata_created;
+  ds.title = {
+    de: dataset.title,
+  };
+  ds.translationMetaData = {
+    fullAvailableLanguages: [],
+    details: {},
+    status: undefined,
+  };
+
+  return ds;
+};
+
+const getResponseData = (dataset) => {
+  const ds = getCommonResponseData(dataset);
+  /* ds.conformsTo = datasetGetters.getConformsTo(dataset);
+  ds.contactPoints = datasetGetters.getContactPoints(dataset);
+  ds.documentations = datasetGetters.getDocumentations(dataset);
+  ds.frequency = datasetGetters.getFrequency(dataset);
+  ds.identifiers = datasetGetters.getIdentifiers(dataset);
+  ds.landingPages = datasetGetters.getLandingPages(dataset);
+  ds.originalLanguage = datasetGetters.getOriginalLanguage(dataset);
+  ds.otherIdentifiers = datasetGetters.getOtherIdentifiers(dataset);
+  ds.provenances = datasetGetters.getProvenances(dataset);
+  ds.relatedResources = datasetGetters.getRelatedResources(dataset);
+  ds.sources = datasetGetters.getSources(dataset);
+  ds.spatial = datasetGetters.getSpatial(dataset);
+  ds.translationMetaData = datasetGetters.getTranslationMetaData(dataset);
+  return ds; */
+
+  ds.conformsTo = [];
+  ds.contactPoints = [];
+  ds.description = {
+    de: dataset.description,
+  };
+
+  return ds;
+};
+
+const getSingleResponseData = (dataset) => {
+  const ds = getCommonResponseData(dataset);
+
+  ds.description = {
+    de: dataset.notes,
+  };
+
+  return ds;
+};
+
 export default class Datasets {
   constructor(baseUrl) {
     this.baseUrl = baseUrl;
@@ -28,85 +155,18 @@ export default class Datasets {
   getSingle(id) {
     return new Promise((resolve, reject) => {
       const endpoint = 'package_show';
-      const reqStr = `${this.baseUrl}${endpoint}`;
+      const reqStr = `${this.baseUrl}${endpoint}?id=${id}`;
       axios.get(reqStr, {
-        params: {
-          id,
-        },
+        params: {},
       })
         .then((response) => {
-          const dataset = response.data.result;
-          /**
-           * @property dataset
-           * @type JSON
-           * @description A dataset object.
-           * @example dataset = {
-         *  categories: [{ id: 'energy', title: 'energy' }, ..],
-         *  description: 'This is dataset1',
-         *  distributions: [{}],
-         *  distributionFormats: ['csv', 'pdf'],
-         *  id: 'abc123qwe345',
-         *  idName: 'dataset-1',
-         *  language: 'EN',
-         *  licence: 'ABC Licence',
-         *  modificationDate: '2002-02-02T00:00',
-         *  publisher: 'Publisher1',
-         *  releaseDate: '2001-01-01T00:00',
-         *  tags: ['tag1', 'tag2'],
-         *  title: 'dataset1',
-         * }
-           */
-          const ds = {};
-          ds.categories = [];
-          ds.description = dataset.notes;
-          ds.distributions = [];
-          ds.distributionFormats = [];
-          ds.id = dataset.id;
-          ds.idName = dataset.name;
-          if (dataset.language) ds.language = dataset.language[0].label;
-          else ds.language = 'unknown';
-          ds.licence = dataset.license_title;
-          ds.modificationDate = dataset.metadata_modified;
-          ds.publisher = dataset.organization.title;
-          ds.releaseDate = dataset.metadata_created;
-          ds.tags = [];
-          ds.title = dataset.title;
-          for (const group of dataset.groups) {
-            ds.categories.push(group.display_name);
-          }
-          for (const resource of dataset.resources) {
-            if (resource.format) ds.distributionFormats.push(resource.format);
-          }
-          for (const tag of dataset.tags) {
-            ds.tags.push(tag.display_name);
-          }
-          /**
-           * @example distributions:  [{
-         * accessUrl: 'http://demo-url-to-this-resource.org/someID-123-xyz/blabla',
-         * downloadUrl: 'http://demo-url-to-this-resource.org/someID-123-xyz/filename.csv',
-         * description: 'A description of this distribution',
-         * format: 'csv',
-         * id: 'someID-123-xyz',
-         * licence: 'ABC Licence',
-         * modificationDate: 2017-05-31T18:33:48.018695,
-         * releaseDate: 2017-05-31T18:33:48.018695,
-         * title: 'someTitle',
-         * urlType: 'download',
-         * },{..}]
-           */
-          for (const dist of dataset.resources) {
-            const distribution = {};
-            distribution.accessUrl = dist.access_url;
-            distribution.description = dist.description;
-            distribution.downloadUrl = dist.url;
-            distribution.format = dist.format;
-            distribution.id = dist.id;
-            distribution.licence = 'unknown';
-            distribution.modificationDate = dist.last_modified;
-            distribution.releaseDate = dist.created;
-            distribution.title = dist.name;
-            distribution.urlType = dist.url_type;
-            ds.distributions.push(distribution);
+          const dataset = response.data.contents.result;
+          let ds = {};
+          try {
+            ds = getSingleResponseData(dataset);
+          } catch (error) {
+            console.warn('Error in datasets.js while checking response:', error.message);
+            console.error(error.stack);
           }
           resolve(ds);
         })
@@ -118,48 +178,45 @@ export default class Datasets {
 
   /**
    * @description GET all datasets matching the given criteria.
-   * @param query
+   * @param q
    * @param facets
    * @param limit
-   * @param offset
+   * @param page
+   * @param sort
+   * @param facetOperator
+   * @param facetGroupOperator
+   * @param geoBounds
    * @returns {Promise}
    */
-  get(query, facets, limit, offset) {
+  get(q, facets, limit, page = 0 /* , sort = 'relevance+asc, last_modified+asc, name+asc', facetOperator = "AND", facetGroupOperator = "AND", geoBounds */) {
+    // The request parameters
+    const params = {
+      q: buildQueryString(q, facets),
+      // sort: searchParams.sort,
+      rows: limit,
+      start: page - 1,
+      'facet.field': '["tags", "groups"]',
+    };
+
     return new Promise((resolve, reject) => {
       const endpoint = 'package_search';
       const reqStr = `${this.baseUrl}${endpoint}`;
-      const queryString = buildQueryString(query, facets);
       axios.get(reqStr, {
-        params: {
-          q: queryString,
-          // sort: searchParams.sort,
-          rows: limit,
-          start: offset,
-          'facet.field': '["tags", "groups"]',
-        },
+        params,
       })
         .then((response) => {
           /**
            * @property availableFacets
            * @type JSON
            * @description The set union of all available facets for the .
-           * @example availableFacets = [
-           *  {
-           *    items: [{
-           *      count: 42,
-           *      title: 'facet1',
-           *      idName: 'facet-1',
-           *    }, {..}],
-           *    title: 'tags',
-           *  }, {..}]
            */
           const resData = {
             availableFacets: [],
-            datasetsCount: response.data.result.count,
+            datasetsCount: response.data.contents.result.count,
             datasets: [],
           };
           // Transform Facets Data model
-          const searchFacets = response.data.result.search_facets;
+          const searchFacets = response.data.contents.result.search_facets;
           Object.keys(searchFacets).forEach((field) => {
             if (searchFacets[field].items.length > 0) {
               const newField = {};
@@ -176,64 +233,15 @@ export default class Datasets {
             }
           });
           // Transform Datasets Data model
-          const datasets = response.data.result.results;
+          const datasets = response.data.contents.result.results;
           for (const dataset of datasets) {
             /**
              * @property dataset
              * @type JSON
              * @description A dataset object.
-             * @example dataset = {
-           *  categories: [{ id: 'energy', title: 'energy' }, ..],
-           *  description: 'This is dataset1',
-           *  distributions: [{}],
-           *  distributionFormats: ['csv', 'pdf'],
-           *  id: 'abc123qwe345',
-           *  idName: 'dataset-1',
-           *  language: 'EN',
-           *  licence: 'ABC Licence',
-           *  modificationDate: '2002-02-02T00:00',
-           *  publisher: 'Publisher1',
-           *  releaseDate: '2001-01-01T00:00',
-           *  tags: ['tag1', 'tag2'],
-           *  title: 'dataset1',
-           * }
              */
-            const ds = {};
-            ds.categories = [];
-            ds.description = dataset.notes;
-            ds.distributions = [];
-            ds.distributionFormats = [];
-            ds.id = dataset.id;
-            ds.idName = dataset.name;
-            if (dataset.language) ds.language = dataset.language[0].label;
-            else ds.language = 'unknown';
-            ds.licence = dataset.license_title;
-            ds.modificationDate = dataset.metadata_modified;
-            ds.publisher = dataset.organization.title;
-            ds.releaseDate = dataset.metadata_created;
-            ds.tags = [];
-            ds.title = dataset.title;
-            for (const group of dataset.groups) {
-              ds.categories.push(group.display_name);
-            }
-            for (const dist of dataset.resources) {
-              const distribution = {};
-              distribution.accessUrl = dist.access_url;
-              distribution.description = dist.description;
-              distribution.downloadUrl = dist.url;
-              distribution.format = dist.format;
-              distribution.id = dist.id;
-              distribution.licence = 'unknown';
-              distribution.modificationDate = dist.last_modified;
-              distribution.releaseDate = dist.created;
-              distribution.title = dist.name;
-              distribution.urlType = dist.url_type;
-              ds.distributions.push(distribution);
-              if (dist.format) ds.distributionFormats.push(dist.format);
-            }
-            for (const tag of dataset.tags) {
-              ds.tags.push(tag.display_name);
-            }
+            let ds = {};
+            ds = getResponseData(dataset);
             resData.datasets.push(ds);
           }
           resolve(resData);
