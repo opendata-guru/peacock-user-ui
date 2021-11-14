@@ -7,7 +7,7 @@
       <div class="mt-4">
         <div class="row">
           <div class="col-10 offset-1" property="dc:description">
-            <p>{{ getTranslationFor(getDescription, $i18n.locale, getLanguages) }}</p>
+            <p v-html="getTranslationFor(getDescription, $i18n.locale, getLanguages)"></p>
           </div>
         </div>
       </div>
