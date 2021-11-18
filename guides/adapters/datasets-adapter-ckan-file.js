@@ -1,141 +1,44 @@
 /* eslint-disable no-restricted-syntax */
 /**
- * @author Dennis ritter
- * @description A sample datasets-adapter for a CKAN-Backend-API.
+ * @author Thomas Tursics
+ * @license SPDX-License-Identifier: Apache-2.0
  */
 
 import axios from 'axios';
-
-const getCommonResponseData = (dataset) => {
-  const ds = {};
-
-  ds.catalog = {
-    id: 0,
-    title: 'Default Catalog',
-    description: 'CKAN does not define a catalog',
-  };
-  ds.categories = [];
-  for (const group of dataset.groups) {
-    ds.categories.push({
-      id: group.id ? group.id : 0,
-      title: group.display_name,
-      resource: undefined,
-    });
-  }
-  // ds.categories = datasetGetters.getCategories(dataset);
-  ds.country = {
-    id: 'de',
-    title: 'Irgendwas',
-  };
-  ds.distributions = [];
-  ds.distributionFormats = [];
-  for (const dist of dataset.resources) {
-    const distribution = {};
-    distribution.accessUrl = dist.access_url;
-    if (dist.description) {
-      distribution.description = {
-        de: dist.description,
-      };
-    } else {
-      distribution.description = {
-        en: 'No description given',
-      };
-    }
-    distribution.downloadUrl = [];
-    distribution.downloadUrl.push(dist.url);
-    const formats = dist.format.split('/');
-    distribution.format = {
-      id: formats[formats.length - 1],
-      title: formats[formats.length - 1],
-    };
-    distribution.id = dist.id;
-    distribution.licence = {
-      id: undefined,
-      title: dist.license ? dist.license : undefined,
-      resource: undefined,
-      description: undefined,
-      la_url: undefined,
-    };
-    distribution.modificationDate = dist.last_modified;
-    distribution.releaseDate = dist.created;
-    distribution.title = {
-      de: dist.name,
-    };
-    ds.distributions.push(distribution);
-    ds.distributionFormats.push(distribution.format);
-  }
-  ds.id = dataset.id;
-  ds.idName = dataset.name;
-  ds.keywords = [];
-  for (const tag of dataset.tags) {
-    ds.keywords.push({
-      id: tag.id,
-      title: tag.display_name,
-    });
-  }
-  ds.languages = [];
-  if (dataset.language) ds.languages.push(dataset.language);
-  ds.licences = [];
-  if (dataset.license_title) ds.licences.push(dataset.license_title);
-  ds.modificationDate = dataset.metadata_modified;
-  ds.publisher = {
-    type: dataset.organization.type,
-    name: dataset.organization.title,
-    email: undefined,
-    resource: undefined,
-  };
-  ds.releaseDate = dataset.metadata_created;
-  ds.title = {
-    de: dataset.title,
-  };
-  ds.translationMetaData = {
-    fullAvailableLanguages: [],
-    details: {},
-    status: undefined,
-  };
-
-  return ds;
-};
-
-const getResponseData = (dataset) => {
-  const ds = getCommonResponseData(dataset);
-  /* ds.conformsTo = datasetGetters.getConformsTo(dataset);
-  ds.contactPoints = datasetGetters.getContactPoints(dataset);
-  ds.documentations = datasetGetters.getDocumentations(dataset);
-  ds.frequency = datasetGetters.getFrequency(dataset);
-  ds.identifiers = datasetGetters.getIdentifiers(dataset);
-  ds.landingPages = datasetGetters.getLandingPages(dataset);
-  ds.originalLanguage = datasetGetters.getOriginalLanguage(dataset);
-  ds.otherIdentifiers = datasetGetters.getOtherIdentifiers(dataset);
-  ds.provenances = datasetGetters.getProvenances(dataset);
-  ds.relatedResources = datasetGetters.getRelatedResources(dataset);
-  ds.sources = datasetGetters.getSources(dataset);
-  ds.spatial = datasetGetters.getSpatial(dataset);
-  ds.translationMetaData = datasetGetters.getTranslationMetaData(dataset);
-  return ds; */
-
-  ds.conformsTo = [];
-  ds.contactPoints = [];
-  ds.description = {
-    de: dataset.description,
-  };
-
-  return ds;
-};
-
-const getSingleResponseData = (dataset) => {
-  const ds = getCommonResponseData(dataset);
-
-  ds.description = {
-    de: dataset.notes,
-  };
-
-  return ds;
-};
+import { getSingleResponseData, getResponseData } from './ckan-helper';
 
 export default class Datasets {
   constructor(baseUrl) {
     this.baseUrl = baseUrl;
+    this.datasets = null;
+  }
+
+  /**
+   * @description Load file once
+   */
+  loadFile() {
+    return new Promise((resolve, reject) => {
+      if (this.datasets) {
+        resolve(this.datasets);
+        return;
+      }
+
+      const reqStr = `${this.baseUrl}`;
+      axios.get(reqStr, {
+        params: {},
+      })
+        .then((response) => {
+          if (response.data.contents.result.results.length !== response.data.contents.result.count) {
+            reject(new Error('Missmatch counting datasets.'));
+          } else {
+            this.datasets = response.data.contents.result.results;
+            resolve(this.datasets);
+          }
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
   }
 
   /**
@@ -178,53 +81,40 @@ export default class Datasets {
    * @param geoBounds
    * @returns {Promise}
    */
-  get(/* q, facets, limit, page = 0, sort = 'relevance+asc, last_modified+asc, name+asc', facetOperator = "AND", facetGroupOperator = "AND", geoBounds */) {
+  get(q, facets, limit, page = 0, sort = 'relevance+asc, last_modified+asc, name+asc'/* , facetOperator = "AND", facetGroupOperator = "AND", geoBounds */) {
     return new Promise((resolve, reject) => {
-      const reqStr = `${this.baseUrl}`;
-      axios.get(reqStr, {
-        params: {},
-      })
-        .then((response) => {
-          console.log(response.data);
-          /**
-           * @property availableFacets
-           * @type JSON
-           * @description The set union of all available facets for the .
-           */
+      this.loadFile()
+        .then(() => {
+          const query = q.trim().toLowerCase();
+          let datasets = this.datasets;
+
+          datasets = datasets.filter((dataset) => {
+            if (query === '') {
+              return true;
+            }
+            if (dataset.title.toLowerCase().indexOf(query) !== -1) {
+              return true;
+            }
+            if (dataset.notes.toLowerCase().indexOf(query) !== -1) {
+              return true;
+            }
+            return false;
+          });
+
           const resData = {
             availableFacets: [],
-            datasetsCount: response.data.contents.result.count,
+            datasetsCount: datasets.length,
             datasets: [],
           };
-          // Transform Facets Data model
-          const searchFacets = response.data.contents.result.search_facets;
-          Object.keys(searchFacets).forEach((field) => {
-            if (searchFacets[field].items.length > 0) {
-              const newField = {};
-              newField.title = searchFacets[field].title;
-              newField.items = [];
-              for (const f of searchFacets[field].items) {
-                const facet = {};
-                facet.count = f.count;
-                facet.idName = f.name;
-                facet.title = f.display_name;
-                newField.items.push(facet);
-              }
-              resData.availableFacets.push(newField);
-            }
-          });
-          // Transform Datasets Data model
-          const datasets = response.data.contents.result.results;
-          for (const dataset of datasets) {
-            /**
-             * @property dataset
-             * @type JSON
-             * @description A dataset object.
-             */
-            let ds = {};
-            ds = getResponseData(dataset);
-            resData.datasets.push(ds);
+
+          console.log(sort, facets);
+          const start = (page - 1) * limit;
+          const end = Math.min(start + limit, resData.datasetsCount);
+          for (let d = start; d < end; d += 1) {
+            const dataset = datasets[d];
+            resData.datasets.push(getResponseData(dataset));
           }
+
           resolve(resData);
         })
         .catch((error) => {
