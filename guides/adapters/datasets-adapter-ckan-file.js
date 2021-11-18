@@ -7,6 +7,22 @@
 import axios from 'axios';
 import { getSingleResponseData, getResponseData } from './ckan-helper';
 
+function sortTitleAsc(a, b) {
+  return String(a.title).localeCompare(b.title);
+}
+
+function sortTitleDesc(a, b) {
+  return String(b.title).localeCompare(a.title);
+}
+
+function sortModificationDate(a, b) {
+  return new Date(b.metadata_modified) - new Date(a.metadata_modified);
+}
+
+function sortReleaseDate(a, b) {
+  return new Date(b.metadata_created) - new Date(a.metadata_created);
+}
+
 export default class Datasets {
   constructor(baseUrl) {
     this.baseUrl = baseUrl;
@@ -101,13 +117,28 @@ export default class Datasets {
             return false;
           });
 
+          const sortOption = sort.split(',')[0].split('+');
+          if (sortOption.length === 2) {
+            if (sortOption[0] === 'relevance') {
+              // do nothing on 'relevance'
+            } else if (sortOption[0] === 'modification_date') {
+              datasets.sort(sortModificationDate);
+            } else if (sortOption[0] === 'release_date') {
+              datasets.sort(sortReleaseDate);
+            } else if (sortOption[1] === 'asc') {
+              datasets.sort(sortTitleAsc);
+            } else {
+              datasets.sort(sortTitleDesc);
+            }
+          }
+
           const resData = {
             availableFacets: [],
             datasetsCount: datasets.length,
             datasets: [],
           };
 
-          console.log(sort, facets);
+          console.log(facets);
           const start = (page - 1) * limit;
           const end = Math.min(start + limit, resData.datasetsCount);
           for (let d = start; d < end; d += 1) {
