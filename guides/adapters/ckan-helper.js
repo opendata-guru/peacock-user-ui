@@ -23,7 +23,7 @@ const getCommonResponseData = (dataset) => {
   // ds.categories = datasetGetters.getCategories(dataset);
   ds.country = {
     id: 'de',
-    title: 'Irgendwas',
+    title: 'Deutschland',
   };
   ds.distributions = [];
   ds.distributionFormats = [];

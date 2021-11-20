@@ -6,6 +6,7 @@
 
 import axios from 'axios';
 import { getSingleResponseData, getResponseData } from './ckan-helper';
+import { createAvailableFacets } from './facet-helper';
 
 function sortTitleAsc(a, b) {
   return String(a.title).localeCompare(b.title);
@@ -44,10 +45,25 @@ export default class Datasets {
         params: {},
       })
         .then((response) => {
-          if (response.data.contents.result.results.length !== response.data.contents.result.count) {
+          const data = response.data;
+          if (!data) {
+            throw new Error('no data found');
+          }
+
+          let result = undefined;
+          if (data.contents) {
+            result = data.contents.result;
+          } else {
+            result = data.result;
+          }
+          if (!result) {
+            throw new Error('no result found');
+          }
+
+          if (result.results.length !== result.count) {
             reject(new Error('Missmatch counting datasets.'));
           } else {
-            this.datasets = response.data.contents.result.results;
+            this.datasets = result.results;
             resolve(this.datasets);
           }
         })
@@ -139,12 +155,17 @@ export default class Datasets {
           };
 
           console.log(facets);
+
+          // TODO map all data to getResponseData(..)
+          // createAvailableFacets(resData);
+
           const start = (page - 1) * limit;
           const end = Math.min(start + limit, resData.datasetsCount);
           for (let d = start; d < end; d += 1) {
-            const dataset = datasets[d];
-            resData.datasets.push(getResponseData(dataset));
+            resData.datasets.push(getResponseData(datasets[d]));
           }
+
+          createAvailableFacets(resData);
 
           resolve(resData);
         })
