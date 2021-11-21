@@ -50,7 +50,7 @@ export default class Datasets {
             throw new Error('no data found');
           }
 
-          let result = undefined;
+          let result;
           if (data.contents) {
             result = data.contents.result;
           } else {
@@ -79,21 +79,10 @@ export default class Datasets {
    */
   getSingle(id) {
     return new Promise((resolve, reject) => {
-      const endpoint = 'package_show';
-      const reqStr = `${this.baseUrl}${endpoint}?id=${id}`;
-      axios.get(reqStr, {
-        params: {},
-      })
-        .then((response) => {
-          const dataset = response.data.contents.result;
-          let ds = {};
-          try {
-            ds = getSingleResponseData(dataset);
-          } catch (error) {
-            console.warn('Error while checking response: ', error.message); // eslint-disable-line
-            console.error(error.stack); // eslint-disable-line
-          }
-          resolve(ds);
+      this.loadFile()
+        .then(() => {
+          const dataset = this.datasets.find(data => data.id === id);
+          resolve(dataset);
         })
         .catch((error) => {
           reject(error);
