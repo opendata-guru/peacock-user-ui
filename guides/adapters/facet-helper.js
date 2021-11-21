@@ -109,30 +109,10 @@ const createKeywordsFacet = (datasets, resData) => {
 };
 
 const createLicenseFacets = (datasets, resData) => {
-  const items = [];
-  const countItems = {};
-  for (const dataset of datasets) {
-    for (const license of dataset.licences) {
-      countItems[license] = (countItems[license] || 0) + 1;
-    }
-  }
-  Object.keys(countItems).forEach((key) => {
-    let id = 'unknown';
-    if (key === 'Datenlizenz Deutschland - Namensnenung 2.0') {
-      id = 'DL-DE BY 2.0';
-    }
-
-    items.push({
-      count: countItems[key],
-      id,
-      title: key,
-    });
-  });
-
-  resData.availableFacets.push({
+  createArrayFacet(datasets, resData, {
     id: 'license',
     title: 'Licenses',
-    items,
+    object: 'licences',
   });
 };
 
@@ -155,5 +135,44 @@ export const createAvailableFacets = (datasets, resData) => {
   createScoringFacet(datasets, resData);
 };
 
-export const silent = () => {
+export const filterFacets = (datasets, facets) => {
+  let data = datasets;
+
+  if (facets.catalog) {
+    for (const catalog of facets.catalog) {
+      data = data.filter(dataset => String(dataset.catalog.id).toLocaleLowerCase() === catalog.toLocaleLowerCase());
+    }
+  }
+
+  if (facets.categories) {
+    for (const category of facets.categories) {
+      data = data.filter(dataset => dataset.categories.find(cat => String(cat.id).toLocaleLowerCase() === category.toLocaleLowerCase()));
+    }
+  }
+
+  if (facets.country) {
+    for (const country of facets.country) {
+      data = data.filter(dataset => String(dataset.country.id).toLocaleLowerCase() === country.toLocaleLowerCase());
+    }
+  }
+
+  if (facets.format) {
+    for (const format of facets.format) {
+      data = data.filter(dataset => dataset.distributionFormats.find(form => String(form.id).toLocaleLowerCase() === format.toLocaleLowerCase()));
+    }
+  }
+
+  if (facets.keywords) {
+    for (const keyword of facets.keywords) {
+      data = data.filter(dataset => dataset.keywords.find(word => String(word.id).toLocaleLowerCase() === keyword.toLocaleLowerCase()));
+    }
+  }
+
+  if (facets.licence) {
+    for (const licence of facets.licence) {
+      data = data.filter(dataset => dataset.licences.find(lic => String(lic.id).toLocaleLowerCase() === licence.toLocaleLowerCase()));
+    }
+  }
+
+  return data;
 };

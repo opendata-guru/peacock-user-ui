@@ -5,8 +5,8 @@
  */
 
 import axios from 'axios';
-import { getSingleResponseData, getResponseData } from './ckan-helper';
-import { createAvailableFacets } from './facet-helper';
+import { getSingleResponseData } from './ckan-helper';
+import { createAvailableFacets, filterFacets } from './facet-helper';
 
 function sortTitleAsc(a, b) {
   return String(a.title.de).localeCompare(b.title.de);
@@ -90,8 +90,8 @@ export default class Datasets {
           try {
             ds = getSingleResponseData(dataset);
           } catch (error) {
-            console.warn('Error in datasets.js while checking response:', error.message);
-            console.error(error.stack);
+            console.warn('Error while checking response: ', error.message); // eslint-disable-line
+            console.error(error.stack); // eslint-disable-line
           }
           resolve(ds);
         })
@@ -148,13 +148,13 @@ export default class Datasets {
             }
           }
 
+          datasets = filterFacets(datasets, facets);
+
           const resData = {
             availableFacets: [],
             datasetsCount: datasets.length,
             datasets: [],
           };
-
-          console.log(facets);
 
           createAvailableFacets(datasets, resData);
 

@@ -8,7 +8,7 @@ const getCommonResponseData = (dataset) => {
   const ds = {};
 
   ds.catalog = {
-    id: 0,
+    id: 'ckan-catalog',
     title: 'Default Catalog',
     description: 'CKAN does not define a catalog',
   };
@@ -74,7 +74,19 @@ const getCommonResponseData = (dataset) => {
   ds.languages = [];
   if (dataset.language) ds.languages.push(dataset.language);
   ds.licences = [];
-  if (dataset.license_title) ds.licences.push(dataset.license_title);
+  if (dataset.license_title) {
+    let id = dataset.license_title.replace(/ /g, '_');
+    if (dataset.license_title === 'Datenlizenz Deutschland - Namensnenung 2.0') {
+      id = 'DL-DE BY 2.0';
+    }
+
+    ds.licences.push({
+      id,
+      resource: undefined,
+      title: dataset.license_title,
+    });
+  }
+
   ds.modificationDate = dataset.metadata_modified;
   ds.publisher = {
     type: dataset.organization.type,
