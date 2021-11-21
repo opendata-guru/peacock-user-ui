@@ -4,10 +4,10 @@
  * @license SPDX-License-Identifier: Apache-2.0
  */
 
-const createObjectFacet = (resData, options) => {
+const createObjectFacet = (datasets, resData, options) => {
   const items = [];
   const countItems = {};
-  for (const dataset of resData.datasets) {
+  for (const dataset of datasets) {
     if (!countItems[dataset[options.object].id]) {
       countItems[dataset[options.object].id] = {
         count: 0,
@@ -31,10 +31,10 @@ const createObjectFacet = (resData, options) => {
   });
 };
 
-const createArrayFacet = (resData, options) => {
+const createArrayFacet = (datasets, resData, options) => {
   const items = [];
   const countItems = {};
-  for (const dataset of resData.datasets) {
+  for (const dataset of datasets) {
     for (const object of dataset[options.object]) {
       if (!countItems[object.id]) {
         countItems[object.id] = {
@@ -60,7 +60,7 @@ const createArrayFacet = (resData, options) => {
   });
 };
 
-const createDataScopeFacet = (resData) => {
+const createDataScopeFacet = (datasets, resData) => {
   resData.availableFacets.push({
     id: 'dataScope',
     title: 'Data scope',
@@ -68,50 +68,50 @@ const createDataScopeFacet = (resData) => {
   });
 };
 
-const createCatalogFacets = (resData) => {
-  createObjectFacet(resData, {
+const createCatalogFacets = (datasets, resData) => {
+  createObjectFacet(datasets, resData, {
     id: 'catalog',
     title: 'Catalogues',
     object: 'catalog',
   });
 };
 
-const createCategoriesFacets = (resData) => {
-  createArrayFacet(resData, {
+const createCategoriesFacets = (datasets, resData) => {
+  createArrayFacet(datasets, resData, {
     id: 'categories',
     title: 'Categories',
     object: 'categories',
   });
 };
 
-const createCountryFacets = (resData) => {
-  createObjectFacet(resData, {
+const createCountryFacets = (datasets, resData) => {
+  createObjectFacet(datasets, resData, {
     id: 'country',
     title: 'Provenance',
     object: 'country',
   });
 };
 
-const createFormatFacet = (resData) => {
-  createArrayFacet(resData, {
+const createFormatFacet = (datasets, resData) => {
+  createArrayFacet(datasets, resData, {
     id: 'format',
     title: 'Formats',
     object: 'distributionFormats',
   });
 };
 
-const createKeywordsFacet = (resData) => {
-  createArrayFacet(resData, {
+const createKeywordsFacet = (datasets, resData) => {
+  createArrayFacet(datasets, resData, {
     id: 'keywords',
     title: 'Keywords',
     object: 'keywords',
   });
 };
 
-const createLicenseFacets = (resData) => {
+const createLicenseFacets = (datasets, resData) => {
   const items = [];
   const countItems = {};
-  for (const dataset of resData.datasets) {
+  for (const dataset of datasets) {
     for (const license of dataset.licences) {
       countItems[license] = (countItems[license] || 0) + 1;
     }
@@ -136,7 +136,7 @@ const createLicenseFacets = (resData) => {
   });
 };
 
-const createScoringFacet = (resData) => {
+const createScoringFacet = (datasets, resData) => {
   resData.availableFacets.push({
     id: 'scoring',
     title: 'Scoring',
@@ -144,15 +144,15 @@ const createScoringFacet = (resData) => {
   });
 };
 
-export const createAvailableFacets = (resData) => {
-  createCatalogFacets(resData);
-  createCategoriesFacets(resData);
-  createCountryFacets(resData);
-  createDataScopeFacet(resData);
-  createFormatFacet(resData);
-  createKeywordsFacet(resData);
-  createLicenseFacets(resData);
-  createScoringFacet(resData);
+export const createAvailableFacets = (datasets, resData) => {
+  createCatalogFacets(datasets, resData);
+  createCategoriesFacets(datasets, resData);
+  createCountryFacets(datasets, resData);
+  createDataScopeFacet(datasets, resData);
+  createFormatFacet(datasets, resData);
+  createKeywordsFacet(datasets, resData);
+  createLicenseFacets(datasets, resData);
+  createScoringFacet(datasets, resData);
 };
 
 export const silent = () => {

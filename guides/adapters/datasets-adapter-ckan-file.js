@@ -9,19 +9,19 @@ import { getSingleResponseData, getResponseData } from './ckan-helper';
 import { createAvailableFacets } from './facet-helper';
 
 function sortTitleAsc(a, b) {
-  return String(a.title).localeCompare(b.title);
+  return String(a.title.de).localeCompare(b.title.de);
 }
 
 function sortTitleDesc(a, b) {
-  return String(b.title).localeCompare(a.title);
+  return String(b.title.de).localeCompare(a.title.de);
 }
 
 function sortModificationDate(a, b) {
-  return new Date(b.metadata_modified) - new Date(a.metadata_modified);
+  return new Date(b.modificationDate) - new Date(a.modificationDate);
 }
 
 function sortReleaseDate(a, b) {
-  return new Date(b.metadata_created) - new Date(a.metadata_created);
+  return new Date(b.releaseDate) - new Date(a.releaseDate);
 }
 
 export default class Datasets {
@@ -63,7 +63,7 @@ export default class Datasets {
           if (result.results.length !== result.count) {
             reject(new Error('Missmatch counting datasets.'));
           } else {
-            this.datasets = result.results;
+            this.datasets = result.results.map(dataset => getSingleResponseData(dataset));
             resolve(this.datasets);
           }
         })
@@ -124,10 +124,10 @@ export default class Datasets {
             if (query === '') {
               return true;
             }
-            if (dataset.title.toLowerCase().indexOf(query) !== -1) {
+            if (dataset.title && dataset.title.de && (dataset.title.de.toLowerCase().indexOf(query) !== -1)) {
               return true;
-            }
-            if (dataset.notes.toLowerCase().indexOf(query) !== -1) {
+            }            
+            if (dataset.description && dataset.description.de && (dataset.description.de.toLowerCase().indexOf(query) !== -1)) {
               return true;
             }
             return false;
@@ -156,16 +156,13 @@ export default class Datasets {
 
           console.log(facets);
 
-          // TODO map all data to getResponseData(..)
-          // createAvailableFacets(resData);
+          createAvailableFacets(datasets, resData);
 
           const start = (page - 1) * limit;
           const end = Math.min(start + limit, resData.datasetsCount);
           for (let d = start; d < end; d += 1) {
-            resData.datasets.push(getResponseData(datasets[d]));
+            resData.datasets.push(datasets[d]);
           }
-
-          createAvailableFacets(resData);
 
           resolve(resData);
         })
