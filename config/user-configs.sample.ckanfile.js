@@ -14,7 +14,7 @@ import datasetCKANFileService from '../guides/adapters/datasets-adapter-ckan-fil
 import distributionCKANService from '../guides/adapters/distributions-adapter-ckan';
 
 glueConfig.title = 'My Data portal';
-glueConfig.api.baseUrl = '/static/example.ckan.json';
+glueConfig.api.baseUrl = '/data/ckan.json';
 glueConfig.locale = 'de';
 
 glueConfig.services.datasetService = datasetCKANFileService;
