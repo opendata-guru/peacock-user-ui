@@ -271,7 +271,7 @@
   /* eslint-disable no-console, quotes */
   import { mapActions, mapGetters } from 'vuex';
   import { normalize } from '../../utils/helpers';
-  import fileTypes from '../../../static/MDR_fileTypes.json';
+  import fileTypes from '../../../static/unused/MDR_fileTypes.json';
 
   export default {
     name: 'Distribution',
