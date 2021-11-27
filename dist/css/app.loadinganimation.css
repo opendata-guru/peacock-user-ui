@@ -1,0 +1,46 @@
+.spinner-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #0065a2;
+}
+
+.spinner {
+  width: 62px;
+  height: 62px;
+  background-color: transparent;
+  background-image: url('../assets/loading.png');
+  background-repeat: no-repeat;
+  position: absolute;
+  top: calc(50% - 31px);
+  left: calc(50% - 31px);
+  -webkit-animation: sk-rotateplane 2s infinite ease-in-out;
+  animation: sk-rotateplane 2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+  } 25% {
+      transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+      -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+    } 50% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+        -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+      } 75% {
+          transform: perspective(120px) rotateX(0deg) rotateY(-180deg);
+          -webkit-transform: perspective(120px) rotateX(0deg) rotateY(-180deg);
+        } 100% {
+            transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+            -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+          }
+}
