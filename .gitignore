@@ -19,7 +19,7 @@ selenium-debug.log
 #user-config/custom_theme.scss
 #user-config/glue-config.js
 
-config/user-configs.js
+#config/user-configs.js
 
 docs/_build
 
