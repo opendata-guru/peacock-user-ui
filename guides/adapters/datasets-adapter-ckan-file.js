@@ -115,7 +115,7 @@ export default class Datasets {
             }
             if (dataset.title && dataset.title.de && (dataset.title.de.toLowerCase().indexOf(query) !== -1)) {
               return true;
-            }            
+            }
             if (dataset.description && dataset.description.de && (dataset.description.de.toLowerCase().indexOf(query) !== -1)) {
               return true;
             }
