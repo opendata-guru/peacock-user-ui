@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "lazyload": [
+    "/data/subdata/corona-erkrankungen.json",
+    "/data/subdata/vornamen.json",
+    "/data/subdata/entsorgungstermine-des-kommunalservice-jena.json"
+  ]
+}
