@@ -1,0 +1,84 @@
+{
+    "license_title": "Datenlizenz Deutschland - Namensnenung 2.0",
+    "maintainer": "",
+    "relationships_as_object": [],
+    "private": false,
+    "maintainer_email": "",
+    "num_tags": 1,
+    "id": "2cc7773d-beba-43ad-9808-a420a67ffcb3",
+    "metadata_created": "2020-03-27T09:27:45.762557",
+    "metadata_modified": "2021-11-17T09:48:30.821859",
+    "author": "Fachdienst Gesundheit",
+    "author_email": "gesundheitsamt@jena.de",
+    "state": "active",
+    "version": "",
+    "creator_user_id": "824e280b-aa06-4c34-b548-d88b4332ec65",
+    "type": "dataset",
+    "resources": [
+      {
+        "mimetype": "text/csv",
+        "cache_url": null,
+        "hash": "",
+        "description": "CSV-Datei mit Komma getrennt. Aktualisierung mindestens einmal täglich. Ab 2.4.2020 mit Daten zu stationären Aufenthalten und schweren Verläufen. Ab 26.8.2020 gibt es 2 neue Spalten mit den neu Erkrankten (letzte 24h) und den aktiven Fällen.",
+        "name": "corona_erkrankungen_jena.csv",
+        "format": "CSV",
+        "url": "https://opendata.jena.de/dataset/2cc7773d-beba-43ad-9808-a420a67ffcb3/resource/d3ba07b6-fb19-451b-b902-5b18d8e8cbad/download/corona_erkrankungen_jena.csv",
+        "cache_last_updated": null,
+        "package_id": "2cc7773d-beba-43ad-9808-a420a67ffcb3",
+        "created": "2020-03-27T09:28:47.953972",
+        "state": "active",
+        "mimetype_inner": null,
+        "last_modified": "2021-11-17T09:48:30.771433",
+        "position": 0,
+        "revision_id": "1634247a-0d26-498a-95f2-4d28a4e68ef7",
+        "url_type": "upload",
+        "id": "d3ba07b6-fb19-451b-b902-5b18d8e8cbad",
+        "resource_type": null,
+        "size": 19705
+      }
+    ],
+    "num_resources": 1,
+    "tags": [
+      {
+        "vocabulary_id": null,
+        "state": "active",
+        "display_name": "Corona",
+        "id": "ff308543-a8fd-42a5-a5bb-0d560d96aa4c",
+        "name": "Corona"
+      }
+    ],
+    "groups": [
+      {
+        "display_name": "Bevölkerung",
+        "description": "",
+        "image_display_url": "https://opendata.jena.de/uploads/group/2016-11-15-070745.046533bevoelkerung.png",
+        "title": "Bevölkerung",
+        "id": "0161496a-b956-4150-9608-d343172f5d90",
+        "name": "bevoelkerung"
+      }
+    ],
+    "license_id": "data-german-name",
+    "relationships_as_subject": [],
+    "organization": {
+      "description": "Die Lichtstadt ganz im Heute: frisch, facettenreich und familienfreundlich. Umrahmt von sanften Bergen prägen Optik, Wissenschaft und Freiheit das Leben im Saaletal.",
+      "created": "2016-08-25T11:31:15.826976",
+      "title": "Stadt Jena",
+      "name": "jena",
+      "is_organization": true,
+      "state": "active",
+      "image_url": "2016-11-15-071104.113392jenalichtstadt3.png",
+      "revision_id": "4c9de25c-751d-428e-878c-09592c452f81",
+      "type": "organization",
+      "id": "661d04c1-905d-41dc-8da6-917aab19cd58",
+      "approval_status": "approved"
+    },
+    "name": "corona-erkrankungen",
+    "isopen": false,
+    "url": "",
+    "notes": "Überblick über die Entwicklung der Corona-Erkrankungen in Jena.",
+    "owner_org": "661d04c1-905d-41dc-8da6-917aab19cd58",
+    "extras": [],
+    "license_url": "https://www.govdata.de/dl-de/by-2-0",
+    "title": "Corona-Erkrankungen",
+    "revision_id": "d5c5debb-d074-49a8-8aa2-764963fdb54a"
+  }

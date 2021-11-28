@@ -33,14 +33,14 @@ export default class Datasets {
   /**
    * @description lazy Load file (used internally)
    */
-  lazyLoadFile(data, result, index) {
+  lazyLoadFiles(lazyload, result) {
     return new Promise((resolve, reject) => {
-      if (index < data.lazyload.length) {
-        axios.get(data.lazyload[index])
+      if (lazyload.length > 0) {
+        axios.get(lazyload.shift())
           .then((lazyResponse) => {
             result.results.push(lazyResponse.data);
 
-            this.lazyLoadFile(data, result, index + 1)
+            this.lazyLoadFiles(lazyload, result)
               .then((newResult) => {
                 resolve(newResult);
               })
@@ -72,14 +72,6 @@ export default class Datasets {
         params: {},
       })
         .then((response) => {
-          function finish(result) {
-            if (result.results.length !== result.count) {
-              reject(new Error('Missmatch counting datasets.'));
-            } else {
-              resolve(result.results.map(dataset => getSingleResponseData(dataset)));
-            }
-          }
-
           const data = response.data;
           if (!data) {
             throw new Error('no data found');
@@ -99,15 +91,20 @@ export default class Datasets {
           }
 
           // my own additional property
+          let lazyFiles = [];
           if (data.lazyload) {
-            result.count += data.lazyload.length;
-            this.lazyLoadFile(data, result, 0)
-              .then(() => {
-                finish(result);
-              });
-          } else {
-            finish(result);
+            lazyFiles = data.lazyload;
+            result.count += lazyFiles.length;
           }
+
+          this.lazyLoadFiles(lazyFiles, result)
+            .then((res) => {
+              if (res.results.length !== res.count) {
+                reject(new Error('Missmatch counting datasets.'));
+              } else {
+                resolve(res.results.map(dataset => getSingleResponseData(dataset)));
+              }
+            });
         })
         .catch((error) => {
           reject(error);
