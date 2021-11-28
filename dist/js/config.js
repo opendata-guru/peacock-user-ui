@@ -14,8 +14,8 @@ var CONFIG_APP_TITLE = 'My Data Portal';
 // var CONFIG_APP_DATA_URL = 'https://www.govdata.de/ckan/api/action/package_search?q=spending';
 // var CONFIG_APP_DATA_URL = 'https://opendata.guru/proxy/cors?url=https://www.govdata.de/ckan/api/action/';
 // var CONFIG_APP_DATA_URL = 'https://opendata.guru/proxy/cors?url=https://opendata.jena.de/api/3/action/package_search?rows=9999';
-// var CONFIG_APP_DATA_URL = '/data/ckan.json';
-var CONFIG_APP_DATA_URL = '/data/ckan-lazy.json';
+// var CONFIG_APP_DATA_URL = '/data/ckan-lazy.json';
+var CONFIG_APP_DATA_URL = '/data/ckan.json';
 
 // ...
 // var CONFIG_APP_DATA_SERVICE = 'piveau'; // e.g. for europeandataportal.eu endpoint
