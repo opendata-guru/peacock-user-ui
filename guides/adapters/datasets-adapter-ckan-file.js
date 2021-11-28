@@ -31,6 +31,33 @@ export default class Datasets {
   }
 
   /**
+   * @description lazy Load file (used internally)
+   */
+  lazyLoadFile(data, result, index) {
+    return new Promise((resolve, reject) => {
+      if (index < data.lazyload.length) {
+        axios.get(data.lazyload[index])
+          .then((lazyResponse) => {
+            result.results.push(lazyResponse.data);
+
+            this.lazyLoadFile(data, result, index + 1)
+              .then((newResult) => {
+                resolve(newResult);
+              })
+              .catch((error) => {
+                reject(error);
+              });
+          })
+          .catch((error) => {
+            reject(error);
+          });
+      } else {
+        resolve(result);
+      }
+    });
+  }
+
+  /**
    * @description Load file once
    */
   loadFile() {
@@ -45,6 +72,14 @@ export default class Datasets {
         params: {},
       })
         .then((response) => {
+          function finish(result) {
+            if (result.results.length !== result.count) {
+              reject(new Error('Missmatch counting datasets.'));
+            } else {
+              resolve(result.results.map(dataset => getSingleResponseData(dataset)));
+            }
+          }
+
           const data = response.data;
           if (!data) {
             throw new Error('no data found');
@@ -57,14 +92,21 @@ export default class Datasets {
             result = data.result;
           }
           if (!result) {
-            throw new Error('no result found');
+            result = {
+              count: 0,
+              results: [],
+            };
           }
 
-          if (result.results.length !== result.count) {
-            reject(new Error('Missmatch counting datasets.'));
+          // my own additional property
+          if (data.lazyload) {
+            result.count += data.lazyload.length;
+            this.lazyLoadFile(data, result, 0)
+              .then(() => {
+                finish(result);
+              });
           } else {
-            this.datasets = result.results.map(dataset => getSingleResponseData(dataset));
-            resolve(this.datasets);
+            finish(result);
           }
         })
         .catch((error) => {
@@ -80,7 +122,8 @@ export default class Datasets {
   getSingle(id) {
     return new Promise((resolve, reject) => {
       this.loadFile()
-        .then(() => {
+        .then((loadedDatasets) => {
+          this.datasets = loadedDatasets;
           const dataset = this.datasets.find(data => data.id === id);
           resolve(dataset);
         })
@@ -105,7 +148,8 @@ export default class Datasets {
   get(q, facets, limit, page = 0, sort = 'relevance+asc, last_modified+asc, name+asc'/* , facetOperator = "AND", facetGroupOperator = "AND", geoBounds */) {
     return new Promise((resolve, reject) => {
       this.loadFile()
-        .then(() => {
+        .then((loadedDatasets) => {
+          this.datasets = loadedDatasets;
           const query = q.trim().toLowerCase();
           let datasets = this.datasets;
 
