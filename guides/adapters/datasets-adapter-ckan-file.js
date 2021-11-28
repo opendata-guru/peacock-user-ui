@@ -33,16 +33,14 @@ export default class Datasets {
   /**
    * @description lazy Load file (used internally)
    */
-  lazyLoadFiles(lazyload, result) {
+  lazyLoadFiles(lazyload) {
     return new Promise((resolve, reject) => {
       if (lazyload.length > 0) {
-        axios.get(lazyload.shift())
-          .then((lazyResponse) => {
-            result.results.push(lazyResponse.data);
-
-            this.lazyLoadFiles(lazyload, result)
-              .then((newResult) => {
-                resolve(newResult);
+        this.loadFile(lazyload.shift())
+          .then((loadedDatasets) => {
+            this.lazyLoadFiles(lazyload)
+              .then((result) => {
+                resolve(result.concat(loadedDatasets));
               })
               .catch((error) => {
                 reject(error);
@@ -52,7 +50,7 @@ export default class Datasets {
             reject(error);
           });
       } else {
-        resolve(result);
+        resolve([]);
       }
     });
   }
@@ -60,14 +58,14 @@ export default class Datasets {
   /**
    * @description Load file once
    */
-  loadFile() {
+  loadFile(filePath) {
     return new Promise((resolve, reject) => {
       if (this.datasets) {
         resolve(this.datasets);
         return;
       }
 
-      const reqStr = `${this.baseUrl}`;
+      const reqStr = filePath || `${this.baseUrl}`;
       axios.get(reqStr, {
         params: {},
       })
@@ -91,18 +89,14 @@ export default class Datasets {
           }
 
           // my own additional property
-          let lazyFiles = [];
-          if (data.lazyload) {
-            lazyFiles = data.lazyload;
-            result.count += lazyFiles.length;
-          }
+          const lazyFiles = data.lazyload || [];
 
-          this.lazyLoadFiles(lazyFiles, result)
-            .then((res) => {
-              if (res.results.length !== res.count) {
+          this.lazyLoadFiles(lazyFiles)
+            .then((lazyResult) => {
+              if (result.results.length !== result.count) {
                 reject(new Error('Missmatch counting datasets.'));
               } else {
-                resolve(res.results.map(dataset => getSingleResponseData(dataset)));
+                resolve(result.results.map(dataset => getSingleResponseData(dataset)).concat(lazyResult));
               }
             });
         })
