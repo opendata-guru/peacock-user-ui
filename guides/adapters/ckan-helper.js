@@ -6,6 +6,7 @@
 
 const getCommonResponseData = (dataset) => {
   const ds = {};
+  const language = dataset.language || 'de';
 
   ds.catalog = {
     id: 'ckan-catalog',
@@ -22,18 +23,33 @@ const getCommonResponseData = (dataset) => {
   }
   // ds.categories = datasetGetters.getCategories(dataset);
   ds.country = {
-    id: 'de',
-    title: 'Deutschland',
+    id: language,
+    title: language === 'de' ? 'Deutschland' : language,
   };
   ds.distributions = [];
   ds.distributionFormats = [];
+
+  ds.licences = [];
+  if (dataset.license_title) {
+    let id = dataset.license_title.replace(/ /g, '_');
+    if (dataset.license_title === 'Datenlizenz Deutschland - Namensnenung 2.0') {
+      id = 'DL-DE BY 2.0';
+    }
+
+    ds.licences.push({
+      id,
+      resource: undefined,
+      title: dataset.license_title,
+      la_url: dataset.license_url,
+    });
+  }
+
   for (const dist of dataset.resources) {
     const distribution = {};
     distribution.accessUrl = dist.access_url;
     if (dist.description) {
-      distribution.description = {
-        de: dist.description,
-      };
+      distribution.description = {};
+      distribution.description[language] = dist.description;
     } else {
       distribution.description = {
         en: 'No description given',
@@ -47,18 +63,35 @@ const getCommonResponseData = (dataset) => {
       title: formats[formats.length - 1],
     };
     distribution.id = dist.id;
-    distribution.licence = {
-      id: undefined,
-      title: dist.license ? dist.license : undefined,
-      resource: undefined,
-      description: undefined,
-      la_url: undefined,
-    };
+    if (dist.license) {
+      distribution.licence = {
+        id: undefined,
+        title: dist.license,
+        resource: undefined,
+        description: undefined,
+        la_url: undefined,
+      };
+    } else if (ds.licences.length > 0) {
+      distribution.licence = {
+        id: ds.licences[0].id,
+        title: ds.licences[0].title,
+        resource: ds.licences[0].resource,
+        description: undefined,
+        la_url: ds.licences[0].la_url,
+      };
+    } else {
+      distribution.licence = {
+        id: undefined,
+        title: undefined,
+        resource: undefined,
+        description: undefined,
+        la_url: undefined,
+      };
+    }
     distribution.modificationDate = dist.last_modified;
     distribution.releaseDate = dist.created;
-    distribution.title = {
-      de: dist.name,
-    };
+    distribution.title = {};
+    distribution.title[language] = dist.name;
     ds.distributions.push(distribution);
     ds.distributionFormats.push(distribution.format);
   }
@@ -73,19 +106,6 @@ const getCommonResponseData = (dataset) => {
   }
   ds.languages = [];
   if (dataset.language) ds.languages.push(dataset.language);
-  ds.licences = [];
-  if (dataset.license_title) {
-    let id = dataset.license_title.replace(/ /g, '_');
-    if (dataset.license_title === 'Datenlizenz Deutschland - Namensnenung 2.0') {
-      id = 'DL-DE BY 2.0';
-    }
-
-    ds.licences.push({
-      id,
-      resource: undefined,
-      title: dataset.license_title,
-    });
-  }
 
   ds.modificationDate = dataset.metadata_modified;
   ds.publisher = {
@@ -95,9 +115,8 @@ const getCommonResponseData = (dataset) => {
     resource: undefined,
   };
   ds.releaseDate = dataset.metadata_created;
-  ds.title = {
-    de: dataset.title,
-  };
+  ds.title = {};
+  ds.title[language] = dataset.title;
   ds.translationMetaData = {
     fullAvailableLanguages: [],
     details: {},
@@ -109,6 +128,8 @@ const getCommonResponseData = (dataset) => {
 
 export const getResponseData = (dataset) => {
   const ds = getCommonResponseData(dataset);
+  const language = dataset.language || 'de';
+
   /* ds.conformsTo = datasetGetters.getConformsTo(dataset);
   ds.contactPoints = datasetGetters.getContactPoints(dataset);
   ds.documentations = datasetGetters.getDocumentations(dataset);
@@ -126,19 +147,18 @@ export const getResponseData = (dataset) => {
 
   ds.conformsTo = [];
   ds.contactPoints = [];
-  ds.description = {
-    de: dataset.description,
-  };
+  ds.description = {};
+  ds.description[language] = dataset.description;
 
   return ds;
 };
 
 export const getSingleResponseData = (dataset) => {
   const ds = getCommonResponseData(dataset);
+  const language = dataset.language || 'de';
 
-  ds.description = {
-    de: dataset.notes,
-  };
+  ds.description = {};
+  ds.description[language] = dataset.notes;
 
   return ds;
 };
