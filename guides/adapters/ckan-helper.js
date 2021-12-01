@@ -55,8 +55,8 @@ const getCommonResponseData = (dataset) => {
         en: 'No description given',
       };
     }
-    distribution.downloadUrl = [];
-    distribution.downloadUrl.push(dist.url);
+    distribution.downloadUrls = [];
+    distribution.downloadUrls.push(dist.url);
     const formats = dist.format.split('/');
     distribution.format = {
       id: formats[formats.length - 1],
