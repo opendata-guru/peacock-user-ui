@@ -128,6 +128,8 @@ export default {
           href: 'https://www.fokus.fraunhofer.de/9663f8cb2d267d4b',
           target: '_self',
         },
+        append: [
+        ],
       },
     },
   },

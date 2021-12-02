@@ -30,9 +30,9 @@
               <app-link v-if="!link.web" class="nav-link" :to="{ path: link.href }">
                 {{ link.title }}
               </app-link>
-              <a v-if="link.web" class="nav-link" :href="link.href">
+              <app-link v-if="link.web" class="nav-link" :to="link.href">
                 {{ link.title }}
-              </a>
+              </app-link>
             </li>
           </ul>
         </div>
