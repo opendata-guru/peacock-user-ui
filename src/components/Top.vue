@@ -26,15 +26,13 @@
 
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <app-link class="nav-link" :to="{ path: '/datasets'}">
-                {{ $t('message.header.navigation.data.datasets') }}
+            <li v-for="link in links" class="nav-item">
+              <app-link v-if="!link.web" class="nav-link" :to="{ path: link.href }">
+                {{ link.title }}
               </app-link>
-            </li>
-            <li class="nav-item">
-              <app-link class="nav-link" :to="{ path: '/catalogues'}">
-                {{ $t('message.header.navigation.data.catalogues') }}
-              </app-link>
+              <a v-if="link.web" class="nav-link" :href="link.href">
+                {{ link.title }}
+              </a>
             </li>
           </ul>
         </div>
@@ -54,8 +52,14 @@ export default {
     appLink: AppLink,
   },
   data() {
+    const that = this;
     return {
       images: GLUE_CONFIG.images.headerLogos,
+      links: GLUE_CONFIG.navigation.topnav.main.append.map(nav => ({
+        title: that.$t(nav.title),
+        href: nav.href,
+        web: (nav.href.indexOf('http://') === 0) || (nav.href.indexOf('https://') === 0),
+      })),
     };
   },
 };

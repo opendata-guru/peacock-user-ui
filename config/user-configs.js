@@ -65,4 +65,61 @@ if (CONFIG_APP_HEADER_LOGO_TEXT || CONFIG_APP_HEADER_LOGO_IMAGE_SRC || CONFIG_AP
     });
 }
 
+let topnav = [];
+if (CONFIG_APP_HEADER_NAV_1_TITLE) {
+    topnav.push({
+        href: CONFIG_APP_HEADER_NAV_1_URL,
+        title: CONFIG_APP_HEADER_NAV_1_TITLE
+    });
+}
+if (CONFIG_APP_HEADER_NAV_2_TITLE) {
+    topnav.push({
+        href: CONFIG_APP_HEADER_NAV_2_URL,
+        title: CONFIG_APP_HEADER_NAV_2_TITLE
+    });
+}
+if (CONFIG_APP_HEADER_NAV_3_TITLE) {
+    topnav.push({
+        href: CONFIG_APP_HEADER_NAV_3_URL,
+        title: CONFIG_APP_HEADER_NAV_3_TITLE
+    });
+}
+if (CONFIG_APP_HEADER_NAV_4_TITLE) {
+    topnav.push({
+        href: CONFIG_APP_HEADER_NAV_4_URL,
+        title: CONFIG_APP_HEADER_NAV_4_TITLE
+    });
+}
+if (CONFIG_APP_HEADER_NAV_5_TITLE) {
+    topnav.push({
+        href: CONFIG_APP_HEADER_NAV_5_URL,
+        title: CONFIG_APP_HEADER_NAV_5_TITLE
+    });
+}
+if (CONFIG_APP_HEADER_NAV_6_TITLE) {
+    topnav.push({
+        href: CONFIG_APP_HEADER_NAV_6_URL,
+        title: CONFIG_APP_HEADER_NAV_6_TITLE
+    });
+}
+if (CONFIG_APP_HEADER_NAV_7_TITLE) {
+    topnav.push({
+        href: CONFIG_APP_HEADER_NAV_7_URL,
+        title: CONFIG_APP_HEADER_NAV_7_TITLE
+    });
+}
+if (CONFIG_APP_HEADER_NAV_8_TITLE) {
+    topnav.push({
+        href: CONFIG_APP_HEADER_NAV_8_URL,
+        title: CONFIG_APP_HEADER_NAV_8_TITLE
+    });
+}
+if (CONFIG_APP_HEADER_NAV_9_TITLE) {
+    topnav.push({
+        href: CONFIG_APP_HEADER_NAV_9_URL,
+        title: CONFIG_APP_HEADER_NAV_9_TITLE
+    });
+}
+glueConfig.navigation.topnav.main.append = topnav;
+
 export { glueConfig, i18n };
