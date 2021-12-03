@@ -32,19 +32,21 @@
       window._paq = window._paq || [];
       this.tracker = window._paq;
 
-      (() => {
-        const u = this.matomoURL;
-        window._paq.push(['setTrackerUrl', `${u}matomo.php`]);
-        window._paq.push(['setSiteId', '1']);
-        const d = document;
-        const g = d.createElement('script');
-        const s = d.getElementsByTagName('script')[0];
-        g.type = 'text/javascript';
-        g.async = true;
-        g.defer = true;
-        g.src = `${u}matomo.js`;
-        s.parentNode.insertBefore(g, s);
-      })();
+      if (this.matomoURL) {
+        (() => {
+          const u = this.matomoURL;
+          window._paq.push(['setTrackerUrl', `${u}matomo.php`]);
+          window._paq.push(['setSiteId', '1']);
+          const d = document;
+          const g = d.createElement('script');
+          const s = d.getElementsByTagName('script')[0];
+          g.type = 'text/javascript';
+          g.async = true;
+          g.defer = true;
+          g.src = `${u}matomo.js`;
+          s.parentNode.insertBefore(g, s);
+        })();
+      }
     },
     watch: {
       // eslint-disable-next-line no-unused-vars

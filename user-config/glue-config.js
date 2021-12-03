@@ -23,7 +23,7 @@ export default {
     baseUrl: 'http://localhost:8081/',
     gazetteerBaseUrl: 'http://localhost:8081/gazetteer/',
     uploadBaseUrl: 'http://localhost:8080',
-    matomoUrl: 'https://matomo',
+    matomoUrl: '',
     authToken: '',
   },
   enable: {

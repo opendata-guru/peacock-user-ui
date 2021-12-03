@@ -34,6 +34,9 @@ var CONFIG_APP_GAZETTEER_URL = '';
 var CONFIG_APP_UPLOAD_URL = '';
 
 // ...
+var CONFIG_APP_MATOMO_URL = '';
+
+// ...
 var CONFIG_APP_LOCALE = 'de';
 
 // ...

@@ -31,6 +31,10 @@ if (CONFIG_APP_UPLOAD_URL) {
     glueConfig.api.uploadBaseUrl = CONFIG_APP_UPLOAD_URL;
 }
 
+if (CONFIG_APP_MATOMO_URL) {
+    glueConfig.api.matomoUrl = CONFIG_APP_MATOMO_URL;
+}
+
 if (CONFIG_APP_LOCALE) {
     glueConfig.locale = CONFIG_APP_LOCALE;
 }
