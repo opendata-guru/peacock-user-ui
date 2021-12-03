@@ -180,77 +180,41 @@
                       <span class="d-inline-block">
                         <small class="pr-1">{{ filterDateFormatEU(distribution.releaseDate) }}</small>
                       </span>
-                      <span class="options dropdown d-inline-block"
-                            v-if="showOptionsDropdown(distribution)">
-                        <button class="btn btn-sm btn-primary p-0 pl-2 w-100"
-                                type="button"
-                                data-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                                title="Options">
-                          {{ $t('message.datasetDetails.options') }}
-                          <i class="material-icons small-icon float-right align-bottom">keyboard_arrow_down</i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right bg-light">
-                          <app-link class="dropdown-item px-3 text-right"
-                                    :path="getVisualisationLink(distribution.accessUrl)"
-                                    target="_blank"
-                                    @click="$emit('trackLink', getVisualisationLink(distribution.accessUrl), 'link')"
-                                    v-if="showVisualisationLink(distribution)">
-                            <small class="px-2">{{ $t('message.datasetDetails.visualisation') }}</small>
-                            <i class="material-icons float-right align-bottom">bar_chart</i>
-                          </app-link>
-                          <app-link class="dropdown-item px-3 text-right"
-                                    :path="getGeoLink(distribution.format.title, distribution.id)"
-                                    target="_blank"
-                                    @click="$emit('trackLink', getGeoLink(distribution.format.title, distribution.id), 'link')"
-                                    v-if="showGeoLink(distribution)">
-                            <small class="px-2">{{ $t('message.datasetDetails.geoVisualisation') }}</small>
-                            <i class="material-icons float-right align-bottom">public</i>
-                          </app-link>
-                        </div>
-                      </span>
-                      <span class="download dropdown d-inline-block"
-                            v-if="showDownloadDropdown(distribution)">
-                        <button class="btn btn-sm btn-primary p-0 pl-2 w-100"
-                                type="button"
-                                data-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                                title="Download">
+                      <app-link class="btn btn-sm btn-primary p-0 px-2"
+                        :path="getVisualisationLink(distribution.accessUrl)"
+                        target="_blank"
+                        @click="$emit('trackLink', getVisualisationLink(distribution.accessUrl), 'link')"
+                        v-if="showVisualisationLink(distribution)">
+                        <span class="px-2">{{ $t('message.datasetDetails.visualisation') }}</span>
+                        <i class="material-icons float-right align-bottom">bar_chart</i>
+                      </app-link>
+                      <app-link class="btn btn-sm btn-primary p-0 px-2"
+                        :path="getGeoLink(distribution.format.title, distribution.id)"
+                        target="_blank"
+                        @click="$emit('trackLink', getGeoLink(distribution.format.title, distribution.id), 'link')"
+                        v-if="showGeoLink(distribution)">
+                        <span class="px-2">{{ $t('message.datasetDetails.geoVisualisation') }}</span>
+                        <i class="material-icons float-right align-bottom">public</i>
+                      </app-link>
+                      <app-link class="text-dark text-decoration-none"
+                        :to="distribution.accessUrl"
+                        target="_blank"
+                        rel="dcat:distribution noopener"
+                        matomo-track-download
+                        @after-click="trackGoto"
+                        v-if="showAccessUrl(distribution)">
+                        <span class="px-2" property="dcat:mediaType" :content="getDistributionFormat(distribution)">{{ $t('message.datasetDetails.openResource') }}</span>
+                        <i class="material-icons align-bottom">open_in_new</i>
+                      </app-link>
+                      <span v-if="showDownloadUrls(distribution)"
+                        v-for="downloadURL in distribution.downloadUrls">
+                        <app-link class="btn btn-sm btn-primary p-0 px-2"
+                          :to="downloadURL"
+                          target="_blank"
+                          matomo-track-download
+                          @after-click="trackGoto">
                           {{ $t('message.datasetDetails.download') }}
-                          <i class="material-icons small-icon float-right align-bottom">keyboard_arrow_down</i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right bg-light">
-                          <span class="dropdown-item px-3 text-right"
-                                v-if="showAccessUrl(distribution)">
-                            <app-link class="text-dark text-decoration-none"
-                                      :to="distribution.accessUrl"
-                                      target="_blank"
-                                      rel="dcat:distribution noopener"
-                                      matomo-track-download
-                                      @after-click="trackGoto">
-                              <small class="px-2" property="dcat:mediaType" :content="getDistributionFormat(distribution)">{{ $t('message.datasetDetails.openResource') }}</small>
-                              <i class="material-icons align-bottom">open_in_new</i>
-                            </app-link>
-                            <i class="copy-text material-icons float-right align-bottom" @click="setClipboard(distribution.accessUrl)">file_copy</i>
-                          </span>
-                          <span class="dropdown-item d-block px-3 text-right"
-                                v-if="showDownloadUrls(distribution)"
-                                v-for="downloadURL in distribution.downloadUrls">
-                            <input class="d-inline-block mr-2 py-0 px-1 w-75 small border border-secondary bg-white"
-                                   type="text"
-                                   :value="`${downloadURL}`">
-                            <app-link class="text-dark text-decoration-none"
-                                      :to="downloadURL"
-                                      target="_blank"
-                                      matomo-track-download
-                                      @after-click="trackGoto">
-                              <i class="material-icons align-bottom">open_in_new</i>
-                            </app-link>
-                            <i class="copy-text material-icons float-right align-bottom" @click="setClipboard(downloadURL)">file_copy</i>
-                          </span>
-                        </div>
+                        </app-link>
                       </span>
                     </span>
                   </span>
