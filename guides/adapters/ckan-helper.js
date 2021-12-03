@@ -38,9 +38,9 @@ const getCommonResponseData = (dataset) => {
 
     ds.licences.push({
       id,
-      resource: undefined,
+      resource: dataset.license_url,
       title: dataset.license_title,
-      la_url: dataset.license_url,
+      la_url: undefined,
     });
   }
 
