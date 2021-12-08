@@ -8,7 +8,7 @@
       <div class="content-wrapper navbar navbar-expand-sm">
         <app-link class="navbar-brand d-inline-block" :to="{ path: '/'}">
           <div v-for="(image, imageIndex) in images" class="project-title-container">
-            <img v-if="image.src" :src="image.src" class="piveau-logo" :title="image.description" :key="imageIndex">
+            <img v-if="image.src" :src="image.src" class="app-logo" :title="image.description" :key="imageIndex">
             <span v-if="image.text">{{image.text}}</span>
           </div>
         </app-link>
@@ -34,6 +34,10 @@
                 {{ link.title }}
               </app-link>
             </li>
+            <li v-if="$env.keycloak.enableLogin" class="nav-item small">
+              <a v-if="!authenticated" v-on:click="login()" class="nav-link p-0 login">{{ $t('message.header.subnav.login') }}</a>
+              <a v-if="authenticated" v-on:click="logout()" class="nav-link p-0 login">{{ $t('message.header.subnav.logout') }}</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -43,6 +47,7 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex';
 import AppLink from './AppLink';
 import GLUE_CONFIG from '../../user-config/glue-config';
 
@@ -51,9 +56,11 @@ export default {
   components: {
     appLink: AppLink,
   },
+  dependencies: 'authService',
   data() {
     const that = this;
     return {
+      authenticated: false,
       images: GLUE_CONFIG.images.headerLogos,
       links: GLUE_CONFIG.navigation.topnav.main.append.map(nav => ({
         title: that.$t(nav.title),
@@ -61,6 +68,35 @@ export default {
         web: (nav.href.indexOf('http://') === 0) || (nav.href.indexOf('https://') === 0),
       })),
     };
+  },
+  computed: {
+    ...mapGetters('auth', [
+      'securityAuth',
+    ]),
+    isAuthenticated() {
+      return this.authService.isAuthenticated(this.securityAuth);
+    },
+  },
+  methods: {
+    ...mapActions('auth', [
+      'authLogout',
+    ]),
+    login() {
+      if (this.$env.keycloak.enableLogin) {
+        this.authService.init(this.$router);
+      }
+    },
+    logout() {
+      this.$Progress.start();
+      this.authService.logout(this.securityAuth, 'window.location.origin');
+      this.authLogout();
+      this.$Progress.finish();
+    },
+  },
+  watch: {
+    isAuthenticated() {
+      this.authenticated = this.authService.isAuthenticated(this.securityAuth);
+    },
   },
 };
 </script>
@@ -76,7 +112,7 @@ export default {
         vertical-align: top;
         text-align: right;
 
-        .piveau-logo {
+        .app-logo {
             width: 120px;
           }
           .project-name {
@@ -94,6 +130,14 @@ export default {
           color: $white;
         }
       }
+
+    .login{
+       color: white;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+    }
     }
   }
   
