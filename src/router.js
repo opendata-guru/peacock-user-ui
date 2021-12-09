@@ -19,7 +19,6 @@ import Imprint from '@/components/Imprint';
 import PrivacyPolicy from '@/components/PrivacyPolicy';
 import MapBasic from '@/components/MapBasic';
 
-import Auth from '@/components/Auth';
 /* eslint-disable */
 import store from './store/index';
 import GLUE_CONFIG from '../user-config/glue-config';
@@ -28,7 +27,8 @@ import { decode } from './utils/jwt';
 const DatasetDetails = () => import(/* webpackChunkName: "datasetDetails" */'@/components/EDP2-datasetDetails');
 const UploadPage = () => import(/* webpackChunkName: "uploadPage" */'@/components/Upload/EDP2-uploadPage');
 const Catalogues = () => import(/* webpackChunkName: "catalogues" */'@/components/Catalogues');
-const NotFound = () => import(/* webpackChunkName: "notFound" */'@/components/NotFound');
+const NotFound = () => import(/* webpackChunkName: "notFound" */'@/components/404-NotFound');
+const Unauthorized = () => import(/* webpackChunkName: "unauthorized" */'@/components/401-Unauthorized');
 
 Vue.use(Router);
 Vue.use(VueHead);
@@ -107,24 +107,11 @@ let router = new Router({
       },
     },
     {
-      path: '/login',
-      name: 'login',
-      component: Auth,
+      path: '/error401',
+      name: 'Unauthorized',
+      component: Unauthorized,
       meta: {
         title,
-        requireAuth: true,
-      },
-    },
-    {
-      path: '/upload',
-      name: 'upload',
-      component: UploadPage,
-      props: {
-        activeStep: 1,
-      },
-      meta: {
-        title,
-        requiresAuth: true,
       },
     },
     {
@@ -140,6 +127,23 @@ let router = new Router({
     return savedPosition || { x: 0, y: 0 };
   },
 });
+
+if (GLUE_CONFIG.keycloak.enableLogin) {
+  router.addRoutes([
+    {
+      path: '/upload',
+      name: 'upload',
+      component: UploadPage,
+      props: {
+        activeStep: 1,
+      },
+      meta: {
+        title,
+        requiresAuth: true,
+      },
+    },
+  ]);
+}
 
 let routeDataset = {
   path: '/datasets/:ds_id',
@@ -212,7 +216,7 @@ router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     const auth = store.state.auth.auth;
     if (!auth.authenticated) {
-      // we can show unauthorized page here for requireAuth Meta
+      next('/error401');
     } else {
       // Checking the role allowed in rtpToken
       const rtpToken = decode(store.state.auth.rtptoken);
@@ -220,11 +224,10 @@ router.beforeEach((to, from, next) => {
         if (role === 'provider') {
           // check or update the token on each request which needed authentication
           auth.updateToken(10).success((success) => {
-            console.log('refresh token'+ success); // eslint-disable-line
             store.dispatch('auth/authLogin', auth);
             next();
           }).error((error) => {
-            console.log('error on teokn '+ error); // eslint-disable-line
+            console.log('error on token '+ error); // eslint-disable-line
           });
         } else {
           // unauthorized
