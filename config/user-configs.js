@@ -10,6 +10,7 @@
 import glueConfig from '../user-config/glue-config';
 import i18n from '../user-config/i18n/i18n.json';
 
+import authKeycloakService from '../src/auth/authService';
 import authZeroService from '../guides/adapters/auth-zero-adapter';
 import datasetCKANService from '../guides/adapters/datasets-adapter-ckan';
 import datasetCKANFileService from '../guides/adapters/datasets-adapter-ckan-file';
@@ -51,14 +52,16 @@ if (CONFIG_APP_DATA_SERVICE) {
     }
 }
 
+glueConfig.keycloak.enableLogin = CONFIG_APP_AUTH_ENABLE === false ? false : true;
 if (CONFIG_APP_AUTH_SERVICE) {
-    if (CONFIG_APP_AUTH_SERVICE === 'zero') {
+    if (CONFIG_APP_AUTH_SERVICE === 'keycloak') {
+        glueConfig.services.authService = authKeycloakService;
+        glueConfig.api.authToken = '';
+    } else if (CONFIG_APP_AUTH_SERVICE === 'zero') {
         glueConfig.services.authService = authZeroService;
         glueConfig.api.authToken = '';
     }
 }
-
-glueConfig.keycloak.enableLogin = CONFIG_APP_ENABLE_LOGIN === false ? false : true;
 
 glueConfig.enable.dataset.categories = CONFIG_APP_ENABLE_DATASET_CATEGORIES === false ? false : true;
 glueConfig.enable.dataset.similarDatasets = CONFIG_APP_ENABLE_DATASET_SIMILARDATASETS === false ? false : true;

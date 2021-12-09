@@ -41,10 +41,10 @@ var CONFIG_APP_LOCALE = 'de';
 
 // ...
 // unused
-// var CONFIG_APP_ENABLE_LOGIN = false;
-// var CONFIG_APP_AUTH_SERVICE = ''; // 'zero'
-var CONFIG_APP_ENABLE_LOGIN = false;
-var CONFIG_APP_AUTH_SERVICE = '';
+// var CONFIG_APP_AUTH_ENABLE = false;
+// var CONFIG_APP_AUTH_SERVICE = 'keycloak'; // 'zero'
+var CONFIG_APP_AUTH_ENABLE = false;
+var CONFIG_APP_AUTH_SERVICE = 'zero';
 
 // ...
 var CONFIG_APP_ENABLE_DATASET_CATEGORIES = false;
