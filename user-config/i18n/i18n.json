@@ -5338,6 +5338,12 @@
       },
       "catalogueFacets": {
         "title": "Filter"
+      },
+      "error": {
+        "goBack": "Gehe zurück",
+        "http401": "He, du! Halt genau hier an. Eine Autorisierung ist erforderlich.",
+        "http403": "Sie sind nicht berechtigt, auf dieses Dokument zuzugreifen.",
+        "http404": "Seite nicht gefunden."
       }
     }
   },
@@ -6297,6 +6303,12 @@
           "legalNotice": "Legal notice",
           "login": "Login"
         }
+      },
+      "error": {
+        "goBack": "Go back",
+        "http401": "Hey, you! Stop right here. Authorization required.",
+        "http403": "You do not have permission to access this document.",
+        "http404": "Page not found."
       }
     }
   },
