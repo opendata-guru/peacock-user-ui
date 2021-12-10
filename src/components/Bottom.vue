@@ -11,7 +11,10 @@
       <div class="content-wrapper navbar navbar-expand-sm">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <app-link v-for="(image, imageIndex) in images" class="footer-link" :to="(image.href.indexOf('http://') === 0) || (image.href.indexOf('https://') === 0) ? image.href : { path: image.href }">
+            <app-link v-for="(image, imageIndex) in images" class="footer-link"
+              :to="(image.href.indexOf('http://') === 0) || (image.href.indexOf('https://') === 0) ? image.href : { path: image.href }"
+              :key="imageIndex"
+              >
               <div class="project-title-container">
                 <img v-if="image.src" :src="image.src" class="footer-logo" height="40" :title="image.description" :key="imageIndex">
                 <span v-if="image.text">{{image.text}}</span>
