@@ -200,4 +200,83 @@ if (CONFIG_APP_FOOTER_NAV_9_TITLE) {
 }
 glueConfig.navigation.topnav.sub.append = footerNav;
 
+if (CONFIG_APP_ROUTER_BASE) {
+    glueConfig.routerOptions.base = CONFIG_APP_ROUTER_BASE;
+}
+
+let routes = [];
+if (CONFIG_APP_ROUTER_ROUTE_1_NAME) {
+    routes.push({
+        name: CONFIG_APP_ROUTER_ROUTE_1_NAME,
+        path: CONFIG_APP_ROUTER_ROUTE_1_PATH,
+        file: CONFIG_APP_ROUTER_ROUTE_1_FILE,
+        requiresAuth: CONFIG_APP_ROUTER_ROUTE_1_REQUIRES_AUTH
+    });
+}
+if (CONFIG_APP_ROUTER_ROUTE_2_NAME) {
+    routes.push({
+        name: CONFIG_APP_ROUTER_ROUTE_2_NAME,
+        path: CONFIG_APP_ROUTER_ROUTE_2_PATH,
+        file: CONFIG_APP_ROUTER_ROUTE_2_FILE,
+        requiresAuth: CONFIG_APP_ROUTER_ROUTE_2_REQUIRES_AUTH
+    });
+}
+if (CONFIG_APP_ROUTER_ROUTE_3_NAME) {
+    routes.push({
+        name: CONFIG_APP_ROUTER_ROUTE_3_NAME,
+        path: CONFIG_APP_ROUTER_ROUTE_3_PATH,
+        file: CONFIG_APP_ROUTER_ROUTE_3_FILE,
+        requiresAuth: CONFIG_APP_ROUTER_ROUTE_3_REQUIRES_AUTH
+    });
+}
+if (CONFIG_APP_ROUTER_ROUTE_4_NAME) {
+    routes.push({
+        name: CONFIG_APP_ROUTER_ROUTE_4_NAME,
+        path: CONFIG_APP_ROUTER_ROUTE_4_PATH,
+        file: CONFIG_APP_ROUTER_ROUTE_1_FILE,
+        requiresAuth: CONFIG_APP_ROUTER_ROUTE_4_REQUIRES_AUTH
+    });
+}
+if (CONFIG_APP_ROUTER_ROUTE_5_NAME) {
+    routes.push({
+        name: CONFIG_APP_ROUTER_ROUTE_5_NAME,
+        path: CONFIG_APP_ROUTER_ROUTE_5_PATH,
+        file: CONFIG_APP_ROUTER_ROUTE_5_FILE,
+        requiresAuth: CONFIG_APP_ROUTER_ROUTE_5_REQUIRES_AUTH
+    });
+}
+if (CONFIG_APP_ROUTER_ROUTE_6_NAME) {
+    routes.push({
+        name: CONFIG_APP_ROUTER_ROUTE_6_NAME,
+        path: CONFIG_APP_ROUTER_ROUTE_6_PATH,
+        file: CONFIG_APP_ROUTER_ROUTE_6_FILE,
+        requiresAuth: CONFIG_APP_ROUTER_ROUTE_6_REQUIRES_AUTH
+    });
+}
+if (CONFIG_APP_ROUTER_ROUTE_7_NAME) {
+    routes.push({
+        name: CONFIG_APP_ROUTER_ROUTE_7_NAME,
+        path: CONFIG_APP_ROUTER_ROUTE_7_PATH,
+        file: CONFIG_APP_ROUTER_ROUTE_7_FILE,
+        requiresAuth: CONFIG_APP_ROUTER_ROUTE_7_REQUIRES_AUTH
+    });
+}
+if (CONFIG_APP_ROUTER_ROUTE_8_NAME) {
+    routes.push({
+        name: CONFIG_APP_ROUTER_ROUTE_8_NAME,
+        path: CONFIG_APP_ROUTER_ROUTE_8_PATH,
+        file: CONFIG_APP_ROUTER_ROUTE_8_FILE,
+        requiresAuth: CONFIG_APP_ROUTER_ROUTE_8_REQUIRES_AUTH
+    });
+}
+if (CONFIG_APP_ROUTER_ROUTE_9_NAME) {
+    routes.push({
+        name: CONFIG_APP_ROUTER_ROUTE_9_NAME,
+        path: CONFIG_APP_ROUTER_ROUTE_1_PATH,
+        file: CONFIG_APP_ROUTER_ROUTE_1_FILE,
+        requiresAuth: CONFIG_APP_ROUTER_ROUTE_9_REQUIRES_AUTH
+    });
+}
+glueConfig.routerOptions.routes = routes;
+
 export { glueConfig, i18n };

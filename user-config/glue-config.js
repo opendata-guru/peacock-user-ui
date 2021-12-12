@@ -83,6 +83,12 @@ export default {
   routerOptions: {
     base: '',
     mode: 'history',
+    routes: [{
+      name: '',
+      path: '',
+      file: '',
+      requiresAuth: true,
+    }],
   },
   navigation: {
     topnav: {

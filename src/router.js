@@ -15,8 +15,6 @@ import DatasetDetailsCategories from '@/components/EDP2-datasetDetails-categorie
 import DatasetDetailsSimilarDatasets from '@/components/EDP2-datasetDetails-similarDatasets';
 import DatasetDetailsActivityStream from '@/components/EDP2-datasetDetails-activityStream';
 // import DistributionDetails from '@/components/DistributionDetails';
-import Imprint from '@/components/Imprint';
-import PrivacyPolicy from '@/components/PrivacyPolicy';
 import MapBasic from '@/components/MapBasic';
 
 /* eslint-disable */
@@ -29,6 +27,7 @@ const UploadPage = () => import(/* webpackChunkName: "uploadPage" */'@/component
 const Catalogues = () => import(/* webpackChunkName: "catalogues" */'@/components/Catalogues');
 const NotFound = () => import(/* webpackChunkName: "notFound" */'@/components/404-NotFound');
 const Unauthorized = () => import(/* webpackChunkName: "unauthorized" */'@/components/401-Unauthorized');
+const StaticPage = () => import(/* webpackChunkName: "staticPage" */'@/components/PeacockStaticPage');
 
 Vue.use(Router);
 Vue.use(VueHead);
@@ -85,20 +84,6 @@ let router = new Router({
       },
     },
     {
-      path: '/imprint',
-      name: 'Imprint',
-      component: Imprint,
-      title,
-    },
-    {
-      path: '/privacypolicy',
-      name: 'PrivacyPolicy',
-      component: PrivacyPolicy,
-      meta: {
-        title,
-      },
-    },
-    {
       path: '/maps',
       name: 'MapBasic',
       component: MapBasic,
@@ -127,6 +112,25 @@ let router = new Router({
     return savedPosition || { x: 0, y: 0 };
   },
 });
+
+if (GLUE_CONFIG.routerOptions && GLUE_CONFIG.routerOptions.routes) {
+  var routes = [];
+  GLUE_CONFIG.routerOptions.routes.forEach((route) => {
+    routes.push({
+      path: route.path,
+      name: route.name,
+      component: StaticPage,
+      props: {
+        fileName: route.file,
+      },
+      meta: {
+        title,
+        requiresAuth: route.requiresAuth === 'false' ? false : (route.requiresAuth === false ? false : true),
+      },
+    });
+  });
+  router.addRoutes(routes);
+}
 
 if (GLUE_CONFIG.keycloak.enableLogin) {
   router.addRoutes([

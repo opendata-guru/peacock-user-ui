@@ -13,7 +13,6 @@ import injector from 'vue-inject';
 // Import glue-config.js
 /* eslint-disable-next-line */
 import { glueConfig as GLUE_CONFIG } from '../../config/user-configs';
-// import impressumComp
 
 export default (envConfig) => {
   injector.constant('baseUrl', envConfig.api.baseUrl);
