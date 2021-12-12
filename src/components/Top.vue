@@ -47,6 +47,10 @@
             <a v-if="!authenticated" v-on:click="login()" class="btn btn-outline-dark login">{{ $t('message.header.subnav.login') }}</a>
             <a v-if="authenticated" v-on:click="logout()" class="btn btn-outline-dark login">{{ $t('message.header.subnav.logout') }}</a>
           </span>
+          <span v-if="showLanguageSwitch" class="navbar-text">
+            <language-selector></language-selector>
+          </span>
+
         </div>
 
       </div>
@@ -57,11 +61,13 @@
 <script>
 import { mapActions, mapGetters } from 'vuex';
 import AppLink from './AppLink';
+import LanguageSelector from './LanguageSelector';
 import GLUE_CONFIG from '../../user-config/glue-config';
 
 export default {
   name: 'top',
   components: {
+    languageSelector: LanguageSelector,
     appLink: AppLink,
   },
   dependencies: 'authService',
@@ -75,6 +81,7 @@ export default {
         href: nav.href,
         web: (nav.href.indexOf('http://') === 0) || (nav.href.indexOf('https://') === 0),
       })),
+      showLanguageSwitch: false,
     };
   },
   computed: {

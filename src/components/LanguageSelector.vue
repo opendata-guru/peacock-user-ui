@@ -4,7 +4,7 @@
 -->
 
 <template>
-  <select class="custom-select-sm language-selector mt-1 d-none d-sm-block" v-model="locale">
+  <select class="btn btn-outline-dark custom-select-sm language-selector d-none d-sm-block" v-model="locale">
     <option v-for="lang in Object.keys(languages)" :key="lang" :value="lang">
       {{ languages[lang] }}
     </option>
