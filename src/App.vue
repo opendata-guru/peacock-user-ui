@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import Top from './components/Top';
+  import PeacockHeader from './components/PeacockHeader';
 
   // Code split footer since they are not in page view initially
   const Bottom = () => import(/* webpackChunkName: "bottom" */'./components/Bottom');
@@ -16,7 +16,7 @@
   export default {
     name: 'app',
     components: {
-      top: Top,
+      top: PeacockHeader,
       bottom: Bottom,
     },
     data() {
