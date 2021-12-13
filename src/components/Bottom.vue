@@ -3,8 +3,6 @@
               SPDX-License-Identifier: Apache-2.0
 -->
 
-<!-- A component to wrap all components that should be present in the HTML-footer -->
-
 <template>
   <footer>
     <nav class="navbar-light bg-light border-top pt-3 pb-3">

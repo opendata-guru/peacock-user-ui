@@ -1,3 +1,8 @@
+<!-- @license Copyright 2019 Fraunhofer FOKUS
+              Modifications copyright 2021 Thomas Tursics
+              SPDX-License-Identifier: Apache-2.0
+-->
+
 <template>
   <header class="mb-3 border-bottom">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
