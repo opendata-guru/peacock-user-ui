@@ -22,12 +22,12 @@ import store from './store/index';
 import GLUE_CONFIG from '../user-config/glue-config';
 import { decode } from './utils/jwt';
 
-const DatasetDetails = () => import(/* webpackChunkName: "datasetDetails" */'@/components/EDP2-datasetDetails');
-const UploadPage = () => import(/* webpackChunkName: "uploadPage" */'@/components/Upload/EDP2-uploadPage');
-const Catalogues = () => import(/* webpackChunkName: "catalogues" */'@/components/Catalogues');
-const NotFound = () => import(/* webpackChunkName: "notFound" */'@/components/404-NotFound');
-const Unauthorized = () => import(/* webpackChunkName: "unauthorized" */'@/components/401-Unauthorized');
-const StaticPage = () => import(/* webpackChunkName: "staticPage" */'@/components/PeacockStaticPage');
+const DatasetDetails = () => import(/* webpackChunkName: "common" */'@/components/EDP2-datasetDetails');
+const UploadPage = () => import(/* webpackChunkName: "admin" */'@/components/Upload/EDP2-uploadPage');
+const Catalogues = () => import(/* webpackChunkName: "common" */'@/components/Catalogues');
+const NotFound = () => import(/* webpackChunkName: "common" */'@/components/404-NotFound');
+const Unauthorized = () => import(/* webpackChunkName: "common" */'@/components/401-Unauthorized');
+const StaticPage = () => import(/* webpackChunkName: "common" */'@/components/PeacockStaticPage');
 
 Vue.use(Router);
 Vue.use(VueHead);

@@ -11,7 +11,7 @@
   import PeacockHeader from './components/PeacockHeader';
 
   // Code split footer since they are not in page view initially
-  const Bottom = () => import(/* webpackChunkName: "bottom" */'./components/Bottom');
+  const Bottom = () => import(/* webpackChunkName: "common" */'./components/Bottom');
 
   export default {
     name: 'app',
