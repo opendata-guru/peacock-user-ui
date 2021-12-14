@@ -203,7 +203,7 @@
 
   export default {
     name: 'peacockDatasets',
-    dependencies: ['DatasetService'],
+    dependencies: ['DatasetService', 'authService'],
     components: {
       appLink: AppLink,
       selectedFacetsOverview: SelectedFacetsOverview,
@@ -235,6 +235,7 @@
         sortSelected: 'relevance+desc, modification_date+desc, title.en+asc',
         sortSelectedLabel: this.$t('message.sort.relevance'),
         filterCollapsed: true,
+        authenticated: false,
         catalogAllowed: false,
       };
     },
@@ -280,20 +281,11 @@
         }
         return facets;
       },
-      authenticated() {
-        if (!this.getRTPToken) return false;
-        const decoded = decode(this.getRTPToken);
-        let isAuthenticated = false;
-        // Go through all catalogues and look for update permission
-        decoded.authorization.permissions.forEach((permission) => {
-          if (permission.scopes.find(scope => scope === 'update')) {
-            if (permission.rsname.replace('https://europeandataportal.eu/id/catalogue/', '') === this.$route.query.catalog) {
-              this.catalogAllowed = true;
-            }
-            isAuthenticated = true;
-          }
-        });
-        return isAuthenticated;
+      isAuthenticated() {
+        return this.authService.isAuthenticated(this.securityAuth);
+      },
+      isCatalogAllowed() {
+        return this.canUpdateCatalog(this.$route.query.catalog);
       },
     },
     methods: {
@@ -468,6 +460,23 @@
         this.$router.replace({ query: Object.assign({}, this.$route.query, { query }, { page: 1 }) });
         this.setQuery(query);
       },
+      canUpdateCatalog(catalog) {
+        let catalogAllowed = false;
+
+        if (this.getRTPToken) {
+          const decoded = decode(this.getRTPToken);
+          // Go through all catalogues and look for update permission
+          decoded.authorization.permissions.forEach((permission) => {
+            if (permission.scopes.find(scope => scope === 'update')) {
+              if (permission.rsname.replace('https://europeandataportal.eu/id/catalogue/', '') === catalog) {
+                catalogAllowed = true;
+              }
+            }
+          });
+        }
+
+        return catalogAllowed;
+      },
     },
     watch: {
       /**
@@ -501,6 +510,12 @@
           this.setSort(sort);
         },
         deep: true,
+      },
+      isAuthenticated() {
+        this.authenticated = this.authService.isAuthenticated(this.securityAuth);
+      },
+      isCatalogAllowed() {
+        this.catalogAllowed = this.canUpdateCatalog(this.$route.query.catalog);
       },
     },
     created() {
