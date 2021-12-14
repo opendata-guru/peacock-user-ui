@@ -9,7 +9,7 @@ import Router from 'vue-router';
 import VueHead from 'vue-head';
 
 import Home from '@/components/Home';
-import Datasets from '@/components/Datasets';
+import Datasets from '@/components/PeacockDatasets';
 import DatasetDetailsDataset from '@/components/EDP2-datasetDetails-dataset';
 import DatasetDetailsCategories from '@/components/EDP2-datasetDetails-categories';
 import DatasetDetailsSimilarDatasets from '@/components/EDP2-datasetDetails-similarDatasets';

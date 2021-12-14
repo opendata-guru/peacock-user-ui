@@ -1,9 +1,14 @@
+<!-- @license Copyright 2019 Fraunhofer FOKUS
+              Modifications copyright 2021 Thomas Tursics
+              SPDX-License-Identifier: Apache-2.0
+-->
+
 <template>
   <div class="container-fluid datasets">
     <div class="row">
       <div class="col d-flex d-md-none justify-content-between flex-wrap">
         <div class="dropdown mb-md-0 mb-3">
-          <button class="btn btn-primary dropdown-toggle"
+          <button class="btn btn-dark dropdown-toggle"
                   type="button" id="dropdown-sort-by-mobile" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
             {{ $t('message.sort.sortBy') + `: ${sortSelectedLabel}`  }}
@@ -21,7 +26,7 @@
               {{ $t('message.sort.lastCreated') }}</button>
           </div>
         </div>
-        <button class="btn btn-primary mb-3 text-right text-white" data-toggle="collapse" data-target="#datasetFacets" @click="filterCollapsed = !filterCollapsed">
+        <button class="btn btn-dark mb-3 text-right text-white" data-toggle="collapse" data-target="#datasetFacets" @click="filterCollapsed = !filterCollapsed">
           Filter
           <i class="material-icons small-icon align-bottom" v-if="filterCollapsed">arrow_drop_up</i>
           <i class="material-icons small-icon align-bottom" v-else>arrow_drop_down</i>
@@ -33,7 +38,7 @@
           <div class="row">
             <div class="col d-flex justify-content-between flex-wrap">
               <div class="dropdown d-none d-md-block mb-md-0 mb-3">
-                <button class="btn btn-primary dropdown-toggle"
+                <button class="btn btn-dark dropdown-toggle"
                         type="button" id="dropdown-sort-by" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                   {{ $t('message.sort.sortBy') + `: ${sortSelectedLabel}`  }}
@@ -55,7 +60,7 @@
               <!-- pass the catalog if called from catalog page -->
               <div v-if="authenticated" class="dropdown d-inline-block">
                 <router-link v-if="catalogAllowed" :to="{name: 'upload', params: { catalog: ($route.query.showcataloguedetails ? $route.query.catalog : '') } }">
-                  <button class="btn btn-primary"
+                  <button class="btn btn-dark"
                           type="button" id="create"
                           aria-haspopup="true" aria-expanded="false">
                     {{ $t('message.datasets.createDataset') }}
@@ -63,7 +68,7 @@
                 </router-link>
               </div>
               <div class="dropdown d-none d-md-inline-block">
-                <button class="d-none btn btn-primary dropdown-toggle"
+                <button class="d-none btn btn-dark dropdown-toggle"
                         type="button" id="dropdown-feeds" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons align-bottom">rss_feed</i>
@@ -96,7 +101,7 @@
                        @keyup.enter="changeQuery(query)"
                        @click="autocompleteData.show = autocompleteData.suggestions.length > 0 && query.length != 0 ? !autocompleteData.show : false">
                 <div class="input-group-append">
-                  <button class="btn btn-sm btn-primary" type="button" @click="changeQuery(query)">
+                  <button class="btn btn-sm btn-dark" type="button" @click="changeQuery(query)">
                     <i class="material-icons align-bottom">search</i>
                   </button>
                 </div>
@@ -114,7 +119,7 @@
             </div>
           </div>
         </div>
-        <div class="alert alert-primary mt-3 d-flex flex-row"
+        <div class="alert alert-secondary mt-3 d-flex flex-row"
              :class="{ 'alert-danger': getDatasetsCount <= 0 && !getLoading}">
           <div>
             {{ getLoading ? $t('message.datasets.loadingMessage'):`${getDatasetsCount}
@@ -160,7 +165,7 @@
     <div class="row">
       <div class="column col-12 col-md-8 offset-md-4">
         <div class="d-flex flex-row justify-content-center">
-          <!--<button class="button is-primary scroll-top" @click="scrollTo(0)">Scroll top</button>-->
+          <!--<button class="button is-dark scroll-top" @click="scrollTo(0)">Scroll top</button>-->
           <pagination class="mt-3"
                       v-if="pagination"
                       :items-count="getDatasetsCount"
@@ -197,7 +202,7 @@
   import { decode } from '../utils/jwt';
 
   export default {
-    name: 'datasets',
+    name: 'peacockDatasets',
     dependencies: ['DatasetService'],
     components: {
       appLink: AppLink,

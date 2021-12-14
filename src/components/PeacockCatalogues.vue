@@ -1,3 +1,8 @@
+<!-- @license Copyright 2019 Fraunhofer FOKUS
+              Modifications copyright 2021 Thomas Tursics
+              SPDX-License-Identifier: Apache-2.0
+-->
+
 <template>
   <div class="container-fluid catalogues">
     <div class="row">
