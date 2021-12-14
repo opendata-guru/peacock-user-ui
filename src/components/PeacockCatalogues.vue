@@ -110,7 +110,7 @@ import DataInfoBox from './DataInfoBox';
 import Pagination from './Pagination';
 // Import filters
 import dateFilters from '../filters/dateFilters';
-import SelectedFacetsOverview from './SelectedFacetsOverview';
+import SelectedFacetsOverview from './PeacockSelectedFacetsOverview';
 import { getCountryFlagImg, getTranslationFor } from '../utils/helpers';
 
 export default {

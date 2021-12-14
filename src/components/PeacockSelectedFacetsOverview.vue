@@ -17,7 +17,7 @@
   import { mapGetters } from 'vuex';
 
   export default {
-    name: 'SelectedFacetsOverview',
+    name: 'peacockSelectedFacetsOverview',
     components: {},
     props: {
       selectedFacets: {

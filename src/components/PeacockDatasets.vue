@@ -197,7 +197,7 @@
   import Pagination from './Pagination';
   import AppLink from './AppLink';
 
-  import SelectedFacetsOverview from './SelectedFacetsOverview';
+  import SelectedFacetsOverview from './PeacockSelectedFacetsOverview';
   import { getTranslationFor, getCountryFlagImg } from '../utils/helpers';
   import { decode } from '../utils/jwt';
 
