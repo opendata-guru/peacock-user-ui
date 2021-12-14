@@ -55,7 +55,7 @@
             </div>
           </div>
         </div>
-        <div class="alert alert-primary mt-3 d-flex flex-row"
+        <div class="alert alert-secondary mt-3 d-flex flex-row"
              :class="{ 'alert-danger': getCataloguesCount <= 0 && !getLoading}">
           <div>
             {{ getLoading ? $t('message.catalogues.loadingMessage'):`${getCataloguesCount}
@@ -109,7 +109,7 @@ import SelectedFacetsOverview from './SelectedFacetsOverview';
 import { getCountryFlagImg, getTranslationFor } from '../utils/helpers';
 
 export default {
-  name: 'catalogues',
+  name: 'peacockCatalogues',
   dependencies: ['CatalogueService'],
   components: {
     selectedFacetsOverview: SelectedFacetsOverview,
