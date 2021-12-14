@@ -5,9 +5,9 @@
       <span>
         {{ `${findFacetFieldTitle(fieldId)}:` }}
       </span>
-      <span v-for="(facetId, i) in selectedFacets[fieldId]" :key="i" class="badge badge-pill badge-highlight mr-1">
+      <span v-for="(facetId, i) in selectedFacets[fieldId]" :key="i" class="badge rounded-pill bg-dark mr-1 px-2">
         {{ findFacetTitle(fieldId, facetId) }}
-        <span @click="removeSelectedFacet(fieldId, facetId)" class="close-facet ml-2">&times;</span>
+        <span @click="removeSelectedFacet(fieldId, facetId)" class="close-facet ml-3">&times;</span>
       </span>
     </p>
   </div>
@@ -48,7 +48,8 @@
       },
       findFacetFieldTitle(fieldId) {
         try {
-          return this.getAvailableFacets.find(field => field.id === fieldId).title;
+          const title = this.getAvailableFacets.find(field => field.id === fieldId).title;
+          return this.$t(`message.datasetFacets.facets.${title.toLowerCase()}`);
         } catch {
           return fieldId;
         }
