@@ -172,7 +172,7 @@
   // import Actions and Getters from Store Module
   import { mapActions, mapGetters } from 'vuex';
   // import nested components
-  import DataInfoBox from './DataInfoBox';
+  import DataInfoBox from './PeacockDataInfoBox';
   import MapBasic from './MapBasic';
   // import filters
   import dateFilters from '../filters/dateFilters';

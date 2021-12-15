@@ -193,7 +193,7 @@
   import fileTypes from '../utils/fileTypes';
   // Import components used in template
   import DatasetFacets from './DatasetFacets';
-  import DataInfoBox from './DataInfoBox';
+  import DataInfoBox from './PeacockDataInfoBox';
   import Pagination from './Pagination';
   import AppLink from './AppLink';
 

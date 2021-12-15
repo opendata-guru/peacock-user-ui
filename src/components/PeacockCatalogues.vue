@@ -106,7 +106,7 @@ import { debounce, has } from 'lodash';
 import fileTypes from '../utils/fileTypes';
 // Import components used in template
 import CatalogueFacets from './CatalogueFacets';
-import DataInfoBox from './DataInfoBox';
+import DataInfoBox from './PeacockDataInfoBox';
 import Pagination from './Pagination';
 // Import filters
 import dateFilters from '../filters/dateFilters';

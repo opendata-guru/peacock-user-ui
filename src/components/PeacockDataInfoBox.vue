@@ -115,7 +115,7 @@
   import dateFilters from '../filters/dateFilters';
 
   export default {
-    name: 'dataInfoBox',
+    name: 'peacockDataInfoBox',
     components: {
       appLink: AppLink,
       linkCopyBar: LinkCopyBar,
