@@ -8,7 +8,8 @@
     <div class="container-fluid navbar-expand-sm">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <app-link v-for="(image, imageIndex) in images" class="nav-link"
+          <app-link v-for="(image, imageIndex) in images"
+            class="nav-link link-secondary"
             :to="(image.href.indexOf('http://') === 0) || (image.href.indexOf('https://') === 0) ? image.href : { path: image.href }"
             :key="imageIndex"
             >
@@ -22,7 +23,7 @@
           class="nav-item"
           :key="linkIndex"
         >
-          <app-link class="nav-link" :to="link.web ? link.href : { path: link.href }">
+          <app-link class="nav-link link-secondary" :to="link.web ? link.href : { path: link.href }">
             {{ link.title }}
           </app-link>
         </li>
