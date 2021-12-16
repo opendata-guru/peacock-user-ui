@@ -4,6 +4,7 @@
  */
 
 import store from '../../src/store/index';
+// import { encode } from '../../src/utils/jwt';
 
 const fakeKeyCloak = {
   token: 'FakeKeyCloak',
@@ -23,6 +24,7 @@ const fakeKeyCloak = {
     };
 
     window.setTimeout(() => {
+      fakeKeyCloak.setRtpToken();
       fakeKeyCloak.authenticated = true;
       ret.successCB();
     }, 100);
@@ -43,6 +45,7 @@ const fakeKeyCloak = {
     };
 
     window.setTimeout(() => {
+      fakeKeyCloak.setRtpToken();
       fakeKeyCloak.authenticated = true;
       ret.successCB('refresh token');
     }, 100);
@@ -50,8 +53,37 @@ const fakeKeyCloak = {
   },
 
   logout: (redirect, router) => {
+    fakeKeyCloak.clearRtpToken();
     fakeKeyCloak.authenticated = false;
     router.push(redirect);
+  },
+
+  clearRtpToken: () => {
+    store.dispatch('auth/rtpToken', '');
+  },
+
+  setRtpToken: () => {
+    // generated with https://jwt.io/
+    const rtpTokenEncoded = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsicHJvdmlkZXIiXX0sImF1dGhvcml6YXRpb24iOnsicGVybWlzc2lvbnMiOlt7InJzbmFtZSI6ImNrYW4tY2F0YWxvZyIsInNjb3BlcyI6WyJ1cGRhdGUiXX1dfX0.mRnO9dqg3eOq8FyB22xF9YE_kSUKx2eFR1APGfvN_ng';
+    /* const rtpToken = {
+      foo: 'bar',
+      realm_access: {
+        roles: [
+          'provider',
+        ],
+      },
+      authorization: {
+        permissions: [
+          {
+            rsname: 'ckan-catalog',
+            scopes: [
+              'update',
+            ],
+          },
+        ],
+      },
+    }; */
+    store.dispatch('auth/rtpToken', rtpTokenEncoded);
   },
 };
 
@@ -64,15 +96,13 @@ export default class AuthZeroService {
   constructor(keyclockConfig, rtpConfig) {
     // initialting Keycloak configuration
     this.keycloak = fakeKeyCloak;
-    // generated with https://jwt.io/
-    this.accesstoken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsicHJvdmlkZXIiXX0sImF1dGhvcml6YXRpb24iOnsicGVybWlzc2lvbnMiOlt7InJzbmFtZSI6ImNrYW4tY2F0YWxvZyIsInNjb3BlcyI6WyJ1cGRhdGUiXX1dfX0.mRnO9dqg3eOq8FyB22xF9YE_kSUKx2eFR1APGfvN_ng';
     // Auth Base URL
     this.baseUrl = keyclockConfig.url;
     this.rtpConfig = rtpConfig;
     this.router = undefined;
     // check if the user has session
     store.dispatch('auth/authLogin', this.keycloak);
-    store.dispatch('auth/rtpToken', this.accesstoken);
+    store.dispatch('auth/rtpToken', '');
   }
 
   init(router) {
