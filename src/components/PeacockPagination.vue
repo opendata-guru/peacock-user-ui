@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'pagination',
+  name: 'peacockPagination',
   components: {},
   props: {
     /** Function that will be called after a pagination item has been clicked */

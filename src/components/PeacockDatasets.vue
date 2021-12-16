@@ -194,7 +194,7 @@
   // Import components used in template
   import DatasetFacets from './DatasetFacets';
   import DataInfoBox from './PeacockDataInfoBox';
-  import Pagination from './Pagination';
+  import Pagination from './PeacockPagination';
   import AppLink from './AppLink';
 
   import SelectedFacetsOverview from './PeacockSelectedFacetsOverview';

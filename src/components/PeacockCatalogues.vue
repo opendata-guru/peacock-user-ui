@@ -107,7 +107,7 @@ import fileTypes from '../utils/fileTypes';
 // Import components used in template
 import CatalogueFacets from './CatalogueFacets';
 import DataInfoBox from './PeacockDataInfoBox';
-import Pagination from './Pagination';
+import Pagination from './PeacockPagination';
 // Import filters
 import dateFilters from '../filters/dateFilters';
 import SelectedFacetsOverview from './PeacockSelectedFacetsOverview';
