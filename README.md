@@ -222,7 +222,7 @@ export default {
 
 ### custom_theme.scss
 
-The custom-theme.scss file is located at `peacock-user-ui/user-config/custom-theme.scss` by default. It contains Bootstrap 4 scss variables and overrides the default Bootstrap values. It must be used to change any general styling rules like spacing, sizes, colors etc. You can also add your own color variables to use them via Bootstrap classes or add other new variables.
+<del>The custom-theme.scss file is located at `peacock-user-ui/user-config/custom-theme.scss` by default. It contains Bootstrap 4 scss variables and overrides the default Bootstrap values. It must be used to change any general styling rules like spacing, sizes, colors etc. You can also add your own color variables to use them via Bootstrap classes or add other new variables.</del>
 
 ---
 

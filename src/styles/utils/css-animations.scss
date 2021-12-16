@@ -1,10 +1,10 @@
 /** Loading Spinner animation */
 .loading-spinner {
-  border: .3em solid $light;
-  border-top: .3em solid $primary;
+  border: .3em solid #ced4da;
+  border-top: .3em solid #212540;
   border-radius: 50%;
-  width: 1.5em;
-  height: 1.5em;
+  width: 40px;
+  height: 40px;
   animation: spin 1s linear infinite;
 }
 

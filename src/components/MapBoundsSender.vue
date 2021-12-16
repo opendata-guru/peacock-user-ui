@@ -235,8 +235,8 @@
   @import '~leaflet-easybutton/src/easy-button.css';
 
   @keyframes blink {
-    from {color: $primary}
-    to {color: $primary-light}
+    from {color: #009374}
+    to {color: #00c69c}
   }
 
   .easy-button-button {
@@ -245,7 +245,7 @@
       background-color: #ccc;
     }
     .state-active{
-      color: $primary;
+      color: #009374;
       animation-name: blink;
       animation-iteration-count: infinite;
       animation-duration: 1s;

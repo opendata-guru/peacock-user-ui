@@ -16,7 +16,6 @@ selenium-debug.log
 
 # Configuration files of the user
 #user-config/i18n/i18n.json
-#user-config/custom_theme.scss
 #user-config/glue-config.js
 
 #config/user-configs.js

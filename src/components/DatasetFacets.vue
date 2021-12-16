@@ -533,7 +533,7 @@
 
   .list-group {
     .facet-header-item {
-      border-left: solid $primary;
+      border-left: solid #009374;
     }
     .facet-title {
       font-weight: 600;

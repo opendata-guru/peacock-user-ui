@@ -227,7 +227,7 @@
     border-color: #ced4da !important;
 
     &:hover {
-      border-color: $dark !important;
+      border-color: #212540 !important;
       cursor: pointer;
     }
   }
