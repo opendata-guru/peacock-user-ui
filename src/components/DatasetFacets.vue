@@ -13,7 +13,7 @@
                    @input="getAutocompleteSuggestions(gazetteer.searchbarText)"
                    @keyup.enter="getAutocompleteSuggestions(gazetteer.searchbarText)">
             <div class="input-group-append">
-              <button class="btn btn-primary">
+              <button class="btn btn-secondary">
                 <i class="material-icons align-bottom">search</i>
               </button>
             </div>
@@ -52,7 +52,7 @@
                 <div class="modal-footer">
                   <button type="button" class="btn btn-danger" data-dismiss="modal">{{ $t('message.mapModal.close') }}</button>
                   <button type="button" class="btn btn-highlight" @click="resetBoundsFor(geoBoundsId)">{{ $t('message.mapModal.reset') }}</button>
-                  <button type="button" class="btn btn-primary" @click="applyHoldedBounds()" data-dismiss="modal">{{ $t('message.mapModal.findDatasets') }}</button>
+                  <button type="button" class="btn btn-secondary" @click="applyHoldedBounds()" data-dismiss="modal">{{ $t('message.mapModal.findDatasets') }}</button>
                 </div>
               </div>
             </div>
@@ -88,8 +88,8 @@
         <!--Facet settings-->
         <div class="row facet-field mb-3" v-if="showOperator && !showCatalogueDetails">
           <div class="col list-group pr-0">
-            <a class="facet-header-item list-group-item">
-              <span class="facet-title">{{ $t('message.datasetFacets.settings') }}</span>
+            <a class="facet-header-item list-group-item list-group-item-secondary">
+              <span class="facet-title text-dark fw-bold">{{ $t('message.datasetFacets.settings') }}</span>
             </a>
               <div class="form-group list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                 {{ $t('message.datasetFacets.operator') }}
@@ -118,8 +118,8 @@
                :class="{'mt-3': (index > 0)}"
                v-if="field.items.length > 0 && (field.id !== 'catalog' || (showCatalogueFacets === (field.id === 'catalog')))">
             <div class="col list-group pr-0">
-              <a class="d-none d-md-block facet-header-item list-group-item">
-                <span class="facet-title mb-0">{{ $t(`message.datasetFacets.facets.${field.title.toLowerCase()}`) }}</span>
+              <a class="d-none d-md-block facet-header-item list-group-item list-group-item-secondary">
+                <span class="facet-title text-dark fw-bold mb-0">{{ $t(`message.datasetFacets.facets.${field.title.toLowerCase()}`) }}</span>
               </a>
               <a class="d-flex d-md-none list-group-item justify-content-between align-items-baseline" @click="toggleExpanded(field.title)">
                 <h4 class="mb-0">{{ $t(`message.datasetFacets.facets.${field.title.toLowerCase()}`) }}</h4>
@@ -133,12 +133,12 @@
                 v-for="(facet, index) in sortByCount(field.items)"
                 :key="index"
                 v-if="isExpanded(field.title) ? (index <= limits.max) : (index <= limits.min - 1)"
-                :class="{active: facetIsSelected(field.id, facet.id)}"
+                :class="{active: facetIsSelected(field.id, facet.id), 'list-group-item-dark': facetIsSelected(field.id, facet.id)}"
                 @click="facetClicked(field.id, facet.id)">
                 <span class="text-truncate" :title="facet.title.de || facet.title">{{facet.title.de || facet.title}}</span>
-                <span class="facet-count badge">{{facet.count | formatNumber}}</span>
+                <span class="facet-count badge bg-secondary">{{facet.count | formatNumber}}</span>
               </button>
-              <button class="d-none d-md-block btn btn-primary" v-if="field.items.length > limits.min"
+              <button class="d-none d-md-block btn btn-secondary" v-if="field.items.length > limits.min"
                       @click="toggleExpanded(field.title)">
                 <i class="material-icons align-bottom expand-more animated" v-if="!isExpanded(field.title)">expand_more</i>
                 <i class="material-icons align-bottom expand-less animated" v-if="isExpanded(field.title)">expand_less</i>
@@ -165,10 +165,10 @@
                 v-for="(facet, index) in sortByCount(field.items)"
                 :key="index"
                 v-if="isExpanded(field.title)"
-                :class="{active: facetIsSelected(field.id, facet.id)}"
+                :class="{active: facetIsSelected(field.id, facet.id), 'list-group-item-dark': facetIsSelected(field.id, facet.id)}"
                 @click="facetClicked(field.id, facet.id)">
                 <span class="text-truncate">{{facet.title}}</span>
-                <span class="facet-count badge">{{facet.count}}</span>
+                <span class="facet-count badge bg-secondary">{{facet.count}}</span>
               </button>
             </div>
           </div>
@@ -529,16 +529,6 @@
 
   .facet:hover {
     cursor: pointer;
-  }
-
-  .list-group {
-    .facet-header-item {
-      border-left: solid #009374;
-    }
-    .facet-title {
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
   }
 
   .map {
