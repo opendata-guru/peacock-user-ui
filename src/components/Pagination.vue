@@ -7,6 +7,7 @@
     </li>
     <li class="page-item"
         v-for="page in getPagesDisplayed(getPage, pageCount)"
+        :key="page"
         :class="{ 'active': page === getPage}"
         @click="pageClickedHandler(page)">
       <button class="page-link">{{ page }}</button>
@@ -124,4 +125,32 @@ export default {
 <style lang="scss" scoped>
   @import '../styles/bootstrap_theme';
 
+  .pagination > li > button
+  {
+    background-color: #fff !important;
+    color: #212540 !important;
+  }
+
+  .pagination > li > button:focus,
+  .pagination > li > button:hover,
+  .pagination > li > span:focus,
+  .pagination > li > span:hover
+  {
+    color: #212540 !important;
+    background-color: #eee !important;
+    border-color: #ddd !important;
+  }
+
+  .pagination > .active > button
+  {
+    color: #fff !important;
+    background-color: #212540 !important;
+    border: solid 1px #212540 !important;
+  }
+
+  .pagination > .active > button:hover
+  {
+    background-color: #212540 !important;
+    border: solid 1px #212540 !important;
+  }
 </style>
