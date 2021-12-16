@@ -201,7 +201,7 @@
   const FACET_GROUP_OPERATORS = Object.freeze({ or: 'OR', and: 'AND' });
 
   export default {
-    name: 'datasetFacets',
+    name: 'peacockDatasetFacets',
     dependencies: ['GazetteerService', 'CatalogueService'],
     components: {
       mapboundssender: MapBoundsSender,

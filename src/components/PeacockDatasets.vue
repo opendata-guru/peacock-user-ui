@@ -192,7 +192,7 @@
   // eslint-disable-next-line no-unused-vars
   import fileTypes from '../utils/fileTypes';
   // Import components used in template
-  import DatasetFacets from './DatasetFacets';
+  import DatasetFacets from './PeacockDatasetFacets';
   import DataInfoBox from './PeacockDataInfoBox';
   import Pagination from './PeacockPagination';
   import AppLink from './AppLink';
