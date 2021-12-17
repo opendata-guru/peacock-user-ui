@@ -105,7 +105,7 @@ import { mapActions, mapGetters } from 'vuex';
 import { debounce, has } from 'lodash';
 import fileTypes from '../utils/fileTypes';
 // Import components used in template
-import CatalogueFacets from './CatalogueFacets';
+import CatalogueFacets from './PeacockCatalogueFacets';
 import DataInfoBox from './PeacockDataInfoBox';
 import Pagination from './PeacockPagination';
 // Import filters

@@ -79,7 +79,7 @@
   const FACET_GROUP_OPERATORS = Object.freeze({ or: 'OR', and: 'AND' });
 
   export default {
-    name: 'catalogueFacets',
+    name: 'peacockCatalogueFacets',
     components: {},
     data() {
       return {
