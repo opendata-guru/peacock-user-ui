@@ -4,8 +4,8 @@
       <div class="col">
         <div class="row facet-field mb-3" v-if="showOperator">
           <div class="col list-group pr-0">
-            <a class="list-group-item facet-header-item">
-              <span class="facet-title">{{ $t('message.datasetFacets.settings') }}</span>
+            <a class="list-group-item facet-header-item list-group-item-secondary">
+              <span class="facet-title text-secondary fw-bold">{{ $t('message.datasetFacets.settings') }}</span>
             </a>
             <div class="form-group list-group-item list-group-item-action d-flex justify-content-between align-items-center">
               {{ $t('message.datasetFacets.operator') }}
@@ -33,20 +33,20 @@
              :class="{'mt-3': (index > 0)}"
              v-if="field.items.length > 0 && field.title === 'Countries'">
           <div class="col list-group pr-0">
-            <a class="list-group-item facet-header-item">
-              <span class="facet-title">{{ $t(`message.datasetFacets.facets.${field.title.toLowerCase()}`) }}</span>
+            <a class="list-group-item facet-header-item list-group-item-secondary">
+              <span class="facet-title text-secondary fw-bold">{{ $t(`message.datasetFacets.facets.${field.title.toLowerCase()}`) }}</span>
             </a>
             <button
               class="facet list-group-item list-group-item-action d-flex justify-content-between align-items-center"
               v-for="(facet, index) in sortByCount(field.items)"
               :key="index"
               v-if="isExpanded(field.title) ? (index <= limits.max) : (index <= limits.min)"
-              :class="{active: facetIsSelected(field.id, facet.id)}"
+              :class="{active: facetIsSelected(field.id, facet.id), 'list-group-item-secondary': facetIsSelected(field.id, facet.id)}"
               @click="facetClicked(field.id, facet.id)">
               {{facet.title}}
-              <span class="facet-count badge">{{facet.count}}</span>
+              <span class="facet-count badge bg-secondary">{{facet.count}}</span>
             </button>
-            <button class="btn btn-primary" v-if="field.items.length > limits.min"
+            <button class="btn btn-secondary" v-if="field.items.length > limits.min"
                     @click="toggleExpanded(field.title)">
               <i class="material-icons expand-more animated" v-if="!isExpanded(field.title)">expand_more</i>
               <i class="material-icons expand-less animated" v-if="isExpanded(field.title)">expand_less</i>
@@ -256,16 +256,6 @@
 
   .facet:hover {
     cursor: pointer;
-  }
-
-  .list-group {
-    .facet-header-item {
-      border-left: solid #009374;
-    }
-    .facet-title {
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
   }
 
   .map {

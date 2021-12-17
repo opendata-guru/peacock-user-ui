@@ -12,7 +12,7 @@
           <div class="row">
             <div class="col">
               <div class="dropdown d-inline-block">
-                <button class="btn btn-primary dropdown-toggle"
+                <button class="btn btn-secondary dropdown-toggle"
                         type="button" id="dropdown-sort-by" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                   {{ $t('message.sort.sortBy') + `: ${sortSelectedLabel}`  }}
@@ -42,7 +42,7 @@
                        @keyup.enter="changeQuery(query)"
                        @click="autocompleteData.show = autocompleteData.suggestions.length > 0 && query.length != 0 ? !autocompleteData.show : false">
                 <div class="input-group-append">
-                  <button class="btn btn-sm btn-primary" type="button" @click="changeQuery(query)">
+                  <button class="btn btn-sm btn-secondary" type="button" @click="changeQuery(query)">
                     <i class="material-icons">search</i>
                   </button>
                 </div>
@@ -64,7 +64,7 @@
              :class="{ 'alert-danger': getCataloguesCount <= 0 && !getLoading}">
           <div>
             {{ getLoading ? $t('message.catalogues.loadingMessage'):`${getCataloguesCount}
-            ${$t('message.catalogues.countMessage')}`}}
+            ${$t('message.catalogue.countMessage')}`}}
           </div>
           <div class="loading-spinner ml-3" v-if="getLoading"></div>
         </div>
@@ -82,7 +82,7 @@
     <div class="row">
       <div class="column col-12 col-md-8 offset-md-4">
         <div class="d-flex flex-row justify-content-center">
-          <!--<button class="button is-primary scroll-top" @click="scrollTo(0)">Scroll top</button>-->
+          <!--<button class="button is-secondary scroll-top" @click="scrollTo(0)">Scroll top</button>-->
           <pagination class="mt-3"
                       v-if="pagination"
                       :items-count="getCataloguesCount"
