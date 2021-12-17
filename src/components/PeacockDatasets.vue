@@ -8,7 +8,7 @@
     <div class="row">
       <div class="col d-flex d-md-none justify-content-between flex-wrap">
         <div class="dropdown mb-md-0 mb-3">
-          <button class="btn btn-dark dropdown-toggle"
+          <button class="btn btn-secondary dropdown-toggle"
                   type="button" id="dropdown-sort-by-mobile" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
             {{ $t('message.sort.sortBy') + `: ${sortSelectedLabel}`  }}
@@ -26,7 +26,7 @@
               {{ $t('message.sort.lastCreated') }}</button>
           </div>
         </div>
-        <button class="btn btn-dark mb-3 text-right text-white" data-toggle="collapse" data-target="#datasetFacets" @click="filterCollapsed = !filterCollapsed">
+        <button class="btn btn-secondary mb-3 text-right text-white" data-toggle="collapse" data-target="#datasetFacets" @click="filterCollapsed = !filterCollapsed">
           Filter
           <i class="material-icons small-icon align-bottom" v-if="filterCollapsed">arrow_drop_up</i>
           <i class="material-icons small-icon align-bottom" v-else>arrow_drop_down</i>
@@ -38,7 +38,7 @@
           <div class="row">
             <div class="col d-flex justify-content-between flex-wrap">
               <div class="dropdown d-none d-md-block mb-md-0 mb-3">
-                <button class="btn btn-dark dropdown-toggle"
+                <button class="btn btn-secondary dropdown-toggle"
                         type="button" id="dropdown-sort-by" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                   {{ $t('message.sort.sortBy') + `: ${sortSelectedLabel}`  }}
@@ -60,7 +60,7 @@
               <!-- pass the catalog if called from catalog page -->
               <div v-if="authenticated" class="dropdown d-inline-block">
                 <router-link v-if="catalogAllowed" :to="{name: 'upload', params: { catalog: ($route.query.showcataloguedetails ? $route.query.catalog : '') } }">
-                  <button class="btn btn-dark"
+                  <button class="btn btn-secondary"
                           type="button" id="create"
                           aria-haspopup="true" aria-expanded="false">
                     {{ $t('message.datasets.createDataset') }}
@@ -68,7 +68,7 @@
                 </router-link>
               </div>
               <div class="dropdown d-none d-md-inline-block">
-                <button class="d-none btn btn-dark dropdown-toggle"
+                <button class="d-none btn btn-secondary dropdown-toggle"
                         type="button" id="dropdown-feeds" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons align-bottom">rss_feed</i>
@@ -101,7 +101,7 @@
                        @keyup.enter="changeQuery(query)"
                        @click="autocompleteData.show = autocompleteData.suggestions.length > 0 && query.length != 0 ? !autocompleteData.show : false">
                 <div class="input-group-append">
-                  <button class="btn btn-sm btn-dark" type="button" @click="changeQuery(query)">
+                  <button class="btn btn-sm btn-secondary" type="button" @click="changeQuery(query)">
                     <i class="material-icons align-bottom">search</i>
                   </button>
                 </div>

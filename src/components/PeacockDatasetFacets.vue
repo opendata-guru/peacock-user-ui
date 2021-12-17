@@ -64,7 +64,7 @@
         <div class="row position-relative" v-if="showCatalogueDetails">
           <span class="px-3">
             <img :src="getCountryFlagImg(getCatalogue.country.id)"
-                  class="catalogue-flag border border-dark"
+                  class="catalogue-flag border border-secondary"
                   width="100%"
                   v-if="has(getCatalogue, 'country.id')"
                   :alt="getCatalogue.country.id">
@@ -89,7 +89,7 @@
         <div class="row facet-field mb-3" v-if="showOperator && !showCatalogueDetails">
           <div class="col list-group pr-0">
             <a class="facet-header-item list-group-item list-group-item-secondary">
-              <span class="facet-title text-dark fw-bold">{{ $t('message.datasetFacets.settings') }}</span>
+              <span class="facet-title text-secondary fw-bold">{{ $t('message.datasetFacets.settings') }}</span>
             </a>
               <div class="form-group list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                 {{ $t('message.datasetFacets.operator') }}
@@ -119,7 +119,7 @@
                v-if="field.items.length > 0 && (field.id !== 'catalog' || (showCatalogueFacets === (field.id === 'catalog')))">
             <div class="col list-group pr-0">
               <a class="d-none d-md-block facet-header-item list-group-item list-group-item-secondary">
-                <span class="facet-title text-dark fw-bold mb-0">{{ $t(`message.datasetFacets.facets.${field.title.toLowerCase()}`) }}</span>
+                <span class="facet-title text-secondary fw-bold mb-0">{{ $t(`message.datasetFacets.facets.${field.title.toLowerCase()}`) }}</span>
               </a>
               <a class="d-flex d-md-none list-group-item justify-content-between align-items-baseline" @click="toggleExpanded(field.title)">
                 <h4 class="mb-0">{{ $t(`message.datasetFacets.facets.${field.title.toLowerCase()}`) }}</h4>
@@ -133,7 +133,7 @@
                 v-for="(facet, index) in sortByCount(field.items)"
                 :key="index"
                 v-if="isExpanded(field.title) ? (index <= limits.max) : (index <= limits.min - 1)"
-                :class="{active: facetIsSelected(field.id, facet.id), 'list-group-item-dark': facetIsSelected(field.id, facet.id)}"
+                :class="{active: facetIsSelected(field.id, facet.id), 'list-group-item-secondary': facetIsSelected(field.id, facet.id)}"
                 @click="facetClicked(field.id, facet.id)">
                 <span class="text-truncate" :title="facet.title.de || facet.title">{{facet.title.de || facet.title}}</span>
                 <span class="facet-count badge bg-secondary">{{facet.count | formatNumber}}</span>
@@ -165,7 +165,7 @@
                 v-for="(facet, index) in sortByCount(field.items)"
                 :key="index"
                 v-if="isExpanded(field.title)"
-                :class="{active: facetIsSelected(field.id, facet.id), 'list-group-item-dark': facetIsSelected(field.id, facet.id)}"
+                :class="{active: facetIsSelected(field.id, facet.id), 'list-group-item-secondary': facetIsSelected(field.id, facet.id)}"
                 @click="facetClicked(field.id, facet.id)">
                 <span class="text-truncate">{{facet.title}}</span>
                 <span class="facet-count badge bg-secondary">{{facet.count}}</span>

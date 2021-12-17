@@ -128,7 +128,7 @@ export default {
   .pagination > li > button
   {
     background-color: #fff !important;
-    color: #212540 !important;
+    color: #5c636a !important;
   }
 
   .pagination > li > button:focus,
@@ -136,7 +136,7 @@ export default {
   .pagination > li > span:focus,
   .pagination > li > span:hover
   {
-    color: #212540 !important;
+    color: #5c636a !important;
     background-color: #eee !important;
     border-color: #ddd !important;
   }
@@ -144,13 +144,14 @@ export default {
   .pagination > .active > button
   {
     color: #fff !important;
-    background-color: #212540 !important;
-    border: solid 1px #212540 !important;
+    background-color: #5c636a !important;
+    border: solid 1px #5c636a !important;
   }
 
   .pagination > .active > button:hover
   {
-    background-color: #212540 !important;
-    border: solid 1px #212540 !important;
+    background-color: #5c636a !important;
+    border: solid 1px #5c636a !important;
+    color: #eee !important;
   }
 </style>
