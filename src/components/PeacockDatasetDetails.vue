@@ -17,7 +17,7 @@ import DatasetDetailsSimilarDatasets from './EDP2-datasetDetails-similarDatasets
 // import DatasetDetailsActivityStream from './EDP2-datasetDetails-activityStream';
 
 export default {
-  name: 'datasetDetails',
+  name: 'peacockDatasetDetails',
   components: {
     datasetDetailsTop: DatasetDetailsTop,
     datasetDetailsDataset: DatasetDetailsDataset,

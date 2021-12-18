@@ -22,7 +22,7 @@ import store from './store/index';
 import GLUE_CONFIG from '../user-config/glue-config';
 import { decode } from './utils/jwt';
 
-const DatasetDetails = () => import(/* webpackChunkName: "common" */'@/components/EDP2-datasetDetails');
+const DatasetDetails = () => import(/* webpackChunkName: "common" */'@/components/PeacockDatasetDetails');
 const UploadPage = () => import(/* webpackChunkName: "admin" */'@/components/Upload/EDP2-uploadPage');
 const Catalogues = () => import(/* webpackChunkName: "common" */'@/components/PeacockCatalogues');
 const NotFound = () => import(/* webpackChunkName: "common" */'@/components/404-NotFound');
