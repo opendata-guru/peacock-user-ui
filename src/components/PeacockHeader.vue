@@ -45,8 +45,8 @@
           </ul>
 
           <span v-if="$env.keycloak.enableLogin" class="navbar-text">
-            <a v-if="!authenticated" v-on:click="login()" class="btn btn-outline-dark login">{{ $t('message.header.subnav.login') }}</a>
-            <a v-if="authenticated" v-on:click="logout()" class="btn btn-outline-dark login">{{ $t('message.header.subnav.logout') }}</a>
+            <a v-if="!authenticated" v-on:click="login()" class="btn btn-sm btn-secondary text-light login">{{ $t('message.header.subnav.login') }}</a>
+            <a v-if="authenticated" v-on:click="logout()" class="btn btn-sm btn-secondary text-light login">{{ $t('message.header.subnav.logout') }}</a>
           </span>
           <span v-if="showLanguageSwitch" class="navbar-text">
             <language-selector></language-selector>

@@ -1,10 +1,12 @@
 <template>
   <div class="mt-1 mb-4">
     <div class="row">
-      <div class="col-4 offset-7 text-end">
+      <div class="col-12 text-end">
+        <datasetDetailsEditButton v-if="authenticated"></datasetDetailsEditButton>
+        <datasetDetailsDeleteButton v-if="authenticated"></datasetDetailsDeleteButton>
         <datasetDetailsFeedbackButton></datasetDetailsFeedbackButton>
         <div class="d-inline dropdown">
-          <a class="mt-1 btn btn-sm btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="mt-1 btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <!--<i class="material-icons small-icon align-bottom text-dark">share</i>-->
             Share Dataset
           </a>
@@ -14,12 +16,6 @@
             <datasetDetailsShareButton class="dropdown-item" :to="`https://www.linkedin.com/shareArticle?mini=true&url=${url}`" :icon="{ prefix: 'fab', iconName: 'linkedin-in' }"></datasetDetailsShareButton>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 text-end" v-if="authenticated">
-        <datasetDetailsEditButton></datasetDetailsEditButton>
-        <datasetDetailsDeleteButton></datasetDetailsDeleteButton>
       </div>
     </div>
     <div class="row">
@@ -35,15 +31,14 @@
   </div>
 </template>
 
-
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import DatasetDetailsNavigation from './PeacockDatasetDetailsNavigation';
 import DatasetDetailsFeedbackButton from './PeacockDatasetDetailsFeedbackButton';
 import DatasetDetailsShareButton from './EDP2-datasetDetails-shareButton';
-import DatasetDetailsHeader from './EDP2-datasetDetails-header';
-import DatasetDetailsDeleteButton from './EDP2-datasetDetails-deleteButton';
-import DatasetDetailsEditButton from './EDP2-datasetDetails-editButton';
+import DatasetDetailsHeader from './PeacockDatasetDetailsHeader';
+import DatasetDetailsDeleteButton from './PeacockDatasetDetailsDeleteButton';
+import DatasetDetailsEditButton from './PeacockDatasetDetailsEditButton';
 import AppLink from './AppLink';
 import { decode } from '../utils/jwt';
 
@@ -112,9 +107,4 @@ export default {
 
 <style lang="scss" scoped>
   @import '../styles/bootstrap_theme';
-
-  /*** MATERIAL ICONS ***/
-  .material-icons.small-icon {
-    font-size: 20px;
-  }
 </style>

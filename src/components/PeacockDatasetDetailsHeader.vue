@@ -1,22 +1,20 @@
 <template>
-  <!-- HEADER -->
   <div>
     <div class="row">
-      <div class="col-10 offset-1">
+      <div class="col-12">
         <h3>{{ getTranslationFor(getTitle, $i18n.locale, getLanguages) }}</h3>
       </div>
     </div>
-    <div class="row mt-1">
-      <div class="col-6 offset-1">
+    <div class="row mt-1 pb-3 border-bottom">
+      <div class="col-6">
         <img class="mr-1 border border-dark" width="30" alt="Catalog Flag" v-if="showCountryFlag(getCountry)" :src="getCountryFlagImg(getCountry.id)">
         <span>{{ getTranslationFor(getCatalog.title, $i18n.locale, getLanguages) }}</span>
       </div>
-      <div class="col-4 px-1 text-end text-break">
+      <div class="col-6 text-end text-break">
         <span class="font-weight-bold">{{ $t('message.metadata.updated') }}:</span>
-          <dataset-date :date="getModificationDate"/>
+        <dataset-date :date="getModificationDate"/>
       </div>
     </div>
-    <hr>
   </div>
 </template>
 
@@ -33,7 +31,7 @@ import dateFilters from '../filters/dateFilters';
 import { getTranslationFor, getCountryFlagImg } from '../utils/helpers';
 
 export default {
-  name: 'datasetDetailsDataset',
+  name: 'peacockDatasetDetailsHeader',
   components: {
     DatasetDate,
   },

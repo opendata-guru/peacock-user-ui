@@ -1,31 +1,30 @@
 <template>
-  <!-- DELETE-BUTTON -->
-<app-link>
-            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel">Are you sure you want to delete this item?</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div v-if="error" class="modal-body">
-                      <div class="alert alert-danger w-100" role="alert">
-                        {{ error }}
-                      </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                    <button type="button" v-on:click="deleteDataSet" data-dismiss="modal" class="btn btn-primary">Yes</button>
-                  </div>
-                </div>
+  <app-link>
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLabel">Are you sure you want to delete this item?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div v-if="error" class="modal-body">
+              <div class="alert alert-danger w-100" role="alert">
+                {{ error }}
               </div>
-            </div>
-      <button data-toggle="modal" data-target="#deleteModal" class="mt-1 btn btn-sm btn-danger">
-        {{ $t('message.datasetDetails.delete') }}
-      </button>
-    </app-link>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            <button type="button" v-on:click="deleteDataSet" data-dismiss="modal" class="btn btn-danger">Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button data-toggle="modal" data-target="#deleteModal" class="mt-1 btn btn-sm btn-outline-secondary delete">
+      {{ $t('message.datasetDetails.delete') }}
+    </button>
+  </app-link>
 </template>
 
 <script>
@@ -36,7 +35,7 @@ import AppLink from './AppLink';
 import { normalize } from '../utils/helpers';
 /* eslint-disable */
 export default {
-  name: 'EDP2-datasetDetailsDeleteButton',
+  name: 'peacockDatasetDetailsDeleteButton',
   dependencies: ['uploadService', 'authService'],
   components: {
     appLink: AppLink,
@@ -86,7 +85,4 @@ export default {
 </script>
 
 <style scoped>
-button {
-  margin: 0 5px;
-}
 </style>
