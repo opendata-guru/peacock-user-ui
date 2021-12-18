@@ -32,7 +32,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
-import DatasetDetailsNavigation from './EDP2-datasetDetails-navigation';
+import DatasetDetailsNavigation from './PeacockDatasetDetailsNavigation';
 import DatasetDetailsFeedbackButton from './EDP2-datasetDetails-feedbackButton';
 import DatasetDetailsShareButton from './EDP2-datasetDetails-shareButton';
 import DatasetDetailsHeader from './EDP2-datasetDetails-header';
