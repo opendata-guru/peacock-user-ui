@@ -23,7 +23,7 @@
         <div class="row">
           <div class="col-12" v-if="getDistributions.length > 0">
             <div class="row mb-5">
-              <div class="col-1 my-auto pr-0 text-right" @click="toggleDistributions()">
+              <div class="col-1 my-auto pr-0 text-end" @click="toggleDistributions()">
             <span class="arrow text-primary" v-if="!distributionsVisible">
               <i class="material-icons">keyboard_arrow_down</i>
             </span>
@@ -75,7 +75,7 @@
                           <i class="material-icons small-icon float-right align-bottom">keyboard_arrow_down</i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right bg-light">
-                          <span class="dropdown-item px-3 text-right"
+                          <span class="dropdown-item px-3 text-end"
                                 v-if="showAccessUrl(distribution)">
                             <app-link class="text-dark text-decoration-none"
                                       :to="distribution.accessUrl"
@@ -86,7 +86,7 @@
                             </app-link>
                             <i class="copy-text material-icons float-right align-bottom" @click="setClipboard(distribution.accessUrl)">file_copy</i>
                           </span>
-                          <span class="dropdown-item d-block px-3 text-right"
+                          <span class="dropdown-item d-block px-3 text-end"
                                 v-if="showDownloadUrls(distribution)"
                                 v-for="downloadURL in distribution.downloadUrls">
                             <input class="d-inline-block mr-2 py-0 px-1 w-75 small border border-secondary bg-white"
@@ -128,7 +128,7 @@
       <!-- INFO TABLE -->
       <div class="mt-2">
         <div class="row">
-          <div class="col-1 my-auto pr-0 text-right" @click="toggleInfo()">
+          <div class="col-1 my-auto pr-0 text-end" @click="toggleInfo()">
             <span class="arrow text-primary" v-if="!infoVisible">
               <i class="material-icons">keyboard_arrow_down</i>
             </span>

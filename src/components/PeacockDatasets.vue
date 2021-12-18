@@ -26,7 +26,7 @@
               {{ $t('message.sort.lastCreated') }}</button>
           </div>
         </div>
-        <button class="btn btn-secondary mb-3 text-right text-white" data-toggle="collapse" data-target="#datasetFacets" @click="filterCollapsed = !filterCollapsed">
+        <button class="btn btn-secondary mb-3 text-end text-white" data-toggle="collapse" data-target="#datasetFacets" @click="filterCollapsed = !filterCollapsed">
           Filter
           <i class="material-icons small-icon align-bottom" v-if="filterCollapsed">arrow_drop_up</i>
           <i class="material-icons small-icon align-bottom" v-else>arrow_drop_down</i>

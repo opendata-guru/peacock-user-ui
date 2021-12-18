@@ -254,7 +254,7 @@
       <div class="mt-5"
            v-if="showSpatial(getSpatial)">
         <div class="row">
-          <div class="col-1 my-auto pr-0 text-right"
+          <div class="col-1 my-auto pr-0 text-end"
                @click="toggleMap()">
             <span class="arrow text-primary"
                   v-if="mapVisible" >
@@ -288,7 +288,7 @@
         <div class="row">
           <div class="col-12">
             <div class="row">
-              <div class="col-1 my-auto pr-0 text-right"
+              <div class="col-1 my-auto pr-0 text-end"
                    @click="toggleInfo()">
                 <span class="arrow text-primary"
                       v-if="!infoVisible">

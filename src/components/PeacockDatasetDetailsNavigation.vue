@@ -7,7 +7,7 @@
           v-if="showDataset"
           @click="setActiveNavigationTab(0)">
         <app-link
-          :class="{'nav-link': true, active: isPath('/'), 'link-dark': !isPath('/')}"
+          :class="{'nav-link': true, active: isPath('') || isPath('/'), 'link-dark': !isPath('') && !isPath('/')}"
           :to="{ path: `/datasets/${getID}/`, query: Object.assign({}, { locale: $route.query.locale }) }"
         >
           {{ $t('message.datasetDetails.subnav.dataset') }}

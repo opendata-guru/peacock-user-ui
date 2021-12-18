@@ -9,7 +9,7 @@
     <div class="row mb-3">
       <div class="col-12">
         <div class="row">
-          <div class="col-1 my-auto pr-0 text-right" @click="toggleDataset()">
+          <div class="col-1 my-auto pr-0 text-end" @click="toggleDataset()">
               <span class="arrow text-primary" v-if="!datasetVisible">
                 <i class="material-icons">keyboard_arrow_down</i>
               </span>
@@ -99,7 +99,7 @@
     <div class="row mb-3">
       <div class="col-12">
         <div class="row">
-          <div class="col-1 my-auto pr-0 text-right" @click="toggleContactPoint()">
+          <div class="col-1 my-auto pr-0 text-end" @click="toggleContactPoint()">
               <span class="arrow text-primary" v-if="!contactPointVisible">
                 <i class="material-icons">keyboard_arrow_down</i>
               </span>
@@ -157,7 +157,7 @@
     <div class="row mb-3">
       <div class="col-12">
         <div class="row">
-          <div class="col-1 my-auto pr-0 text-right" @click="togglePublisher()">
+          <div class="col-1 my-auto pr-0 text-end" @click="togglePublisher()">
               <span class="arrow text-primary" v-if="!publisherVisible">
                 <i class="material-icons">keyboard_arrow_down</i>
               </span>

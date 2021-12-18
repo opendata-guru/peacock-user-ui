@@ -11,7 +11,7 @@
         <img class="mr-1 border border-dark" width="30" alt="Catalog Flag" v-if="showCountryFlag(getCountry)" :src="getCountryFlagImg(getCountry.id)">
         <span>{{ getTranslationFor(getCatalog.title, $i18n.locale, getLanguages) }}</span>
       </div>
-      <div class="col-4 px-1 text-right text-break">
+      <div class="col-4 px-1 text-end text-break">
         <span class="font-weight-bold">{{ $t('message.metadata.updated') }}:</span>
           <dataset-date :date="getModificationDate"/>
       </div>

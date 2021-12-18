@@ -11,7 +11,7 @@
 
     <!-- UPLOAD -->
     <div class="row mb-3">
-      <div class="col-1 my-auto pr-0 text-right" @click="toggleUpload()">
+      <div class="col-1 my-auto pr-0 text-end" @click="toggleUpload()">
           <span class="arrow text-primary" v-if="!uploadVisible">
             <i class="material-icons">keyboard_arrow_down</i>
           </span>

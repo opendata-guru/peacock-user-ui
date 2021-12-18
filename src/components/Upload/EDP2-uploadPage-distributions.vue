@@ -11,7 +11,7 @@
 
     <!-- ADD DISTRIBUTION FORM -->
     <div class="row mb-3">
-      <div class="col-1 my-auto pr-0 text-right" @click="toggleDistribution()">
+      <div class="col-1 my-auto pr-0 text-end" @click="toggleDistribution()">
             <span class="arrow text-primary" v-if="!distributionVisible">
               <i class="material-icons">keyboard_arrow_down</i>
             </span>
@@ -101,7 +101,7 @@
     <div class="row mb-3" v-if="distributions.length > 0">
       <div class="col-12">
         <div class="row mb-5">
-          <div class="col-1 my-auto pr-0 text-right" @click="toggleDistributionList()">
+          <div class="col-1 my-auto pr-0 text-end" @click="toggleDistributionList()">
           <span class="arrow text-primary" v-if="!distributionListVisible">
             <i class="material-icons">keyboard_arrow_down</i>
           </span>
