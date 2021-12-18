@@ -1,10 +1,7 @@
 <template>
   <div class="mt-1 mb-4">
     <div class="row">
-      <div class="col-6 offset-1">
-        <datasetDetailsNavigation></datasetDetailsNavigation>
-      </div>
-      <div class="col-4 text-right">
+      <div class="col-4 offset-7 text-end">
         <datasetDetailsFeedbackButton></datasetDetailsFeedbackButton>
         <div class="d-inline dropdown">
           <a class="mt-1 btn btn-sm btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -18,10 +15,19 @@
           </div>
         </div>
       </div>
-      <div class="col-12 text-right" v-if="authenticated">
+    </div>
+    <div class="row">
+      <div class="col-12 text-end" v-if="authenticated">
         <datasetDetailsEditButton></datasetDetailsEditButton>
         <datasetDetailsDeleteButton></datasetDetailsDeleteButton>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <datasetDetailsNavigation></datasetDetailsNavigation>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-12 mt-3">
         <datasetDetailsHeader></datasetDetailsHeader>
       </div>
@@ -33,7 +39,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import DatasetDetailsNavigation from './PeacockDatasetDetailsNavigation';
-import DatasetDetailsFeedbackButton from './EDP2-datasetDetails-feedbackButton';
+import DatasetDetailsFeedbackButton from './PeacockDatasetDetailsFeedbackButton';
 import DatasetDetailsShareButton from './EDP2-datasetDetails-shareButton';
 import DatasetDetailsHeader from './EDP2-datasetDetails-header';
 import DatasetDetailsDeleteButton from './EDP2-datasetDetails-deleteButton';

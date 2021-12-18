@@ -1,12 +1,11 @@
 <template>
-  <!-- FEEDBACK-BUTTON -->
   <app-link
     v-if="getFeedbackQuery(getID, getTitle)"
     :path="`/${this.$i18n.locale}/feedback/form`"
     :query="getFeedbackQuery(getID, getTitle)"
     @click="$emit('trackLink', `/${this.$i18n.locale}/feedback/form${getFeedbackQuery(getID, getTitle)}`, 'link')"
     target="_blank">
-    <button class="mt-1 btn btn-sm btn-light">
+    <button class="mt-1 btn btn-sm btn-secondary feedback">
       {{ $t('message.datasetDetails.feedback') }}
     </button>
   </app-link>
@@ -23,7 +22,7 @@ import AppLink from './AppLink';
 import GLUE_CONFIG from '../../user-config/glue-config';
 
 export default {
-  name: 'EDP2-datasetDetailsFeedbackButton',
+  name: 'peacockDatasetDetailsFeedbackButton',
   components: {
     appLink: AppLink,
   },
