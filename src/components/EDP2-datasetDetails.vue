@@ -10,7 +10,7 @@
 import { mapActions, mapGetters } from 'vuex';
 
 // import nested components
-import DatasetDetailsTop from './EDP2-datasetDetails-top';
+import DatasetDetailsTop from './PeacockDatasetDetailsTop';
 import DatasetDetailsDataset from './EDP2-datasetDetails-dataset';
 import DatasetDetailsCategories from './EDP2-datasetDetails-categories';
 import DatasetDetailsSimilarDatasets from './EDP2-datasetDetails-similarDatasets';

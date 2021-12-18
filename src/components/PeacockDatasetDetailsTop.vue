@@ -43,7 +43,7 @@ import AppLink from './AppLink';
 import { decode } from '../utils/jwt';
 
 export default {
-  name: 'datasetDetailsTop',
+  name: 'peacockDatasetDetailsTop',
   dependencies: ['authService', 'DatasetService'],
   components: {
     datasetDetailsNavigation: DatasetDetailsNavigation,
