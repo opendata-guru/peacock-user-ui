@@ -34,7 +34,7 @@
 
         <!-- Formats and licenses -->
         <div class="" v-if="!isNil(metadata) && isObject(metadata)">
-          <span class="formats badge bg-secondary rounded-pill me-1"
+          <span class="formats badge bg-light border border-secondary text-secondary rounded-pill me-1"
                 v-for="(tag, i) in bodyTags"
                 v-if="showDistributionFormat(tag)"
                 :key="i"

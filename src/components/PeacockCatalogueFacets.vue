@@ -44,7 +44,7 @@
               :class="{active: facetIsSelected(field.id, facet.id), 'list-group-item-secondary': facetIsSelected(field.id, facet.id)}"
               @click="facetClicked(field.id, facet.id)">
               {{facet.title}}
-              <span class="facet-count badge bg-secondary">{{facet.count}}</span>
+              <span class="facet-count badge bg-light text-secondary border border-secondary">{{facet.count}}</span>
             </button>
             <button class="btn btn-secondary" v-if="field.items.length > limits.min"
                     @click="toggleExpanded(field.title)">

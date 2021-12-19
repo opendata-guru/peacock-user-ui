@@ -136,7 +136,7 @@
                 :class="{active: facetIsSelected(field.id, facet.id), 'list-group-item-secondary': facetIsSelected(field.id, facet.id)}"
                 @click="facetClicked(field.id, facet.id)">
                 <span class="text-truncate" :title="facet.title.de || facet.title">{{facet.title.de || facet.title}}</span>
-                <span class="facet-count badge bg-secondary">{{facet.count | formatNumber}}</span>
+                <span class="facet-count badge bg-light text-secondary border border-secondary">{{facet.count | formatNumber}}</span>
               </button>
               <button class="d-none d-md-block btn btn-secondary" v-if="field.items.length > limits.min"
                       @click="toggleExpanded(field.title)">
@@ -168,7 +168,7 @@
                 :class="{active: facetIsSelected(field.id, facet.id), 'list-group-item-secondary': facetIsSelected(field.id, facet.id)}"
                 @click="facetClicked(field.id, facet.id)">
                 <span class="text-truncate">{{facet.title}}</span>
-                <span class="facet-count badge bg-secondary">{{facet.count}}</span>
+                <span class="facet-count badge bg-light text-secondary border border-secondary">{{facet.count}}</span>
               </button>
             </div>
           </div>
