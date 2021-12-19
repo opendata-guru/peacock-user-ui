@@ -124,7 +124,11 @@
             {{ getLoading ? $t('message.datasets.loadingMessage'):`${getDatasetsCount}
             ${$t('message.datasets.countMessage')}`}}
           </div>
-          <div class="loading-spinner ml-3" v-if="getLoading"></div>
+          <div class="text-center ml-3" v-if="getLoading">
+            <div class="spinner-border text-secondary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
         </div>
         <!--
         <div class="alert alert-info mt-3" v-if="getGeoBoundsById('modal-map')">
@@ -158,7 +162,11 @@
                                     },
                                   }">
         </data-info-box>
-        <div class="loading-spinner mx-auto mt-3 mb-3" v-if="getLoading"></div>
+        <div class="text-center mt-3 mb-3" v-if="getLoading">
+          <div class="spinner-border text-secondary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
       </section>
     </div>
     <div class="row">
@@ -551,7 +559,6 @@
 
 <style lang="scss" scoped>
   @import '../styles/bootstrap_theme';
-  @import '../styles/utils/css-animations';
 
   .suggestion-input-group {
     position: relative;

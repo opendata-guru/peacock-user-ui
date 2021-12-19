@@ -4,7 +4,11 @@
       <div class="row">
         <div class="col-10 offset-1">
           <h3>{{ $t('message.datasetDetails.subnav.similarDatasets') }}</h3>
-          <div class="loading-spinner mx-auto" v-if="!similarDatasetsFetched"></div>
+          <div class="text-center" v-if="!similarDatasetsFetched">
+            <div class="spinner-border text-secondary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
           <p v-if="!similarDatasetsPresent && similarDatasetsFetched">{{ $t('message.similarDatasets.notFound') }}</p>
           <div class="mt-4" v-if="similarDatasetsPresent && similarDatasetsFetched">
             <div class="mt-3 border-bottom border-secondary" v-if="has(similarDataset, 'title') && has(similarDataset, 'description')" v-for="(similarDataset, i) in similarDatasets" :key="i">
@@ -102,5 +106,4 @@ export default {
 
 <style lang="scss" scoped>
   @import '../styles/bootstrap_theme';
-  @import '../styles/utils/css-animations';
 </style>

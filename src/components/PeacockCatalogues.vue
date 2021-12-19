@@ -65,7 +65,11 @@
             {{ getLoading ? $t('message.catalogues.loadingMessage'):`${getCataloguesCount}
             ${$t('message.catalogue.countMessage')}`}}
           </div>
-          <div class="loading-spinner ml-3" v-if="getLoading"></div>
+          <div class="text-center ml-3" v-if="getLoading">
+            <div class="spinner-border text-secondary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
         </div>
         <selectedFacetsOverview :selected-facets="getFacets"/>
         <data-info-box class="catalogue" v-for="catalogue in getCatalogues" :key="catalogue.idName" ref="catalogueBox"
@@ -75,7 +79,11 @@
                        :body-img="getCountryFlagImg(has(catalogue, 'country.id') ? catalogue.country.id : 'eu')"
                        :footer-tags="[`${has(catalogue, 'count') ? catalogue.count : 0}`]">
         </data-info-box>
-        <div class="loading-spinner mx-auto mt-3 mb-3" v-if="getLoading"></div>
+        <div class="text-center mt-3 mb-3" v-if="getLoading">
+          <div class="spinner-border text-secondary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
       </section>
     </div>
     <div class="row">
@@ -410,7 +418,6 @@ export default {
 
 <style lang="scss" scoped>
   @import '../styles/bootstrap_theme';
-  @import '../styles/utils/css-animations';
 
   .suggestion-input-group {
     position: relative;
