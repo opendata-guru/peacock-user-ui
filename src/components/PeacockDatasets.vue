@@ -119,8 +119,7 @@
             </div>
           </div>
         </div>
-        <div class="alert alert-secondary mt-3 d-flex flex-row"
-             :class="{ 'alert-danger': getDatasetsCount <= 0 && !getLoading}">
+        <div class="alert alert-secondary mt-3 d-flex flex-row">
           <div>
             {{ getLoading ? $t('message.datasets.loadingMessage'):`${getDatasetsCount}
             ${$t('message.datasets.countMessage')}`}}

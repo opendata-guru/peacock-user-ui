@@ -60,8 +60,7 @@
             </div>
           </div>
         </div>
-        <div class="alert alert-secondary mt-3 d-flex flex-row"
-             :class="{ 'alert-danger': getCataloguesCount <= 0 && !getLoading}">
+        <div class="alert alert-secondary mt-3 d-flex flex-row">
           <div>
             {{ getLoading ? $t('message.catalogues.loadingMessage'):`${getCataloguesCount}
             ${$t('message.catalogue.countMessage')}`}}
