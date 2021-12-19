@@ -81,7 +81,6 @@ export default {
     isPath(relPath) {
       const pattern = `/datasets/${this.getID}${relPath}`;
       const pos = this.$router.currentRoute.path.indexOf(pattern);
-      console.log(relPath, ' ', (pos >= 0) && ((pos + pattern.length) === this.$router.currentRoute.path.length));
       return (pos >= 0) && ((pos + pattern.length) === this.$router.currentRoute.path.length);
     },
   },

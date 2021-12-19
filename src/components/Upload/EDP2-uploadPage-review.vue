@@ -59,7 +59,7 @@
                           </span>
                         </small>
                       </span>
-                      <span class="col-md-5 col-12 mt-2 text-md-right text-left">
+                      <span class="col-md-5 col-12 mt-2 text-md-end text-left">
                       <span class="d-inline-block">
                         <small class="pr-1">{{ filterDateFormatEU(distribution.releaseDate) }}</small>
                       </span>

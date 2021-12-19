@@ -3,16 +3,16 @@
     <div v-if="!loadingDatasetDetails">
       <span property="dc:issued" :content="getReleaseDate"></span>
       <span property="dc:modified" :content="getModificationDate"></span>
-      <!-- TEXT -->
-      <div class="mt-4">
+
+      <div class="mt-4 description">
         <div class="row">
-          <div class="col-10 offset-1" property="dc:description">
+          <div class="col-12" property="dc:description">
             <p v-html="getTranslationFor(getDescription, $i18n.locale, getLanguages)"></p>
           </div>
         </div>
       </div>
-      <!-- INFO BANNERS -->
-      <div class="mt-3">
+
+      <div class="mt-3 infobanner">
         <div class="row">
           <div class="col-12">
             <!-- INCORRECT DATE BANNER -->
@@ -27,7 +27,7 @@
                   <p class="mb-0">This dataset's last updated date is incorrect or incomplete, please contact the data provider for further inquiries.</p>
                 </div>
                 <div class="col-1">
-                  <button class="close pt-0"
+                  <button class="close pt-0 btn btn-secondary"
                           type="button"
                           data-dismiss="alert"
                           aria-label="Close">
@@ -57,7 +57,7 @@
                   </div>
                 </div>
                 <div class="col-1">
-                  <button class="close pt-0"
+                  <button class="close pt-0 btn btn-secondary"
                           type="button"
                           data-dismiss="alert"
                           aria-label="Close">
@@ -78,7 +78,7 @@
                   <p class="mb-0">{{ $t('message.datasetDetails.translation.noTranslation') }}</p>
                 </div>
                 <div class="col-1">
-                  <button class="close pt-0"
+                  <button class="close pt-0 btn btn-secondary"
                           type="button"
                           data-dismiss="alert"
                           aria-label="Close">
@@ -99,7 +99,7 @@
                   <p class="mb-0">{{ $t('message.datasetDetails.translation.update') }}</p>
                 </div>
                 <div class="col-1">
-                  <button class="close pt-0"
+                  <button class="close pt-0 btn btn-secondary"
                           type="button"
                           data-dismiss="alert"
                           aria-label="Close">
@@ -111,27 +111,26 @@
           </div>
         </div>
       </div>
-      <!-- DISTRIBUTIONS -->
-      <div class="mt-1">
+
+      <div class="mt-1 distributions">
         <div class="row">
-          <div class="col-10 offset-1">
+          <div class="col-12">
             <h3>{{ $t('message.metadata.distributions') }} ({{ getDistributions ? getDistributions.length : 0 }})</h3>
           </div>
-          <ul class="list list-unstyled col-12">
-            <hr>
+          <ul class="list list-unstyled col-12 border-top mt-3 pt-3">
             <div v-for="distribution in getDistributions"
                  :key="distribution.id">
               <li class="row">
                 <span class="d-inline-block col-md-1 col-2 pr-md-1 pr-0 m-md-0 m-auto">
-                  <div class="circle float-md-right text-center text-white"
+                  <div class="float-md-right text-center"
                        :type="getDistributionFormat(distribution)"
                        :data-toggle="distributionFormatTruncated(distribution) ? 'tooltip' : false"
                        :data-placement="distributionFormatTruncated(distribution) ? 'top' : false"
                        :title="distributionFormatTruncated(distribution) ? getDistributionFormat(distribution) : false">
-                    <span>{{ truncate(getDistributionFormat(distribution), 4, true) }}</span>
+                    <span class="bg-light border border-secondary text-secondary rounded-pill badge">{{ truncate(getDistributionFormat(distribution), 4, true) }}</span>
                   </div>
                 </span>
-                <span class="col-10">
+                <span class="col-md-11 col-10">
                   <span class="row">
                     <span class="d-inline-block col-md-7 col-12">
                       <h6 class="m-0">{{ getDistributionTitle(distribution) }}</h6>
@@ -148,6 +147,7 @@
                         </span>
                         <app-link :to="distribution.licence.resource"
                                   target="_blank"
+                                  class="link-dark"
                                   @click="$emit('trackLink', distribution.licence.resource, 'link')">
                           {{ distribution.licence.title }}
                         </app-link>
@@ -161,6 +161,7 @@
                         </app-link>
                         <app-link :to="distribution.licence.la_url"
                                   target="_blank"
+                                  class="link-dark"
                                   @click="$emit('trackLink', distribution.licence.la_url, 'link')"
                                   v-if="showLicensingAssistant(distribution)">
                           {{ $t('message.distributionLicense.licensingAssistant') }}
@@ -176,11 +177,11 @@
                         {{ $t('message.distributionLicense.notProvided') }}
                       </small>
                     </span>
-                    <span class="col-md-5 col-12 mt-2 text-md-right text-left">
+                    <span class="col-md-5 col-12 mt-2 text-end">
                       <span class="d-inline-block">
                         <small class="pr-1">{{ filterDateFormatEU(distribution.releaseDate) }}</small>
                       </span>
-                      <app-link class="btn btn-sm btn-primary p-0 px-2"
+                      <app-link class="btn btn-sm btn-secondary p-0 px-2"
                         :path="getVisualisationLink(distribution.accessUrl)"
                         target="_blank"
                         @click="$emit('trackLink', getVisualisationLink(distribution.accessUrl), 'link')"
@@ -188,7 +189,7 @@
                         <span class="px-2">{{ $t('message.datasetDetails.visualisation') }}</span>
                         <i class="material-icons float-right align-bottom">bar_chart</i>
                       </app-link>
-                      <app-link class="btn btn-sm btn-primary p-0 px-2"
+                      <app-link class="btn btn-sm btn-secondary p-0 px-2"
                         :path="getGeoLink(distribution.format.title, distribution.id)"
                         target="_blank"
                         @click="$emit('trackLink', getGeoLink(distribution.format.title, distribution.id), 'link')"
@@ -196,7 +197,7 @@
                         <span class="px-2">{{ $t('message.datasetDetails.geoVisualisation') }}</span>
                         <i class="material-icons float-right align-bottom">public</i>
                       </app-link>
-                      <app-link class="text-dark text-decoration-none"
+                      <app-link class="btn btn-sm btn-secondary p-0 px-2"
                         :to="distribution.accessUrl"
                         target="_blank"
                         rel="dcat:distribution noopener"
@@ -208,7 +209,7 @@
                       </app-link>
                       <span v-if="showDownloadUrls(distribution)"
                         v-for="downloadURL in distribution.downloadUrls">
-                        <app-link class="btn btn-sm btn-primary p-0 px-2"
+                        <app-link class="btn btn-sm btn-secondary p-0 px-2"
                           :to="downloadURL"
                           target="_blank"
                           matomo-track-download
@@ -225,11 +226,11 @@
           </ul>
         </div>
       </div>
-      <!-- KEYWORDS -->
-      <div class="mt-2"
+
+      <div class="mt-2 keywords"
            v-if="showKeywords(getKeywords)">
         <div class="row">
-          <div class="col-10 offset-1">
+          <div class="col-12">
             <div class="row">
               <span class="col-4 col-sm-3 col-md-2 mt-md-0 mt-3 mb-2 pr-0"
                     property="dcat:keyword"
@@ -238,7 +239,7 @@
                     :content="keyword.title"
                     :key="i">
                 <app-link :to="getKeywordLink(keyword)">
-                  <small class="d-inline-block w-100 p-2 ml-1 rounded-pill text-center text-white bg-primary"
+                  <small class="d-inline-block w-100 p-2 ml-1 rounded-pill text-center text-white bg-secondary"
                          :data-toggle="keywordTruncated(keyword) ? 'tooltip' : false"
                          :data-placement="keywordTruncated(keyword) ? 'top' : false"
                          :title="keywordTruncated(keyword) ? keyword.title : false">
@@ -250,26 +251,26 @@
           </div>
         </div>
       </div>
-      <!-- MAP -->
-      <div class="mt-5"
+
+      <div class="mt-5 map"
            v-if="showSpatial(getSpatial)">
         <div class="row">
           <div class="col-1 my-auto pr-0 text-end"
                @click="toggleMap()">
-            <span class="arrow text-primary"
+            <span class="arrow text-secondary"
                   v-if="mapVisible" >
               <i class="material-icons">keyboard_arrow_up</i>
             </span>
-            <span class="arrow text-primary"
+            <span class="arrow text-secondary"
                   v-else>
               <i class="material-icons">keyboard_arrow_down</i>
             </span>
           </div>
-          <div class="col-10">
+          <div class="col-11">
             <h3 class="heading"
                 @click="toggleMap()">{{ $t('message.datasetDetails.geoInfo') }}</h3>
           </div>
-          <div class="col-10 offset-1">
+          <div class="col-12">
             <div id="collapse-geo-info"
                  ref="geocollapse"
                  class="collapse show">
@@ -283,26 +284,26 @@
           </div>
         </div>
       </div>
-      <!-- INFO -->
-      <div class="mt-5">
+
+      <div class="mt-5 info">
         <div class="row">
           <div class="col-12">
             <div class="row">
               <div class="col-1 my-auto pr-0 text-end"
                    @click="toggleInfo()">
-                <span class="arrow text-primary"
+                <span class="arrow text-secondary"
                       v-if="!infoVisible">
                   <i class="material-icons">keyboard_arrow_down</i>
                 </span>
-                <span class="arrow text-primary" v-else>
+                <span class="arrow text-secondary" v-else>
                   <i class="material-icons">keyboard_arrow_up</i>
                 </span>
               </div>
-              <div class="col-10 py-2 bg-white">
+              <div class="col-11 py-2 bg-white">
                 <h3 class="heading"
                     @click="toggleInfo()">{{ $t('message.datasetDetails.additionalInfo') }}</h3>
               </div>
-              <div class="col-10 offset-1"
+              <div class="col-12"
                    v-if="infoVisible">
                 <table class="table table-borderless table-responsive pl-3 bg-light">
                   <tr v-if="isArray(getLandingPages) && getLandingPages.length > 0">
@@ -310,7 +311,7 @@
                     <td>
                       <div v-for="(landingPage, i) of getLandingPages"
                            :key="i">
-                        <app-link :to="landingPage || ''">{{ landingPage }}</app-link>
+                        <app-link class="link-dark" :to="landingPage || ''">{{ landingPage }}</app-link>
                       </div>
                     </td>
                   </tr>
@@ -319,7 +320,7 @@
                     <td>
                       <div v-for="(source, i) of getSources"
                            :key="i">
-                        <app-link :to="source"
+                        <app-link class="link-dark" :to="source"
                            v-if="!isNil(source)">{{ source }}</app-link>
                       </div>
                     </td>
@@ -348,7 +349,7 @@
                       <div v-if="has(getPublisher, 'name') && !isNil(getPublisher.name)">{{ $t('message.metadata.name') }}: {{ getPublisher.name }}</div>
                       <div v-if="has(getPublisher, 'email') && !isNil(getPublisher.email)">{{ $t('message.metadata.email') }}: {{ getPublisher.email }}</div>
                       <div v-if="has(getPublisher, 'resource') && !isNil(getPublisher.resource)">{{ $t('message.metadata.resource') }}:
-                        <app-link :to="getPublisher.resource">{{ getPublisher.resource }}</app-link>
+                        <app-link class="link-dark" :to="getPublisher.resource">{{ getPublisher.resource }}</app-link>
                       </div>
                     </td>
                   </tr>
@@ -359,10 +360,10 @@
                            :key="i">
                         <div v-if="has(contactPoint, 'name') && !isNil(contactPoint.name)">{{ $t('message.metadata.name') }}: {{contactPoint.name}}</div>
                         <div v-if="has(contactPoint, 'email') && !isNil(contactPoint.email)">{{ $t($t('message.metadata.email')) }}:
-                          <app-link :to="`mailto:${contactPoint.email}`">{{ contactPoint.email}}</app-link>
+                          <app-link class="link-dark" :to="`mailto:${contactPoint.email}`">{{ contactPoint.email}}</app-link>
                         </div>
                         <div v-if="has(contactPoint, 'resource') && !isNil(contactPoint.resource)">{{ $t('message.metadata.resource') }}:
-                          <app-link :to="contactPoint.resource">{{ contactPoint.resource }}</app-link>
+                          <app-link class="link-dark" :to="contactPoint.resource">{{ contactPoint.resource }}</app-link>
                         </div>
                         <br>
                       </div>
@@ -375,7 +376,7 @@
                            :key="i">
                         <div v-if="has(conformTo, 'title') && !isNil(conformTo.title)">{{ $t('message.metadata.title') }}: {{ conformTo.title}}</div>
                         <div v-if="has(conformTo, 'resource') && !isNil(conformTo.resource)">{{ $t('message.metadata.resource') }}:
-                          <app-link :to="conformTo.resource">{{ conformTo.resource }}</app-link>
+                          <app-link class="link-dark" :to="conformTo.resource">{{ conformTo.resource }}</app-link>
                         </div>
                         <br>
                       </div>
@@ -388,7 +389,7 @@
                            :key="i">
                         <div v-if="has(provenance, 'label') && !isNil(provenance.label)">{{ $t('message.metadata.label') }}: {{ provenance.label }}</div>
                         <div v-if="has(provenance, 'resource') && !isNil(provenance.resource)">{{ $t('message.metadata.resource') }}:
-                          <app-link :to="provenance.resource">{{ provenance.resource }}</app-link>
+                          <app-link class="link-dark" :to="provenance.resource">{{ provenance.resource }}</app-link>
                         </div>
                         <br>
                       </div>
@@ -400,7 +401,7 @@
                       <div v-for="(resource, i) of getRelatedResources"
                            :key="i"
                            v-if="!isNil(resource)">
-                        <app-link :to="resource">{{ resource }}</app-link>
+                        <app-link class="link-dark" :to="resource">{{ resource }}</app-link>
                       </div>
                     </td>
                   </tr>
@@ -430,7 +431,7 @@
                       <div v-for="(documentation, i) of getDocumentations"
                            :key="i"
                            v-if="!isNil(documentation)">
-                        <app-link :to="documentation">{{ documentation }}</app-link>
+                        <app-link class="link-dark" :to="documentation">{{ documentation }}</app-link>
                       </div>
                     </td>
                   </tr>
@@ -710,52 +711,6 @@ export default {
 
   .heading, .arrow, .copy-text {
     cursor: pointer;
-  }
-  .text-break {
-    word-break: break-word;
-  }
-  .circle {
-    width: 40px;
-    height: 40px;
-    margin: 0 auto;
-    padding: 20px 0;
-    font-size: 12px;
-    line-height: 1px;
-    border-radius: 50%;
-    background-color: #000000;
-    &[type="HTML"] {
-      background-color: #55a1ce;
-    }
-    &[type="JSON"] {
-      background-color: #ef7100;
-    }
-    &[type="XML"] {
-      background-color: #ef7100;
-    }
-    &[type="TXT"] {
-      background-color: #74cbec;
-    }
-    &[type="CSV"] {
-      background-color: #dfb100;
-    }
-    &[type="XLS"] {
-      background-color: #2db55d;
-    }
-    &[type="ZIP"] {
-      background-color: #686868;
-    }
-    &[type="API"] {
-      background-color: #ec96be;
-    }
-    &[type="PDF"] {
-      background-color: #e0051e;
-    }
-    &[type="RDF"],
-    &[type="NQUAD"],
-    &[type="NTRIPLES"],
-    &[type="TURTLE"] {
-      background-color: #0b4498;
-    }
   }
 
   /*** BOOTSTRAP ***/
