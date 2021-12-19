@@ -6,7 +6,7 @@
         <datasetDetailsDeleteButton v-if="authenticated"></datasetDetailsDeleteButton>
         <datasetDetailsFeedbackButton></datasetDetailsFeedbackButton>
         <div class="d-inline dropdown">
-          <a class="mt-1 btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="mt-1 btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <!--<i class="material-icons small-icon align-bottom text-dark">share</i>-->
             Share Dataset
           </a>

@@ -4,8 +4,8 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="deleteModalLabel">Are you sure you want to delete this item?</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <h5 class="modal-title text-dark" id="deleteModalLabel">Are you sure you want to delete this item?</h5>
+            <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -15,13 +15,13 @@
               </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-            <button type="button" v-on:click="deleteDataSet" data-dismiss="modal" class="btn btn-danger">Yes</button>
+            <button type="button" class="btn btn-outline-secondary btn-no" data-bs-dismiss="modal">No</button>
+            <button type="button" v-on:click="deleteDataSet" data-bs-dismiss="modal" class="btn btn-secondary btn-yes">Yes</button>
           </div>
         </div>
       </div>
     </div>
-    <button data-toggle="modal" data-target="#deleteModal" class="mt-1 btn btn-sm btn-outline-secondary delete">
+    <button data-bs-toggle="modal" data-bs-target="#deleteModal" class="mt-1 btn btn-sm btn-outline-secondary delete">
       {{ $t('message.datasetDetails.delete') }}
     </button>
   </app-link>

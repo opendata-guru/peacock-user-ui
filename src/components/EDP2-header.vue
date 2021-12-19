@@ -137,7 +137,7 @@
               <app-link id="edp2-topnav-dropdown-1"
                         class="nav-link dropdown-toggle"
                         fragment="#"
-                        data-toggle="dropdown">
+                        data-bs-toggle="dropdown">
                 {{ $t('message.header.navigation.whatWeDo.title') }}
               </app-link>
               <div class="dropdown-menu border-0 w-100 mt-0 edp2-topnav-dropdown-container" aria-labelledby="edp2-topnav-dropdown-1">
@@ -191,7 +191,7 @@
               <app-link id="edp2-topnav-dropdown-2"
                         class="nav-link dropdown-toggle"
                         fragment="#"
-                        data-toggle="dropdown">
+                        data-bs-toggle="dropdown">
                 {{ $t('message.header.navigation.data.title') }}
               </app-link>
               <div class="dropdown-menu border-0 w-100 mt-0 edp2-topnav-dropdown-container"
@@ -246,7 +246,7 @@
               <app-link id="edp2-topnav-dropdown-3"
                         class="nav-link dropdown-toggle"
                         fragment="#"
-                        data-toggle="dropdown">
+                        data-bs-toggle="dropdown">
                 {{ $t('message.header.navigation.providingData.title') }}
               </app-link>
               <div class="dropdown-menu border-0 w-100 mt-0 edp2-topnav-dropdown-container"
@@ -280,7 +280,7 @@
               <app-link id="edp2-topnav-dropdown-4"
                         class="nav-link dropdown-toggle"
                         fragment="#"
-                        data-toggle="dropdown">
+                        data-bs-toggle="dropdown">
                 {{ $t('message.header.navigation.usingData.title') }}
               </app-link>
               <div class="dropdown-menu border-0 w-100 mt-0 edp2-topnav-dropdown-container"
@@ -321,7 +321,7 @@
               <app-link id="edp2-topnav-dropdown-5"
                         class="nav-link dropdown-toggle"
                         fragment="#"
-                        data-toggle="dropdown">
+                        data-bs-toggle="dropdown">
                 {{ $t('message.header.navigation.resources.title') }}
               </app-link>
               <div class="dropdown-menu border-0 w-100 mt-0 edp2-topnav-dropdown-container"
@@ -363,8 +363,8 @@
       <nav class="navbar navbar-expand-md w-100 edp2-topnav-mobile d-md-none d-flex justify-content-end">
         <button class="navbar-toggler rounded collapsed"
                 type="button"
-                data-toggle="collapse"
-                data-target="#navbarToggle"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarToggle"
                 aria-controls="navbarTogglerDemo02"
                 aria-expanded="false"
                 aria-label="Toggle navigation">

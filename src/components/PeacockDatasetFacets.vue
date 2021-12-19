@@ -33,7 +33,7 @@
         <div class="row position-relative mb-3" v-if="showGazetteer && !showCatalogueDetails">
           <mapboundsreceiver class="border-secondary map" width="100%" :bounds-id="geoBoundsId" ref="mapReceiver"/>
           <Button class="btn btn-highlight reset-bounds-button" v-if="getGeoBoundsById(geoBoundsId)" @click="resetBoundsFor(geoBoundsId)">Reset Bounds</Button>
-          <Button class="btn btn-sm btn-secondary map-modal-button" data-toggle="modal" data-target=".map-modal" @click="triggerResize()">
+          <Button class="btn btn-sm btn-secondary map-modal-button" data-bs-toggle="modal" data-target=".map-modal" @click="triggerResize()">
             <i class="material-icons">fullscreen</i>
           </Button>
           <!-- Modal Map Start -->
@@ -42,7 +42,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h4 class="modal-title">{{ $t('message.mapModal.drawRectangleMsg') }}</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
@@ -50,7 +50,7 @@
                   <mapboundssender :bounds-id="geoBoundsId" map-container-id="modalMap" ref="mapSender"></mapboundssender>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">{{ $t('message.mapModal.close') }}</button>
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">{{ $t('message.mapModal.close') }}</button>
                   <button type="button" class="btn btn-highlight" @click="resetBoundsFor(geoBoundsId)">{{ $t('message.mapModal.reset') }}</button>
                   <button type="button" class="btn btn-secondary" @click="applyHoldedBounds()" data-dismiss="modal">{{ $t('message.mapModal.findDatasets') }}</button>
                 </div>

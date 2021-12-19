@@ -9,7 +9,7 @@
       <div class="col d-flex d-md-none justify-content-between flex-wrap">
         <div class="dropdown mb-md-0 mb-3">
           <button class="btn btn-secondary dropdown-toggle"
-                  type="button" id="dropdown-sort-by-mobile" data-toggle="dropdown"
+                  type="button" id="dropdown-sort-by-mobile" data-bs-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
             {{ $t('message.sort.sortBy') + `: ${sortSelectedLabel}`  }}
           </button>
@@ -26,7 +26,7 @@
               {{ $t('message.sort.lastCreated') }}</button>
           </div>
         </div>
-        <button class="btn btn-secondary mb-3 text-end text-white" data-toggle="collapse" data-target="#datasetFacets" @click="filterCollapsed = !filterCollapsed">
+        <button class="btn btn-secondary mb-3 text-end text-white" data-bs-toggle="collapse" data-bs-target="#datasetFacets" @click="filterCollapsed = !filterCollapsed">
           Filter
           <i class="material-icons small-icon align-bottom" v-if="filterCollapsed">arrow_drop_up</i>
           <i class="material-icons small-icon align-bottom" v-else>arrow_drop_down</i>
@@ -39,7 +39,7 @@
             <div class="col d-flex justify-content-between flex-wrap">
               <div class="dropdown d-none d-md-block mb-md-0 mb-3">
                 <button class="btn btn-secondary dropdown-toggle"
-                        type="button" id="dropdown-sort-by" data-toggle="dropdown"
+                        type="button" id="dropdown-sort-by" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                   {{ $t('message.sort.sortBy') + `: ${sortSelectedLabel}`  }}
                 </button>
@@ -69,7 +69,7 @@
               </div>
               <div class="dropdown d-none d-md-inline-block">
                 <button class="d-none btn btn-secondary dropdown-toggle"
-                        type="button" id="dropdown-feeds" data-toggle="dropdown"
+                        type="button" id="dropdown-feeds" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons align-bottom">rss_feed</i>
                   {{ $t('message.datasets.datasetsFeed') }}
@@ -133,7 +133,7 @@
         <!--
         <div class="alert alert-info mt-3" v-if="getGeoBoundsById('modal-map')">
           {{`${$t('message.datasets.geoBoundsMessagePre')}`}}<strong>{{getGeoBoundsById('modal-map')}}</strong>{{`. ${$t('message.datasets.geoBoundsMessageRemove')}`}}
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="resetGeoBounds('modal-map'); loadDatasets({})">
+          <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close" @click="resetGeoBounds('modal-map'); loadDatasets({})">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -195,7 +195,7 @@
   // Import custom helpers
   import { debounce, has, uniqBy } from 'lodash';
   // import jQuery
-  import $ from 'jquery';
+  // import $ from 'jquery';
   // eslint-disable-next-line no-unused-vars
   import fileTypes from '../utils/fileTypes';
   // Import components used in template
@@ -539,9 +539,6 @@
           .then(() => {
             this.setPageCount(Math.ceil(this.getDatasetsCount / this.getLimit));
             this.$Progress.finish();
-            $('[data-toggle="tooltip"]').tooltip({
-              container: 'body',
-            });
           })
           .catch(() => {
             this.$Progress.fail();

@@ -1,6 +1,6 @@
 <template>
   <div class="data-info-box card mt-3 border border-light">
-    <a data-toggle="collapse"
+    <a data-bs-toggle="collapse"
        :href="`#dist-${collapseId}`"
        v-if="collapse">
       <div class="card-header bg-transparent border-0">

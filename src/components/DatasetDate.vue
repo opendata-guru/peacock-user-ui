@@ -1,8 +1,8 @@
 <template>
   <span
     class="d-inline-block"
-    data-toggle="tooltip"
-    data-placement="top"
+    data-bs-toggle="tooltip"
+    data-bs-placement="top"
     :title="
       isIncorrectDate()
         ? 'This date is incorrect or incomplete, please contact the data provider.'

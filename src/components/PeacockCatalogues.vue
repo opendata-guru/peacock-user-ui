@@ -13,7 +13,7 @@
             <div class="col">
               <div class="dropdown d-inline-block">
                 <button class="btn btn-secondary dropdown-toggle"
-                        type="button" id="dropdown-sort-by" data-toggle="dropdown"
+                        type="button" id="dropdown-sort-by" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                   {{ $t('message.sort.sortBy') + `: ${sortSelectedLabel}`  }}
                 </button>

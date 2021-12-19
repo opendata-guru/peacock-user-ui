@@ -15,7 +15,7 @@
       </div>
       <div class="nav-item dropdown">
         <button class="nav-link btn-settings"
-                data-toggle="dropdown">
+                data-bs-toggle="dropdown">
           <i class="material-icons text-dark">settings</i>
         </button>
         <div class="dropdown-menu">
@@ -28,7 +28,7 @@
     <div class="row">
       <div class="col-8">
         <div class="alert alert-warning" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
           The title and description of this dataset are machine translated.<br/>
@@ -37,7 +37,7 @@
         </div>
         <h3 class="card-title">{{ getTitle['en'] }}</h3>
         <div class="card">
-          <a class="bg-primary d-flex justify-content-start" data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="false" aria-controls="collapseExample">
+          <a class="bg-primary d-flex justify-content-start" data-bs-toggle="collapse" href="#collapseOne" role="button" aria-expanded="false" aria-controls="collapseExample">
             <div class="card-header">
               <h5 class="card-title text-white mb-0">
                 {{ $t('message.metadata.description') }}
@@ -51,7 +51,7 @@
           </div>
         </div>
         <div class="card">
-          <a class="bg-primary d-flex justify-content-start" data-toggle="collapse" href="#collapse-geo-info" role="button" aria-expanded="false" aria-controls="collapseExample">
+          <a class="bg-primary d-flex justify-content-start" data-bs-toggle="collapse" href="#collapse-geo-info" role="button" aria-expanded="false" aria-controls="collapseExample">
             <div class="card-header">
               <h5 class="card-title text-white mb-0">
                 {{ $t('message.metadata.geoInfo') }}

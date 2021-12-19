@@ -138,10 +138,10 @@
                     </small>
                   </span>
                   <span class="d-inline-block col-1">
-                    <button class="btn btn-primary" data-toggle="modal" @click="editDistribution(distribution)" data-target="#updateModal">{{ $t('message.datasetDetails.edit') }}</button>
+                    <button class="btn btn-primary" data-bs-toggle="modal" @click="editDistribution(distribution)" data-bs-target="#updateModal">{{ $t('message.datasetDetails.edit') }}</button>
                   </span>
                   <span class="d-inline-block col-1">
-                    <button class="btn btn-danger" data-toggle="modal" @click="editDistribution(distribution)" data-target="#deleteModal">{{ $t('message.datasetDetails.delete') }}</button>
+                    <button class="btn btn-danger" data-bs-toggle="modal" @click="editDistribution(distribution)" data-bs-target="#deleteModal">{{ $t('message.datasetDetails.delete') }}</button>
                   </span>
                 </span>
               </span>
@@ -158,7 +158,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="updateModalLabel">{{distributionEdit.title}}</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -223,8 +223,8 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="button" data-dismiss="modal" class="btn btn-primary" @click="updateDistribution(distributionEdit)">Update</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" data-bs-dismiss="modal" class="btn btn-primary" @click="updateDistribution(distributionEdit)">Update</button>
           </div>
         </div>
       </div>
@@ -236,7 +236,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="deleteModalLabel">Are you sure you want to delete this item?</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -246,8 +246,8 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-            <button type="button" @click="deleteDistribution(distributionEdit)" data-dismiss="modal" class="btn btn-primary">Yes</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+            <button type="button" @click="deleteDistribution(distributionEdit)" data-bs-dismiss="modal" class="btn btn-primary">Yes</button>
           </div>
         </div>
       </div>

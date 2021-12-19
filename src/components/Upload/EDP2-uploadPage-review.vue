@@ -67,7 +67,7 @@
                             v-if="showDownloadDropdown(distribution)">
                         <button class="btn btn-sm btn-primary p-0 pl-2 w-100"
                                 type="button"
-                                data-toggle="dropdown"
+                                data-bs-toggle="dropdown"
                                 aria-haspopup="true"
                                 aria-expanded="false"
                                 title="Download">

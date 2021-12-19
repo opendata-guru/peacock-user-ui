@@ -29,7 +29,7 @@
                 <div class="col-1">
                   <button class="close pt-0 btn btn-secondary"
                           type="button"
-                          data-dismiss="alert"
+                          data-bs-dismiss="alert"
                           aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -59,7 +59,7 @@
                 <div class="col-1">
                   <button class="close pt-0 btn btn-secondary"
                           type="button"
-                          data-dismiss="alert"
+                          data-bs-dismiss="alert"
                           aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -80,7 +80,7 @@
                 <div class="col-1">
                   <button class="close pt-0 btn btn-secondary"
                           type="button"
-                          data-dismiss="alert"
+                          data-bs-dismiss="alert"
                           aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -101,7 +101,7 @@
                 <div class="col-1">
                   <button class="close pt-0 btn btn-secondary"
                           type="button"
-                          data-dismiss="alert"
+                          data-bs-dismiss="alert"
                           aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -124,8 +124,8 @@
                 <span class="d-inline-block col-md-1 col-2 pr-md-1 pr-0 m-md-0 m-auto">
                   <div class="float-md-right text-center"
                        :type="getDistributionFormat(distribution)"
-                       :data-toggle="distributionFormatTruncated(distribution) ? 'tooltip' : false"
-                       :data-placement="distributionFormatTruncated(distribution) ? 'top' : false"
+                       :data-bs-toggle="distributionFormatTruncated(distribution) ? 'tooltip' : false"
+                       :data-bs-placement="distributionFormatTruncated(distribution) ? 'top' : false"
                        :title="distributionFormatTruncated(distribution) ? getDistributionFormat(distribution) : false">
                     <span class="bg-light border border-secondary text-secondary rounded-pill badge">{{ truncate(getDistributionFormat(distribution), 4, true) }}</span>
                   </div>
@@ -155,8 +155,8 @@
                                   target="_blank"
                                   @click="$emit('trackLink', distribution.licence.resource, 'link')">
                           <i class="material-icons small-icon align-bottom text-dark"
-                             data-toggle="tooltip"
-                             data-placement="top"
+                             data-bs-toggle="tooltip"
+                             data-bs-placement="top"
                              :title="distribution.licence.description">info</i>
                         </app-link>
                         <app-link :to="distribution.licence.la_url"
@@ -240,8 +240,8 @@
                     :key="i">
                 <app-link :to="getKeywordLink(keyword)">
                   <small class="d-inline-block w-100 p-2 ml-1 rounded-pill text-center text-white bg-secondary"
-                         :data-toggle="keywordTruncated(keyword) ? 'tooltip' : false"
-                         :data-placement="keywordTruncated(keyword) ? 'top' : false"
+                         :data-bs-toggle="keywordTruncated(keyword) ? 'tooltip' : false"
+                         :data-bs-placement="keywordTruncated(keyword) ? 'top' : false"
                          :title="keywordTruncated(keyword) ? keyword.title : false">
                     {{ truncate(keyword.title, maxKeywordLength, false) }}
                   </small>
@@ -452,7 +452,7 @@
 </template>
 
 <script>
-import $ from 'jquery';
+// import $ from 'jquery';
 // import Actions and Getters from Store Module
 import { mapActions, mapGetters } from 'vuex';
 // import helper functions
@@ -684,10 +684,6 @@ export default {
           this.$nextTick(() => {
             // Display/hide translation banners
             this.setTranslationBanners();
-            // Activate bootstrap tooltips
-            $('[data-toggle="tooltip"]').tooltip({
-              container: 'body',
-            });
           });
         })
         .catch(() => {
