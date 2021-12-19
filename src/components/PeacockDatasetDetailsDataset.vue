@@ -472,7 +472,7 @@ import { getTranslationFor, getCountryFlagImg, truncate } from '../utils/helpers
 const MAX_KEYWORD_LENGTH = 10;
 
 export default {
-  name: 'datasetDetailsDataset',
+  name: 'peacockDatasetDetailsDataset',
   dependencies: 'DatasetService',
   components: {
     appLink: AppLink,
