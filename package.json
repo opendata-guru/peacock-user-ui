@@ -1,6 +1,6 @@
 {
   "name": "peacock-user-ui",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A Single-Page-Application base to realize Open Data Frontends.",
   "author": "Thomas Tursics <thomas@tursics.de> (https://www.tursics.de)",
   "readme": "README.md",
