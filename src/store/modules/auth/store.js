@@ -8,10 +8,30 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-const state = {
-  auth: {
-    authenticated: false,
+const notAuthObject = {
+  authenticated: false,
+  updateToken() {
+    return {
+      success: () => {
+        const ret = {
+          errorCB: undefined,
+          error: (func) => {
+            ret.errorCB = func;
+          },
+        };
+
+        window.setTimeout(() => {
+          ret.errorCB('<no token>');
+        }, 100);
+
+        return ret;
+      },
+    };
   },
+};
+
+const state = {
+  auth: notAuthObject,
   service: null,
   rtptoken: '',
 };
@@ -51,7 +71,11 @@ const actions = {
 
 const mutations = {
   SECURITY_AUTH(state, keycloakAuth) {
-    state.auth = keycloakAuth;
+    if (keycloakAuth) {
+      state.auth = keycloakAuth;
+    } else {
+      state.auth.authenticated = false;
+    }
   },
   RTP_TOKEN(state, rtpToken) {
     state.rtptoken = rtpToken;
