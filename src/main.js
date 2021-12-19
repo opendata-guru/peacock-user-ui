@@ -8,8 +8,6 @@
 // import IE Promise polyfill
 import '@babel/polyfill';
 import 'es6-promise/auto';
-// import jQuery
-// import $ from 'jquery';
 // import vuex-router-sync. see: https://github.com/vuejs/vuex-router-sync
 import { sync } from 'vuex-router-sync';
 // import vue-progressbar. see: https://github.com/hilongjw/vue-progressbar
@@ -76,12 +74,9 @@ const i18n = new VueI18n({
 Vue.use(RuntimeConfiguration, { baseConfig: GLUE_CONFIG, debug: false });
 
 // Bootstrap requirements to use js-features of bs-components
-require('popper.js');
+require('@popperjs/core');
 require('bootstrap');
 require('./styles/styles.sass');
-/* $(() => {
-  $('[data-toggle="popover"]').popover({ container: 'body' });
-}); */
 // OpenStreetMaps popup styles
 require('leaflet/dist/leaflet.css');
 

@@ -21,9 +21,6 @@ module.exports = merge(baseWebpackConfig, {
   devtool: 'source-map',
   plugins: [
     new webpack.ProvidePlugin({ // inject ES5 modules as global vars
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
       Tether: 'tether',
     }),
     new webpack.DefinePlugin({

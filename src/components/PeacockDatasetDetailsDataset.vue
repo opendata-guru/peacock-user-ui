@@ -452,7 +452,6 @@
 </template>
 
 <script>
-// import $ from 'jquery';
 // import Actions and Getters from Store Module
 import { mapActions, mapGetters } from 'vuex';
 // import helper functions

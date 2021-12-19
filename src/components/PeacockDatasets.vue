@@ -194,8 +194,6 @@
   import { mapActions, mapGetters } from 'vuex';
   // Import custom helpers
   import { debounce, has, uniqBy } from 'lodash';
-  // import jQuery
-  // import $ from 'jquery';
   // eslint-disable-next-line no-unused-vars
   import fileTypes from '../utils/fileTypes';
   // Import components used in template
