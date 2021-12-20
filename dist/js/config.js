@@ -9,19 +9,19 @@
 var CONFIG_APP_TITLE = 'My Data Portal';
 
 // ...
-// var CONFIG_APP_DATA_URL = 'https://data.europa.eu/api/hub/search/';
+var CONFIG_APP_DATA_URL = 'https://data.europa.eu/api/hub/search/';
 // var CONFIG_APP_DATA_URL = 'https://www.govdata.de/ckan/api/action/';
 // var CONFIG_APP_DATA_URL = 'https://www.govdata.de/ckan/api/action/package_search?q=spending';
 // var CONFIG_APP_DATA_URL = 'https://opendata.guru/proxy/cors?url=https://www.govdata.de/ckan/api/action/';
 // var CONFIG_APP_DATA_URL = 'https://opendata.guru/proxy/cors?url=https://opendata.jena.de/api/3/action/package_search?rows=9999';
 // var CONFIG_APP_DATA_URL = '/data/ckan-lazy.json';
-var CONFIG_APP_DATA_URL = '/data/ckan.json';
+// var CONFIG_APP_DATA_URL = '/data/ckan.json';
 
 // ...
-// var CONFIG_APP_DATA_SERVICE = 'piveau'; // e.g. for europeandataportal.eu endpoint
+var CONFIG_APP_DATA_SERVICE = 'piveau'; // e.g. for europeandataportal.eu endpoint
 // var CONFIG_APP_DATA_SERVICE = 'ckan'; // e.g. for govdata.de endpoint
 // var CONFIG_APP_DATA_SERVICE = 'ckan-file'; // e.g. for local ckan json file
-var CONFIG_APP_DATA_SERVICE = 'ckan-file';
+// var CONFIG_APP_DATA_SERVICE = 'ckan-file';
 
 // ...
 // unused
@@ -117,7 +117,7 @@ var CONFIG_APP_FOOTER_NAV_9_URL = '';
 var CONFIG_APP_FOOTER_NAV_9_TITLE = '';
 
 // ...
-var CONFIG_APP_ROUTER_BASE = '';
+var CONFIG_APP_ROUTER_BASE = '/peacock-user-ui/';
 // var CONFIG_APP_ROUTER_BASE = '/dist/';
 
 // ...
