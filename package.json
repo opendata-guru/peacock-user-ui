@@ -7,11 +7,12 @@
   "license": "Apache-2.0",
   "scripts": {
     "start": "npm run dev",
-    "dev": "cross-env NODE_ENV=development node build/dev-server.js",
-    "test:lint": "eslint .",
-    "fix": "eslint . --fix",
     "build": "cross-env NODE_ENV=production BUILD_MODE=build node build/build.js",
-    "build:test": "cross-env NODE_ENV=production BUILD_MODE=test node build/build.js"
+    "build:test": "cross-env NODE_ENV=production BUILD_MODE=test node build/build.js",
+    "dev": "cross-env NODE_ENV=development node build/dev-server.js",
+    "gh:pages": "git subtree push --prefix dist origin gh-pages",
+    "fix": "eslint . --fix",
+    "test:lint": "eslint ."
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.4",
