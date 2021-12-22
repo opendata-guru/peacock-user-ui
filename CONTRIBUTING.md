@@ -10,3 +10,55 @@ Thanks for contributing to this project. Feel free to:
 - [improve the documentation](https://github.com/opendata-guru/peacock-user-ui/blob/master/README.md)
 - [get in touch](https://twitter.com/tursics)
 
+# Provide code
+
+You can provide bug fixes and new code. First of all, setup your environment.
+
+## Project Setup
+
+Prepare your system and [install nvm](https://github.com/nvm-sh/nvm/blob/master/README.md#installing-and-updating), the version manager for node.js.
+
+Install [Node.js v15.14.0+ and NPM 7.7.6+](https://nodejs.org/en/) on your system. Yes, this repo use older version of node.js. You are welcome to drop a merge request with updated packages.
+
+```bash
+$ nvm use 15
+Now using node v15.14.0 (npm v7.7.6)
+$ node -v
+v15.14.0
+```
+
+Clone or download the code:
+
+```bash
+$ git clone git@github.com:opendata-guru/peacock-user-ui.git
+```
+
+Install NPM packages:
+
+```bash
+$ cd peacock-user-ui
+$ npm install
+```
+
+## Build for Development
+
+Open a terminal and run:
+
+```bash
+$ npm run dev
+```
+
+This will start a local webserver on Port `8084`. Open a web browser and visit `http://localhost:8084` to see the app.
+
+**Hot Module Replacement** is supported. The page will update automatically whenever files are changed and saved.
+
+## Build for Production
+
+Open a terminal and run:
+
+```bash
+$ npm run build
+```
+
+This will optimize files for production and store the bundle in
+  `peacock-user-ui/dist`
