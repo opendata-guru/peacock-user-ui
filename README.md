@@ -4,6 +4,10 @@ This project provide a HTML user portal for view open data datasets.
 
 It's based on the [piveau ui](https://github.com/piveau-data/piveau-hub-ui) project from Fraunhofer FOKUS.
 
+## Contribution
+
+If you want to contribute to this projekt (report a bug, wish a new feature, improve the documentation, edit the code, ...), just go to the [contribution page](CONTRIBUTION.md).
+
 ## Configurations
 
 ---
