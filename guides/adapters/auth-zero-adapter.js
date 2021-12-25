@@ -4,7 +4,7 @@
  */
 
 import store from '../../src/store/index';
-// import { encode } from '../../src/utils/jwt';
+import { encode } from '../../src/utils/jwt';
 
 const fakeKeyCloak = {
   token: 'FakeKeyCloak',
@@ -63,26 +63,25 @@ const fakeKeyCloak = {
   },
 
   setRtpToken: () => {
-    // generated with https://jwt.io/
-    const rtpTokenEncoded = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsicHJvdmlkZXIiXX0sImF1dGhvcml6YXRpb24iOnsicGVybWlzc2lvbnMiOlt7InJzbmFtZSI6ImNrYW4tY2F0YWxvZyIsInNjb3BlcyI6WyJ1cGRhdGUiXX1dfX0.mRnO9dqg3eOq8FyB22xF9YE_kSUKx2eFR1APGfvN_ng';
-    /* const rtpToken = {
-      foo: 'bar',
+    const rtpToken = {
       realm_access: {
         roles: [
           'provider',
         ],
       },
       authorization: {
-        permissions: [
-          {
-            rsname: 'ckan-catalog',
-            scopes: [
-              'update',
-            ],
-          },
-        ],
+        permissions: [],
       },
-    }; */
+    };
+
+    rtpToken.authorization.permissions.push({
+      rsname: 'ckan-catalog',
+      scopes: [
+        'update',
+      ],
+    });
+
+    const rtpTokenEncoded = encode(rtpToken);
     store.dispatch('auth/rtpToken', rtpTokenEncoded);
   },
 };
