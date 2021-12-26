@@ -11,9 +11,7 @@ If you want to contribute to this projekt (report a bug, wish a new feature, imp
 ## Configurations
 
 ---
-### glue-config.js
-
-The glue-config.js file is located at `peacock-user-ui/user-config/glue-config.js` by default. It is the main project configuration file. The following table and example file shortly describes the configurable values.
+The following table and example file shortly describes the configurable values.
 
 <details>
 <summary>Open glue-config.js Example File</summary>
@@ -182,12 +180,6 @@ export default {
 ### i18n.json
 
 The i18n.json file is located at `peacock-user-ui/user-config/i18n/i18n.json` by default. It contains translations for all available languages for the vue-i18n module.
-
----
-
-### user-configs.js
-
-The user-configs.json file is located at `peacock-user-ui/config/user-configs.js` by default. It contains the paths to the glue-config.js and i18n.json. By default that is the paths as described above.
 
 ---
 
