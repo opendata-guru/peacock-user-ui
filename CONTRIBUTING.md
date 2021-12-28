@@ -69,11 +69,15 @@ This will optimize files for production and store the bundle in
 
 The glue-config.js file is located at `peacock-user-ui/user-config/glue-config.js` by default. It is the main project configuration file.
 
+You need to rebuild the project after changing this file.
+
 ### user-configs.js
 
 The user-configs.json file is located at `peacock-user-ui/config/user-configs.js` by default. It contains the paths to the glue-config.js and i18n.json. So this file overwrite the settings in `glue-config.js`. The simplest sample file is `user-configs.default.js` (with no configuration overwrites).
 
 The `user-configs.js` checks global variables and set the values, if set, to the configuration. The global variables can set in `config.js`file.
+
+You need to rebuild the project after changing this file.
 
 ### config.js
 
