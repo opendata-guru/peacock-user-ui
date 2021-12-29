@@ -5,6 +5,7 @@
 
 import store from '../../src/store/index';
 import { encode } from '../../src/utils/jwt';
+import datasets from '../../src/store/modules/datasets/store';
 
 const fakeKeyCloak = {
   token: 'FakeKeyCloak',
@@ -74,11 +75,17 @@ const fakeKeyCloak = {
       },
     };
 
-    rtpToken.authorization.permissions.push({
-      rsname: 'ckan-catalog',
-      scopes: [
-        'update',
-      ],
+    datasets.state.availableFacets.forEach((facet) => {
+      if (facet.id === 'catalog') {
+        facet.items.forEach((catalog) => {
+          rtpToken.authorization.permissions.push({
+            rsname: catalog.id,
+            scopes: [
+              'update',
+            ],
+          });
+        });
+      }
     });
 
     const rtpTokenEncoded = encode(rtpToken);
