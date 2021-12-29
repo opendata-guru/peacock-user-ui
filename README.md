@@ -10,6 +10,105 @@ If you want to contribute to this projekt (report a bug, wish a new feature, imp
 
 ## Configurations
 
+The following table shortly describes the configurable values in `peacock-user-ui/static/js/config.js`.
+
+Key | Default value | Description
+----|---------------|-------------
+CONFIG_APP_TITLE | My Data Portal
+CONFIG_APP_DATA_URL | https://data.europa.eu/api/hub/search/
+CONFIG_APP_DATA_SERVICE | piveau
+CONFIG_APP_GAZETTEER_URL | https://data.europa.eu/api/hub/search/gazetteer/
+CONFIG_APP_UPLOAD_URL | https://www.europeandataportal.eu/data/api/
+CONFIG_APP_MATOMO_URL | *empty*
+CONFIG_APP_LOCALE | en
+CONFIG_APP_AUTH_ENABLE | false
+CONFIG_APP_AUTH_SERVICE | keycloak
+CONFIG_APP_ENABLE_DATASET_CATEGORIES | false
+CONFIG_APP_ENABLE_DATASET_SIMILARDATASETS | false
+CONFIG_APP_ENABLE_DATASET_FEEDBACK | false
+CONFIG_APP_ENABLE_FILTER_GAZETTEER | false
+CONFIG_APP_ENABLE_FILTER_OPERATOR | false
+CONFIG_APP_HEADER_LOGO_TEXT | My Data Portal
+CONFIG_APP_HEADER_LOGO_IMAGE_SRC | https://i.imgur.com/lgtG4zB.png
+CONFIG_APP_HEADER_LOGO_IMAGE_DESCRIPTION | Logo
+CONFIG_APP_FOOTER_LOGO_TEXT | Peacock User UI 🦚
+CONFIG_APP_FOOTER_LOGO_IMAGE_SRC | https://i.imgur.com/lgtG4zB.png
+CONFIG_APP_FOOTER_LOGO_IMAGE_DESCRIPTION | Logo
+CONFIG_APP_FOOTER_LOGO_URL | https://github.com/opendata-guru/peacock-user-ui
+CONFIG_APP_HEADER_NAV_1_URL | /datasets
+CONFIG_APP_HEADER_NAV_1_TITLE | message.header.navigation.data.datasets
+CONFIG_APP_HEADER_NAV_2_URL | /catalogues
+CONFIG_APP_HEADER_NAV_2_TITLE | message.header.navigation.data.catalogues
+CONFIG_APP_HEADER_NAV_3_URL |
+CONFIG_APP_HEADER_NAV_3_TITLE |
+CONFIG_APP_HEADER_NAV_4_URL |
+CONFIG_APP_HEADER_NAV_4_TITLE |
+CONFIG_APP_HEADER_NAV_5_URL |
+CONFIG_APP_HEADER_NAV_5_TITLE |
+CONFIG_APP_HEADER_NAV_6_URL |
+CONFIG_APP_HEADER_NAV_6_TITLE |
+CONFIG_APP_HEADER_NAV_7_URL |
+CONFIG_APP_HEADER_NAV_7_TITLE |
+CONFIG_APP_HEADER_NAV_8_URL |
+CONFIG_APP_HEADER_NAV_8_TITLE |
+CONFIG_APP_HEADER_NAV_9_URL |
+CONFIG_APP_HEADER_NAV_9_TITLE |
+CONFIG_APP_FOOTER_NAV_1_URL | /imprint
+CONFIG_APP_FOOTER_NAV_1_TITLE | message.navigation.navItems.imprint
+CONFIG_APP_FOOTER_NAV_2_URL | /privacypolicy
+CONFIG_APP_FOOTER_NAV_2_TITLE | message.navigation.navItems.privacyPolicy
+CONFIG_APP_FOOTER_NAV_3_URL |
+CONFIG_APP_FOOTER_NAV_3_TITLE |
+CONFIG_APP_FOOTER_NAV_4_URL |
+CONFIG_APP_FOOTER_NAV_4_TITLE |
+CONFIG_APP_FOOTER_NAV_5_URL |
+CONFIG_APP_FOOTER_NAV_5_TITLE |
+CONFIG_APP_FOOTER_NAV_6_URL |
+CONFIG_APP_FOOTER_NAV_6_TITLE |
+CONFIG_APP_FOOTER_NAV_7_URL |
+CONFIG_APP_FOOTER_NAV_7_TITLE |
+CONFIG_APP_FOOTER_NAV_8_URL |
+CONFIG_APP_FOOTER_NAV_8_TITLE |
+CONFIG_APP_FOOTER_NAV_9_URL |
+CONFIG_APP_FOOTER_NAV_9_TITLE |
+CONFIG_APP_ROUTER_BASE | *empty*
+CONFIG_APP_ROUTER_ROUTE_1_NAME |
+CONFIG_APP_ROUTER_ROUTE_1_PATH |
+CONFIG_APP_ROUTER_ROUTE_1_FILE |
+CONFIG_APP_ROUTER_ROUTE_1_REQUIRES_AUTH | true
+CONFIG_APP_ROUTER_ROUTE_2_NAME |
+CONFIG_APP_ROUTER_ROUTE_2_PATH |
+CONFIG_APP_ROUTER_ROUTE_2_FILE |
+CONFIG_APP_ROUTER_ROUTE_2_REQUIRES_AUTH | true
+CONFIG_APP_ROUTER_ROUTE_3_NAME |
+CONFIG_APP_ROUTER_ROUTE_3_PATH |
+CONFIG_APP_ROUTER_ROUTE_3_FILE |
+CONFIG_APP_ROUTER_ROUTE_3_REQUIRES_AUTH | true
+CONFIG_APP_ROUTER_ROUTE_4_NAME |
+CONFIG_APP_ROUTER_ROUTE_4_PATH |
+CONFIG_APP_ROUTER_ROUTE_4_FILE |
+CONFIG_APP_ROUTER_ROUTE_4_REQUIRES_AUTH | true
+CONFIG_APP_ROUTER_ROUTE_5_NAME |
+CONFIG_APP_ROUTER_ROUTE_5_PATH |
+CONFIG_APP_ROUTER_ROUTE_5_FILE |
+CONFIG_APP_ROUTER_ROUTE_5_REQUIRES_AUTH | true
+CONFIG_APP_ROUTER_ROUTE_6_NAME |
+CONFIG_APP_ROUTER_ROUTE_6_PATH |
+CONFIG_APP_ROUTER_ROUTE_6_FILE |
+CONFIG_APP_ROUTER_ROUTE_6_REQUIRES_AUTH | true
+CONFIG_APP_ROUTER_ROUTE_7_NAME |
+CONFIG_APP_ROUTER_ROUTE_7_PATH |
+CONFIG_APP_ROUTER_ROUTE_7_FILE |
+CONFIG_APP_ROUTER_ROUTE_7_REQUIRES_AUTH | true
+CONFIG_APP_ROUTER_ROUTE_8_NAME |
+CONFIG_APP_ROUTER_ROUTE_8_PATH |
+CONFIG_APP_ROUTER_ROUTE_8_FILE |
+CONFIG_APP_ROUTER_ROUTE_8_REQUIRES_AUTH | true
+CONFIG_APP_ROUTER_ROUTE_9_NAME |
+CONFIG_APP_ROUTER_ROUTE_9_PATH |
+CONFIG_APP_ROUTER_ROUTE_9_FILE |
+CONFIG_APP_ROUTER_ROUTE_9_REQUIRES_AUTH | true
+
 ---
 The following table and example file shortly describes the configurable values.
 
@@ -17,13 +116,6 @@ The following table and example file shortly describes the configurable values.
 <summary>Open glue-config.js Example File</summary>
 
 ```javascript
-
-// Import Adapters for data requests
-import datasetService from '../src/my-adapter-folder/myDatasetService';
-import catalogueService from '../src/my-adapter-folder/myCatalogueService';
-import distributionService from '../src/my-adapter-folder/myDistributionService';
-import datastoreService from '../src/my-adapter-folder/myDatastoreService';
-import gazetteerService from '../src/my-adapter-folder/myGazetteerService';
 
 // Exported Config-Object
 export default {
@@ -75,14 +167,6 @@ export default {
   locale: 'en',
   // The fallback language if no translations for another language is available (Atleast this language must be present and complete in your i18n.json file)
   fallbackLocale: 'en',
-  // The services fetch data from somewhere.Each Service has to be Imported at the beginning of this file.
-  services: {
-    catalogueService,
-    datasetService,
-    distributionService,
-    datastoreService,
-    gazetteerService,
-  },
   
   themes: {
     // Sets the header Theme. Currently Available: 'primary' XOR 'dark' XOR 'light'.
@@ -192,63 +276,3 @@ The UserImprint.vue and UserPrivacyPolicy.vue files are located at `peacock-user
 ### index.js
 
 The index.js file is located at `peacock-user-ui/config/index.js` by default and is generated by the Vue-Webpack-Bundle. It contains several configurations for the development and production build process.
-
-## Runtime Configuration
-
-We utilize a Vue plugin `RuntimeConfiguration` to configure a web application using environment variables without rebuilding it.
-
-See [runtime-config-template.js](./src/utils/runtimeconfig/runtime-config-template.js) for all available runtime variables.
-
-### Usage
-
-Normally, you would use `process.env` to consume environment specific configuration. This changes here.
-To consume environment variables in a Vue component, use `this.$env` as you would use `process.env`.
-
-#### Example
-
-```bash
-this.$env.MATOMO_URL // Formerly process.env.MATOMO_URL
-```
-
-`this.$env` differs from `process.env` in a way that some properties that are set using environment variables are set here. That means that in a development environment, `this.$env` would be equivalent to `process.env`.
-
-### Creating new runtime variables
-
-If you want to make configuration properties dynamic during runtime using environment variables, follow these steps:
-
-1. In [runtime-config-template.js](./src/utils/runtimeconfig/runtime-config-template.js), add your desired configuration variable as a property and enter its enivronment variable name as value. However, there are some restrictions you must follow:
-    - Environment variable names in [runtime-config-template.js](./src/utils/runtimeconfig/runtime-config-template.js) must have the prefix `$VUE_APP_`.
-    - Ensure that the property you want to replace during runtime is consistent in its name *and* structure.
-2. Build and deploy the application.
-3. Set your environment variable *without* the dollar sign `$` at the beginning. For example, if your new entry in [runtime-config-template.js](./src/utils/runtimeconfig/runtime-config-template.js) is `MATOMO_URL: '$VUE_APP_MATOMO_URL'`, make sure you set the environment variable `VUE_APP_MATOMO_URL`.
-4. Your  variable is now ready for consumption and can be changed during runtime by changing their associated environment variable.
-
-#### Example
-
-Let's suppose `process.env` looks like this (depending on how the project is set up):
-```javascript
-{
-  NODE_ENV: 'production',
-  ROOT_API: 'https://www.europeandataportal.eu/metrics',
-  ROOT_URL: 'https://www.europeandataportal.eu',
-  MATOMO: {
-      API_URL: 'https://www.ppe-aws.europeandataportal.eu/piwik/',
-      ID: 89
-  }
-}
-```
-
-and you want to change `ROOT_API`, `MATOMO.API_URL`, and `MATOMO.ID` during runtime. Let's go through the steps outlined above:
-
-1. [runtime-config-template.js](./src/utils/runtimeconfig/runtime-config-template.js), would look like this:
-```javascript
-export default {
-  ROOT_API: '$VUE_APP_ROOT_API',
-  MATOMO_URL: {
-      API_URL: '$VUE_APP_MATOMO_API_URL',
-      ID: '$VUE_APP_MATOMO_ID'
-  }
-}
-```
-2. Build and deploy.
-3. Now set the environment variables. These are: `VUE_APP_ROOT_API`, `VUE_APP_MATOMO_API_URL`, and `VUE_APP_MATOMO_ID`.

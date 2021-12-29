@@ -81,8 +81,33 @@ You need to rebuild the project after changing this file.
 
 ### config.js
 
-tbd.
+The config.js file is located at `peacock-user-ui/static/js/config.js` by default. Use this file to customize all settings for this project.
 
-### environment variables
+You **does not need** to rebuild the project after changing this file. But you must reload the browser while hot reloading does not work.
 
-tbd.
+All settings described in [README.md](README.me) file.
+
+## Write own adapter
+
+Write your own adapter with up to 5 files. Import your adapter files in `user-configs.js` file:
+
+```javascript
+// Import Adapters for data requests
+import datasetService from '../src/my-adapter-folder/myDatasetService';
+import catalogueService from '../src/my-adapter-folder/myCatalogueService';
+import distributionService from '../src/my-adapter-folder/myDistributionService';
+import datastoreService from '../src/my-adapter-folder/myDatastoreService';
+import gazetteerService from '../src/my-adapter-folder/myGazetteerService';
+
+// Exported Config-Object
+export default {
+  // The services fetch data from somewhere. Each service has to be imported at the beginning of this file.
+  services: {
+    catalogueService,
+    datasetService,
+    distributionService,
+    datastoreService,
+    gazetteerService,
+  },
+};
+```
