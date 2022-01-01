@@ -68,6 +68,7 @@ glueConfig.enable.dataset.similarDatasets = CONFIG_APP_ENABLE_DATASET_SIMILARDAT
 glueConfig.enable.dataset.feedback = CONFIG_APP_ENABLE_DATASET_FEEDBACK === false ? false : true;
 glueConfig.enable.filter.gazetteer = CONFIG_APP_ENABLE_FILTER_GAZETTEER === false ? false : true;
 glueConfig.enable.filter.operator = CONFIG_APP_ENABLE_FILTER_OPERATOR === false ? false : true;
+glueConfig.enable.favorites.enable = CONFIG_APP_ENABLE_FAVORITES === false ? false : true;
 
 if (CONFIG_APP_HEADER_LOGO_TEXT || CONFIG_APP_HEADER_LOGO_IMAGE_SRC || CONFIG_APP_HEADER_LOGO_IMAGE_DESCRIPTION) {
     glueConfig.images.headerLogos.push({

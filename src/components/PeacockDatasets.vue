@@ -147,6 +147,8 @@
                        :description="getTranslationFor(dataset.description, $i18n.locale, dataset.languages)"
                        :description-length="300"
                        :body-tags="removeDuplicatesOf(dataset.distributionFormats)"
+                       :favorite="dataset.favorite"
+                       @favorite-updated="favoriteChanged(dataset.id, $event)"
                        :source="{
                                     sourceImage: getCountryFlagImg(has(dataset, 'country.id') ? dataset.country.id : 'eu'),
                                     sourceTitle: dataset.catalog.title,
@@ -303,6 +305,7 @@
         'useService',
         'addFacet',
         'removeFacet',
+        'setDatasets',
         'setFacets',
         'setFacetOperator',
         'setFacetGroupOperator',
@@ -481,6 +484,16 @@
         }
 
         return catalogAllowed;
+      },
+      favoriteChanged(datasetId, value) {
+        const datasets = this.getDatasets;
+        datasets.filter(dataset => dataset.id === datasetId).map((dataset) => {
+          const data = dataset;
+          console.log(data.favorite);
+          data.favorite = value;
+          return data;
+        });
+        this.setDatasets(datasets);
       },
     },
     watch: {

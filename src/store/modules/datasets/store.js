@@ -271,6 +271,9 @@ const actions = {
     const limit = getters.getLimit(state) + amount;
     commit('SET_LIMIT', limit);
   },
+  setDatasets({ commit }, datasets) {
+    commit('SET_DATASETS', datasets);
+  },
   setDatasetGeoBounds({ commit }, bounds) {
     commit('SET_DATASET_GEO_BOUNDS', bounds);
   },

@@ -30,6 +30,14 @@
               </span>
             </li>
           </ul>
+          <button v-if="showFavorites"
+            type="button"
+            class="btn btn-sm btn-secondary position-absolute top-0 end-0"
+            @click="onFavorites"
+          >
+            <i v-if="favorite === true" class="material-icons fs-6">favorite</i>
+            <i v-if="favorite !== true" class="material-icons fs-6">favorite_border</i>
+          </button>
         </div>
 
         <!-- Formats and licenses -->
@@ -113,6 +121,7 @@
   import animations from '../mixins/animations';
   import { getTranslationFor, truncate } from '../utils/helpers';
   import dateFilters from '../filters/dateFilters';
+  import GLUE_CONFIG from '../../user-config/glue-config';
 
   export default {
     name: 'peacockDataInfoBox',
@@ -168,10 +177,16 @@
         type: Array,
         default: () => [],
       },
+      favorite: {
+        type: Boolean,
+        default: false,
+      },
     },
     mixins: [animations],
     data() {
-      return {};
+      return {
+        showFavorites: GLUE_CONFIG.enable.favorites.enable,
+      };
     },
     computed: {},
     methods: {
@@ -205,6 +220,11 @@
 
         // Dates in the future are incorrect.
         return moment().diff(m) < 0;
+      },
+      onFavorites(e) {
+        e.preventDefault();
+        console.log('emit ', !(this.favorite || false));
+        this.$emit('favorite-updated', !(this.favorite || false));
       },
     },
     created() {

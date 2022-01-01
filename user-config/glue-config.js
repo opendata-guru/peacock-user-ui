@@ -39,6 +39,9 @@ export default {
       gazetteer: true,
       operator: true,
     },
+    favorites: {
+      enable: false,
+    },
   },
   keycloak: {
     enableLogin: true,
