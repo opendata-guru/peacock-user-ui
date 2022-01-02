@@ -489,10 +489,10 @@
         const datasets = this.getDatasets;
         datasets.filter(dataset => dataset.id === datasetId).map((dataset) => {
           const data = dataset;
-          console.log(data.favorite);
           data.favorite = value;
           return data;
         });
+        this.setDatasets([]);
         this.setDatasets(datasets);
       },
     },

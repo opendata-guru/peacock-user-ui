@@ -223,7 +223,6 @@
       },
       onFavorites(e) {
         e.preventDefault();
-        console.log('emit ', !(this.favorite || false));
         this.$emit('favorite-updated', !(this.favorite || false));
       },
     },
