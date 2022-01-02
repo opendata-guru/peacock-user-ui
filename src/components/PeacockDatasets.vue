@@ -207,6 +207,7 @@
   import SelectedFacetsOverview from './PeacockSelectedFacetsOverview';
   import { getTranslationFor, getCountryFlagImg } from '../utils/helpers';
   import { decode } from '../utils/jwt';
+  import { getAsJSONJD } from '../utils/convertTo';
 
   export default {
     name: 'peacockDatasets',
@@ -494,6 +495,15 @@
         });
         this.setDatasets([]);
         this.setDatasets(datasets);
+        this.copyToClipboard(getAsJSONJD.call(this));
+      },
+      copyToClipboard(obj) {
+        const input = document.createElement('INPUT');
+        input.value = JSON.stringify(obj, null, 2);
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
       },
     },
     watch: {
