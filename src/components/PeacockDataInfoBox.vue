@@ -35,8 +35,8 @@
             class="btn btn-sm btn-secondary position-absolute top-0 end-0"
             @click="onFavorites"
           >
-            <i v-if="favorite === true" class="material-icons fs-6">favorite</i>
-            <i v-if="favorite !== true" class="material-icons fs-6">favorite_border</i>
+            <i v-if="favorite === true" class="material-icons fs-6 align-text-bottom">favorite</i>
+            <i v-if="favorite !== true" class="material-icons fs-6 align-text-bottom">favorite_border</i>
           </button>
         </div>
 
