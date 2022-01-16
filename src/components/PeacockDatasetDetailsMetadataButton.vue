@@ -25,9 +25,37 @@ export default {
   computed: {
     // import store-getters
     ...mapGetters('datasetDetails', [
+      'getCatalog',
       'getCategories',
+      'getConformsTo',
+      'getContactPoints',
+      'getCountry',
+      'getDescription',
+      'getDistributions',
+      'getDistributionFormats',
+      'getDocumentations',
+      'getFrequency',
+      'getIdentifiers',
       'getID',
+      'getIdName',
+      'getLandingPages',
+      'getLanguages',
+      'getLicences',
+      'getLoading',
+      'getModificationDate',
+      'getOriginalLanguage',
+      'getOtherIdentifiers',
+      'getProvenances',
       'getPublisher',
+      'getRelatedResources',
+      'getReleaseDate',
+      'getKeywords',
+      'getService',
+      'getSimilarDatasets',
+      'getSources',
+      'getSpatial',
+      'getTranslationMetaData',
+      'getTitle',
     ]),
   },
   methods: {
@@ -51,7 +79,6 @@ export default {
       this.onClick();
     },
     onClick() {
-      console.log(this.getID, this.datasetDetails);
       this.copyToClipboard(getAsCKAN(this));
     },
     copyToClipboard(obj) {
