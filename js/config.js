@@ -24,6 +24,9 @@ var CONFIG_APP_DATA_SERVICE = 'piveau'; // e.g. for europeandataportal.eu endpoi
 // var CONFIG_APP_DATA_SERVICE = 'ckan-file';
 
 // ...
+var CONFIG_APP_DATA_CACHE_BUSTING = true;
+
+// ...
 // unused
 // var CONFIG_APP_GAZETTEER_URL = 'https://data.europa.eu/api/hub/search/gazetteer/';
 var CONFIG_APP_GAZETTEER_URL = '';
@@ -60,6 +63,9 @@ var CONFIG_APP_ENABLE_FILTER_GAZETTEER = false;
 
 // ...
 var CONFIG_APP_ENABLE_FILTER_OPERATOR = false;
+
+// ...
+var CONFIG_APP_ENABLE_FAVORITES = false;
 
 // ...
 var CONFIG_APP_HEADER_LOGO_TEXT = CONFIG_APP_TITLE;
