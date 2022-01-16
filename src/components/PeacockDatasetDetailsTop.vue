@@ -4,6 +4,15 @@
       <div class="col-12 text-end">
         <datasetDetailsEditButton v-if="authenticated"></datasetDetailsEditButton>
         <datasetDetailsDeleteButton v-if="authenticated"></datasetDetailsDeleteButton>
+        <datasetDetailsMetadataButton v-if="showFavorites"></datasetDetailsMetadataButton>
+        <button v-if="showFavorites"
+          type="button"
+          class="btn btn-sm btn-secondary mt-1"
+          @click="onFavorites"
+        >
+          <i v-if="favorite === true" class="material-icons fs-6 align-text-bottom">favorite</i>
+          <i v-if="favorite !== true" class="material-icons fs-6 align-text-bottom">favorite_border</i>
+        </button>
         <datasetDetailsFeedbackButton></datasetDetailsFeedbackButton>
         <div class="d-inline dropdown">
           <a class="mt-1 btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -39,8 +48,10 @@ import DatasetDetailsShareButton from './EDP2-datasetDetails-shareButton';
 import DatasetDetailsHeader from './PeacockDatasetDetailsHeader';
 import DatasetDetailsDeleteButton from './PeacockDatasetDetailsDeleteButton';
 import DatasetDetailsEditButton from './PeacockDatasetDetailsEditButton';
+import DatasetDetailsMetadataButton from './PeacockDatasetDetailsMetadataButton';
 import AppLink from './AppLink';
 import { decode } from '../utils/jwt';
+import GLUE_CONFIG from '../../user-config/glue-config';
 
 export default {
   name: 'peacockDatasetDetailsTop',
@@ -51,6 +62,7 @@ export default {
     datasetDetailsShareButton: DatasetDetailsShareButton,
     datasetDetailsDeleteButton: DatasetDetailsDeleteButton,
     datasetDetailsEditButton: DatasetDetailsEditButton,
+    datasetDetailsMetadataButton: DatasetDetailsMetadataButton,
     datasetDetailsHeader: DatasetDetailsHeader,
     appLink: AppLink,
   },
@@ -58,6 +70,8 @@ export default {
     return {
       rtpToken: '',
       catalogId: '',
+      favorite: false,
+      showFavorites: GLUE_CONFIG.enable.favorites.enable,
     };
   },
   computed: {
@@ -101,6 +115,9 @@ export default {
       'useService',
     ]),
     decode,
+    onFavorites(e) {
+      e.preventDefault();
+    },
   },
 };
 </script>
