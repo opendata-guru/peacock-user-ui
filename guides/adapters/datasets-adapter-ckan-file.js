@@ -7,6 +7,7 @@
 import axios from 'axios';
 import { getSingleResponseData } from './ckan-helper';
 import { createAvailableFacets, filterFacets } from './facet-helper';
+import GLUE_CONFIG from '../../user-config/glue-config';
 
 function sortTitleAsc(a, b) {
   return String(a.title.de).localeCompare(b.title.de);
@@ -65,7 +66,11 @@ export default class Datasets {
         return;
       }
 
-      const reqStr = filePath || `${this.baseUrl}`;
+      let reqStr = filePath || `${this.baseUrl}`;
+      if (GLUE_CONFIG.enable.services.cacheBusting) {
+        reqStr += `?now=${Date.now()}`;
+      }
+
       axios.get(reqStr, {
         params: {},
       })

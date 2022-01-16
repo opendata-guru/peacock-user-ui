@@ -42,6 +42,9 @@ export default {
     favorites: {
       enable: false,
     },
+    services: {
+      cacheBusting: true,
+    },
   },
   keycloak: {
     enableLogin: true,

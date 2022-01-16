@@ -17,6 +17,7 @@ Key | Default value | Description
 CONFIG_APP_TITLE | My Data Portal
 CONFIG_APP_DATA_URL | https://data.europa.eu/api/hub/search/
 CONFIG_APP_DATA_SERVICE | piveau
+CONFIG_APP_DATA_CACHE_BUSTING | true | used for file data services e.g. `ckan-file`
 CONFIG_APP_GAZETTEER_URL | https://data.europa.eu/api/hub/search/gazetteer/
 CONFIG_APP_UPLOAD_URL | https://www.europeandataportal.eu/data/api/
 CONFIG_APP_MATOMO_URL | *empty*

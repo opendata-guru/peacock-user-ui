@@ -52,6 +52,8 @@ if (CONFIG_APP_DATA_SERVICE) {
     }
 }
 
+glueConfig.enable.services.cacheBusting = CONFIG_APP_DATA_CACHE_BUSTING === false ? false : true;
+
 glueConfig.keycloak.enableLogin = CONFIG_APP_AUTH_ENABLE === false ? false : true;
 if (CONFIG_APP_AUTH_SERVICE) {
     if (CONFIG_APP_AUTH_SERVICE === 'keycloak') {
