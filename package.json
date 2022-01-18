@@ -1,12 +1,19 @@
 {
   "name": "peacock-user-ui",
   "version": "1.0.7",
-  "description": "A Single-Page-Application base to realize Open Data Frontends.",
-  "author": "Thomas Tursics <thomas@tursics.de> (https://www.tursics.de)",
-  "readme": "README.md",
+  "description": "A HTML-SPA user portal for view open data datasets",
+  "keywords": ["opendata", "portal", "peacock", "SPA"],
+  "homepage": "https://github.com/opendata-guru/peacock-user-ui#readme",
+  "bugs": {
+    "url": "https://github.com/opendata-guru/peacock-user-ui/issues",
+    "email": "thomas@tursics.de"
+  },
   "license": "Apache-2.0",
+  "author": "Thomas Tursics <thomas@tursics.de> (https://www.tursics.de)",
+  "browser": true,
   "scripts": {
     "start": "npm run dev",
+    "release": "npm run build && npm login && npm publish",
     "build": "cross-env NODE_ENV=production BUILD_MODE=build node build/build.js",
     "build:test": "cross-env NODE_ENV=production BUILD_MODE=test node build/build.js",
     "dev": "cross-env NODE_ENV=development node build/dev-server.js",
