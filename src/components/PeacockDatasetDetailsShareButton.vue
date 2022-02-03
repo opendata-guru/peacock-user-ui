@@ -3,7 +3,7 @@
             :to="to"
             target="_blank">
     <button class="btn btn-block text-left">
-      Share on
+      {{ $t('message.datasetDetails.share.on') }}
       <font-awesome-icon class="ml-1 fa" :icon="icon"></font-awesome-icon>
     </button>
   </app-link>
@@ -14,7 +14,7 @@
   import AppLink from './AppLink';
 
   export default {
-    name: 'EDP2-datasetDetailsShareButton',
+    name: 'PeacockDatasetDetailsShareButton',
     components: {
       appLink: AppLink,
     },

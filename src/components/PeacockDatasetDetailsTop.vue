@@ -17,7 +17,7 @@
         <div class="d-inline dropdown">
           <a class="mt-1 btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <!--<i class="material-icons small-icon align-bottom text-dark">share</i>-->
-            Share Dataset
+            {{ $t('message.datasetDetails.share.dataset') }}
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <datasetDetailsShareButton class="dropdown-item" :to="`https://www.facebook.com/sharer.php?u=${url}`" :icon="{ prefix: 'fab', iconName: 'facebook-f' }"></datasetDetailsShareButton>
@@ -44,7 +44,7 @@
 import { mapGetters, mapActions } from 'vuex';
 import DatasetDetailsNavigation from './PeacockDatasetDetailsNavigation';
 import DatasetDetailsFeedbackButton from './PeacockDatasetDetailsFeedbackButton';
-import DatasetDetailsShareButton from './EDP2-datasetDetails-shareButton';
+import DatasetDetailsShareButton from './PeacockDatasetDetailsShareButton';
 import DatasetDetailsHeader from './PeacockDatasetDetailsHeader';
 import DatasetDetailsDeleteButton from './PeacockDatasetDetailsDeleteButton';
 import DatasetDetailsEditButton from './PeacockDatasetDetailsEditButton';

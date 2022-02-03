@@ -5026,32 +5026,37 @@
   "de": {
     "message": {
       "datasetDetails": {
-        "openResource": "Ressource öffnen",
+        "additionalInfo": "Zusätzliche Informationen",
+        "delete": "Löschen",
+        "download": "Download",
+        "feedback": "Feedback",
+        "follow": "Folgen",
         "geoInfo": "Datensatzumfang",
+        "manage": "verwalten",
+        "menu": "Menü",
+        "openResource": "Ressource öffnen",
+        "options": "Optionen",
+        "preview": "Vorschau",
         "translation": {
-          "link": "Hier klicken um den Datensatz in seiner ursprünglichen Sprache anzuzeigen",
           "message": "Titel und Beschreibung dieses Datensatzes wurden maschinell übersetzt.",
           "noTranslation": "Für die gewünschte Sprache steht keine Übersetzung zur Verfügung. Die Informationen werden in der Standardsprache angezeigt",
           "original": "Originale Sprache",
+          "link": "Hier klicken um den Datensatz in seiner ursprünglichen Sprache anzuzeigen",
           "update": "Eine aktualisierte Übersetzung dieses Datensatzes ist in Arbeit."
         },
-        "options": "Optionen",
         "subnav": {
           "activityStream": "Aktivitätsanzeige",
-          "similarDatasets": "Ähnliche Datensätze",
           "categories": "Kategorien",
-          "dataset": "Datensatz"
+          "dataset": "Datensatz",
+          "similarDatasets": "Ähnliche Datensätze"
         },
-        "follow": "Folgen",
-        "preview": "Vorschau",
-        "visualisation": "Visualisierung öffnen",
-        "additionalInfo": "Zusätzliche Informationen",
-        "feedback": "Feedback",
+        "share": {
+          "dataset": "Teile Datensatz",
+          "on": "Teile auf"
+        },
         "unfollow": "Entfolgen",
-        "manage": "verwalten",
-        "geoVisualisation": "Geo-Visualisierung öffnen",
-        "download": "Download",
-        "menu": "Menü"
+        "visualisation": "Visualisierung öffnen",
+        "geoVisualisation": "Geo-Visualisierung öffnen"
       },
       "userQueries": {
         "searchAllQueries": "Suchanfragen…",
@@ -6112,6 +6117,10 @@
           "categories": "Categories",
           "dataset": "Dataset",
           "similarDatasets": "Similar Datasets"
+        },
+        "share": {
+          "dataset": "Share Dataset",
+          "on": "Share on"
         },
         "unfollow": "Unfollow",
         "visualisation": "Open Visualisation",
