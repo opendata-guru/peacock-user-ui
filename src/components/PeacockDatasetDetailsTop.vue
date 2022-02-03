@@ -17,6 +17,7 @@
         <div class="d-inline dropdown">
           <a class="mt-1 btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <!--<i class="material-icons small-icon align-bottom text-dark">share</i>-->
+            <font-awesome-icon class="me-1 fa" :icon="{ prefix: 'fas', iconName: 'share-alt' }"></font-awesome-icon>
             {{ $t('message.datasetDetails.share.dataset') }}
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">

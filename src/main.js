@@ -34,14 +34,19 @@ import {
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
 import {
-  faComment,
-  faExternalLinkAlt,
-  faPlus,
-  faMinus,
+  faAngleDown,
+  faAngleUp,
   faArrowDown,
   faArrowUp,
-  faInfoCircle,
+  faComment,
   faExclamationTriangle,
+  faExpand,
+  faExternalLinkAlt,
+  faInfoCircle,
+  faMinus,
+  faPlus,
+  faShareAlt,
+  faSearch,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 // import main user configurations (glueConfig) and i18n configurations
@@ -101,7 +106,7 @@ services(Vue.prototype.$env);
 // Sync store and router
 sync(store, router);
 
-library.add(faGoogle, faGooglePlus, faGooglePlusG, faFacebook, faFacebookF, faInstagram, faTwitter, faLinkedinIn, faComment, faExternalLinkAlt, faPlus, faMinus, faArrowDown, faArrowUp, faInfoCircle, faExclamationTriangle);
+library.add(faGoogle, faGooglePlus, faGooglePlusG, faFacebook, faFacebookF, faInstagram, faTwitter, faLinkedinIn, faComment, faExternalLinkAlt, faPlus, faMinus, faArrowDown, faArrowUp, faInfoCircle, faExclamationTriangle, faShareAlt, faSearch, faExpand, faAngleUp, faAngleDown);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 

@@ -14,7 +14,7 @@
                    @keyup.enter="getAutocompleteSuggestions(gazetteer.searchbarText)">
             <div class="input-group-append">
               <button class="btn btn-secondary">
-                <i class="material-icons align-bottom">search</i>
+                <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'search' }"></font-awesome-icon>
               </button>
             </div>
             <div class="suggestion-list-group">
@@ -33,8 +33,8 @@
         <div class="row position-relative mb-3" v-if="showGazetteer && !showCatalogueDetails">
           <mapboundsreceiver class="border-secondary map" width="100%" :bounds-id="geoBoundsId" ref="mapReceiver"/>
           <Button class="btn btn-highlight reset-bounds-button" v-if="getGeoBoundsById(geoBoundsId)" @click="resetBoundsFor(geoBoundsId)">Reset Bounds</Button>
-          <Button class="btn btn-sm btn-secondary map-modal-button" data-bs-toggle="modal" data-target=".map-modal" @click="triggerResize()">
-            <i class="material-icons">fullscreen</i>
+          <Button class="btn btn-sm btn-secondary map-modal-button" data-bs-toggle="modal" data-bs-target=".map-modal" @click="triggerResize()">
+            <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'expand' }"></font-awesome-icon>
           </Button>
           <!-- Modal Map Start -->
           <div id="modal-map-wrapper" class="modal fade map-modal pr-md-4 pl-md-4 pr-0 pl-0" tabindex="-1" role="dialog" aria-labelledby="Large map view" aria-hidden="true">
@@ -140,8 +140,8 @@
               </button>
               <button class="d-none d-md-block btn btn-secondary" v-if="field.items.length > limits.min"
                       @click="toggleExpanded(field.title)">
-                <i class="material-icons align-bottom expand-more animated" v-if="!isExpanded(field.title)">expand_more</i>
-                <i class="material-icons align-bottom expand-less animated" v-if="isExpanded(field.title)">expand_less</i>
+                <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'angle-down' }" v-if="!isExpanded(field.title)"></font-awesome-icon>
+                <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'angle-up' }" v-if="isExpanded(field.title)"></font-awesome-icon>
               </button>
             </div>
           </div>

@@ -48,8 +48,8 @@
             </button>
             <button class="btn btn-secondary" v-if="field.items.length > limits.min"
                     @click="toggleExpanded(field.title)">
-              <i class="material-icons expand-more animated" v-if="!isExpanded(field.title)">expand_more</i>
-              <i class="material-icons expand-less animated" v-if="isExpanded(field.title)">expand_less</i>
+              <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'angle-down' }" v-if="!isExpanded(field.title)"></font-awesome-icon>
+              <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'angle-up' }" v-if="isExpanded(field.title)"></font-awesome-icon>
             </button>
           </div>
         </div>
@@ -70,7 +70,7 @@
   import { getTranslationFor, getCountryFlagImg } from '../utils/helpers';
   import GLUE_CONFIG from '../../user-config/glue-config';
   /* The minimum amount of facets to show for one category before hiding results */
-  const MIN_FACET_LIMIT = 50;
+  const MIN_FACET_LIMIT = 25;
   /* The maximum amount of facets to show for one category */
   const MAX_FACET_LIMIT = 100;
   /* Enum for possible Facet operators */

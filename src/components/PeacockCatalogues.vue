@@ -43,7 +43,7 @@
                        @click="autocompleteData.show = autocompleteData.suggestions.length > 0 && query.length != 0 ? !autocompleteData.show : false">
                 <div class="input-group-append">
                   <button class="btn btn-sm btn-secondary" type="button" @click="changeQuery(query)">
-                    <i class="material-icons">search</i>
+                    <font-awesome-icon class="fa fs-5 my-1" :icon="{ prefix: 'fas', iconName: 'search' }"></font-awesome-icon>
                   </button>
                 </div>
                 <div class="suggestion-list-group" v-if="autocompleteData.show">
