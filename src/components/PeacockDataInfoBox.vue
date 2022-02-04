@@ -35,8 +35,8 @@
             class="btn btn-sm btn-secondary position-absolute top-0 end-0"
             @click="onFavorites"
           >
-            <i v-if="favorite === true" class="material-icons fs-6 align-text-bottom">favorite</i>
-            <i v-if="favorite !== true" class="material-icons fs-6 align-text-bottom">favorite_border</i>
+            <font-awesome-icon v-if="favorite === true" class="fa fs-6" :icon="{ prefix: 'fas', iconName: 'heart' }"></font-awesome-icon>
+            <font-awesome-icon v-else class="fa fs-6" :icon="{ prefix: 'far', iconName: 'heart' }"></font-awesome-icon>
           </button>
         </div>
 
@@ -90,7 +90,7 @@
     <!-- <div class="card-footer d-flex justify-content-between">
       <linkCopyBar :link="footerLink" v-if="hasFooterLink()"></linkCopyBar>
       <div class="w-50">
-        <i class="material-icons feature-icon float-right" v-for="(fi, index) in featureIndicators" :key="index">{{ fi }}</i>
+        <font-awesome-icon class="fa fs-6" v-for="(fi, index) in featureIndicators" :key="index" :icon="{ prefix: 'fas', iconName: fi }"></font-awesome-icon>
       </div>
       <span class="align-middle mr-1"
             v-for="(tag, index) in footerTags"

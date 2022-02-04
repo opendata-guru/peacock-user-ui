@@ -34,17 +34,26 @@ import {
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
 import {
+  faHeart as faHeartFAR,
+} from '@fortawesome/free-regular-svg-icons';
+import {
   faAngleDown,
   faAngleUp,
   faArrowDown,
   faArrowUp,
+  faCaretDown,
+  faCaretUp,
+  faChartBar,
   faComment,
   faExclamationTriangle,
   faExpand,
   faExternalLinkAlt,
+  faGlobeAmericas,
+  faHeart as faHeartFAS,
   faInfoCircle,
   faMinus,
   faPlus,
+  faRss,
   faShareAlt,
   faSearch,
 } from '@fortawesome/free-solid-svg-icons';
@@ -106,7 +115,10 @@ services(Vue.prototype.$env);
 // Sync store and router
 sync(store, router);
 
-library.add(faGoogle, faGooglePlus, faGooglePlusG, faFacebook, faFacebookF, faInstagram, faTwitter, faLinkedinIn, faComment, faExternalLinkAlt, faPlus, faMinus, faArrowDown, faArrowUp, faInfoCircle, faExclamationTriangle, faShareAlt, faSearch, faExpand, faAngleUp, faAngleDown);
+library.add(faGoogle, faGooglePlus, faGooglePlusG, faFacebook, faFacebookF, faInstagram, faTwitter, faLinkedinIn,
+  faComment, faExternalLinkAlt, faPlus, faMinus, faChartBar, faGlobeAmericas,
+  faArrowDown, faArrowUp, faInfoCircle, faExclamationTriangle, faShareAlt, faSearch, faExpand,
+  faAngleUp, faAngleDown, faCaretUp, faCaretDown, faRss, faHeartFAR, faHeartFAS);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 

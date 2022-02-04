@@ -21,7 +21,7 @@
                  v-if="dateIncorrect">
               <div class="row">
                 <div class="col-1 m-auto text-center">
-                  <i class="material-icons">info</i>
+                  <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'info-circle' }"></font-awesome-icon>
                 </div>
                 <div class="col-10">
                   <p class="mb-0">This dataset's last updated date is incorrect or incomplete, please contact the data provider for further inquiries.</p>
@@ -42,7 +42,7 @@
                  v-if="machineTranslated">
               <div class="row">
                 <div class="col-1 m-auto text-center">
-                  <i class="material-icons">info</i>
+                  <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'info-circle' }"></font-awesome-icon>
                 </div>
                 <div class="col-10">
                   <p class="mb-0">{{ $t('message.datasetDetails.translation.message') }}</p>
@@ -72,7 +72,7 @@
                  v-if="translationNotAvailable">
               <div class="row">
                 <div class="col-1 m-auto text-center">
-                  <i class="material-icons">info</i>
+                  <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'info-circle' }"></font-awesome-icon>
                 </div>
                 <div class="col-10">
                   <p class="mb-0">{{ $t('message.datasetDetails.translation.noTranslation') }}</p>
@@ -93,7 +93,7 @@
                  v-if="translationUpdateProcessing">
               <div class="row">
                 <div class="col-1 m-auto text-center">
-                  <i class="material-icons">info</i>
+                  <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'info-circle' }"></font-awesome-icon>
                 </div>
                 <div class="col-10">
                   <p class="mb-0">{{ $t('message.datasetDetails.translation.update') }}</p>
@@ -154,10 +154,10 @@
                         <app-link :to="distribution.licence.resource"
                                   target="_blank"
                                   @click="$emit('trackLink', distribution.licence.resource, 'link')">
-                          <i class="material-icons small-icon align-bottom text-dark"
+                          <font-awesome-icon class="fa fs-5 align-bottom text-dark" :icon="{ prefix: 'fas', iconName: 'info-circle' }"
                              data-bs-toggle="tooltip"
                              data-bs-placement="top"
-                             :title="distribution.licence.description">info</i>
+                             :title="distribution.licence.description"></font-awesome-icon>
                         </app-link>
                         <app-link :to="distribution.licence.la_url"
                                   target="_blank"
@@ -170,7 +170,7 @@
                                   target="_blank"
                                   @click="$emit('trackLink', distribution.licence.la_url, 'link')"
                                   v-if="showLicensingAssistant(distribution)">
-                          <i class="material-icons small-icon align-bottom text-dark">open_in_new</i>
+                          <font-awesome-icon class="fa fs-5 text-dark" :icon="{ prefix: 'fas', iconName: 'external-link-alt' }"></font-awesome-icon>
                         </app-link>
                       </small>
                       <small class="text-muted" v-else>
@@ -187,7 +187,7 @@
                         @click="$emit('trackLink', getVisualisationLink(distribution.accessUrl), 'link')"
                         v-if="showVisualisationLink(distribution)">
                         <span class="px-2">{{ $t('message.datasetDetails.visualisation') }}</span>
-                        <i class="material-icons float-right align-bottom">bar_chart</i>
+                        <font-awesome-icon class="fa fs-5 float-right" :icon="{ prefix: 'fas', iconName: 'chart-bar' }"></font-awesome-icon>
                       </app-link>
                       <app-link class="btn btn-sm btn-secondary p-0 px-2"
                         :path="getGeoLink(distribution.format.title, distribution.id)"
@@ -195,7 +195,7 @@
                         @click="$emit('trackLink', getGeoLink(distribution.format.title, distribution.id), 'link')"
                         v-if="showGeoLink(distribution)">
                         <span class="px-2">{{ $t('message.datasetDetails.geoVisualisation') }}</span>
-                        <i class="material-icons float-right align-bottom">public</i>
+                        <font-awesome-icon class="fa fs-5 float-right" :icon="{ prefix: 'fas', iconName: 'globe-americas' }"></font-awesome-icon>
                       </app-link>
                       <app-link class="btn btn-sm btn-secondary p-0 px-2"
                         :to="distribution.accessUrl"
@@ -205,7 +205,7 @@
                         @after-click="trackGoto"
                         v-if="showAccessUrl(distribution)">
                         <span class="px-2" property="dcat:mediaType" :content="getDistributionFormat(distribution)">{{ $t('message.datasetDetails.openResource') }}</span>
-                        <i class="material-icons align-bottom">open_in_new</i>
+                        <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'external-link-alt' }"></font-awesome-icon>
                       </app-link>
                       <span v-if="showDownloadUrls(distribution)"
                         v-for="downloadURL in distribution.downloadUrls">
@@ -259,11 +259,11 @@
                @click="toggleMap()">
             <span class="arrow text-secondary"
                   v-if="mapVisible" >
-              <i class="material-icons">keyboard_arrow_up</i>
+              <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'angle-up' }"></font-awesome-icon>
             </span>
             <span class="arrow text-secondary"
                   v-else>
-              <i class="material-icons">keyboard_arrow_down</i>
+              <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'angle-down' }"></font-awesome-icon>
             </span>
           </div>
           <div class="col-11">
@@ -293,10 +293,10 @@
                    @click="toggleInfo()">
                 <span class="arrow text-secondary"
                       v-if="!infoVisible">
-                  <i class="material-icons">keyboard_arrow_down</i>
+                  <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'angle-down' }"></font-awesome-icon>
                 </span>
                 <span class="arrow text-secondary" v-else>
-                  <i class="material-icons">keyboard_arrow_up</i>
+                  <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'angle-up' }"></font-awesome-icon>
                 </span>
               </div>
               <div class="col-11 py-2 bg-white">
@@ -722,9 +722,5 @@ export default {
         }
       }
     }
-  }
-  /*** MATERIAL ICONS ***/
-  .material-icons.small-icon {
-    font-size: 20px;
   }
 </style>

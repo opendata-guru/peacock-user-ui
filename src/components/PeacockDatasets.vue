@@ -27,9 +27,9 @@
           </div>
         </div>
         <button class="btn btn-secondary mb-3 text-end text-white" data-bs-toggle="collapse" data-bs-target="#datasetFacets" @click="filterCollapsed = !filterCollapsed">
-          Filter
-          <i class="material-icons small-icon align-bottom" v-if="filterCollapsed">arrow_drop_up</i>
-          <i class="material-icons small-icon align-bottom" v-else>arrow_drop_down</i>
+          {{ $t('message.datasetFacets.filter') }}
+          <font-awesome-icon class="fa fs-6" :icon="{ prefix: 'fas', iconName: 'caret-down' }" v-if="filterCollapsed"></font-awesome-icon>
+          <font-awesome-icon class="fa fs-6" :icon="{ prefix: 'fas', iconName: 'caret-up' }" v-else></font-awesome-icon>
         </button>
       </div>
       <dataset-facets class="col-md-3 col-12 mb-3 mb-md-0 px-0 collapse" id="datasetFacets"></dataset-facets>
@@ -71,7 +71,7 @@
                 <button class="d-none btn btn-secondary dropdown-toggle"
                         type="button" id="dropdown-feeds" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons align-bottom">rss_feed</i>
+                  <font-awesome-icon class="fa fs-6" :icon="{ prefix: 'fas', iconName: 'rss' }" v-if="filterCollapsed"></font-awesome-icon>
                   {{ $t('message.datasets.datasetsFeed') }}
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdown-feeds">
@@ -594,11 +594,6 @@
     position: absolute;
     top: 0;
     z-index: 100;
-  }
-
-  /*** MATERIAL ICONS ***/
-  .material-icons.small-icon {
-    font-size: 20px;
   }
 
   @media screen and (min-width:768px) {

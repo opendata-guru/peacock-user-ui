@@ -124,8 +124,8 @@
               <a class="d-flex d-md-none list-group-item justify-content-between align-items-baseline" @click="toggleExpanded(field.title)">
                 <h4 class="mb-0">{{ $t(`message.datasetFacets.facets.${field.title.toLowerCase()}`) }}</h4>
                 <button class="btn">
-                  <i class="material-icons small-icon expand-more animated" v-if="!isExpanded(field.title)">expand_more</i>
-                  <i class="material-icons small-icon expand-less animated" v-if="isExpanded(field.title)">expand_less</i>
+                  <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'angle-down' }" v-if="!isExpanded(field.title)"></font-awesome-icon>
+                  <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'angle-up' }" v-if="isExpanded(field.title)"></font-awesome-icon>
                 </button>
               </a>
               <button
@@ -153,11 +153,11 @@
                :class="{'mt-3': (index > 0)}"
                v-if="field.items.length > 0 && (field.id !== 'catalog' || (showCatalogueFacets === (field.id === 'catalog')))">
             <div class="col list-group pr-0">
-              <a class="list-group-item d-flex justify-content-between align-items-baseline">
+              <a class="list-group-item d-flex justify-content-between align-items-baseline" @click="toggleExpanded(field.title)">
                 <h4 class="mb-0">{{ $t(`message.datasetFacets.facets.${field.title.toLowerCase()}`) }}</h4>
-                <button class="btn" @click="toggleExpanded(field.title)">
-                  <i class="material-icons small-icon align-bottom expand-more animated" v-if="!isExpanded(field.title)">expand_more</i>
-                  <i class="material-icons small-icon align-bottom expand-less animated" v-if="isExpanded(field.title)">expand_less</i>
+                <button class="btn">
+                  <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'angle-down' }" v-if="!isExpanded(field.title)"></font-awesome-icon>
+                  <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'angle-up' }" v-if="isExpanded(field.title)"></font-awesome-icon>
                 </button>
               </a>
               <button
@@ -588,8 +588,4 @@
     left: 0;
   }
 
-  /*** MATERIAL ICONS ***/
-  .material-icons.small-icon {
-    font-size: 20px;
-  }
 </style>

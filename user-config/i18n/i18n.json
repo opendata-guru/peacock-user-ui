@@ -5281,6 +5281,7 @@
         "and": "UND",
         "settings": "Einstellungen",
         "europeanCatalogues": "Europäische Kataloge",
+        "filter": "Filter",
         "or": "oder"
       },
       "catalogue": {
@@ -6082,6 +6083,7 @@
         "and": "AND",
         "or": "OR" ,
         "europeanCatalogues": "European Catalogues",
+        "filter": "Filter",
         "facets": {
           "countries": "Countries",
           "catalogues": "Catalogues",

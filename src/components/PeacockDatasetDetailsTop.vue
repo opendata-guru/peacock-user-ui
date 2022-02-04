@@ -10,13 +10,12 @@
           class="btn btn-sm btn-secondary mt-1"
           @click="onFavorites"
         >
-          <i v-if="favorite === true" class="material-icons fs-6 align-text-bottom">favorite</i>
-          <i v-if="favorite !== true" class="material-icons fs-6 align-text-bottom">favorite_border</i>
+          <font-awesome-icon v-if="favorite === true" class="fa fs-6" :icon="{ prefix: 'fas', iconName: 'heart' }"></font-awesome-icon>
+          <font-awesome-icon v-else class="fa fs-6" :icon="{ prefix: 'far', iconName: 'heart' }"></font-awesome-icon>
         </button>
         <datasetDetailsFeedbackButton></datasetDetailsFeedbackButton>
         <div class="d-inline dropdown">
           <a class="mt-1 btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <!--<i class="material-icons small-icon align-bottom text-dark">share</i>-->
             <font-awesome-icon class="me-1 fa" :icon="{ prefix: 'fas', iconName: 'share-alt' }"></font-awesome-icon>
             {{ $t('message.datasetDetails.share.dataset') }}
           </a>
