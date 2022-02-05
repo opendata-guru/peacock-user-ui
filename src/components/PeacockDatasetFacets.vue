@@ -50,8 +50,8 @@
                   <mapboundssender :bounds-id="geoBoundsId" map-container-id="modalMap" ref="mapSender"></mapboundssender>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">{{ $t('message.mapModal.close') }}</button>
-                  <button type="button" class="btn btn-highlight" @click="resetBoundsFor(geoBoundsId)">{{ $t('message.mapModal.reset') }}</button>
+                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">{{ $t('message.mapModal.close') }}</button>
+                  <button type="button" class="btn btn-outline-secondary" @click="resetBoundsFor(geoBoundsId)">{{ $t('message.mapModal.reset') }}</button>
                   <button type="button" class="btn btn-secondary" @click="applyHoldedBounds()" data-dismiss="modal">{{ $t('message.mapModal.findDatasets') }}</button>
                 </div>
               </div>
@@ -187,7 +187,7 @@
     has,
     isNil,
   } from 'lodash';
-  import MapBoundsSender from './MapBoundsSender';
+  import MapBoundsSender from './PeacockMapBoundsSender';
   import MapBoundsReceiver from './MapBoundsReceiver';
   import { getTranslationFor, getCountryFlagImg } from '../utils/helpers';
   import GLUE_CONFIG from '../../user-config/glue-config';

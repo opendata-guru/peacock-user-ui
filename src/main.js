@@ -52,6 +52,7 @@ import {
   faHeart as faHeartFAS,
   faInfoCircle,
   faMinus,
+  faPen,
   faPlus,
   faRss,
   faShareAlt,
@@ -116,7 +117,7 @@ services(Vue.prototype.$env);
 sync(store, router);
 
 library.add(faGoogle, faGooglePlus, faGooglePlusG, faFacebook, faFacebookF, faInstagram, faTwitter, faLinkedinIn,
-  faComment, faExternalLinkAlt, faPlus, faMinus, faChartBar, faGlobeAmericas,
+  faComment, faExternalLinkAlt, faPlus, faMinus, faChartBar, faGlobeAmericas, faPen,
   faArrowDown, faArrowUp, faInfoCircle, faExclamationTriangle, faShareAlt, faSearch, faExpand,
   faAngleUp, faAngleDown, faCaretUp, faCaretDown, faRss, faHeartFAR, faHeartFAS);
 Vue.component('font-awesome-icon', FontAwesomeIcon);

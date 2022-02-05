@@ -1,5 +1,7 @@
 <template>
-  <div :id="mapContainerId" ref="mapref"></div>
+  <div :id="mapContainerId" ref="mapref">
+    <font-awesome-icon class="fa fs-6 mapContainerPen" :icon="{ prefix: 'fas', iconName: 'pen' }"></font-awesome-icon>
+  </div>
 </template>
 
 <script>
@@ -15,7 +17,7 @@
   import 'leaflet-editable';
 
   export default {
-    name: 'MapBoundsSender',
+    name: 'PeacockMapBoundsSender',
     dependencies: ['DatasetService'],
     data() {
       return {
@@ -129,10 +131,14 @@
         this.map.flyToBounds(this.startBounds, this.map.getBoundsZoom(this.startBounds));
       },
       createBtnControls(map) {
+        const mapContainerPenObj = document.querySelector('.mapContainerPen');
+        const mapContainerPen = mapContainerPenObj.outerHTML;
+        mapContainerPenObj.style.display = 'none';
+
         const rectButton = Leaflet.easyButton({
           states: [{
             stateName: 'passive', // name the state
-            icon: '<i class="material-icons">edit</i>', // and define its properties
+            icon: mapContainerPen, // and define its properties
             title: 'Draw a new Rectangle', // like its title
             onClick: (btn, mapp) => { // and its callback
               btn.state('active');
@@ -145,7 +151,7 @@
             },
           }, {
             stateName: 'active',
-            icon: '<i class="material-icons active">edit</i>',
+            icon: mapContainerPen,
             title: 'Cancel Drawing Rectangle',
             onClick: (btn) => {
               btn.state('passive');
@@ -250,9 +256,6 @@
       animation-iteration-count: infinite;
       animation-duration: 1s;
       animation-direction: alternate;
-    }
-    .material-icons {
-      vertical-align: middle;
     }
   }
 
