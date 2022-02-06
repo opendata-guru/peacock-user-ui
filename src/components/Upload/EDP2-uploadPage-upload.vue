@@ -26,7 +26,7 @@
         <!-- LIST OF UPLOADED DISTRIBUTIONS -->
         <div class="mb-5" v-for="distribution in getAPIUploadData.distributions" :key="distribution.id">
           <div class="mb-2 align-baseline">
-           <strong>{{ distribution.title.en }}</strong>
+           <strong>{{ distribution.title ? distribution.title.en : '-' }}</strong>
           </div>
           <!-- CHOOSE FILE -->
           <div class="row mt-2">
@@ -43,7 +43,8 @@
                 <div class="d-inline-block text-truncate" style="width:90%">
                   <samp :key="files[distribution.id]['fileName']" v-if="has(files[distribution.id], 'fileName')">{{ files[distribution.id]['fileName'] }}</samp>
                 </div>
-                <i class="material-icons ml-3 align-baseline float-right">{{ files[distribution.id]['uploadSuccess'] ? 'check_circle_outline' : 'error_outline' }}</i>
+                <font-awesome-icon v-if="files[distribution.id]['uploadSuccess']" class="fa fs-5 float-right" :icon="{ prefix: 'fas', iconName: 'check-circle' }"></font-awesome-icon>
+                <font-awesome-icon v-else class="fa fs-5 float-right" :icon="{ prefix: 'fas', iconName: 'exclamation-circle' }"></font-awesome-icon>
               </div>
             </div>
           </div>
@@ -127,7 +128,11 @@
               // Update Response Status
               this.files[distribution.id].uploadSuccess = response.status === 200;
             }).catch((err) => {
-              this.error = `error : ${err.response.status} ${err.response.statusText}`;
+              if (err.response) {
+                this.error = `error : ${err.response.status} ${err.response.statusText}`;
+              } else {
+                this.error = `error : ${err}`;
+              }
               this.$Progress.fail();
             });
           });

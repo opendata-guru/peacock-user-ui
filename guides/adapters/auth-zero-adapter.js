@@ -63,7 +63,7 @@ const fakeKeyCloak = {
     store.dispatch('auth/rtpToken', '');
   },
 
-  setRtpToken: () => {
+  generateRtpToken: () => {
     const rtpToken = {
       realm_access: {
         roles: [
@@ -72,6 +72,9 @@ const fakeKeyCloak = {
       },
       authorization: {
         permissions: [],
+      },
+      data: {
+        access_token: 'access_token',
       },
     };
 
@@ -88,6 +91,11 @@ const fakeKeyCloak = {
       }
     });
 
+    return rtpToken;
+  },
+
+  setRtpToken: () => {
+    const rtpToken = fakeKeyCloak.generateRtpToken();
     const rtpTokenEncoded = encode(rtpToken);
     store.dispatch('auth/rtpToken', rtpTokenEncoded);
   },
@@ -106,6 +114,7 @@ export default class AuthZeroService {
     this.baseUrl = keyclockConfig.url;
     this.rtpConfig = rtpConfig;
     this.router = undefined;
+    this.foo = '';
     // check if the user has session
     store.dispatch('auth/authLogin', this.keycloak);
     store.dispatch('auth/rtpToken', '');
@@ -166,20 +175,22 @@ export default class AuthZeroService {
    * @description get token for axios request
    * @param keycloak keycloak object
    */
-  /* getToken = (keycloak) => {
+  getToken(keycloak) {
+    this.foo = 'bar';
     const _keyclock = keycloak;
     _keyclock.updateToken(10)
       .success(() => {
         store.dispatch('auth/authLogin', _keyclock);
         return _keyclock.token;
       });
-  } */
+  }
 
   /**
    * @description refresh or update the token on each Auth protected request
    * @param keycloak keycloak object
    */
-  /* refreshToken = (keycloak) => {
+  refreshToken(keycloak) {
+    this.foo = 'bar';
     return new Promise((resolve, reject) => {
       keycloak.updateToken(10)
         .success(() => {
@@ -189,7 +200,7 @@ export default class AuthZeroService {
           reject(err);
         });
     });
-  } */
+  }
 
   /**
    * @description get role exist or not
@@ -199,4 +210,16 @@ export default class AuthZeroService {
   /* roles = (keycloak, role) => {
     return keycloak.hasRealmRole(role);
   } */
+
+  /**
+  * @description get RTP Token
+  * @param keycloak keycloack token
+  */
+  getRTPToken() {
+    this.foo = 'bar';
+    return new Promise((resolve) => {
+      const response = fakeKeyCloak.generateRtpToken();
+      resolve(response);
+    });
+  }
 }

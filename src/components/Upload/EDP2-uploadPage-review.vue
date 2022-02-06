@@ -25,10 +25,10 @@
             <div class="row mb-5">
               <div class="col-1 my-auto pr-0 text-end" @click="toggleDistributions()">
             <span class="arrow text-primary" v-if="!distributionsVisible">
-              <i class="material-icons">keyboard_arrow_down</i>
+              <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'angle-down' }"></font-awesome-icon>
             </span>
-                <span class="arrow text-primary" v-else>
-              <i class="material-icons">keyboard_arrow_up</i>
+            <span class="arrow text-primary" v-else>
+              <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'angle-up' }"></font-awesome-icon>
             </span>
               </div>
               <div class="col-10 py-2 text-left">
@@ -130,10 +130,10 @@
         <div class="row">
           <div class="col-1 my-auto pr-0 text-end" @click="toggleInfo()">
             <span class="arrow text-primary" v-if="!infoVisible">
-              <i class="material-icons">keyboard_arrow_down</i>
+              <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'angle-down' }"></font-awesome-icon>
             </span>
             <span class="arrow text-primary" v-else>
-              <i class="material-icons">keyboard_arrow_up</i>
+              <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'angle-up' }"></font-awesome-icon>
             </span>
           </div>
           <div class="col-10 py-2 bg-white">

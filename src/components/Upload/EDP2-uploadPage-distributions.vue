@@ -515,7 +515,6 @@
                 }
               ]
             };
-            const token = this.authService.getToken(this.securityAuth);
 
             //check if distribution exist or not
             if (Array.isArray(this.distributions) && this.distributions.length) {
@@ -577,12 +576,14 @@
               let datasetTitle = (this.getTitle.toLowerCase()).replace(/[^a-zA-Z0-9]/g,'-');
               this.$Progress.start();
               console.log('RDF is: ' + JSON.stringify(rdf)); // eslint-disable-line
+
+              const token = this.authService.getToken(this.securityAuth);
               this.authService.refreshToken(this.securityAuth).then((token) => {
                 this.authService.getRTPToken(token).then((rtpToken) => {
 
                   // check if the route param has mandatory field Title, which comes only after clicking EDIT button
                   // when edit dataset, first delete dataset then create again (as per fabian (06/09/2019))
-                  if (this.$route.params.title) {
+                  if (this.$route.params.title && this.$route.params.title.en) {
                     // delete and create implementation need to be discussed
                     // normalizing dataset ID (as per torben jastrow 17/07/2019)
                     let datasetId = this.$route.params.title.en.replace(/\s+/g, '-').toLowerCase();
@@ -611,12 +612,16 @@
                   } else {
                     // create dataset
                     this.uploadService.upload(datasetTitle, this.getCatalogue, rdf, rtpToken.data.access_token, !this.useOnlyDownloadURL).then((result) => {
-                    this.$Progress.finish();
-                    this.addApiUploadData(result.data);
-                    // Finish upload and go to review page, if no files have to be uploaded
-                    this.setStep(this.useOnlyDownloadURL ? 4 : 3);
+                      this.$Progress.finish();
+                      this.addApiUploadData(result.data);
+                      // Finish upload and go to review page, if no files have to be uploaded
+                      this.setStep(this.useOnlyDownloadURL ? 4 : 3);
                     }).catch((err) => {
-                      this.error = `error : ${err.response.status} ${err.response.statusText}`;
+                      if (err.response) {
+                        this.error = `error : ${err.response.status} ${err.response.statusText}`;
+                      } else {
+                        this.error = `error : ${err}`;
+                      }
                       this.$Progress.fail();
                   });
                   }
