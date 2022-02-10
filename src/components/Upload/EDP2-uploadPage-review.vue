@@ -72,7 +72,7 @@
                                 aria-expanded="false"
                                 title="Download">
                           {{ $t('message.datasetDetails.download') }}
-                          <i class="material-icons small-icon float-right align-bottom">keyboard_arrow_down</i>
+                          <font-awesome-icon class="fa fs-5 float-right" :icon="{ prefix: 'fas', iconName: 'angle-down' }"></font-awesome-icon>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right bg-light">
                           <span class="dropdown-item px-3 text-end"
@@ -82,9 +82,9 @@
                                       target="_blank"
                                       rel="dcat:distribution noopener">
                               <small class="px-2" property="dcat:mediaType" :content="getDistributionFormat(distribution)">{{ $t('message.datasetDetails.openResource') }}</small>
-                              <i class="material-icons align-bottom">open_in_new</i>
+                              <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'external-link-alt' }"></font-awesome-icon>
                             </app-link>
-                            <i class="copy-text material-icons float-right align-bottom" @click="setClipboard(distribution.accessUrl)">file_copy</i>
+                            <font-awesome-icon class="fa fs-5 float-right" :icon="{ prefix: 'far', iconName: 'copy' }" @click="setClipboard(distribution.accessUrl)"></font-awesome-icon>
                           </span>
                           <span class="dropdown-item d-block px-3 text-end"
                                 v-if="showDownloadUrls(distribution)"
@@ -95,9 +95,9 @@
                             <app-link class="text-dark text-decoration-none"
                                       :to="downloadURL"
                                       target="_blank">
-                              <i class="material-icons align-bottom">open_in_new</i>
+                              <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'external-link-alt' }"></font-awesome-icon>
                             </app-link>
-                            <i class="copy-text material-icons float-right align-bottom" @click="setClipboard(downloadURL)">file_copy</i>
+                            <font-awesome-icon class="fa fs-5 float-right" :icon="{ prefix: 'far', iconName: 'copy' }" @click="setClipboard(downloadURL)"></font-awesome-icon>
                           </span>
                         </div>
                       </span>

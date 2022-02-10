@@ -34,7 +34,8 @@ import {
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
 import {
-  faHeart as faHeartFAR,
+  faCopy as farCopy,
+  faHeart as farHeart,
 } from '@fortawesome/free-regular-svg-icons';
 import {
   faAngleDown,
@@ -46,12 +47,13 @@ import {
   faChartBar,
   faCheckCircle,
   faComment,
+  faCopy as fasCopy,
   faExclamationCircle,
   faExclamationTriangle,
   faExpand,
   faExternalLinkAlt,
   faGlobeAmericas,
-  faHeart as faHeartFAS,
+  faHeart as fasHeart,
   faInfoCircle,
   faMinus,
   faPen,
@@ -121,8 +123,8 @@ sync(store, router);
 library.add(faGoogle, faGooglePlus, faGooglePlusG, faFacebook, faFacebookF, faInstagram, faTwitter, faLinkedinIn,
   faComment, faExternalLinkAlt, faPlus, faMinus, faChartBar, faGlobeAmericas, faPen,
   faArrowDown, faArrowUp, faInfoCircle, faCheckCircle, faExclamationCircle, faExclamationTriangle,
-  faShareAlt, faSearch, faExpand,
-  faAngleUp, faAngleDown, faCaretUp, faCaretDown, faRss, faHeartFAR, faHeartFAS);
+  faShareAlt, faSearch, faExpand, farCopy, fasCopy,
+  faAngleUp, faAngleDown, faCaretUp, faCaretDown, faRss, farHeart, fasHeart);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 

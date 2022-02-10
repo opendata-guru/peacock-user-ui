@@ -12,7 +12,7 @@
            :value="link.url" @focus="$event.target.select()" ref="linkTextInput" readonly>
     <div class="input-group-append">
       <button class="btn btn-outline-secondary" type="button" title="copy" @click="copyLink()">
-        <i class="material-icons">content_copy</i>
+        <font-awesome-icon class="fa fs-6" :icon="{ prefix: 'far', iconName: 'copy' }"></font-awesome-icon>
       </button>
     </div>
   </div>
