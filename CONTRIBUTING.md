@@ -21,10 +21,10 @@ Prepare your system and [install nvm](https://github.com/nvm-sh/nvm/blob/master/
 Install [Node.js v15.14.0+ and NPM 7.7.6+](https://nodejs.org/en/) on your system. Yes, this repo use older version of node.js. You are welcome to drop a merge request with updated packages.
 
 ```bash
-$ nvm use 15
-Now using node v15.14.0 (npm v7.7.6)
+$ nvm use 16
+Now using node v16.14.0 (npm v8.3.1)
 $ node -v
-v15.14.0
+v16.14.0
 ```
 
 Clone or download the code:
