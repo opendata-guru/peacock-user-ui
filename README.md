@@ -1,8 +1,32 @@
 # Peacock User UI
 
 This project provide a HTML user portal for view open data datasets.
-
 It's based on the [piveau ui](https://github.com/piveau-data/piveau-hub-ui) project from Fraunhofer FOKUS.
+
+
+You can use this project as npm package.
+Get it from [npmjs.com](https://www.npmjs.com/package/peacock-user-ui) with command:
+
+```
+npm i peacock-user-ui
+```
+
+**or**
+
+You can use an out-of-the-box CDN version and just include main files.
+All files located at:
+
+```
+https://unpkg.com/peacock-user-ui@latest/dist/index.html
+```
+
+**or**
+
+A pre-configured demo is located at:
+
+```
+https://opendata-guru.github.io/peacock-user-ui/
+```
 
 ## Contribution
 
