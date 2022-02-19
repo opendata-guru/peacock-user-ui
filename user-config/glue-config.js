@@ -15,12 +15,12 @@ import datastoreService from '../src/viaduct-ui-adapter-vhub/datastore';
 import gazetteerService from '../src/viaduct-ui-adapter-vhub/gazetteer';
 import uploadService from '../src/services/uploads';
 import authService from '../src/auth/authService';
-import { version } from '../package.json';
+import packageInfo from '../package.json';
 
 // Export Config-Object
 export default {
   title: 'Peacock',
-  version,
+  version: packageInfo.version,
   api: {
     baseUrl: 'http://localhost:8081/',
     gazetteerBaseUrl: 'http://localhost:8081/gazetteer/',

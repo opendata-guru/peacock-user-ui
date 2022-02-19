@@ -5,8 +5,7 @@ const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
-const MomentLocalesPlugin = require('moment-locales-webpack-plugin')
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 let buildMode
 if (process.env.NODE_ENV === 'production') {
@@ -120,8 +119,6 @@ module.exports = {
       'shorthands': true
     }),
     // Prevent from bundling all locales
-    new MomentLocalesPlugin,
-    // Persistent module caching
-    new HardSourceWebpackPlugin(),
+    new MomentLocalesPlugin
   ],
 };

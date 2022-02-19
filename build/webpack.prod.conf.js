@@ -2,14 +2,13 @@
 const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
-const merge = require('webpack-merge')
+const { merge } = require('webpack-merge')
 const path = require('path')
 const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 let buildMode
 if (process.env.NODE_ENV === 'production') {
@@ -37,15 +36,11 @@ var webpackConfig = merge(baseWebpackConfig, {
   },
   optimization: {
     minimizer: [
-      new TerserPlugin({
-        sourceMap: true,
-        parallel: true,
-        cache: true
-      })
+      new CssMinimizerPlugin()
     ],
     splitChunks: {
       chunks: 'all',
-      name: true
+      name: 'vendors',
     },
   },
   plugins: [
@@ -58,13 +53,6 @@ var webpackConfig = merge(baseWebpackConfig, {
     new MiniCssExtractPlugin({
       filename: utils.assetsPath('css/[name].css'),
       chunkFilename: utils.assetsPath('css/app.[name].css'),
-    }),
-    // Compress extracted CSS. We are using this plugin so that possible
-    // duplicated CSS from different components can be deduped.
-    new OptimizeCSSPlugin({
-      cssProcessorOptions: {
-        safe: true,
-      },
     }),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
@@ -82,13 +70,17 @@ var webpackConfig = merge(baseWebpackConfig, {
       },
     }),
     // copy custom static assets
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../static'),
-        to: config[buildMode].assetsSubDirectory,
-        ignore: ['.*'],
-      }
-    ])
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, '../static'),
+          to: config[buildMode].assetsSubDirectory,
+          globOptions: {
+            ignore: ['.*'],
+          },
+        }
+      ],
+    })
   ]
 })
 
