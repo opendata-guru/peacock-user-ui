@@ -9,6 +9,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 
 let buildMode
 if (process.env.NODE_ENV === 'production') {
@@ -35,8 +36,10 @@ var webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: utils.assetsPath('js/app.[name].js'),
   },
   optimization: {
+    minimize: true,
     minimizer: [
-      new CssMinimizerPlugin()
+      new CssMinimizerPlugin(),
+      new TerserPlugin()
     ],
     splitChunks: {
       chunks: 'all',
