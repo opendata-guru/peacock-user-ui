@@ -4,20 +4,27 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #0065a2;
+  background-color: #dee2e6;
 }
 
 .spinner {
-  width: 62px;
-  height: 62px;
-  background-color: transparent;
-  background-image: url('../assets/loading.png');
-  background-repeat: no-repeat;
+  width: 4rem;
+  height: 4rem;
   position: absolute;
-  top: calc(50% - 31px);
-  left: calc(50% - 31px);
-  -webkit-animation: sk-rotateplane 2s infinite ease-in-out;
-  animation: sk-rotateplane 2s infinite ease-in-out;
+  top: calc(50% - 2rem);
+  left: calc(50% - 2rem);
+  -webkit-animation: sk-rotateplane 3s infinite ease-in-out;
+  animation: sk-rotateplane 3s infinite ease-in-out;
+}
+.spinner::after {
+  background: #f8f9fa;
+  content: "🦚";
+  display: block;
+  font-size: 3rem;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  width: 4rem;
 }
 
 @-webkit-keyframes sk-rotateplane {
