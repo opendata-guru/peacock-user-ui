@@ -36,7 +36,7 @@ export default class Datasets {
         params: {},
       })
         .then((response) => {
-          const dataset = response.data.contents.result;
+          const dataset = response.data.contents ? response.data.contents.result : response.data.result;
           let ds = {};
           try {
             ds = getSingleResponseData(dataset);
@@ -86,11 +86,11 @@ export default class Datasets {
            */
           const resData = {
             availableFacets: [],
-            datasetsCount: response.data.contents.result.count,
+            datasetsCount: response.data.contents ? response.data.contents.result.count : response.data.result.count,
             datasets: [],
           };
           // Transform Facets Data model
-          const searchFacets = response.data.contents.result.search_facets;
+          const searchFacets = response.data.contents ? response.data.contents.result.search_facets : response.data.result.search_facets;
           Object.keys(searchFacets).forEach((field) => {
             if (searchFacets[field].items.length > 0) {
               const newField = {};
@@ -107,7 +107,7 @@ export default class Datasets {
             }
           });
           // Transform Datasets Data model
-          const datasets = response.data.contents.result.results;
+          const datasets = response.data.contents ? response.data.contents.result.results : response.data.result.results;
           for (const dataset of datasets) {
             /**
              * @property dataset
