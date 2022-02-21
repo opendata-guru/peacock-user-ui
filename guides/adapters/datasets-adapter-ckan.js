@@ -2,7 +2,7 @@
 /**
  * @author Dennis ritter
  * @description A sample datasets-adapter for a CKAN-Backend-API.
- * @license Modifications copyright 2021 Thomas Tursics
+ * @license Modifications copyright 2021-2022 Thomas Tursics
  *          SPDX-License-Identifier: Apache-2.0
 */
 

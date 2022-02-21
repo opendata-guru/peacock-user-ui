@@ -1,3 +1,7 @@
+<!-- @license Copyright 2022 Thomas Tursics
+              SPDX-License-Identifier: Apache-2.0
+-->
+
 <template>
   <div class="mb-5">
     <div v-if="!loadingDatasetDetails">

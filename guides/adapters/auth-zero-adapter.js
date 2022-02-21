@@ -1,5 +1,5 @@
 /**
- * @license Copyright 2021 Thomas Tursics
+ * @license Copyright 2021-2022 Thomas Tursics
  *          SPDX-License-Identifier: Apache-2.0
  */
 

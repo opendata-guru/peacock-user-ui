@@ -1,3 +1,7 @@
+<!-- @license Copyright 2022 Thomas Tursics
+              SPDX-License-Identifier: Apache-2.0
+-->
+
 <template>
   <div class="input-group input-group-sm w-50">
     <div class="input-group-prepend">

@@ -3,6 +3,8 @@
 /**
  * @author Dennis Ritter
  * @description Vuex store for the datasets module
+ * @license Modification copyright 2022 Thomas Tursics
+ *          SPDX-License-Identifier: Apache-2.0
  */
 import Vue from 'vue';
 import Vuex from 'vuex';

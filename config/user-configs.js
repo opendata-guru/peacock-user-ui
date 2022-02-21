@@ -3,7 +3,7 @@
  * @description Simply override configurations from the glue-config.js
  *              This is a sample file. Copy it and remove 'sample' from it's name and edit configurations.
  * @license Copyright 2019 Fraunhofer FOKUS
- *          Modifications copyright 2021 Thomas Tursics
+ *          Modifications copyright 2021-2022 Thomas Tursics
  *          SPDX-License-Identifier: Apache-2.0
  */
 

@@ -1,3 +1,7 @@
+<!-- @license Copyright 2022 Thomas Tursics
+              SPDX-License-Identifier: Apache-2.0
+-->
+
 <template>
   <div :id="mapContainerId" ref="mapref">
     <font-awesome-icon class="fa fs-6 mapContainerPen" :icon="{ prefix: 'fas', iconName: 'pen' }"></font-awesome-icon>

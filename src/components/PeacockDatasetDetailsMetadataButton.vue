@@ -1,3 +1,7 @@
+<!-- @license Copyright 2022 Thomas Tursics
+              SPDX-License-Identifier: Apache-2.0
+-->
+
 <template>
   <a @click="metadataLink" @mousedown.middle="metadataLink" href="#" class="mt-1 btn btn-sm btn-outline-secondary metadata">
     {{ $t('message.datasetDetails.metadata') }}

@@ -1,7 +1,8 @@
 /* eslint-disable no-restricted-syntax */
 /**
  * @author Thomas Tursics
- * @license SPDX-License-Identifier: Apache-2.0
+ * @license copyright 2021-2022 Thomas Tursics
+ *          SPDX-License-Identifier: Apache-2.0
  */
 
 import axios from 'axios';
