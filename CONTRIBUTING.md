@@ -96,6 +96,7 @@ Publishing a new release will automatically:
 
 - create new downloadable ZIP files of source code on github
 - publish a new version to [npm](https://www.npmjs.com/package/peacock-user-ui)
+- publish a new version to CDN unpkg.com
 
 # Configurations
 
