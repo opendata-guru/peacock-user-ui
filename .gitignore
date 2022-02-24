@@ -33,3 +33,4 @@ src/components/user/*
 .vscode
 
 jsconfig.json
+coverage

@@ -40,6 +40,8 @@ $ cd peacock-user-ui
 $ npm install
 ```
 
+# Build steps
+
 ## Build for Development
 
 Open a terminal and run:
@@ -63,15 +65,47 @@ $ npm run build
 This will optimize files for production and store the bundle in
   `peacock-user-ui/dist`
 
-## Configurations
+## Publish a new version to NPM
 
-### glue-config.js
+First of all check if you can create a production build successfully.
+
+```bash
+$ npm run build
+```
+
+Then check that all tests run without any errors and code coverage is as high as possible.
+
+```bash
+$ npm run test
+$ npx jest --coverage
+```
+
+Remove all known security vulnerabilities. Get the audit report:
+
+```bash
+$ npm audit
+```
+
+Follow next steps:
+
+- open `package.json` file and increase the version number of the package
+- push all changes to github
+- [draft a new release](https://github.com/opendata-guru/peacock-user-ui/releases/new)
+
+Publishing a new release will automatically:
+
+- create new downloadable ZIP files of source code on github
+- publish a new version to [npm](https://www.npmjs.com/package/peacock-user-ui)
+
+# Configurations
+
+## glue-config.js
 
 The glue-config.js file is located at `peacock-user-ui/user-config/glue-config.js` by default. It is the main project configuration file.
 
 You need to rebuild the project after changing this file.
 
-### user-configs.js
+## user-configs.js
 
 The user-configs.json file is located at `peacock-user-ui/config/user-configs.js` by default. It contains the paths to the glue-config.js and i18n.json. So this file overwrite the settings in `glue-config.js`. The simplest sample file is `user-configs.default.js` (with no configuration overwrites).
 
@@ -79,7 +113,7 @@ The `user-configs.js` checks global variables and set the values, if set, to the
 
 You need to rebuild the project after changing this file.
 
-### config.js
+## config.js
 
 The config.js file is located at `peacock-user-ui/static/js/config.js` by default. Use this file to customize all settings for this project.
 
@@ -87,7 +121,7 @@ You **does not need** to rebuild the project after changing this file. But you m
 
 All settings described in [README.md](README.me) file.
 
-## Write own adapter
+# Write own adapter
 
 Write your own adapter with up to 5 files. Import your adapter files in `user-configs.js` file:
 
