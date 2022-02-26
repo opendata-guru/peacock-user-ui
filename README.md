@@ -39,15 +39,15 @@ The following table shortly describes the configurable values in `peacock-user-u
 Key | Default value | Description
 ----|---------------|-------------
 CONFIG_APP_TITLE | My Data Portal
-CONFIG_APP_DATA_URL | https://data.europa.eu/api/hub/search/
-CONFIG_APP_DATA_SERVICE | piveau
+CONFIG_APP_DATA_URL | https://data.europa.eu/api/hub/search/ | Set the API data endpoint. You can use e.g. CKAN endpoints like 'https://www.govdata.de/ckan/api/action/' and 'https://www.govdata.de/ckan/api/action/package_search?q=spending'. Sometimes CORS are misconfigured and you need an data proxy like 'https://opendata.guru/proxy/cors?url=https://www.govdata.de/ckan/api/action/' and 'https://opendata.guru/proxy/cors?url=https://opendata.jena.de/api/3/action/package_search?rows=9999'. It's also possible to use local path to data files, try '/data/ckan-lazy.json' and '/data/ckan.json'.
+CONFIG_APP_DATA_SERVICE | piveau | The Service defines the data format data url uses. Use 'piveau' for EU data portal, 'ckan' for CKAN API portals and 'ckan-file' for local CKAN json files.
 CONFIG_APP_DATA_CACHE_BUSTING | true | used for file data services e.g. `ckan-file`
 CONFIG_APP_GAZETTEER_URL | https://data.europa.eu/api/hub/search/gazetteer/
 CONFIG_APP_UPLOAD_URL | https://www.europeandataportal.eu/data/api/
 CONFIG_APP_MATOMO_URL | *empty*
-CONFIG_APP_LOCALE | en
-CONFIG_APP_AUTH_ENABLE | false
-CONFIG_APP_AUTH_SERVICE | keycloak
+CONFIG_APP_LOCALE | en | Used display language. Use e.g. 'de' for German. The fallback language is English.
+CONFIG_APP_AUTH_ENABLE | false | Enable Auth to display a `log in` button for admin functionality.
+CONFIG_APP_AUTH_SERVICE | keycloak | Set the authentification method `keycloak` or `zero` (for fake login auth).
 CONFIG_APP_ENABLE_DATASET_CATEGORIES | false
 CONFIG_APP_ENABLE_DATASET_SIMILARDATASETS | false
 CONFIG_APP_ENABLE_DATASET_FEEDBACK | false
@@ -55,9 +55,9 @@ CONFIG_APP_ENABLE_FILTER_GAZETTEER | false
 CONFIG_APP_ENABLE_FILTER_OPERATOR | false
 CONFIG_APP_ENABLE_FAVORITES | true
 CONFIG_APP_ROUTER_BASE | *empty* | Set the path of the url. Default is an empty string, works for every url like https://some-domain.com or https://sub.domain.com . Set value to `/my-path/' for urls like 'https://some-domain.com/my-path/'.
-CONFIG_APP_ROUTER_ROUTE_1_NAME to CONFIG_APP_ROUTER_ROUTE_9_NAME |
-CONFIG_APP_ROUTER_ROUTE_1_PATH to CONFIG_APP_ROUTER_ROUTE_9_PATH |
-CONFIG_APP_ROUTER_ROUTE_1_FILE to CONFIG_APP_ROUTER_ROUTE_9_FILE |
+CONFIG_APP_ROUTER_ROUTE_1_NAME to CONFIG_APP_ROUTER_ROUTE_9_NAME | *empty*
+CONFIG_APP_ROUTER_ROUTE_1_PATH to CONFIG_APP_ROUTER_ROUTE_9_PATH | *empty*
+CONFIG_APP_ROUTER_ROUTE_1_FILE to CONFIG_APP_ROUTER_ROUTE_9_FILE | *empty*
 CONFIG_APP_ROUTER_ROUTE_1_REQUIRES_AUTH to CONFIG_APP_ROUTER_ROUTE_9_REQUIRES_AUTH | true
 
 Customize pages header:
@@ -65,29 +65,29 @@ Customize pages header:
 Key | Default value | Description
 ----|---------------|-------------
 CONFIG_APP_HEADER_LOGO_TEXT | My Data Portal
-CONFIG_APP_HEADER_LOGO_IMAGE_SRC | https://i.imgur.com/lgtG4zB.png
-CONFIG_APP_HEADER_LOGO_IMAGE_DESCRIPTION | Logo
+CONFIG_APP_HEADER_LOGO_IMAGE_SRC | *empty*
+CONFIG_APP_HEADER_LOGO_IMAGE_DESCRIPTION | *empty*
 CONFIG_APP_HEADER_NAV_1_URL | /datasets
 CONFIG_APP_HEADER_NAV_1_TITLE | message.header.navigation.data.datasets
 CONFIG_APP_HEADER_NAV_2_URL | /catalogues
 CONFIG_APP_HEADER_NAV_2_TITLE | message.header.navigation.data.catalogues
-CONFIG_APP_HEADER_NAV_3_URL to CONFIG_APP_HEADER_NAV_9_URL |
-CONFIG_APP_HEADER_NAV_3_TITLE to CONFIG_APP_HEADER_NAV_9_TITLE |
+CONFIG_APP_HEADER_NAV_3_URL to CONFIG_APP_HEADER_NAV_9_URL | *empty*
+CONFIG_APP_HEADER_NAV_3_TITLE to CONFIG_APP_HEADER_NAV_9_TITLE | *empty*
 
 Customize pages footer:
 
 Key | Default value | Description
 ----|---------------|-------------
 CONFIG_APP_FOOTER_LOGO_TEXT | Peacock User UI 🦚
-CONFIG_APP_FOOTER_LOGO_IMAGE_SRC | https://i.imgur.com/lgtG4zB.png
-CONFIG_APP_FOOTER_LOGO_IMAGE_DESCRIPTION | Logo
+CONFIG_APP_FOOTER_LOGO_IMAGE_SRC | *empty*
+CONFIG_APP_FOOTER_LOGO_IMAGE_DESCRIPTION | *empty*
 CONFIG_APP_FOOTER_LOGO_URL | https://github.com/opendata-guru/peacock-user-ui
 CONFIG_APP_FOOTER_NAV_1_URL | /imprint
 CONFIG_APP_FOOTER_NAV_1_TITLE | message.navigation.navItems.imprint
 CONFIG_APP_FOOTER_NAV_2_URL | /privacypolicy
 CONFIG_APP_FOOTER_NAV_2_TITLE | message.navigation.navItems.privacyPolicy
-CONFIG_APP_FOOTER_NAV_3_URL to CONFIG_APP_FOOTER_NAV_9_URL |
-CONFIG_APP_FOOTER_NAV_3_TITLE to CONFIG_APP_FOOTER_NAV_9_TITLE |
+CONFIG_APP_FOOTER_NAV_3_URL to CONFIG_APP_FOOTER_NAV_9_URL | *empty*
+CONFIG_APP_FOOTER_NAV_3_TITLE to CONFIG_APP_FOOTER_NAV_9_TITLE | *empty*
 
 ---
 The following table and example file shortly describes the configurable values.
