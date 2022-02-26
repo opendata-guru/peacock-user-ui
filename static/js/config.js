@@ -123,8 +123,7 @@ var CONFIG_APP_FOOTER_NAV_9_URL = '';
 var CONFIG_APP_FOOTER_NAV_9_TITLE = '';
 
 // ...
-var CONFIG_APP_ROUTER_BASE = '/peacock-user-ui/';
-// var CONFIG_APP_ROUTER_BASE = '/dist/';
+var CONFIG_APP_ROUTER_BASE = '';
 
 // ...
 var CONFIG_APP_ROUTER_ROUTE_1_NAME = 'foo';
