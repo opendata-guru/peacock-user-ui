@@ -1,165 +1,103 @@
 /**
- * @license Copyright 2021 Thomas Tursics
+ * @license Copyright 2021-2022 Thomas Tursics
  *          SPDX-License-Identifier: Apache-2.0
  */
 
 /* eslint-disable */
 
-// ...
-var CONFIG_APP_TITLE = 'My Data Portal';
-
-// ...
-var CONFIG_APP_DATA_URL = 'https://data.europa.eu/api/hub/search/';
-// var CONFIG_APP_DATA_URL = 'https://www.govdata.de/ckan/api/action/';
-// var CONFIG_APP_DATA_URL = 'https://www.govdata.de/ckan/api/action/package_search?q=spending';
-// var CONFIG_APP_DATA_URL = 'https://opendata.guru/proxy/cors?url=https://www.govdata.de/ckan/api/action/';
-// var CONFIG_APP_DATA_URL = 'https://opendata.guru/proxy/cors?url=https://opendata.jena.de/api/3/action/package_search?rows=9999';
-// var CONFIG_APP_DATA_URL = '/data/ckan-lazy.json';
-// var CONFIG_APP_DATA_URL = '/data/ckan.json';
-
-// ...
-var CONFIG_APP_DATA_SERVICE = 'piveau'; // e.g. for europeandataportal.eu endpoint
-// var CONFIG_APP_DATA_SERVICE = 'ckan'; // e.g. for govdata.de endpoint
-// var CONFIG_APP_DATA_SERVICE = 'ckan-file'; // e.g. for local ckan json file
-// var CONFIG_APP_DATA_SERVICE = 'ckan-file';
-
-// ...
-var CONFIG_APP_DATA_CACHE_BUSTING = true;
-
-// ...
-// unused
-// var CONFIG_APP_GAZETTEER_URL = 'https://data.europa.eu/api/hub/search/gazetteer/';
-var CONFIG_APP_GAZETTEER_URL = '';
-
-// ...
-// unused
-// var CONFIG_APP_UPLOAD_URL = 'https://www.europeandataportal.eu/data/api/';
-var CONFIG_APP_UPLOAD_URL = '';
-
-// ...
-var CONFIG_APP_MATOMO_URL = '';
-
-// ...
-var CONFIG_APP_LOCALE = 'de';
-
-// ...
-// unused
-// var CONFIG_APP_AUTH_ENABLE = false;
-// var CONFIG_APP_AUTH_SERVICE = 'keycloak'; // 'zero'
-var CONFIG_APP_AUTH_ENABLE = false;
-var CONFIG_APP_AUTH_SERVICE = 'zero';
-
-// ...
-var CONFIG_APP_ENABLE_DATASET_CATEGORIES = false;
-
-// ...
-var CONFIG_APP_ENABLE_DATASET_SIMILARDATASETS = false;
-
-// ...
-var CONFIG_APP_ENABLE_DATASET_FEEDBACK = false;
-
-// ...
-var CONFIG_APP_ENABLE_FILTER_GAZETTEER = false;
-
-// ...
-var CONFIG_APP_ENABLE_FILTER_OPERATOR = false;
-
-// ...
-var CONFIG_APP_ENABLE_FAVORITES = false;
-
-// ...
-var CONFIG_APP_HEADER_LOGO_TEXT = CONFIG_APP_TITLE;
-// var CONFIG_APP_HEADER_LOGO_IMAGE_SRC = 'https://i.imgur.com/lgtG4zB.png';
-var CONFIG_APP_HEADER_LOGO_IMAGE_SRC = '';
-// var CONFIG_APP_HEADER_LOGO_IMAGE_DESCRIPTION = 'Logo';
-var CONFIG_APP_HEADER_LOGO_IMAGE_DESCRIPTION = '';
-
-// ...
-var CONFIG_APP_FOOTER_LOGO_TEXT = 'Peacock User UI 🦚';
-// var CONFIG_APP_FOOTER_LOGO_IMAGE_SRC = 'https://i.imgur.com/lgtG4zB.png';
-var CONFIG_APP_FOOTER_LOGO_IMAGE_SRC = '';
-// var CONFIG_APP_FOOTER_LOGO_IMAGE_DESCRIPTION = 'Logo';
-var CONFIG_APP_FOOTER_LOGO_IMAGE_DESCRIPTION = '';
-var CONFIG_APP_FOOTER_LOGO_URL = 'https://github.com/opendata-guru/peacock-user-ui';
-
-// ...
-var CONFIG_APP_HEADER_NAV_1_URL = '/datasets';
-var CONFIG_APP_HEADER_NAV_1_TITLE = 'message.header.navigation.data.datasets';
-var CONFIG_APP_HEADER_NAV_2_URL = '/catalogues';
-var CONFIG_APP_HEADER_NAV_2_TITLE = 'message.header.navigation.data.catalogues';
-var CONFIG_APP_HEADER_NAV_3_URL = '';
-var CONFIG_APP_HEADER_NAV_3_TITLE = '';
-var CONFIG_APP_HEADER_NAV_4_URL = '';
-var CONFIG_APP_HEADER_NAV_4_TITLE = '';
-var CONFIG_APP_HEADER_NAV_5_URL = '';
-var CONFIG_APP_HEADER_NAV_5_TITLE = '';
-var CONFIG_APP_HEADER_NAV_6_URL = '';
-var CONFIG_APP_HEADER_NAV_6_TITLE = '';
-var CONFIG_APP_HEADER_NAV_7_URL = '';
-var CONFIG_APP_HEADER_NAV_7_TITLE = '';
-var CONFIG_APP_HEADER_NAV_8_URL = '';
-var CONFIG_APP_HEADER_NAV_8_TITLE = '';
-var CONFIG_APP_HEADER_NAV_9_URL = '';
-var CONFIG_APP_HEADER_NAV_9_TITLE = '';
-
-// ...
-var CONFIG_APP_FOOTER_NAV_1_URL = '/imprint';
-var CONFIG_APP_FOOTER_NAV_1_TITLE = 'message.navigation.navItems.imprint';
-var CONFIG_APP_FOOTER_NAV_2_URL = '/privacypolicy';
-var CONFIG_APP_FOOTER_NAV_2_TITLE = 'message.navigation.navItems.privacyPolicy';
-var CONFIG_APP_FOOTER_NAV_3_URL = '';
-var CONFIG_APP_FOOTER_NAV_3_TITLE = '';
-var CONFIG_APP_FOOTER_NAV_4_URL = '';
-var CONFIG_APP_FOOTER_NAV_4_TITLE = '';
-var CONFIG_APP_FOOTER_NAV_5_URL = '';
-var CONFIG_APP_FOOTER_NAV_5_TITLE = '';
-var CONFIG_APP_FOOTER_NAV_6_URL = '';
-var CONFIG_APP_FOOTER_NAV_6_TITLE = '';
-var CONFIG_APP_FOOTER_NAV_7_URL = '';
-var CONFIG_APP_FOOTER_NAV_7_TITLE = '';
-var CONFIG_APP_FOOTER_NAV_8_URL = '';
-var CONFIG_APP_FOOTER_NAV_8_TITLE = '';
-var CONFIG_APP_FOOTER_NAV_9_URL = '';
-var CONFIG_APP_FOOTER_NAV_9_TITLE = '';
-
-// ...
-var CONFIG_APP_ROUTER_BASE = '/peacock-user-ui/';
-// var CONFIG_APP_ROUTER_BASE = '/dist/';
-
-// ...
-var CONFIG_APP_ROUTER_ROUTE_1_NAME = 'foo';
-var CONFIG_APP_ROUTER_ROUTE_1_PATH = '/foo';
-var CONFIG_APP_ROUTER_ROUTE_1_FILE = '/pages/foo.html';
-var CONFIG_APP_ROUTER_ROUTE_1_REQUIRES_AUTH = false;
-var CONFIG_APP_ROUTER_ROUTE_2_NAME = '';
-var CONFIG_APP_ROUTER_ROUTE_2_PATH = '';
-var CONFIG_APP_ROUTER_ROUTE_2_FILE = '';
-var CONFIG_APP_ROUTER_ROUTE_2_REQUIRES_AUTH = true;
-var CONFIG_APP_ROUTER_ROUTE_3_NAME = '';
-var CONFIG_APP_ROUTER_ROUTE_3_PATH = '';
-var CONFIG_APP_ROUTER_ROUTE_3_FILE = '';
-var CONFIG_APP_ROUTER_ROUTE_3_REQUIRES_AUTH = true;
-var CONFIG_APP_ROUTER_ROUTE_4_NAME = '';
-var CONFIG_APP_ROUTER_ROUTE_4_PATH = '';
-var CONFIG_APP_ROUTER_ROUTE_4_FILE = '';
-var CONFIG_APP_ROUTER_ROUTE_4_REQUIRES_AUTH = true;
-var CONFIG_APP_ROUTER_ROUTE_5_NAME = '';
-var CONFIG_APP_ROUTER_ROUTE_5_PATH = '';
-var CONFIG_APP_ROUTER_ROUTE_5_FILE = '';
-var CONFIG_APP_ROUTER_ROUTE_5_REQUIRES_AUTH = true;
-var CONFIG_APP_ROUTER_ROUTE_6_NAME = '';
-var CONFIG_APP_ROUTER_ROUTE_6_PATH = '';
-var CONFIG_APP_ROUTER_ROUTE_6_FILE = '';
-var CONFIG_APP_ROUTER_ROUTE_6_REQUIRES_AUTH = true;
-var CONFIG_APP_ROUTER_ROUTE_7_NAME = '';
-var CONFIG_APP_ROUTER_ROUTE_7_PATH = '';
-var CONFIG_APP_ROUTER_ROUTE_7_FILE = '';
-var CONFIG_APP_ROUTER_ROUTE_7_REQUIRES_AUTH = true;
-var CONFIG_APP_ROUTER_ROUTE_8_NAME = '';
-var CONFIG_APP_ROUTER_ROUTE_8_PATH = '';
-var CONFIG_APP_ROUTER_ROUTE_8_FILE = '';
-var CONFIG_APP_ROUTER_ROUTE_8_REQUIRES_AUTH = true;
-var CONFIG_APP_ROUTER_ROUTE_9_NAME = '';
-var CONFIG_APP_ROUTER_ROUTE_9_PATH = '';
-var CONFIG_APP_ROUTER_ROUTE_9_FILE = '';
-var CONFIG_APP_ROUTER_ROUTE_9_REQUIRES_AUTH = true;
+var CONFIG_APP_TITLE = "My Data Portal",
+    CONFIG_APP_DATA_URL = "https://data.europa.eu/api/hub/search/",
+    CONFIG_APP_DATA_SERVICE = "piveau",
+    CONFIG_APP_DATA_CACHE_BUSTING = !0,
+    CONFIG_APP_GAZETTEER_URL = "https://data.europa.eu/api/hub/search/gazetteer/",
+    CONFIG_APP_UPLOAD_URL = "https://www.europeandataportal.eu/data/api/",
+    CONFIG_APP_MATOMO_URL = "",
+    CONFIG_APP_LOCALE = "en",
+    CONFIG_APP_AUTH_ENABLE = !1,
+    CONFIG_APP_AUTH_SERVICE = "keycloak",
+    CONFIG_APP_ENABLE_DATASET_CATEGORIES = !1,
+    CONFIG_APP_ENABLE_DATASET_SIMILARDATASETS = !1,
+    CONFIG_APP_ENABLE_DATASET_FEEDBACK = !1,
+    CONFIG_APP_ENABLE_FILTER_GAZETTEER = !1,
+    CONFIG_APP_ENABLE_FILTER_OPERATOR = !1,
+    CONFIG_APP_ENABLE_FAVORITES = !1,
+    CONFIG_APP_HEADER_LOGO_TEXT = CONFIG_APP_TITLE,
+    CONFIG_APP_HEADER_LOGO_IMAGE_SRC = "",
+    CONFIG_APP_HEADER_LOGO_IMAGE_DESCRIPTION = "",
+    CONFIG_APP_FOOTER_LOGO_TEXT = "Peacock User UI 🦚",
+    CONFIG_APP_FOOTER_LOGO_IMAGE_SRC = "",
+    CONFIG_APP_FOOTER_LOGO_IMAGE_DESCRIPTION = "",
+    CONFIG_APP_FOOTER_LOGO_URL = "https://github.com/opendata-guru/peacock-user-ui",
+    CONFIG_APP_HEADER_NAV_1_URL = "/datasets",
+    CONFIG_APP_HEADER_NAV_1_TITLE = "message.header.navigation.data.datasets",
+    CONFIG_APP_HEADER_NAV_2_URL = "/catalogues",
+    CONFIG_APP_HEADER_NAV_2_TITLE = "message.header.navigation.data.catalogues",
+    CONFIG_APP_HEADER_NAV_3_URL = "",
+    CONFIG_APP_HEADER_NAV_3_TITLE = "",
+    CONFIG_APP_HEADER_NAV_4_URL = "",
+    CONFIG_APP_HEADER_NAV_4_TITLE = "",
+    CONFIG_APP_HEADER_NAV_5_URL = "",
+    CONFIG_APP_HEADER_NAV_5_TITLE = "",
+    CONFIG_APP_HEADER_NAV_6_URL = "",
+    CONFIG_APP_HEADER_NAV_6_TITLE = "",
+    CONFIG_APP_HEADER_NAV_7_URL = "",
+    CONFIG_APP_HEADER_NAV_7_TITLE = "",
+    CONFIG_APP_HEADER_NAV_8_URL = "",
+    CONFIG_APP_HEADER_NAV_8_TITLE = "",
+    CONFIG_APP_HEADER_NAV_9_URL = "",
+    CONFIG_APP_HEADER_NAV_9_TITLE = "",
+    CONFIG_APP_FOOTER_NAV_1_URL = "/imprint",
+    CONFIG_APP_FOOTER_NAV_1_TITLE = "message.navigation.navItems.imprint",
+    CONFIG_APP_FOOTER_NAV_2_URL = "/privacypolicy",
+    CONFIG_APP_FOOTER_NAV_2_TITLE = "message.navigation.navItems.privacyPolicy",
+    CONFIG_APP_FOOTER_NAV_3_URL = "",
+    CONFIG_APP_FOOTER_NAV_3_TITLE = "",
+    CONFIG_APP_FOOTER_NAV_4_URL = "",
+    CONFIG_APP_FOOTER_NAV_4_TITLE = "",
+    CONFIG_APP_FOOTER_NAV_5_URL = "",
+    CONFIG_APP_FOOTER_NAV_5_TITLE = "",
+    CONFIG_APP_FOOTER_NAV_6_URL = "",
+    CONFIG_APP_FOOTER_NAV_6_TITLE = "",
+    CONFIG_APP_FOOTER_NAV_7_URL = "",
+    CONFIG_APP_FOOTER_NAV_7_TITLE = "",
+    CONFIG_APP_FOOTER_NAV_8_URL = "",
+    CONFIG_APP_FOOTER_NAV_8_TITLE = "",
+    CONFIG_APP_FOOTER_NAV_9_URL = "",
+    CONFIG_APP_FOOTER_NAV_9_TITLE = "",
+    CONFIG_APP_ROUTER_BASE = "",
+    CONFIG_APP_ROUTER_ROUTE_1_NAME = "foo",
+    CONFIG_APP_ROUTER_ROUTE_1_PATH = "/foo",
+    CONFIG_APP_ROUTER_ROUTE_1_FILE = "/pages/foo.html",
+    CONFIG_APP_ROUTER_ROUTE_1_REQUIRES_AUTH = !1,
+    CONFIG_APP_ROUTER_ROUTE_2_NAME = "",
+    CONFIG_APP_ROUTER_ROUTE_2_PATH = "",
+    CONFIG_APP_ROUTER_ROUTE_2_FILE = "",
+    CONFIG_APP_ROUTER_ROUTE_2_REQUIRES_AUTH = !0,
+    CONFIG_APP_ROUTER_ROUTE_3_NAME = "",
+    CONFIG_APP_ROUTER_ROUTE_3_PATH = "",
+    CONFIG_APP_ROUTER_ROUTE_3_FILE = "",
+    CONFIG_APP_ROUTER_ROUTE_3_REQUIRES_AUTH = !0,
+    CONFIG_APP_ROUTER_ROUTE_4_NAME = "",
+    CONFIG_APP_ROUTER_ROUTE_4_PATH = "",
+    CONFIG_APP_ROUTER_ROUTE_4_FILE = "",
+    CONFIG_APP_ROUTER_ROUTE_4_REQUIRES_AUTH = !0,
+    CONFIG_APP_ROUTER_ROUTE_5_NAME = "",
+    CONFIG_APP_ROUTER_ROUTE_5_PATH = "",
+    CONFIG_APP_ROUTER_ROUTE_5_FILE = "",
+    CONFIG_APP_ROUTER_ROUTE_5_REQUIRES_AUTH = !0,
+    CONFIG_APP_ROUTER_ROUTE_6_NAME = "",
+    CONFIG_APP_ROUTER_ROUTE_6_PATH = "",
+    CONFIG_APP_ROUTER_ROUTE_6_FILE = "",
+    CONFIG_APP_ROUTER_ROUTE_6_REQUIRES_AUTH = !0,
+    CONFIG_APP_ROUTER_ROUTE_7_NAME = "",
+    CONFIG_APP_ROUTER_ROUTE_7_PATH = "",
+    CONFIG_APP_ROUTER_ROUTE_7_FILE = "",
+    CONFIG_APP_ROUTER_ROUTE_7_REQUIRES_AUTH = !0,
+    CONFIG_APP_ROUTER_ROUTE_8_NAME = "",
+    CONFIG_APP_ROUTER_ROUTE_8_PATH = "",
+    CONFIG_APP_ROUTER_ROUTE_8_FILE = "",
+    CONFIG_APP_ROUTER_ROUTE_8_REQUIRES_AUTH = !0,
+    CONFIG_APP_ROUTER_ROUTE_9_NAME = "",
+    CONFIG_APP_ROUTER_ROUTE_9_PATH = "",
+    CONFIG_APP_ROUTER_ROUTE_9_FILE = "",
+    CONFIG_APP_ROUTER_ROUTE_9_REQUIRES_AUTH = !0;
