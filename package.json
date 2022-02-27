@@ -1,6 +1,6 @@
 {
   "name": "peacock-user-ui",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A HTML-SPA user portal for view open data datasets",
   "author": "Thomas Tursics <thomas@tursics.de> (https://www.tursics.de)",
   "scripts": {

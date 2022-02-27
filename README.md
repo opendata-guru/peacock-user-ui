@@ -55,6 +55,7 @@ CONFIG_APP_ENABLE_FILTER_GAZETTEER | false
 CONFIG_APP_ENABLE_FILTER_OPERATOR | false
 CONFIG_APP_ENABLE_FAVORITES | true
 CONFIG_APP_ROUTER_BASE | *empty* | Set the path of the url. Default is an empty string, works for every url like https://some-domain.com or https://sub.domain.com . Set value to `/my-path/' for urls like 'https://some-domain.com/my-path/'.
+CONFIG_APP_ROUTER_LIB_BASE | *empty*  | Set the path of this library. Use the same value as in `CONFIG_APP_ROUTER_BASE` or `'https://unpkg.com/peacock-user-ui@latest/dist/'` when you using the CDN.
 CONFIG_APP_ROUTER_ROUTE_1_NAME to CONFIG_APP_ROUTER_ROUTE_9_NAME | *empty*
 CONFIG_APP_ROUTER_ROUTE_1_PATH to CONFIG_APP_ROUTER_ROUTE_9_PATH | *empty*
 CONFIG_APP_ROUTER_ROUTE_1_FILE to CONFIG_APP_ROUTER_ROUTE_9_FILE | *empty*

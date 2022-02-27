@@ -205,8 +205,10 @@ glueConfig.navigation.topnav.sub.append = footerNav;
 
 if (CONFIG_APP_ROUTER_BASE) {
     glueConfig.routerOptions.base = CONFIG_APP_ROUTER_BASE;
-    window.resourceBasePath = CONFIG_APP_ROUTER_BASE;
-    __webpack_public_path__ = CONFIG_APP_ROUTER_BASE;
+}
+if (CONFIG_APP_ROUTER_LIB_BASE) {
+    window.resourceBasePath = CONFIG_APP_ROUTER_LIB_BASE;
+    __webpack_public_path__ = CONFIG_APP_ROUTER_LIB_BASE;
 }
 
 let routes = [];
