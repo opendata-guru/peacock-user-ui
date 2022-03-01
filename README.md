@@ -56,39 +56,50 @@ CONFIG_APP_ENABLE_FILTER_OPERATOR | false
 CONFIG_APP_ENABLE_FAVORITES | true
 CONFIG_APP_ROUTER_BASE | *empty* | Set the path of the url. Default is an empty string, works for every url like https://some-domain.com or https://sub.domain.com . Set value to `/my-path/' for urls like 'https://some-domain.com/my-path/'.
 CONFIG_APP_ROUTER_LIB_BASE | *empty*  | Set the path of this library. Use the same value as in `CONFIG_APP_ROUTER_BASE` or `'https://unpkg.com/peacock-user-ui@latest/dist/'` when you using the CDN.
-CONFIG_APP_ROUTER_ROUTE_1_NAME to CONFIG_APP_ROUTER_ROUTE_9_NAME | *empty*
-CONFIG_APP_ROUTER_ROUTE_1_PATH to CONFIG_APP_ROUTER_ROUTE_9_PATH | *empty*
-CONFIG_APP_ROUTER_ROUTE_1_FILE to CONFIG_APP_ROUTER_ROUTE_9_FILE | *empty*
-CONFIG_APP_ROUTER_ROUTE_1_REQUIRES_AUTH to CONFIG_APP_ROUTER_ROUTE_9_REQUIRES_AUTH | true
 
-Customize pages header:
+### Embed own pages
 
-Key | Default value | Description
-----|---------------|-------------
-CONFIG_APP_HEADER_LOGO_TEXT | My Data Portal
-CONFIG_APP_HEADER_LOGO_IMAGE_SRC | *empty*
-CONFIG_APP_HEADER_LOGO_IMAGE_DESCRIPTION | *empty*
-CONFIG_APP_HEADER_NAV_1_URL | /datasets
-CONFIG_APP_HEADER_NAV_1_TITLE | message.header.navigation.data.datasets
-CONFIG_APP_HEADER_NAV_2_URL | /catalogues
-CONFIG_APP_HEADER_NAV_2_TITLE | message.header.navigation.data.catalogues
-CONFIG_APP_HEADER_NAV_3_URL to CONFIG_APP_HEADER_NAV_9_URL | *empty*
-CONFIG_APP_HEADER_NAV_3_TITLE to CONFIG_APP_HEADER_NAV_9_TITLE | *empty*
+You can embed own static HTML files.
+The header and footer will be added automatically.
 
-Customize pages footer:
+Key | Description | Default value
+----|-------------|---------------
+CONFIG_APP_ROUTER_ROUTE_1_NAME to CONFIG_APP_ROUTER_ROUTE_9_NAME || `empty`
+CONFIG_APP_ROUTER_ROUTE_1_PATH to CONFIG_APP_ROUTER_ROUTE_9_PATH || `empty`
+CONFIG_APP_ROUTER_ROUTE_1_FILE to CONFIG_APP_ROUTER_ROUTE_9_FILE || `empty`
+CONFIG_APP_ROUTER_ROUTE_1_REQUIRES_AUTH to CONFIG_APP_ROUTER_ROUTE_9_REQUIRES_AUTH | Set to `true` if your page is protected, set to `false` to access without login. | `true`
 
-Key | Default value | Description
-----|---------------|-------------
-CONFIG_APP_FOOTER_LOGO_TEXT | Peacock User UI 🦚
-CONFIG_APP_FOOTER_LOGO_IMAGE_SRC | *empty*
-CONFIG_APP_FOOTER_LOGO_IMAGE_DESCRIPTION | *empty*
-CONFIG_APP_FOOTER_LOGO_URL | https://github.com/opendata-guru/peacock-user-ui
-CONFIG_APP_FOOTER_NAV_1_URL | /imprint
-CONFIG_APP_FOOTER_NAV_1_TITLE | message.navigation.navItems.imprint
-CONFIG_APP_FOOTER_NAV_2_URL | /privacypolicy
-CONFIG_APP_FOOTER_NAV_2_TITLE | message.navigation.navItems.privacyPolicy
-CONFIG_APP_FOOTER_NAV_3_URL to CONFIG_APP_FOOTER_NAV_9_URL | *empty*
-CONFIG_APP_FOOTER_NAV_3_TITLE to CONFIG_APP_FOOTER_NAV_9_TITLE | *empty*
+
+### Customize pages header
+
+Use relative `URL`s for default pages (e.g. `'/datasets'`) or router pages (see above) (e.g. `'/imprint'`). Use `URL`s starting with `https://` to navigate to other locations.
+
+Key | Description | Default value
+----|-------------|---------------
+CONFIG_APP_HEADER_LOGO_TEXT || `'My Data Portal'`
+CONFIG_APP_HEADER_LOGO_IMAGE_SRC || `empty`
+CONFIG_APP_HEADER_LOGO_IMAGE_DESCRIPTION || `empty`
+CONFIG_APP_HEADER_NAV_1_URL || `'/datasets'`
+CONFIG_APP_HEADER_NAV_1_TITLE || `'message.header.navigation.data.datasets'`
+CONFIG_APP_HEADER_NAV_2_URL || `'/catalogues'`
+CONFIG_APP_HEADER_NAV_2_TITLE || `'message.header.navigation.data.catalogues'`
+CONFIG_APP_HEADER_NAV_3_URL to CONFIG_APP_HEADER_NAV_9_URL || `empty`
+CONFIG_APP_HEADER_NAV_3_TITLE to CONFIG_APP_HEADER_NAV_9_TITLE || `empty`
+
+### Customize pages footer
+
+Key | Description | Default value
+----|-------------|---------------
+CONFIG_APP_FOOTER_LOGO_TEXT || `'Peacock User UI 🦚'`
+CONFIG_APP_FOOTER_LOGO_IMAGE_SRC || `empty`
+CONFIG_APP_FOOTER_LOGO_IMAGE_DESCRIPTION || `empty`
+CONFIG_APP_FOOTER_LOGO_URL || `'https://github.com/opendata-guru/peacock-user-ui'`
+CONFIG_APP_FOOTER_NAV_1_URL || `'/imprint'`
+CONFIG_APP_FOOTER_NAV_1_TITLE || `'message.navigation.navItems.imprint'`
+CONFIG_APP_FOOTER_NAV_2_URL || `'/privacypolicy'`
+CONFIG_APP_FOOTER_NAV_2_TITLE || `'message.navigation.navItems.privacyPolicy'`
+CONFIG_APP_FOOTER_NAV_3_URL to CONFIG_APP_FOOTER_NAV_9_URL || `empty`
+CONFIG_APP_FOOTER_NAV_3_TITLE to CONFIG_APP_FOOTER_NAV_9_TITLE || `empty`
 
 ---
 The following table and example file shortly describes the configurable values.
