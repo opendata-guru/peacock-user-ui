@@ -22,9 +22,9 @@ export default {
   title: 'Peacock',
   version: packageInfo.version,
   api: {
-    baseUrl: 'http://localhost:8081/',
-    gazetteerBaseUrl: 'http://localhost:8081/gazetteer/',
-    uploadBaseUrl: 'http://localhost:8080',
+    baseUrl: 'https://data.europa.eu/api/hub/search/',
+    gazetteerBaseUrl: 'https://data.europa.eu/api/hub/search/gazetteer/',
+    uploadBaseUrl: 'https://www.europeandataportal.eu/data/api/',
     matomoUrl: '',
     authToken: '',
   },

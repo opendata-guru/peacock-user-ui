@@ -16,31 +16,31 @@ import datasetCKANService from '../guides/adapters/datasets-adapter-ckan';
 import datasetCKANFileService from '../guides/adapters/datasets-adapter-ckan-file';
 // import distributionCKANService from '../guides/adapters/distributions-adapter-ckan';
 
-if (CONFIG_APP_TITLE) {
+if (typeof CONFIG_APP_TITLE !== 'undefined') {
     glueConfig.title = CONFIG_APP_TITLE;
 }
 
-if (CONFIG_APP_DATA_URL) {
+if (typeof CONFIG_APP_DATA_URL !== 'undefined') {
     glueConfig.api.baseUrl = CONFIG_APP_DATA_URL;
 }
 
-if (CONFIG_APP_GAZETTEER_URL) {
+if (typeof CONFIG_APP_GAZETTEER_URL !== 'undefined') {
     glueConfig.api.gazetteerBaseUrl = CONFIG_APP_GAZETTEER_URL;
 }
 
-if (CONFIG_APP_UPLOAD_URL) {
+if (typeof CONFIG_APP_UPLOAD_URL !== 'undefined') {
     glueConfig.api.uploadBaseUrl = CONFIG_APP_UPLOAD_URL;
 }
 
-if (CONFIG_APP_MATOMO_URL) {
+if (typeof CONFIG_APP_MATOMO_URL !== 'undefined') {
     glueConfig.api.matomoUrl = CONFIG_APP_MATOMO_URL;
 }
 
-if (CONFIG_APP_LOCALE) {
+if (typeof CONFIG_APP_LOCALE !== 'undefined') {
     glueConfig.locale = CONFIG_APP_LOCALE;
 }
 
-if (CONFIG_APP_DATA_SERVICE) {
+if (typeof CONFIG_APP_DATA_SERVICE !== 'undefined') {
     if (CONFIG_APP_DATA_SERVICE === 'piveau') {
         // use default
     } else if (CONFIG_APP_DATA_SERVICE === 'ckan') {
@@ -52,10 +52,7 @@ if (CONFIG_APP_DATA_SERVICE) {
     }
 }
 
-glueConfig.enable.services.cacheBusting = CONFIG_APP_DATA_CACHE_BUSTING === false ? false : true;
-
-glueConfig.keycloak.enableLogin = CONFIG_APP_AUTH_ENABLE === false ? false : true;
-if (CONFIG_APP_AUTH_SERVICE) {
+if (typeof CONFIG_APP_AUTH_SERVICE !== 'undefined') {
     if (CONFIG_APP_AUTH_SERVICE === 'keycloak') {
         glueConfig.services.authService = authKeycloakService;
         glueConfig.api.authToken = '';
@@ -65,80 +62,91 @@ if (CONFIG_APP_AUTH_SERVICE) {
     }
 }
 
-glueConfig.enable.dataset.categories = CONFIG_APP_ENABLE_DATASET_CATEGORIES === false ? false : true;
-glueConfig.enable.dataset.similarDatasets = CONFIG_APP_ENABLE_DATASET_SIMILARDATASETS === false ? false : true;
-glueConfig.enable.dataset.feedback = CONFIG_APP_ENABLE_DATASET_FEEDBACK === false ? false : true;
-glueConfig.enable.filter.gazetteer = CONFIG_APP_ENABLE_FILTER_GAZETTEER === false ? false : true;
-glueConfig.enable.filter.operator = CONFIG_APP_ENABLE_FILTER_OPERATOR === false ? false : true;
-glueConfig.enable.favorites.enable = CONFIG_APP_ENABLE_FAVORITES === false ? false : true;
+if (typeof CONFIG_APP_ROUTER_BASE !== 'undefined') {
+    glueConfig.routerOptions.base = CONFIG_APP_ROUTER_BASE;
+}
 
-if (CONFIG_APP_HEADER_LOGO_TEXT || CONFIG_APP_HEADER_LOGO_IMAGE_SRC || CONFIG_APP_HEADER_LOGO_IMAGE_DESCRIPTION) {
+if (typeof CONFIG_APP_ROUTER_LIB_BASE !== 'undefined') {
+    window.resourceBasePath = CONFIG_APP_ROUTER_LIB_BASE;
+    __webpack_public_path__ = CONFIG_APP_ROUTER_LIB_BASE;
+}
+
+glueConfig.enable.dataset.similarDatasets = typeof CONFIG_APP_ENABLE_DATASET_SIMILARDATASETS !== 'undefined' ? CONFIG_APP_ENABLE_DATASET_SIMILARDATASETS : false;
+glueConfig.enable.services.cacheBusting = typeof CONFIG_APP_DATA_CACHE_BUSTING !== 'undefined' ? CONFIG_APP_DATA_CACHE_BUSTING : true;
+glueConfig.enable.dataset.categories = typeof CONFIG_APP_ENABLE_DATASET_CATEGORIES !== 'undefined' ? CONFIG_APP_ENABLE_DATASET_CATEGORIES : false;
+glueConfig.enable.dataset.feedback = typeof CONFIG_APP_ENABLE_DATASET_FEEDBACK !== 'undefined' ? CONFIG_APP_ENABLE_DATASET_FEEDBACK : false;
+glueConfig.enable.favorites.enable = typeof CONFIG_APP_ENABLE_FAVORITES !== 'undefined' ? CONFIG_APP_ENABLE_FAVORITES : true;
+glueConfig.enable.filter.gazetteer = typeof CONFIG_APP_ENABLE_FILTER_GAZETTEER !== 'undefined' ? CONFIG_APP_ENABLE_FILTER_GAZETTEER : false;
+glueConfig.enable.filter.operator = typeof CONFIG_APP_ENABLE_FILTER_OPERATOR !== 'undefined' ? CONFIG_APP_ENABLE_FILTER_OPERATOR : false;
+glueConfig.keycloak.enableLogin = typeof CONFIG_APP_AUTH_ENABLE !== 'undefined' ? CONFIG_APP_AUTH_ENABLE : false;
+
+if ((typeof CONFIG_APP_HEADER_LOGO_TEXT !== 'undefined') || (typeof CONFIG_APP_HEADER_LOGO_IMAGE_SRC !== 'undefined') || (typeof CONFIG_APP_HEADER_LOGO_IMAGE_DESCRIPTION !== 'undefined')) {
     glueConfig.images.headerLogos.push({
-        src: CONFIG_APP_HEADER_LOGO_IMAGE_SRC || '',
-        description: CONFIG_APP_HEADER_LOGO_IMAGE_DESCRIPTION || '',
-        text: CONFIG_APP_HEADER_LOGO_TEXT || '',
+        src: typeof CONFIG_APP_HEADER_LOGO_IMAGE_SRC !== 'undefined' ? CONFIG_APP_HEADER_LOGO_IMAGE_SRC : '',
+        description: typeof CONFIG_APP_HEADER_LOGO_IMAGE_DESCRIPTION !== 'undefined' ? CONFIG_APP_HEADER_LOGO_IMAGE_DESCRIPTION :'',
+        text: typeof CONFIG_APP_HEADER_LOGO_TEXT !== 'undefined' ? CONFIG_APP_HEADER_LOGO_TEXT : '',
     });
 }
 
-if (CONFIG_APP_FOOTER_LOGO_TEXT || CONFIG_APP_FOOTER_LOGO_IMAGE_SRC || CONFIG_APP_FOOTER_LOGO_IMAGE_DESCRIPTION) {
+if ((typeof CONFIG_APP_FOOTER_LOGO_TEXT !== 'undefined') || (typeof CONFIG_APP_FOOTER_LOGO_IMAGE_SRC !== 'undefined') || (typeof CONFIG_APP_FOOTER_LOGO_IMAGE_DESCRIPTION !== 'undefined')) {
     glueConfig.images.footerLogos.push({
-        src: CONFIG_APP_FOOTER_LOGO_IMAGE_SRC || '',
-        description: CONFIG_APP_FOOTER_LOGO_IMAGE_DESCRIPTION || '',
-        text: CONFIG_APP_FOOTER_LOGO_TEXT || '',
-        href: CONFIG_APP_FOOTER_LOGO_URL || '/',
+        src: typeof CONFIG_APP_FOOTER_LOGO_IMAGE_SRC !== 'undefined' ? CONFIG_APP_FOOTER_LOGO_IMAGE_SRC : '',
+        description: typeof CONFIG_APP_FOOTER_LOGO_IMAGE_DESCRIPTION !== 'undefined' ? CONFIG_APP_FOOTER_LOGO_IMAGE_DESCRIPTION : '',
+        text: typeof CONFIG_APP_FOOTER_LOGO_TEXT !== 'undefined' ? CONFIG_APP_FOOTER_LOGO_TEXT : '',
+        href: typeof CONFIG_APP_FOOTER_LOGO_URL !== 'undefined' ? CONFIG_APP_FOOTER_LOGO_URL : '/',
     });
 }
 
 let headerNav = [];
-if (CONFIG_APP_HEADER_NAV_1_TITLE) {
+if (typeof CONFIG_APP_HEADER_NAV_1_TITLE !== 'undefined') {
     headerNav.push({
         href: CONFIG_APP_HEADER_NAV_1_URL,
         title: CONFIG_APP_HEADER_NAV_1_TITLE
     });
 }
-if (CONFIG_APP_HEADER_NAV_2_TITLE) {
+if (typeof CONFIG_APP_HEADER_NAV_2_TITLE !== 'undefined') {
     headerNav.push({
         href: CONFIG_APP_HEADER_NAV_2_URL,
         title: CONFIG_APP_HEADER_NAV_2_TITLE
     });
 }
-if (CONFIG_APP_HEADER_NAV_3_TITLE) {
+if (typeof CONFIG_APP_HEADER_NAV_3_TITLE !== 'undefined') {
     headerNav.push({
         href: CONFIG_APP_HEADER_NAV_3_URL,
         title: CONFIG_APP_HEADER_NAV_3_TITLE
     });
 }
-if (CONFIG_APP_HEADER_NAV_4_TITLE) {
+if (typeof CONFIG_APP_HEADER_NAV_4_TITLE !== 'undefined') {
     headerNav.push({
         href: CONFIG_APP_HEADER_NAV_4_URL,
         title: CONFIG_APP_HEADER_NAV_4_TITLE
     });
 }
-if (CONFIG_APP_HEADER_NAV_5_TITLE) {
+if (typeof CONFIG_APP_HEADER_NAV_5_TITLE !== 'undefined') {
     headerNav.push({
         href: CONFIG_APP_HEADER_NAV_5_URL,
         title: CONFIG_APP_HEADER_NAV_5_TITLE
     });
 }
-if (CONFIG_APP_HEADER_NAV_6_TITLE) {
+if (typeof CONFIG_APP_HEADER_NAV_6_TITLE !== 'undefined') {
     headerNav.push({
         href: CONFIG_APP_HEADER_NAV_6_URL,
         title: CONFIG_APP_HEADER_NAV_6_TITLE
     });
 }
-if (CONFIG_APP_HEADER_NAV_7_TITLE) {
+if (typeof CONFIG_APP_HEADER_NAV_7_TITLE !== 'undefined') {
     headerNav.push({
         href: CONFIG_APP_HEADER_NAV_7_URL,
         title: CONFIG_APP_HEADER_NAV_7_TITLE
     });
 }
-if (CONFIG_APP_HEADER_NAV_8_TITLE) {
+if (typeof CONFIG_APP_HEADER_NAV_8_TITLE !== 'undefined') {
     headerNav.push({
         href: CONFIG_APP_HEADER_NAV_8_URL,
         title: CONFIG_APP_HEADER_NAV_8_TITLE
     });
 }
-if (CONFIG_APP_HEADER_NAV_9_TITLE) {
+if (typeof CONFIG_APP_HEADER_NAV_9_TITLE !== 'undefined') {
     headerNav.push({
         href: CONFIG_APP_HEADER_NAV_9_URL,
         title: CONFIG_APP_HEADER_NAV_9_TITLE
@@ -147,55 +155,55 @@ if (CONFIG_APP_HEADER_NAV_9_TITLE) {
 glueConfig.navigation.topnav.main.append = headerNav;
 
 let footerNav = [];
-if (CONFIG_APP_FOOTER_NAV_1_TITLE) {
+if (typeof CONFIG_APP_FOOTER_NAV_1_TITLE !== 'undefined') {
     footerNav.push({
         href: CONFIG_APP_FOOTER_NAV_1_URL,
         title: CONFIG_APP_FOOTER_NAV_1_TITLE
     });
 }
-if (CONFIG_APP_FOOTER_NAV_2_TITLE) {
+if (typeof CONFIG_APP_FOOTER_NAV_2_TITLE !== 'undefined') {
     footerNav.push({
         href: CONFIG_APP_FOOTER_NAV_2_URL,
         title: CONFIG_APP_FOOTER_NAV_2_TITLE
     });
 }
-if (CONFIG_APP_FOOTER_NAV_3_TITLE) {
+if (typeof CONFIG_APP_FOOTER_NAV_3_TITLE !== 'undefined') {
     footerNav.push({
         href: CONFIG_APP_FOOTER_NAV_3_URL,
         title: CONFIG_APP_FOOTER_NAV_3_TITLE
     });
 }
-if (CONFIG_APP_FOOTER_NAV_4_TITLE) {
+if (typeof CONFIG_APP_FOOTER_NAV_4_TITLE !== 'undefined') {
     footerNav.push({
         href: CONFIG_APP_FOOTER_NAV_4_URL,
         title: CONFIG_APP_FOOTER_NAV_4_TITLE
     });
 }
-if (CONFIG_APP_FOOTER_NAV_5_TITLE) {
+if (typeof CONFIG_APP_FOOTER_NAV_5_TITLE !== 'undefined') {
     footerNav.push({
         href: CONFIG_APP_FOOTER_NAV_5_URL,
         title: CONFIG_APP_FOOTER_NAV_5_TITLE
     });
 }
-if (CONFIG_APP_FOOTER_NAV_6_TITLE) {
+if (typeof CONFIG_APP_FOOTER_NAV_6_TITLE !== 'undefined') {
     footerNav.push({
         href: CONFIG_APP_FOOTER_NAV_6_URL,
         title: CONFIG_APP_FOOTER_NAV_6_TITLE
     });
 }
-if (CONFIG_APP_FOOTER_NAV_7_TITLE) {
+if (typeof CONFIG_APP_FOOTER_NAV_7_TITLE !== 'undefined') {
     footerNav.push({
         href: CONFIG_APP_FOOTER_NAV_7_URL,
         title: CONFIG_APP_FOOTER_NAV_7_TITLE
     });
 }
-if (CONFIG_APP_FOOTER_NAV_8_TITLE) {
+if (typeof CONFIG_APP_FOOTER_NAV_8_TITLE !== 'undefined') {
     footerNav.push({
         href: CONFIG_APP_FOOTER_NAV_8_URL,
         title: CONFIG_APP_FOOTER_NAV_8_TITLE
     });
 }
-if (CONFIG_APP_FOOTER_NAV_9_TITLE) {
+if (typeof CONFIG_APP_FOOTER_NAV_9_TITLE !== 'undefined') {
     footerNav.push({
         href: CONFIG_APP_FOOTER_NAV_9_URL,
         title: CONFIG_APP_FOOTER_NAV_9_TITLE
@@ -203,16 +211,8 @@ if (CONFIG_APP_FOOTER_NAV_9_TITLE) {
 }
 glueConfig.navigation.topnav.sub.append = footerNav;
 
-if (CONFIG_APP_ROUTER_BASE) {
-    glueConfig.routerOptions.base = CONFIG_APP_ROUTER_BASE;
-}
-if (CONFIG_APP_ROUTER_LIB_BASE) {
-    window.resourceBasePath = CONFIG_APP_ROUTER_LIB_BASE;
-    __webpack_public_path__ = CONFIG_APP_ROUTER_LIB_BASE;
-}
-
 let routes = [];
-if (CONFIG_APP_ROUTER_ROUTE_1_NAME) {
+if (typeof CONFIG_APP_ROUTER_ROUTE_1_NAME !== 'undefined') {
     routes.push({
         name: CONFIG_APP_ROUTER_ROUTE_1_NAME,
         path: CONFIG_APP_ROUTER_ROUTE_1_PATH,
@@ -220,7 +220,7 @@ if (CONFIG_APP_ROUTER_ROUTE_1_NAME) {
         requiresAuth: CONFIG_APP_ROUTER_ROUTE_1_REQUIRES_AUTH
     });
 }
-if (CONFIG_APP_ROUTER_ROUTE_2_NAME) {
+if (typeof CONFIG_APP_ROUTER_ROUTE_2_NAME !== 'undefined') {
     routes.push({
         name: CONFIG_APP_ROUTER_ROUTE_2_NAME,
         path: CONFIG_APP_ROUTER_ROUTE_2_PATH,
@@ -228,7 +228,7 @@ if (CONFIG_APP_ROUTER_ROUTE_2_NAME) {
         requiresAuth: CONFIG_APP_ROUTER_ROUTE_2_REQUIRES_AUTH
     });
 }
-if (CONFIG_APP_ROUTER_ROUTE_3_NAME) {
+if (typeof CONFIG_APP_ROUTER_ROUTE_3_NAME !== 'undefined') {
     routes.push({
         name: CONFIG_APP_ROUTER_ROUTE_3_NAME,
         path: CONFIG_APP_ROUTER_ROUTE_3_PATH,
@@ -236,7 +236,7 @@ if (CONFIG_APP_ROUTER_ROUTE_3_NAME) {
         requiresAuth: CONFIG_APP_ROUTER_ROUTE_3_REQUIRES_AUTH
     });
 }
-if (CONFIG_APP_ROUTER_ROUTE_4_NAME) {
+if (typeof CONFIG_APP_ROUTER_ROUTE_4_NAME !== 'undefined') {
     routes.push({
         name: CONFIG_APP_ROUTER_ROUTE_4_NAME,
         path: CONFIG_APP_ROUTER_ROUTE_4_PATH,
@@ -244,7 +244,7 @@ if (CONFIG_APP_ROUTER_ROUTE_4_NAME) {
         requiresAuth: CONFIG_APP_ROUTER_ROUTE_4_REQUIRES_AUTH
     });
 }
-if (CONFIG_APP_ROUTER_ROUTE_5_NAME) {
+if (typeof CONFIG_APP_ROUTER_ROUTE_5_NAME !== 'undefined') {
     routes.push({
         name: CONFIG_APP_ROUTER_ROUTE_5_NAME,
         path: CONFIG_APP_ROUTER_ROUTE_5_PATH,
@@ -252,7 +252,7 @@ if (CONFIG_APP_ROUTER_ROUTE_5_NAME) {
         requiresAuth: CONFIG_APP_ROUTER_ROUTE_5_REQUIRES_AUTH
     });
 }
-if (CONFIG_APP_ROUTER_ROUTE_6_NAME) {
+if (typeof CONFIG_APP_ROUTER_ROUTE_6_NAME !== 'undefined') {
     routes.push({
         name: CONFIG_APP_ROUTER_ROUTE_6_NAME,
         path: CONFIG_APP_ROUTER_ROUTE_6_PATH,
@@ -260,7 +260,7 @@ if (CONFIG_APP_ROUTER_ROUTE_6_NAME) {
         requiresAuth: CONFIG_APP_ROUTER_ROUTE_6_REQUIRES_AUTH
     });
 }
-if (CONFIG_APP_ROUTER_ROUTE_7_NAME) {
+if (typeof CONFIG_APP_ROUTER_ROUTE_7_NAME !== 'undefined') {
     routes.push({
         name: CONFIG_APP_ROUTER_ROUTE_7_NAME,
         path: CONFIG_APP_ROUTER_ROUTE_7_PATH,
@@ -268,7 +268,7 @@ if (CONFIG_APP_ROUTER_ROUTE_7_NAME) {
         requiresAuth: CONFIG_APP_ROUTER_ROUTE_7_REQUIRES_AUTH
     });
 }
-if (CONFIG_APP_ROUTER_ROUTE_8_NAME) {
+if (typeof CONFIG_APP_ROUTER_ROUTE_8_NAME !== 'undefined') {
     routes.push({
         name: CONFIG_APP_ROUTER_ROUTE_8_NAME,
         path: CONFIG_APP_ROUTER_ROUTE_8_PATH,
@@ -276,7 +276,7 @@ if (CONFIG_APP_ROUTER_ROUTE_8_NAME) {
         requiresAuth: CONFIG_APP_ROUTER_ROUTE_8_REQUIRES_AUTH
     });
 }
-if (CONFIG_APP_ROUTER_ROUTE_9_NAME) {
+if (typeof CONFIG_APP_ROUTER_ROUTE_9_NAME !== 'undefined') {
     routes.push({
         name: CONFIG_APP_ROUTER_ROUTE_9_NAME,
         path: CONFIG_APP_ROUTER_ROUTE_1_PATH,

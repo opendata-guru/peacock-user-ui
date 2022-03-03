@@ -36,26 +36,26 @@ If you want to contribute to this projekt (report a bug, wish a new feature, imp
 
 The following table shortly describes the configurable values in `peacock-user-ui/static/js/config.js`.
 
-Key | Default value | Description
-----|---------------|-------------
-CONFIG_APP_TITLE | My Data Portal
-CONFIG_APP_DATA_URL | https://data.europa.eu/api/hub/search/ | Set the API data endpoint. You can use e.g. CKAN endpoints like 'https://www.govdata.de/ckan/api/action/' and 'https://www.govdata.de/ckan/api/action/package_search?q=spending'. Sometimes CORS are misconfigured and you need an data proxy like 'https://opendata.guru/proxy/cors?url=https://www.govdata.de/ckan/api/action/' and 'https://opendata.guru/proxy/cors?url=https://opendata.jena.de/api/3/action/package_search?rows=9999'. It's also possible to use local path to data files, try '/data/ckan-lazy.json' and '/data/ckan.json'.
-CONFIG_APP_DATA_SERVICE | piveau | The Service defines the data format data url uses. Use 'piveau' for EU data portal, 'ckan' for CKAN API portals and 'ckan-file' for local CKAN json files.
-CONFIG_APP_DATA_CACHE_BUSTING | true | used for file data services e.g. `ckan-file`
-CONFIG_APP_GAZETTEER_URL | https://data.europa.eu/api/hub/search/gazetteer/
-CONFIG_APP_UPLOAD_URL | https://www.europeandataportal.eu/data/api/
-CONFIG_APP_MATOMO_URL | *empty*
-CONFIG_APP_LOCALE | en | Used display language. Use e.g. 'de' for German. The fallback language is English.
-CONFIG_APP_AUTH_ENABLE | false | Enable Auth to display a `log in` button for admin functionality.
-CONFIG_APP_AUTH_SERVICE | keycloak | Set the authentification method `keycloak` or `zero` (for fake login auth).
-CONFIG_APP_ENABLE_DATASET_CATEGORIES | false
-CONFIG_APP_ENABLE_DATASET_SIMILARDATASETS | false
-CONFIG_APP_ENABLE_DATASET_FEEDBACK | false
-CONFIG_APP_ENABLE_FILTER_GAZETTEER | false
-CONFIG_APP_ENABLE_FILTER_OPERATOR | false
-CONFIG_APP_ENABLE_FAVORITES | true
-CONFIG_APP_ROUTER_BASE | *empty* | Set the path of the url. Default is an empty string, works for every url like https://some-domain.com or https://sub.domain.com . Set value to `/my-path/' for urls like 'https://some-domain.com/my-path/'.
-CONFIG_APP_ROUTER_LIB_BASE | *empty*  | Set the path of this library. Use the same value as in `CONFIG_APP_ROUTER_BASE` or `'https://unpkg.com/peacock-user-ui@latest/dist/'` when you using the CDN.
+Key | Description | Default value
+----|-------------|---------------
+CONFIG_APP_TITLE | | `Peacock`
+CONFIG_APP_DATA_URL | Set the API data endpoint. You can use e.g. CKAN endpoints like 'https://www.govdata.de/ckan/api/action/' and 'https://www.govdata.de/ckan/api/action/package_search?q=spending'. Sometimes CORS are misconfigured and you need an data proxy like 'https://opendata.guru/proxy/cors?url=https://www.govdata.de/ckan/api/action/' and 'https://opendata.guru/proxy/cors?url=https://opendata.jena.de/api/3/action/package_search?rows=9999'. It's also possible to use local path to data files, try '/data/ckan-lazy.json' and '/data/ckan.json'. | `https://data.europa.eu/api/hub/search/`
+CONFIG_APP_DATA_SERVICE | The Service defines the data format data url uses. Use `piveau` for EU data portal, `ckan` for CKAN API portals and `ckan-file` for local CKAN json files. | `piveau`
+CONFIG_APP_DATA_CACHE_BUSTING | used for file data services e.g. `ckan-file` | true
+CONFIG_APP_GAZETTEER_URL | | `https://data.europa.eu/api/hub/search/gazetteer/`
+CONFIG_APP_UPLOAD_URL | | `https://www.europeandataportal.eu/data/api/`
+CONFIG_APP_MATOMO_URL | | `empty`
+CONFIG_APP_LOCALE | Used display language. Use e.g. `de` for German. The fallback language is English. | `en`
+CONFIG_APP_AUTH_ENABLE | Enable Auth to display a `log in` button for admin functionality. | false
+CONFIG_APP_AUTH_SERVICE | Set the authentification method `keycloak` or `zero` (for fake login auth). | `keycloak`
+CONFIG_APP_ENABLE_DATASET_CATEGORIES | | false
+CONFIG_APP_ENABLE_DATASET_SIMILARDATASETS | | false
+CONFIG_APP_ENABLE_DATASET_FEEDBACK | | false
+CONFIG_APP_ENABLE_FILTER_GAZETTEER | | false
+CONFIG_APP_ENABLE_FILTER_OPERATOR | | false
+CONFIG_APP_ENABLE_FAVORITES | | true
+CONFIG_APP_ROUTER_BASE | Set the path of the url. Default is an empty string, works for every url like https://some-domain.com or https://sub.domain.com . Set value to `/my-path/` for urls like `https://some-domain.com/my-path/`. | `empty`
+CONFIG_APP_ROUTER_LIB_BASE | Set the path of this library. Use the same value as in `CONFIG_APP_ROUTER_BASE` or `'https://unpkg.com/peacock-user-ui@latest/dist/'` when you using the CDN. | `empty`
 
 ### Embed own pages
 
@@ -76,7 +76,7 @@ Use relative `URL`s for default pages (e.g. `'/datasets'`) or router pages (see 
 
 Key | Description | Default value
 ----|-------------|---------------
-CONFIG_APP_HEADER_LOGO_TEXT || `'My Data Portal'`
+CONFIG_APP_HEADER_LOGO_TEXT | Set your portal name, e.g. `'My Data Portal'`. | `empty`
 CONFIG_APP_HEADER_LOGO_IMAGE_SRC || `empty`
 CONFIG_APP_HEADER_LOGO_IMAGE_DESCRIPTION || `empty`
 CONFIG_APP_HEADER_NAV_1_URL || `'/datasets'`
@@ -90,10 +90,10 @@ CONFIG_APP_HEADER_NAV_3_TITLE to CONFIG_APP_HEADER_NAV_9_TITLE || `empty`
 
 Key | Description | Default value
 ----|-------------|---------------
-CONFIG_APP_FOOTER_LOGO_TEXT || `'Peacock User UI 🦚'`
+CONFIG_APP_FOOTER_LOGO_TEXT | Set your footer logo name, e.g. `'Peacock User UI 🦚'`. | `empty`
 CONFIG_APP_FOOTER_LOGO_IMAGE_SRC || `empty`
 CONFIG_APP_FOOTER_LOGO_IMAGE_DESCRIPTION || `empty`
-CONFIG_APP_FOOTER_LOGO_URL || `'https://github.com/opendata-guru/peacock-user-ui'`
+CONFIG_APP_FOOTER_LOGO_URL | Set the URI of the link, e.g. `'https://github.com/opendata-guru/peacock-user-ui'`. | `'/'`
 CONFIG_APP_FOOTER_NAV_1_URL || `'/imprint'`
 CONFIG_APP_FOOTER_NAV_1_TITLE || `'message.navigation.navItems.imprint'`
 CONFIG_APP_FOOTER_NAV_2_URL || `'/privacypolicy'`
