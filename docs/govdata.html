@@ -23,6 +23,7 @@
     <script type="text/javascript">
         CONFIG_APP_TITLE = 'Demo Data Portal';
         CONFIG_APP_HEADER_LOGO_TEXT = CONFIG_APP_TITLE;
+        CONFIG_APP_AUTH_SERVICE = 'zero';
 
         CONFIG_APP_ROUTER_BASE = '/peacock-user-ui/';
         CONFIG_APP_ROUTER_LIB_BASE = 'https://unpkg.com/peacock-user-ui@latest/dist/';
@@ -30,15 +31,15 @@
         CONFIG_APP_DATA_URL = 'https://opendata.guru/proxy/cors?url=https://www.govdata.de/ckan/api/action/';
         CONFIG_APP_DATA_SERVICE = 'ckan';
 
-        CONFIG_APP_HEADER_NAV_1_URL = 'https://opendata-guru.github.io/peacock-user-ui/index.html';
+        CONFIG_APP_HEADER_NAV_1_URL = '/peacock-user-ui/index.html';
         CONFIG_APP_HEADER_NAV_1_TITLE = 'European data';
-        CONFIG_APP_HEADER_NAV_2_URL = 'https://opendata-guru.github.io/peacock-user-ui/govdata.html';
+        CONFIG_APP_HEADER_NAV_2_URL = '/peacock-user-ui/govdata.html';
         CONFIG_APP_HEADER_NAV_2_TITLE = 'govdata';
 
-        var CONFIG_APP_ROUTER_ROUTE_1_NAME = 'startpage';
-        var CONFIG_APP_ROUTER_ROUTE_1_PATH = '/doc/govdata.html';
-        var CONFIG_APP_ROUTER_ROUTE_1_FILE = '/doc/govdata-inner.html';
-        var CONFIG_APP_ROUTER_ROUTE_1_REQUIRES_AUTH = false;
+        CONFIG_APP_ROUTER_ROUTE_1_NAME = 'startpage';
+        CONFIG_APP_ROUTER_ROUTE_1_PATH = '/peacock-user-ui/govdata.html';
+        CONFIG_APP_ROUTER_ROUTE_1_FILE = '/peacock-user-ui/govdata-inner.html';
+        CONFIG_APP_ROUTER_ROUTE_1_REQUIRES_AUTH = false;
     </script>
 </body>
 </html>
