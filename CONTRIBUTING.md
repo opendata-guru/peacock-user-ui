@@ -86,9 +86,21 @@ Remove all known security vulnerabilities. Get the audit report:
 $ npm audit
 ```
 
+Open `package.json` file and increase the version number of the package:
+
+```bash
+"version": "1.0.#",
+```
+
+Build the final production build:
+
+```bash
+$ npm run build
+```
+
 Follow next steps:
 
-- open `package.json` file and increase the version number of the package
+- format `dist/js/config.js` with https://webformatter.com/javascript
 - push all changes to github
 - [draft a new release](https://github.com/opendata-guru/peacock-user-ui/releases/new)
 
