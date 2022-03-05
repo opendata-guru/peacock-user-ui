@@ -49,9 +49,9 @@ let router = new Router({
           url.href = `${window.location.protocol}//${window.location.host}${to.hash.slice(1)}`
 
           // Prevent redirection loop
-          return url.pathname === '/' ? {name: 'Datasets'} : url.pathname;
+          return url.pathname === '/' ? {name: GLUE_CONFIG.routerOptions.redirectRootTo} : url.pathname;
         }
-        return {name: 'Datasets'};
+        return {name: GLUE_CONFIG.routerOptions.redirectRootTo};
       },
       meta: {
         title,
@@ -119,7 +119,7 @@ if (GLUE_CONFIG.routerOptions && GLUE_CONFIG.routerOptions.routes) {
     routes.push({
       path: route.path,
       name: route.name,
-      component: StaticPage,
+      component: route.component === 'Datasets' ? Datasets : StaticPage,
       props: {
         fileName: route.file,
       },

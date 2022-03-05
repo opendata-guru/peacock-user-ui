@@ -91,10 +91,12 @@ export default {
   routerOptions: {
     base: '',
     mode: 'history',
+    redirectRootTo: 'Datasets',
     routes: [{
       name: '',
       path: '',
       file: '',
+      component: '',
       requiresAuth: true,
     }],
   },
