@@ -220,7 +220,7 @@ if (typeof CONFIG_APP_ROUTER_ROUTE_1_NAME !== 'undefined') {
     routes.push({
         name: CONFIG_APP_ROUTER_ROUTE_1_NAME,
         path: CONFIG_APP_ROUTER_ROUTE_1_PATH,
-        file: CONFIG_APP_ROUTER_ROUTE_1_FILE,
+        file: typeof CONFIG_APP_ROUTER_ROUTE_1_FILE !== 'undefined' ? CONFIG_APP_ROUTER_ROUTE_1_FILE : '',
         component: typeof CONFIG_APP_ROUTER_ROUTE_1_COMPONENT !== 'undefined' ? CONFIG_APP_ROUTER_ROUTE_1_COMPONENT : '',
         requiresAuth: CONFIG_APP_ROUTER_ROUTE_1_REQUIRES_AUTH
     });
@@ -229,7 +229,7 @@ if (typeof CONFIG_APP_ROUTER_ROUTE_2_NAME !== 'undefined') {
     routes.push({
         name: CONFIG_APP_ROUTER_ROUTE_2_NAME,
         path: CONFIG_APP_ROUTER_ROUTE_2_PATH,
-        file: CONFIG_APP_ROUTER_ROUTE_2_FILE,
+        file: typeof CONFIG_APP_ROUTER_ROUTE_2_FILE !== 'undefined' ? CONFIG_APP_ROUTER_ROUTE_2_FILE : '',
         component: typeof CONFIG_APP_ROUTER_ROUTE_2_COMPONENT !== 'undefined' ? CONFIG_APP_ROUTER_ROUTE_2_COMPONENT : '',
         requiresAuth: CONFIG_APP_ROUTER_ROUTE_2_REQUIRES_AUTH
     });
@@ -238,7 +238,7 @@ if (typeof CONFIG_APP_ROUTER_ROUTE_3_NAME !== 'undefined') {
     routes.push({
         name: CONFIG_APP_ROUTER_ROUTE_3_NAME,
         path: CONFIG_APP_ROUTER_ROUTE_3_PATH,
-        file: CONFIG_APP_ROUTER_ROUTE_3_FILE,
+        file: typeof CONFIG_APP_ROUTER_ROUTE_3_FILE !== 'undefined' ? CONFIG_APP_ROUTER_ROUTE_3_FILE : '',
         component: typeof CONFIG_APP_ROUTER_ROUTE_3_COMPONENT !== 'undefined' ? CONFIG_APP_ROUTER_ROUTE_3_COMPONENT : '',
         requiresAuth: CONFIG_APP_ROUTER_ROUTE_3_REQUIRES_AUTH
     });
@@ -247,7 +247,7 @@ if (typeof CONFIG_APP_ROUTER_ROUTE_4_NAME !== 'undefined') {
     routes.push({
         name: CONFIG_APP_ROUTER_ROUTE_4_NAME,
         path: CONFIG_APP_ROUTER_ROUTE_4_PATH,
-        file: CONFIG_APP_ROUTER_ROUTE_1_FILE,
+        file: typeof CONFIG_APP_ROUTER_ROUTE_4_FILE !== 'undefined' ? CONFIG_APP_ROUTER_ROUTE_4_FILE : '',
         component: typeof CONFIG_APP_ROUTER_ROUTE_4_COMPONENT !== 'undefined' ? CONFIG_APP_ROUTER_ROUTE_4_COMPONENT : '',
         requiresAuth: CONFIG_APP_ROUTER_ROUTE_4_REQUIRES_AUTH
     });
@@ -256,7 +256,7 @@ if (typeof CONFIG_APP_ROUTER_ROUTE_5_NAME !== 'undefined') {
     routes.push({
         name: CONFIG_APP_ROUTER_ROUTE_5_NAME,
         path: CONFIG_APP_ROUTER_ROUTE_5_PATH,
-        file: CONFIG_APP_ROUTER_ROUTE_5_FILE,
+        file: typeof CONFIG_APP_ROUTER_ROUTE_5_FILE !== 'undefined' ? CONFIG_APP_ROUTER_ROUTE_5_FILE : '',
         component: typeof CONFIG_APP_ROUTER_ROUTE_5_COMPONENT !== 'undefined' ? CONFIG_APP_ROUTER_ROUTE_5_COMPONENT : '',
         requiresAuth: CONFIG_APP_ROUTER_ROUTE_5_REQUIRES_AUTH
     });
@@ -265,7 +265,7 @@ if (typeof CONFIG_APP_ROUTER_ROUTE_6_NAME !== 'undefined') {
     routes.push({
         name: CONFIG_APP_ROUTER_ROUTE_6_NAME,
         path: CONFIG_APP_ROUTER_ROUTE_6_PATH,
-        file: CONFIG_APP_ROUTER_ROUTE_6_FILE,
+        file: typeof CONFIG_APP_ROUTER_ROUTE_6_FILE !== 'undefined' ? CONFIG_APP_ROUTER_ROUTE_6_FILE : '',
         component: typeof CONFIG_APP_ROUTER_ROUTE_6_COMPONENT !== 'undefined' ? CONFIG_APP_ROUTER_ROUTE_6_COMPONENT : '',
         requiresAuth: CONFIG_APP_ROUTER_ROUTE_6_REQUIRES_AUTH
     });
@@ -274,7 +274,7 @@ if (typeof CONFIG_APP_ROUTER_ROUTE_7_NAME !== 'undefined') {
     routes.push({
         name: CONFIG_APP_ROUTER_ROUTE_7_NAME,
         path: CONFIG_APP_ROUTER_ROUTE_7_PATH,
-        file: CONFIG_APP_ROUTER_ROUTE_7_FILE,
+        file: typeof CONFIG_APP_ROUTER_ROUTE_7_FILE !== 'undefined' ? CONFIG_APP_ROUTER_ROUTE_7_FILE : '',
         component: typeof CONFIG_APP_ROUTER_ROUTE_7_COMPONENT !== 'undefined' ? CONFIG_APP_ROUTER_ROUTE_7_COMPONENT : '',
         requiresAuth: CONFIG_APP_ROUTER_ROUTE_7_REQUIRES_AUTH
     });
@@ -283,7 +283,7 @@ if (typeof CONFIG_APP_ROUTER_ROUTE_8_NAME !== 'undefined') {
     routes.push({
         name: CONFIG_APP_ROUTER_ROUTE_8_NAME,
         path: CONFIG_APP_ROUTER_ROUTE_8_PATH,
-        file: CONFIG_APP_ROUTER_ROUTE_8_FILE,
+        file: typeof CONFIG_APP_ROUTER_ROUTE_8_FILE !== 'undefined' ? CONFIG_APP_ROUTER_ROUTE_8_FILE : '',
         component: typeof CONFIG_APP_ROUTER_ROUTE_8_COMPONENT !== 'undefined' ? CONFIG_APP_ROUTER_ROUTE_8_COMPONENT : '',
         requiresAuth: CONFIG_APP_ROUTER_ROUTE_8_REQUIRES_AUTH
     });
@@ -291,8 +291,8 @@ if (typeof CONFIG_APP_ROUTER_ROUTE_8_NAME !== 'undefined') {
 if (typeof CONFIG_APP_ROUTER_ROUTE_9_NAME !== 'undefined') {
     routes.push({
         name: CONFIG_APP_ROUTER_ROUTE_9_NAME,
-        path: CONFIG_APP_ROUTER_ROUTE_1_PATH,
-        file: CONFIG_APP_ROUTER_ROUTE_1_FILE,
+        path: CONFIG_APP_ROUTER_ROUTE_9_PATH,
+        file: typeof CONFIG_APP_ROUTER_ROUTE_9_FILE !== 'undefined' ? CONFIG_APP_ROUTER_ROUTE_9_FILE : '',
         component: typeof CONFIG_APP_ROUTER_ROUTE_9_COMPONENT !== 'undefined' ? CONFIG_APP_ROUTER_ROUTE_9_COMPONENT : '',
         requiresAuth: CONFIG_APP_ROUTER_ROUTE_9_REQUIRES_AUTH
     });
