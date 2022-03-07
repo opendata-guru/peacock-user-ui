@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" type=image/ico href=/assets/favicon.ico>
+    <title>Peacock</title>
+
+    <link rel=stylesheet type=text/css href="https://unpkg.com/peacock-user-ui@latest/dist/css/app.loadinganimation.css">
+    <script defer=defer src="https://unpkg.com/peacock-user-ui@latest/dist/js/vendors.js"></script>
+    <script defer=defer src="https://unpkg.com/peacock-user-ui@latest/dist/js/app.js"></script>
+    <link href="https://unpkg.com/peacock-user-ui@latest/dist/css/app.vendors.css" rel=stylesheet>
+    <link href="https://unpkg.com/peacock-user-ui@latest/dist/css/app.css" rel=stylesheet>
+</head>
+<body>
+    <div id=app>
+        <app>
+            <div class=spinner-container id=good>
+                <div class=spinner></div>
+            </div>
+        </app>
+    </div>
+    <script type="text/javascript">
+        CONFIG_APP_TITLE = 'Demo Data Portal';
+        CONFIG_APP_HEADER_LOGO_TEXT = CONFIG_APP_TITLE;
+        CONFIG_APP_AUTH_SERVICE = 'zero';
+        CONFIG_APP_ROUTER_REDIRECT_ROOT_TO = 'Welcome';
+
+        CONFIG_APP_ROUTER_BASE = '/peacock-user-ui/';
+        CONFIG_APP_ROUTER_LIB_BASE = 'https://unpkg.com/peacock-user-ui@latest/dist/';
+
+        CONFIG_APP_DATA_URL = 'https://data.europa.eu/api/hub/search/';
+        CONFIG_APP_DATA_SERVICE = 'piveau';
+
+        CONFIG_APP_HEADER_NAV_1_URL = '/index.html';
+        CONFIG_APP_HEADER_NAV_1_TITLE = 'European data';
+        CONFIG_APP_HEADER_NAV_2_URL = 'https://opendata-guru.github.io/peacock-user-ui/govdata.html';
+        CONFIG_APP_HEADER_NAV_2_TITLE = 'govdata';
+
+        CONFIG_APP_ROUTER_ROUTE_1_NAME = 'Welcome';
+        CONFIG_APP_ROUTER_ROUTE_1_PATH = '/welcome';
+        CONFIG_APP_ROUTER_ROUTE_1_FILE = '/peacock-user-ui/welcome-sub.html';
+        CONFIG_APP_ROUTER_ROUTE_1_REQUIRES_AUTH = false;
+
+        CONFIG_APP_ROUTER_ROUTE_2_NAME = 'europa';
+        CONFIG_APP_ROUTER_ROUTE_2_PATH = '/index.html';
+        CONFIG_APP_ROUTER_ROUTE_2_COMPONENT = 'Datasets';
+        CONFIG_APP_ROUTER_ROUTE_2_REQUIRES_AUTH = false;
+    </script>
+</body>
+</html>
