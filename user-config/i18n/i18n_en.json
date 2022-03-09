@@ -1,0 +1,340 @@
+{
+      "categories": {
+        "envi": "Environment",
+        "agri": "Agriculture, fisheries, forestry and food",
+        "econ": "Economy and finance",
+        "educ": "Education, culture and sport",
+        "ener": "Energy",
+        "gove": "Government and public sector",
+        "heal": "Health",
+        "intr": "International issues",
+        "just": "Justice, legal system and public safety",
+        "regi": "Regions and cities",
+        "soci": "Population and society",
+        "tech": "Science and technology",
+        "tran": "Transport"
+      },
+      "metadata": {
+        "accessUrl": "Access URL",
+        "addDistribution": "Add Distribution",
+        "categories": "Categories",
+        "chooseCategory": "Choose a Category",
+        "chooseCatalogue": "Choose a Catalogue",
+        "chooseFile": "Choose a File",
+        "chooseFormat": "Choose a Format",
+        "chooseType": "Choose a Type",
+        "conformsTo": "Conforms to",
+        "contactPoints": "Contact Points",
+        "coordinates": "Coordinates",
+        "created": "Created",
+        "dataset": "Dataset",
+        "datasets": "Datasets",
+        "description": "Description",
+        "distribution": "Distribution",
+        "distributions": "Distributions",
+        "documentations": "Documentations",
+        "downloadUrl": "Download URL",
+        "email": "E-Mail",
+        "format": "Format",
+        "frequency": "Frequency",
+        "homepage": "Homepage",
+        "label": "Label",
+        "landingPage": "Landing Page",
+        "identifiers": "Identifiers",
+        "license": "Licence",
+        "name": "Name",
+        "otherIdentifiers": "Other Identifiers",
+        "provenances": "Provenance",
+        "publisher": "Publisher",
+        "relatedResources": "Related Resources",
+        "resource": "Link",
+        "review": "Review",
+        "sources": "Sources",
+        "spatial": "Spatial",
+        "tags": "Tags",
+        "title": "Title",
+        "type": "Type",
+        "updated": "Updated",
+        "upload": "Upload",
+        "metadataQuality": "Metadata Quality"
+      },
+      "pagination": {
+        "previous": "Previous",
+        "previousPage": "<",
+        "next": "Next",
+        "nextPage": ">",
+        "finish": "Finish"
+      },
+      "sort": {
+        "sortBy": "Order by",
+        "relevance": "Relevance",
+        "lastUpdated": "Last Modified",
+        "lastCreated": "Last Created",
+        "nameAZ": "Name Ascending",
+        "nameZA": "Name Descending"
+      },
+      "datasets": {
+        "searchBar": {
+          "placeholder": "Search datasets..."
+        },
+        "findLocation": "Filter by location",
+        "geoBoundsMessagePre": "Your Search has been limited to:",
+        "geoBoundsMessageRemove": "Close this notification to remove the limitation or use the reset function.",
+        "countMessage": "datasets found",
+        "countMessageSingular": "dataset found",
+        "noResult": "No datasets found",
+        "loadingMessage": "Loading datasets...",
+        "showMore": "Show More",
+        "datasetsFeed": "Datasets Feed",
+        "createDataset": "Create Dataset",
+        "saveQuery": "Save Query",
+        "meta": {
+          "translationNotComplete": "Translation not complete"
+        }
+      },
+      "datasetFacets": {
+        "title": "Filters",
+        "settings": "Settings",
+        "operator": "Operator",
+        "and": "AND",
+        "or": "OR" ,
+        "europeanCatalogues": "European Catalogues",
+        "filter": "Filter",
+        "facets": {
+          "countries": "Countries",
+          "catalogues": "Catalogues",
+          "categories": "Categories",
+          "keywords": "Keywords",
+          "formats": "Formats",
+          "licences": "Licences"
+        }
+      },
+      "datasetDetails": {
+        "about": "about",
+        "additionalInfo": "Additional Information",
+        "download": "Download",
+        "feedback": "Feedback",
+        "edit": "Edit",
+        "delete": "Delete",
+        "manage": "Manage",
+        "follow": "Follow",
+        "geoInfo": "Dataset Extent",
+        "menu": "Menu",
+        "openResource": "Go to resource",
+        "options": "Options",
+        "preview": "Preview",
+        "translation": {
+          "message": "The title and description of this dataset are machine translated.",
+          "noTranslation": "There is no translation available for the desired language. The information is displayed in its default language.",
+          "original": "Original language",
+          "link": "Click here to see the dataset in the original language",
+          "update": "An updated translation of this dataset is in progress."
+        },
+        "subnav": {
+          "activityStream": "Activity Stream",
+          "categories": "Categories",
+          "dataset": "Dataset",
+          "similarDatasets": "Similar Datasets"
+        },
+        "share": {
+          "dataset": "Share Dataset",
+          "on": "Share on"
+        },
+        "unfollow": "Unfollow",
+        "visualisation": "Open Visualisation",
+        "geoVisualisation": "Open Geo-Visualization"
+      },
+      "datasetCategories": {
+        "noCategories": "No categories found",
+        "foundCategories": "{number} category found",
+        "foundCategory": "{number} categories found"
+      },
+      "distributionLicense": {
+        "notFound": "No licence information found.",
+        "notFoundExtended": "No licence information found, please check source for further information about the licence.",
+        "notProvided": "No Licence Provided",
+        "licensingAssistant": "Licensing Assistant",
+        "openLA": "Open Licence Assistant"
+      },
+      "visualisation": {
+        "info": "If Visusalisation does not load within some seconds click here.",
+        "loading": "Visualisation is loading ...",
+        "previewAvailable": "Preview available"
+      },
+      "userQueries": {
+        "save": "Save Query",
+        "myQueries": "My Queries",
+        "querySaved": "Query Saved",
+        "queryDeleted": "Query deleted",
+        "searchQueries": "Search my queries...",
+        "executeQuery": "Execute Query",
+        "queryFound": "{number} query found",
+        "queriesFound": "{number} queries found",
+        "noQueryFound": "No query found",
+        "searchAllQueries": "Search queries...",
+        "areYouSure": "Are you sure you want to delete this query?",
+        "noDescription": "This query has no description",
+        "placeholderNotes": "eg. Some useful notes about the query",
+        "noQueriesSaved": "You haven't saved any queries."
+      },
+      "similarDatasets": {
+        "similarDatasets": "Similar Datasets",
+        "verySimilar": "Very Similar",
+        "similar": "Similar",
+        "lessSimilar": "Less Similar",
+        "marginalSimilar": "Marginal Similar",
+        "notFound": "No similiar dataset where found."
+      },
+      "statistics": {
+        "statistics": "Statistics",
+        "currentState": "Current State",
+        "evolution": "Evolution",
+        "selectType": "Select the Statistic Type",
+        "datasetsPerCategory": "Datasets per Category",
+        "datasetsPerCatalogue": "Datasets per Catalogue",
+        "datasetsPerCountryAndCatalogue": "Datasets per Country and Catalogue",
+        "datasetsPerCountry": "Datasets per Country",
+        "totalNumber": "Total Number of Datasets",
+        "selectTimePeriod": "Select the Time Period",
+        "increaseStartEnd": "Increase of {dataset_model} in % between {start_date} and {end_date}",
+        "evolutionStartEnd": "Evolution of the total number of Datasets between {start_date} and {end_date}",
+        "evolutionNumber": "Evolution of the number of {dataset_model} between {start_date} and {end_date}",
+        "numberDate": "Number of {dataset_model} as of {date}"
+      },
+      "catalogues": {
+        "searchBar": {
+          "placeholder": "Search catalogues..."
+        },
+        "geoBoundsMessagePre": "Your Search has been limited to:",
+        "geoBoundsMessageRemove": "Close this notification to remove the limitation or use the reset function.",
+        "countMessage": "catalogues found",
+        "countMessageSingular": "catalogue found",
+        "countMessageNoResult": "No catalogues found",
+        "loadingMessage": "Loading catalogues..."
+      },
+      "catalogueFacets": {
+        "title": "Filters",
+        "settings": "Settings",
+        "operator": "Operator",
+        "and": "AND",
+        "or": "OR" ,
+        "europeanCatalogues": "European Catalogues",
+        "facets": {
+          "countries": "Countries",
+          "catalogues": "Catalogues",
+          "categories": "Categories",
+          "keywords": "Keywords",
+          "formats": "Formats",
+          "licences": "Licences"
+        }
+      },
+      "distributions": {
+        "footerLink": "Download"
+      },
+      "distributionDetails": {},
+      "navigation": {
+        "navItems": {
+          "home": "Home",
+          "about": "About",
+          "data": "Data",
+          "map": "Map",
+          "imprint": "Imprint",
+          "privacyPolicy": "Privacy policy"
+        }
+      },
+      "mapModal": {
+        "close": "Close",
+        "reset": "Clear",
+        "findDatasets": "Apply",
+        "drawRectangleMsg": "Draw a rectangle to select a region",
+        "copyright": "Map © OpenStreetMap contributors",
+        "disclaimer": "Disclaimer",
+        "fullscreen": "Fullscreen"
+      },
+      "header": {
+        "european": "European",
+        "dataPortal": "Data Portal",
+        "navigation": {
+          "data": {
+            "title": "Data",
+            "datasets": "Datasets",
+            "catalogues": "Catalogues",
+            "metadataQuality": "Metadata Quality",
+            "licensingAssistant": "Licensing Assistant",
+            "sparqlManager": "SPARQL Manager",
+            "statistics": "Statistics"
+          },
+          "providingData": {
+            "title": "Providing Data",
+            "practicalGuide": "Practical Guide",
+            "cataloguesHarvestedByUs": "Catalogues Harvested by us",
+            "beHarvestedByUs": "Be Harvested by us"
+          },
+          "resources": {
+            "title": "Resources",
+            "elearning": "eLearning",
+            "trainingCompanion": "Training Companion",
+            "moreTrainingMaterial": "More Training Material",
+            "reportsAboutOpenData": "Reports about Open Data"
+          },
+          "usingData": {
+            "title": "Using Data",
+            "benefitsOfUsingData": "Benefits of Using Data",
+            "checklistForUsingData": "Checklist for Using Data",
+            "useCases": "Use Cases",
+            "tellUsYourStory": "Tell us your story"
+          },
+          "whatWeDo": {
+            "title": "What we do",
+            "ourActivities": "Our Activities",
+            "openDataMaturity": "Open data Maturity",
+            "factsheetsAndReports": "Factsheets and Reports",
+            "featuredHighlights": "Featured Highlights",
+            "calendar": "Calendar",
+            "news": "News"
+          }
+        },
+        "searchInputPlaceholder": "Search site content...",
+        "subnav": {
+          "newsletter": "Newsletter",
+          "faq": "FAQ",
+          "search": "Search",
+          "contact": "Contact",
+          "cookies": "Cookies",
+          "legalNotice": "Legal notice",
+          "login": "Login",
+          "logout": "Logout"
+        }
+      },
+      "home": {
+        "msg": "Sorry, this page has no content yet. Visit the Data tab to see something!"
+      },
+      "imprint": {
+        "msg": "INSERT IMPRINT HERE"
+      },
+      "footer": {
+        "fundedBy": "Funded by the European Union",
+        "newsletter": "Newsletter",
+        "newsletterText": "Stay informed on our latest news!",
+        "subscribe": "Subscribe",
+        "followUs": "Follow us on",
+        "helpUsImprove": "Help us improve",
+        "helpUsImproveText": "Your feedback will help us to improve the overall user experience. Any suggestions?",
+        "lastUpdate": "Last Update",
+        "links": {
+          "newsletter": "Newsletter",
+          "faq": "FAQ",
+          "search": "Search",
+          "contact": "Contact",
+          "cookies": "Cookies",
+          "legalNotice": "Legal notice",
+          "login": "Login"
+        }
+      },
+      "error": {
+        "goBack": "Go back",
+        "http401": "Hey, you! Stop right here. Authorization required.",
+        "http403": "You do not have permission to access this document.",
+        "http404": "Page not found."
+      }
+    }
