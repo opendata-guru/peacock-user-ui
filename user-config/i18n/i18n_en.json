@@ -265,31 +265,57 @@
     },
     "or": {
       "string": "OR",
-      "europeanCatalogues": {
-        "string": "European Catalogues"
+    },
+    "europeanCatalogues": {
+      "string": "European Catalogues"
+    },
+    "filter": {
+      "string": "Filter"
+    },
+    "facets": {
+      "data scope": {
+        "string": "Data scope",
+        "context": "Dataset > Facets"
       },
-      "filter": {
-        "string": "Filter"
+      "provenance": {
+        "string": "Provenance",
+        "context": "Dataset > Facets"
       },
-      "facets": {
-        "countries": {
-          "string": "Countries"
-        },
-        "catalogues": {
-          "string": "Catalogues"
-        },
-        "categories": {
-          "string": "Categories"
-        },
-        "keywords": {
-          "string": "Keywords"
-        },
-        "formats": {
-          "string": "Formats"
-        },
-        "licences": {
-          "string": "Licences"
-        }
+      "countries": {
+        "string": "Countries",
+        "context": "Dataset > Facets"
+      },
+      "catalogues": {
+        "string": "Catalogues",
+        "context": "Dataset > Facets"
+      },
+      "categories": {
+        "string": "Categories",
+        "context": "Dataset > Facets"
+      },
+      "publisher": {
+        "string": "Publisher",
+        "context": "Dataset > Facets"
+      },
+      "keywords": {
+        "string": "Keywords",
+        "context": "Dataset > Facets"
+      },
+      "scoring": {
+        "string": "Metadata Quality",
+        "context": "Dataset > Facets"
+      },
+      "formats": {
+        "string": "Formats",
+        "context": "Dataset > Facets"
+      },
+      "licences": {
+        "string": "Licences",
+        "context": "Dataset > Facets"
+      },
+      "licenses": {
+        "string": "Licences",
+        "context": "Dataset > Facets"
       }
     }
   },
