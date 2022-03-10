@@ -36,8 +36,8 @@
             <div class="col">
               <div class="input-group">
                 <input type="text" class="form-control"
-                       :aria-label="$t('message.datasets.searchBar.placeholder')"
-                       :placeholder="$t('message.datasets.searchBar.placeholder')"
+                       :aria-label="$t('message.catalogues.searchBar.placeholder')"
+                       :placeholder="$t('message.catalogues.searchBar.placeholder')"
                        v-model="query"
                        @keyup.enter="changeQuery(query)"
                        @click="autocompleteData.show = autocompleteData.suggestions.length > 0 && query.length != 0 ? !autocompleteData.show : false">
@@ -63,7 +63,7 @@
         <div class="alert alert-secondary mt-3 d-flex flex-row">
           <div>
             {{ getLoading ? $t('message.catalogues.loadingMessage'):`${getCataloguesCount}
-            ${$t('message.catalogue.countMessage')}`}}
+            ${$t('message.catalogues.countMessage')}`}}
           </div>
           <div class="text-center ml-3" v-if="getLoading">
             <div class="spinner-border text-secondary" role="status">
