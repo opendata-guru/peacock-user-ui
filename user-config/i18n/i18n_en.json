@@ -66,16 +66,20 @@
       "string": "Choose a Type"
     },
     "conformsTo": {
-      "string": "Conforms to"
+      "string": "Conforms to",
+      "context": "Metadata Label"
     },
     "contactPoints": {
-      "string": "Contact Points"
+      "string": "Contact Points",
+      "context": "Metadata Label"
     },
     "coordinates": {
-      "string": "Coordinates"
+      "string": "Coordinates",
+      "context": "Metadata Label"
     },
     "created": {
-      "string": "Created"
+      "string": "Created",
+      "context": "Metadata Label"
     },
     "dataset": {
       "string": "Dataset"
@@ -90,76 +94,95 @@
       "string": "Distribution"
     },
     "distributions": {
-      "string": "Distributions"
+      "string": "Distributions",
+      "context": "Metadata Label"
     },
     "documentations": {
-      "string": "Documentations"
+      "string": "Documentations",
+      "context": "Metadata Label"
     },
     "downloadUrl": {
       "string": "Download URL"
     },
     "email": {
-      "string": "E-Mail"
+      "string": "E-Mail",
+      "context": "Metadata Label"
     },
     "format": {
       "string": "Format"
     },
     "frequency": {
-      "string": "Frequency"
+      "string": "Frequency",
+      "context": "Metadata Label"
     },
     "homepage": {
       "string": "Homepage"
     },
     "label": {
-      "string": "Label"
+      "string": "Label",
+      "context": "Metadata Label"
     },
     "landingPage": {
-      "string": "Landing Page"
+      "string": "Landing Page",
+      "context": "Metadata Label"
     },
     "identifiers": {
-      "string": "Identifiers"
+      "string": "Identifiers",
+      "context": "Metadata Label"
     },
     "license": {
-      "string": "Licence"
+      "string": "Licence",
+      "context": "Metadata Label"
     },
     "name": {
-      "string": "Name"
+      "string": "Name",
+      "context": "Metadata Label"
     },
     "otherIdentifiers": {
-      "string": "Other Identifiers"
+      "string": "Other Identifiers",
+      "context": "Metadata Label"
     },
     "provenances": {
-      "string": "Provenance"
+      "string": "Provenance",
+      "context": "Metadata Label"
     },
     "publisher": {
-      "string": "Publisher"
+      "string": "Publisher",
+      "context": "Metadata Label"
     },
     "relatedResources": {
-      "string": "Related Resources"
+      "string": "Related Resources",
+      "context": "Metadata Label"
     },
     "resource": {
-      "string": "Link"
+      "string": "Link",
+      "context": "Metadata Label"
     },
     "review": {
       "string": "Review"
     },
     "sources": {
-      "string": "Sources"
+      "string": "Sources",
+      "context": "Metadata Label"
     },
     "spatial": {
-      "string": "Spatial"
+      "string": "Spatial",
+      "context": "Metadata Label"
     },
     "tags": {
       "string": "Tags"
     },
     "title": {
-      "string": "Title"
+      "string": "Title",
+      "context": "Metadata Label"
     },
     "type": {
-      "string": "Type"
+      "string": "Type",
+      "context": "Metadata Label"
     },
     "updated": {
-      "string": "Updated"
+      "string": "Updated",
+      "context": "Metadata Label"
     },
     "upload": {
       "string": "Upload"
@@ -170,19 +193,24 @@
   },
   "pagination": {
     "previous": {
-      "string": "Previous"
+      "string": "Previous",
+      "context": "Pagination"
     },
     "previousPage": {
-      "string": "<"
+      "string": "<",
+      "context": "Pagination"
     },
     "next": {
-      "string": "Next"
+      "string": "Next",
+      "context": "Pagination"
     },
     "nextPage": {
-      "string": ">"
+      "string": ">",
+      "context": "Pagination"
     },
     "finish": {
-      "string": "Finish"
+      "string": "Finish",
+      "context": "Pagination"
     }
   },
   "sort": {
@@ -190,25 +218,31 @@
       "string": "Order by"
     },
     "relevance": {
-      "string": "Relevance"
+      "string": "Relevance",
+      "context": "Sort > Method"
     },
     "lastUpdated": {
-      "string": "Last Modified"
+      "string": "Last Modified",
+      "context": "Sort > Method"
     },
     "lastCreated": {
-      "string": "Last Created"
+      "string": "Last Created",
+      "context": "Sort > Method"
     },
     "nameAZ": {
-      "string": "Name Ascending"
+      "string": "Name Ascending",
+      "context": "Sort > Method"
     },
     "nameZA": {
-      "string": "Name Descending"
+      "string": "Name Descending",
+      "context": "Sort > Method"
     }
   },
   "datasets": {
     "searchBar": {
       "placeholder": {
-        "string": "Search datasets..."
+        "string": "Search datasets...",
+        "context": "Dataset > Search Bar"
       }
     },
     "findLocation": {
@@ -230,16 +264,19 @@
       "string": "No datasets found"
     },
     "loadingMessage": {
-      "string": "Loading datasets..."
+      "string": "Loading datasets...",
+      "context": "Dataset"
     },
     "showMore": {
       "string": "Show More"
     },
     "datasetsFeed": {
-      "string": "Datasets Feed"
+      "string": "Datasets Feed",
+      "context": "Dataset > Button"
     },
     "createDataset": {
-      "string": "Create Dataset"
+      "string": "Create Dataset",
+      "context": "Dataset > Admin Button"
     },
     "saveQuery": {
       "string": "Save Query"
@@ -255,67 +292,72 @@
       "string": "Filters"
     },
     "settings": {
-      "string": "Settings"
+      "string": "Settings",
+      "context": "Dataset > Facets > Filter Options"
     },
     "operator": {
-      "string": "Operator"
+      "string": "Operator",
+      "context": "Dataset > Facets > Filter Options"
     },
     "and": {
-      "string": "AND"
+      "string": "AND",
+      "context": "Dataset > Facets > Filter Options"
     },
     "or": {
-      "string": "OR"
+      "string": "OR",
+      "context": "Dataset > Facets > Filter Options"
     },
     "europeanCatalogues": {
       "string": "European Catalogues"
     },
     "filter": {
-      "string": "Filter"
+      "string": "Filter",
+      "context": "Dataset > Facets > Filter Options Title"
     },
     "facets": {
       "data scope": {
         "string": "Data scope",
-        "context": "Dataset > Facets"
+        "context": "Dataset > Facets > Header"
       },
       "provenance": {
         "string": "Provenance",
-        "context": "Dataset > Facets"
+        "context": "Dataset > Facets > Header"
       },
       "countries": {
         "string": "Countries",
-        "context": "Dataset > Facets"
+        "context": "Dataset > Facets > Header"
       },
       "catalogues": {
         "string": "Catalogues",
-        "context": "Dataset > Facets"
+        "context": "Dataset > Facets > Header"
       },
       "categories": {
         "string": "Categories",
-        "context": "Dataset > Facets"
+        "context": "Dataset > Facets > Header"
       },
       "publisher": {
         "string": "Publisher",
-        "context": "Dataset > Facets"
+        "context": "Dataset > Facets > Header"
       },
       "keywords": {
         "string": "Keywords",
-        "context": "Dataset > Facets"
+        "context": "Dataset > Facets > Header"
       },
       "scoring": {
         "string": "Metadata Quality",
-        "context": "Dataset > Facets"
+        "context": "Dataset > Facets > Header"
       },
       "formats": {
         "string": "Formats",
-        "context": "Dataset > Facets"
+        "context": "Dataset > Facets > Header"
       },
       "licences": {
         "string": "Licences",
-        "context": "Dataset > Facets"
+        "context": "Dataset > Facets > Header"
       },
       "licenses": {
         "string": "Licences",
-        "context": "Dataset > Facets"
+        "context": "Dataset > Facets > Header"
       }
     }
   },
@@ -324,10 +366,12 @@
       "string": "about"
     },
     "additionalInfo": {
-      "string": "Additional Information"
+      "string": "Additional Information",
+      "context": "Dataset Details > Header"
     },
     "download": {
-      "string": "Download"
+      "string": "Download",
+      "context": "Dataset Details > Button"
     },
     "feedback": {
       "string": "Feedback"
@@ -345,13 +389,15 @@
       "string": "Follow"
     },
     "geoInfo": {
-      "string": "Dataset Extent"
+      "string": "Dataset Extent",
+      "context": "Dataset Details > Header"
     },
     "menu": {
       "string": "Menu"
     },
     "openResource": {
-      "string": "Go to resource"
+      "string": "Go to resource",
+      "context": "Dataset Details > Button"
     },
     "options": {
       "string": "Options"
@@ -361,19 +407,24 @@
     },
     "translation": {
       "message": {
-        "string": "The title and description of this dataset are machine translated."
+        "string": "The title and description of this dataset are machine translated.",
+        "context": "Dataset Details > Translation"
       },
       "noTranslation": {
-        "string": "There is no translation available for the desired language. The information is displayed in its default language."
+        "string": "There is no translation available for the desired language. The information is displayed in its default language.",
+        "context": "Dataset Details > Translation"
       },
       "original": {
-        "string": "Original language"
+        "string": "Original language",
+        "context": "Dataset Details > Translation"
       },
       "link": {
-        "string": "Click here to see the dataset in the original language"
+        "string": "Click here to see the dataset in the original language",
+        "context": "Dataset Details > Translation"
       },
       "update": {
-        "string": "An updated translation of this dataset is in progress."
+        "string": "An updated translation of this dataset is in progress.",
+        "context": "Dataset Details > Translation"
       }
     },
     "subnav": {
@@ -402,10 +453,12 @@
       "string": "Unfollow"
     },
     "visualisation": {
-      "string": "Open Visualisation"
+      "string": "Open Visualisation",
+      "context": "Dataset Details > Button"
     },
     "geoVisualisation": {
-      "string": "Open Geo-Visualization"
+      "string": "Open Geo-Visualization",
+      "context": "Dataset Details > Button"
     }
   },
   "datasetCategories": {
@@ -427,10 +480,12 @@
       "string": "No licence information found, please check source for further information about the licence."
     },
     "notProvided": {
-      "string": "No Licence Provided"
+      "string": "No Licence Provided",
+      "context": "License"
     },
     "licensingAssistant": {
-      "string": "Licensing Assistant"
+      "string": "Licensing Assistant",
+      "context": "License"
     },
     "openLA": {
       "string": "Open Licence Assistant"
@@ -558,7 +613,8 @@
   "catalogues": {
     "searchBar": {
       "placeholder": {
-        "string": "Search catalogues..."
+        "string": "Search catalogues...",
+        "context": "Catalog > Search Bar"
       }
     },
     "geoBoundsMessagePre": {
@@ -577,7 +633,8 @@
       "string": "No catalogues found"
     },
     "loadingMessage": {
-      "string": "Loading catalogues..."
+      "string": "Loading catalogues...",
+      "context": "Catalog"
     }
   },
   "catalogueFacets": {
@@ -641,10 +698,12 @@
         "string": "Map"
       },
       "imprint": {
-        "string": "Imprint"
+        "string": "Imprint",
+        "context": "Navigation"
       },
       "privacyPolicy": {
-        "string": "Privacy policy"
+        "string": "Privacy policy",
+        "context": "Navigation"
       }
     }
   },
@@ -684,10 +743,12 @@
           "string": "Data"
         },
         "datasets": {
-          "string": "Datasets"
+          "string": "Datasets",
+          "context": "Navigation"
         },
         "catalogues": {
-          "string": "Catalogues"
+          "string": "Catalogues",
+          "context": "Navigation"
         },
         "metadataQuality": {
           "string": "Metadata Quality"
@@ -797,10 +858,12 @@
         "string": "Legal notice"
       },
       "login": {
-        "string": "Login"
+        "string": "Login",
+        "context": "Header > Admin Button"
       },
       "logout": {
-        "string": "Logout"
+        "string": "Logout",
+        "context": "Header > Admin Button"
       }
     }
   },
@@ -865,16 +928,20 @@
   },
   "error": {
     "goBack": {
-      "string": "Go back"
+      "string": "Go back",
+      "context": "Page > Error Page > Button"
     },
     "http401": {
-      "string": "Hey, you! Stop right here. Authorization required."
+      "string": "Hey, you! Stop right here. Authorization required.",
+      "context": "Page > Error Page > Message"
     },
     "http403": {
-      "string": "You do not have permission to access this document."
+      "string": "You do not have permission to access this document.",
+      "context": "Page > Error Page > Message"
     },
     "http404": {
-      "string": "Page not found."
+      "string": "Page not found.",
+      "context": "Page > Error Page > Message"
     }
   }
 }
