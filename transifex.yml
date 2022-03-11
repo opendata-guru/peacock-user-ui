@@ -1,7 +1,8 @@
-git:
-  filters:
+filters:
   - filter_type: file
+    # all supported i18n types: https://docs.transifex.com/formats
     file_format: STRUCTURED_JSON
     source_language: en
     source_file: user-config/i18n/i18n_en.json
+    # path expression to translation files, must contain <lang> placeholder
     translation_file_expression: 'user-config/i18n/i18n_<lang>.json'
