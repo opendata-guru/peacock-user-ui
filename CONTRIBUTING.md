@@ -6,7 +6,7 @@ Thanks for contributing to this project. Feel free to:
 - [wish a new feature](https://github.com/opendata-guru/peacock-user-ui/issues/new?assignees=&labels=&template=feature_request.md&title=
 )
 - [fix a reported problem](https://github.com/opendata-guru/peacock-user-ui/issues)
-- translate in to your language or fix missing transpations (link will follow)
+- [translate in to your language or fix missing translations](https://www.transifex.com/peacock/open-data-portal/)
 - [improve the documentation](https://github.com/opendata-guru/peacock-user-ui/blob/master/README.md)
 - [get in touch](https://twitter.com/tursics)
 
