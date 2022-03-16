@@ -17,7 +17,7 @@ Thanks for contributing to this project. Feel free to:
 ![Transifex Logo](https://cdn.transifex.com/txc/static/charts/images/tx-logo-micro.c5603f91c780.png)
 
 We use Transifex as online translation service.
-Have a look at [/peacock/open-data-portal](https://www.transifex.com/peacock/open-data-portal/).
+Have a look at [Transifex project page](https://www.transifex.com/peacock/open-data-portal/).
 You can register as translator for free.
 It will automatically accept requests from translators to join the team.
 
