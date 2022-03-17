@@ -6,9 +6,20 @@ Thanks for contributing to this project. Feel free to:
 - [wish a new feature](https://github.com/opendata-guru/peacock-user-ui/issues/new?assignees=&labels=&template=feature_request.md&title=
 )
 - [fix a reported problem](https://github.com/opendata-guru/peacock-user-ui/issues)
-- translate in to your language or fix missing transpations (link will follow)
+- [translate in to your language or fix missing translations](https://www.transifex.com/peacock/open-data-portal/)
 - [improve the documentation](https://github.com/opendata-guru/peacock-user-ui/blob/master/README.md)
 - [get in touch](https://twitter.com/tursics)
+
+# Translate
+
+![transifex chart image](https://www.transifex.com/projects/p/open-data-portal/resource/i18njson/chart/image_png)
+
+![Transifex Logo](https://cdn.transifex.com/txc/static/charts/images/tx-logo-micro.c5603f91c780.png)
+
+We use Transifex as online translation service.
+Have a look at [Transifex project page](https://www.transifex.com/peacock/open-data-portal/).
+You can register as translator for free.
+It will automatically accept requests from translators to join the team.
 
 # Provide code
 
