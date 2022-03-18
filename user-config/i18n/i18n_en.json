@@ -436,15 +436,15 @@
       "developer_comment": "Page > Error Page > Button > goBack"
     },
     "http401": {
-      "string": "Hey, you! Stop right here. Authorization required.",
+      "string": "Authorization required. Even if the data is open, you are now entering a protected area.",
       "developer_comment": "Page > Error Page > Message > http401"
     },
     "http403": {
-      "string": "You do not have permission to access this document.",
+      "string": "You do not have permission to access this document. Please change the license to something other than Copyright-BY-NC-ND-SA.",
       "developer_comment": "Page > Error Page > Message > http403"
     },
     "http404": {
-      "string": "Page not found.",
+      "string": "There's nothing to see here. Maybe an empty text? An invisible space? Just 0? A minus sign? A false value? Undefined? Or just a brightly colored cell.",
       "developer_comment": "Page > Error Page > Message > http404"
     }
   },
