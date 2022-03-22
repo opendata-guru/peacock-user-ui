@@ -16,6 +16,8 @@ var CONFIG_APP_UPLOAD_URL = 'https://www.europeandataportal.eu/data/api/';
 var CONFIG_APP_MATOMO_URL = '';
 
 var CONFIG_APP_LOCALE = 'en';
+var CONFIG_APP_LOCALE_FALLBACK = 'en';
+var CONFIG_APP_LANGUAGES = {};
 
 var CONFIG_APP_AUTH_ENABLE = false;
 var CONFIG_APP_AUTH_SERVICE = 'keycloak';

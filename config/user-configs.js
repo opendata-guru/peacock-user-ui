@@ -16,6 +16,22 @@ import datasetCKANService from '../guides/adapters/datasets-adapter-ckan';
 import datasetCKANFileService from '../guides/adapters/datasets-adapter-ckan-file';
 // import distributionCKANService from '../guides/adapters/distributions-adapter-ckan';
 
+function combine(baseObject, additionalObject) {
+    for (const key in additionalObject) {
+        if (baseObject.hasOwnProperty(key)) {
+            if (Object.prototype.toString.call(additionalObject[key]) === '[object Object]') {
+                baseObject[key] = combine(baseObject[key] || {}, additionalObject[key]);
+            } else {
+                baseObject[key] = additionalObject[key];
+            }
+        } else {
+            baseObject[key] = additionalObject[key];
+        }
+    }
+
+    return baseObject;
+}
+
 if (typeof CONFIG_APP_TITLE !== 'undefined') {
     glueConfig.title = CONFIG_APP_TITLE;
 }
@@ -38,6 +54,12 @@ if (typeof CONFIG_APP_MATOMO_URL !== 'undefined') {
 
 if (typeof CONFIG_APP_LOCALE !== 'undefined') {
     glueConfig.locale = CONFIG_APP_LOCALE;
+}
+if (typeof CONFIG_APP_LOCALE_FALLBACK !== 'undefined') {
+    glueConfig.fallbackLocale = CONFIG_APP_LOCALE_FALLBACK;
+}
+if (typeof CONFIG_APP_LANGUAGES !== 'undefined') {
+    i18n = combine(i18n, CONFIG_APP_LANGUAGES);
 }
 
 if (typeof CONFIG_APP_DATA_SERVICE !== 'undefined') {

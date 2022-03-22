@@ -45,7 +45,6 @@ CONFIG_APP_DATA_CACHE_BUSTING | used for file data services e.g. `ckan-file` | t
 CONFIG_APP_GAZETTEER_URL | | `https://data.europa.eu/api/hub/search/gazetteer/`
 CONFIG_APP_UPLOAD_URL | | `https://www.europeandataportal.eu/data/api/`
 CONFIG_APP_MATOMO_URL | | `empty`
-CONFIG_APP_LOCALE | Used display language. Use e.g. `de` for German. The fallback language is English. | `en`
 CONFIG_APP_AUTH_ENABLE | Enable Auth to display a `log in` button for admin functionality. | false
 CONFIG_APP_AUTH_SERVICE | Set the authentification method `keycloak` or `zero` (for fake login auth). | `keycloak`
 CONFIG_APP_ENABLE_DATASET_CATEGORIES | | false
@@ -57,6 +56,68 @@ CONFIG_APP_ENABLE_FAVORITES | | true
 CONFIG_APP_ROUTER_BASE | Set the path of the url. Default is an empty string, works for every url like https://some-domain.com or https://sub.domain.com . Set value to `/my-path/` for urls like `https://some-domain.com/my-path/`. | `empty`
 CONFIG_APP_ROUTER_LIB_BASE | Set the path of this library. Use the same value as in `CONFIG_APP_ROUTER_BASE` or `'https://unpkg.com/peacock-user-ui@latest/dist/'` when you using the CDN. | `empty`
 CONFIG_APP_ROUTER_REDIRECT_ROOT_TO | If you open the website without path (`'/'`) the router will redirect to a new page. Set to a default route name e.g. to `'Datasets'` or to a own router name e.g. in `CONFIG_APP_ROUTER_ROUTE_1_NAME`. | `'Datasets'`
+
+### Localisation
+
+Customize the shown language of the website.
+Default is English.
+
+You can:
+
+* load one of 25 predefined languages
+* add own translated single strings
+* add own language translation
+
+Key | Description | Default value
+----|-------------|---------------
+CONFIG_APP_LOCALE | Used display language. Use e.g. `de` for German. | `en`
+CONFIG_APP_LOCALE_FALLBACK | Used fallback language if no translations for another language is available. | `en`
+CONFIG_APP_LANGUAGES | Add own translation. | {}
+
+TODO: Load predefined language from CDN.
+
+Append a new string to English and German translation:
+
+```
+CONFIG_APP_LANGUAGES = {
+  'en': {
+    'message': {
+      'mystring': 'My string'
+    }
+  },
+  'de': {
+    'message': {
+      'mystring': 'Mein Text'
+    }
+  }
+};
+```
+
+Use the new string:
+
+```
+CONFIG_APP_TITLE = message.mystring
+```
+
+Append a new language translation:
+
+```
+CONFIG_APP_LANGUAGES = {
+  'tlh': {
+    'message': {
+      'hello': 'nuqneH',
+      ...
+    }
+  }
+};
+```
+
+Use the new language:
+
+```
+CONFIG_APP_LOCALE = 'tlh'
+```
+
 
 ### Embed own pages
 
@@ -252,12 +313,6 @@ export default {
 ### custom_theme.scss
 
 <del>The custom-theme.scss file is located at `peacock-user-ui/user-config/custom-theme.scss` by default. It contains Bootstrap 4 scss variables and overrides the default Bootstrap values. It must be used to change any general styling rules like spacing, sizes, colors etc. You can also add your own color variables to use them via Bootstrap classes or add other new variables.</del>
-
----
-
-### i18n.json
-
-The i18n.json file is located at `peacock-user-ui/user-config/i18n/i18n.json` by default. It contains translations for all available languages for the vue-i18n module.
 
 ---
 

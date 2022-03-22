@@ -77,15 +77,15 @@ import dateFilters from './filters/dateFilters';
 import RuntimeConfiguration from './utils/runtimeconfig';
 // Configured language
 const LOCALE = GLUE_CONFIG.locale;
+const FALLBACK_LOCALE = GLUE_CONFIG.fallbackLocale;
 
 // Set locale for dateFilters (moment.js)
 dateFilters.setLocale(LOCALE);
 // vue-i18n setup -- docs: https://kazupon.github.io/vue-i18n/en/started.html
 Vue.use(VueI18n);
-// const I18N = require('./i18n/i18n.json');
 const i18n = new VueI18n({
   locale: LOCALE,
-  fallbackLocale: 'en',
+  fallbackLocale: FALLBACK_LOCALE,
   messages: I18N_CONFIG,
   silentTranslationWarn: true,
 });

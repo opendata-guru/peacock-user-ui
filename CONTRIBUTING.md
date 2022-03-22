@@ -21,6 +21,14 @@ Have a look at [Transifex project page](https://www.transifex.com/peacock/open-d
 You can register as translator for free.
 It will automatically accept requests from translators to join the team.
 
+## Update translation in code
+
+TODO
+### i18n.json
+
+The i18n.json file is located at `peacock-user-ui/user-config/i18n/i18n.json` by default. It contains translations for all available languages for the vue-i18n module.
+
+
 # Provide code
 
 You can provide bug fixes and new code. First of all, setup your environment.
@@ -125,13 +133,13 @@ Publishing a new release will automatically:
 
 ## glue-config.js
 
-The glue-config.js file is located at `peacock-user-ui/user-config/glue-config.js` by default. It is the main project configuration file.
+The glue-config.js file is located at `peacock-user-ui/user-config/glue-config.js`. It is the main project configuration file. **But it contains default values only (and some very old values that should be removed in future).
 
 You need to rebuild the project after changing this file.
 
 ## user-configs.js
 
-The user-configs.json file is located at `peacock-user-ui/config/user-configs.js` by default. It contains the paths to the glue-config.js and i18n.json. So this file overwrite the settings in `glue-config.js`. The simplest sample file is `user-configs.default.js` (with no configuration overwrites).
+The user-configs.json file is located at `peacock-user-ui/config/user-configs.js`. It contains the paths to the glue-config.js and i18n.json. So this file overwrite the settings in `glue-config.js`.
 
 The `user-configs.js` checks global variables and set the values, if set, to the configuration. The global variables can set in `config.js`file.
 
@@ -139,7 +147,7 @@ You need to rebuild the project after changing this file.
 
 ## config.js
 
-The config.js file is located at `peacock-user-ui/static/js/config.js` by default. Use this file to customize all settings for this project.
+The config.js file is located at `peacock-user-ui/static/js/config.js`. Use this file to customize all settings for this project.
 
 You **does not need** to rebuild the project after changing this file. But you must reload the browser while hot reloading does not work.
 
