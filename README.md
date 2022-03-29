@@ -57,7 +57,7 @@ CONFIG_APP_ROUTER_BASE | Set the path of the url. Default is an empty string, wo
 CONFIG_APP_ROUTER_LIB_BASE | Set the path of this library. Use the same value as in `CONFIG_APP_ROUTER_BASE` or `'https://unpkg.com/peacock-user-ui@latest/dist/'` when you using the CDN. | `empty`
 CONFIG_APP_ROUTER_REDIRECT_ROOT_TO | If you open the website without path (`'/'`) the router will redirect to a new page. Set to a default route name e.g. to `'Datasets'` or to a own router name e.g. in `CONFIG_APP_ROUTER_ROUTE_1_NAME`. | `'Datasets'`
 
-### Localisation
+## Localisation
 
 Customize the shown language of the website.
 Default is English.
@@ -119,7 +119,7 @@ CONFIG_APP_LOCALE = 'tlh'
 ```
 
 
-### Embed own pages
+## Embed own pages
 
 You can embed own static HTML files.
 The header and footer will be added automatically.
@@ -133,7 +133,7 @@ CONFIG_APP_ROUTER_ROUTE_1_FILE to CONFIG_APP_ROUTER_ROUTE_9_FILE || `empty`
 CONFIG_APP_ROUTER_ROUTE_1_REQUIRES_AUTH to CONFIG_APP_ROUTER_ROUTE_9_REQUIRES_AUTH | Set to `true` if your page is protected, set to `false` to access without login. | `true`
 
 
-### Customize pages header
+## Customize pages header
 
 Use relative `URL`s for default pages (e.g. `'/datasets'`) or router pages (see above) (e.g. `'/imprint'`). Use `URL`s starting with `https://` to navigate to other locations.
 
@@ -149,7 +149,7 @@ CONFIG_APP_HEADER_NAV_2_TITLE || `'message.header.navigation.data.catalogues'`
 CONFIG_APP_HEADER_NAV_3_URL to CONFIG_APP_HEADER_NAV_9_URL || `empty`
 CONFIG_APP_HEADER_NAV_3_TITLE to CONFIG_APP_HEADER_NAV_9_TITLE || `empty`
 
-### Customize pages footer
+## Customize pages footer
 
 Key | Description | Default value
 ----|-------------|---------------

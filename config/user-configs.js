@@ -14,6 +14,7 @@ import authKeycloakService from '../src/auth/authService';
 import authZeroService from '../guides/adapters/auth-zero-adapter';
 import datasetCKANService from '../guides/adapters/datasets-adapter-ckan';
 import datasetCKANFileService from '../guides/adapters/datasets-adapter-ckan-file';
+import axios from 'axios';
 // import distributionCKANService from '../guides/adapters/distributions-adapter-ckan';
 
 function combine(baseObject, additionalObject) {
@@ -30,6 +31,58 @@ function combine(baseObject, additionalObject) {
     }
 
     return baseObject;
+}
+
+function flattenStructuredJSON(obj) {
+	const ret = {};
+
+	for (const key in obj) {
+		if (!obj.hasOwnProperty(key)) {
+            continue;
+        }
+
+		if ((typeof obj[key]) === 'object') {
+			const flatObj = flattenStructuredJSON(obj[key]);
+            ret[key] = {};
+
+            for (const flatKey in flatObj) {
+				if (!flatObj.hasOwnProperty(flatKey)) {
+                    continue;
+                }
+
+                if (flatKey === 'string') {
+                    ret[key] = flatObj[flatKey];
+                } else {
+                    ret[key][flatKey] = flatObj[flatKey];
+                }
+            }
+		} else {
+            if (key === 'string') {
+                ret[key] = obj[key];
+            }
+		}
+	}
+	return ret;
+};
+
+async function appendLanguage(lang, url) {
+    let data = undefined;
+    try {
+        const response = await axios.get(url);
+        data = response.data;
+    } catch (error) {
+        console.error(`Could not load ${url}`);
+    }
+
+    if (data) {
+        data = flattenStructuredJSON(data);
+        i18n = combine(i18n, {
+            [lang]: {
+                message: data
+            }
+        });
+        console.log(i18n);
+    }
 }
 
 if (typeof CONFIG_APP_TITLE !== 'undefined') {
@@ -61,6 +114,7 @@ if (typeof CONFIG_APP_LOCALE_FALLBACK !== 'undefined') {
 if (typeof CONFIG_APP_LANGUAGES !== 'undefined') {
     i18n = combine(i18n, CONFIG_APP_LANGUAGES);
 }
+//appendLanguage('fi', 'https://raw.githubusercontent.com/opendata-guru/peacock-user-ui/master/user-config/i18n/i18n_de.json');
 
 if (typeof CONFIG_APP_DATA_SERVICE !== 'undefined') {
     if (CONFIG_APP_DATA_SERVICE === 'piveau') {
