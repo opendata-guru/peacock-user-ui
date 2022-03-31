@@ -65,14 +65,12 @@ function flattenStructuredJSON(obj) {
 	return ret;
 };
 
-async function appendLanguage(lang, url) {
-    let data = undefined;
-    try {
-        const response = await axios.get(url);
-        data = response.data;
-    } catch (error) {
-        console.error(`Could not load ${url}`);
-    }
+function appendLanguage(lang, url) {
+    const xhrObj = new XMLHttpRequest();
+    xhrObj.open('GET', url, false);
+    xhrObj.send();
+
+    let data = JSON.parse(xhrObj.responseText);
 
     if (data) {
         data = flattenStructuredJSON(data);
@@ -81,7 +79,6 @@ async function appendLanguage(lang, url) {
                 message: data
             }
         });
-        console.log(i18n);
     }
 }
 
@@ -114,7 +111,7 @@ if (typeof CONFIG_APP_LOCALE_FALLBACK !== 'undefined') {
 if (typeof CONFIG_APP_LANGUAGES !== 'undefined') {
     i18n = combine(i18n, CONFIG_APP_LANGUAGES);
 }
-//appendLanguage('fi', 'https://raw.githubusercontent.com/opendata-guru/peacock-user-ui/master/user-config/i18n/i18n_de.json');
+// appendLanguage('fi', 'https://raw.githubusercontent.com/opendata-guru/peacock-user-ui/master/user-config/i18n/i18n_de.json');
 
 if (typeof CONFIG_APP_DATA_SERVICE !== 'undefined') {
     if (CONFIG_APP_DATA_SERVICE === 'piveau') {
