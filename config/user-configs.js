@@ -70,7 +70,7 @@ function appendLanguage(lang, url) {
     xhrObj.open('GET', url, false);
     xhrObj.send();
 
-    let data = JSON.parse(xhrObj.responseText);
+    let data = xhrObj.status < 300 ? JSON.parse(xhrObj.responseText) : undefined;
 
     if (data) {
         data = flattenStructuredJSON(data);
@@ -111,7 +111,13 @@ if (typeof CONFIG_APP_LOCALE_FALLBACK !== 'undefined') {
 if (typeof CONFIG_APP_LANGUAGES !== 'undefined') {
     i18n = combine(i18n, CONFIG_APP_LANGUAGES);
 }
-// appendLanguage('fi', 'https://raw.githubusercontent.com/opendata-guru/peacock-user-ui/master/user-config/i18n/i18n_de.json');
+if ((typeof CONFIG_APP_LOAD_LANGUAGE_1 !== 'undefined') && (CONFIG_APP_LOAD_LANGUAGE_1 !== '')) {
+    if ((typeof CONFIG_APP_LOAD_LANGUAGE_URL_1 !== 'undefined') && (CONFIG_APP_LOAD_LANGUAGE_URL_1 !== '')) {
+        appendLanguage(CONFIG_APP_LOAD_LANGUAGE_1, CONFIG_APP_LOAD_LANGUAGE_URL_1);
+    } else {
+        appendLanguage(CONFIG_APP_LOAD_LANGUAGE_1, CONFIG_APP_ROUTER_LIB_BASE + 'assets/lang/' + CONFIG_APP_LOAD_LANGUAGE_1 + '.json');
+    }
+}
 
 if (typeof CONFIG_APP_DATA_SERVICE !== 'undefined') {
     if (CONFIG_APP_DATA_SERVICE === 'piveau') {
