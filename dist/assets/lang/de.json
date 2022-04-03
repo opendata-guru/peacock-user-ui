@@ -1,0 +1,1131 @@
+{
+  "catalogues": {
+    "searchBar": {
+      "placeholder": {
+        "string": "Kataloge durchsuchen",
+        "developer_comment": "Catalog > Search Bar > placeholder"
+      }
+    },
+    "geoBoundsMessagePre": {
+      "string": "Your Search has been limited to:",
+      "developer_comment": ":geoBoundsMessagePre:"
+    },
+    "geoBoundsMessageRemove": {
+      "string": "Schließen Sie diese Meldung, um die Einschränkung zu entfernen \noder benutzen Sie die Reset Funktion.",
+      "developer_comment": ":geoBoundsMessageRemove:"
+    },
+    "countMessage": {
+      "string": "Kataloge gefunden für ",
+      "developer_comment": ":countMessage:"
+    },
+    "countMessageSingular": {
+      "string": "Katalog gefunden für ",
+      "developer_comment": ":countMessageSingular:"
+    },
+    "countMessageNoResult": {
+      "string": "Kein Katalog gefunden für ",
+      "developer_comment": ":countMessageNoResult:"
+    },
+    "loadingMessage": {
+      "string": "Loading catalogues...",
+      "developer_comment": "Catalog > loadingMessage"
+    }
+  },
+  "catalogueFacets": {
+    "title": {
+      "string": "Filter",
+      "developer_comment": ":title:"
+    },
+    "settings": {
+      "string": "Settings",
+      "developer_comment": ":settings:"
+    },
+    "operator": {
+      "string": "Operator",
+      "developer_comment": ":operator:"
+    },
+    "and": {
+      "string": "AND",
+      "developer_comment": ":and:"
+    },
+    "or": {
+      "string": "OR",
+      "developer_comment": ":or:"
+    },
+    "europeanCatalogues": {
+      "string": "European Catalogues",
+      "developer_comment": ":europeanCatalogues:"
+    },
+    "facets": {
+      "countries": {
+        "string": "Countries",
+        "developer_comment": ":countries:"
+      },
+      "catalogues": {
+        "string": "Catalogues",
+        "developer_comment": ":catalogues:"
+      },
+      "categories": {
+        "string": "Categories",
+        "developer_comment": ":categories:"
+      },
+      "keywords": {
+        "string": "Keywords",
+        "developer_comment": ":keywords:"
+      },
+      "formats": {
+        "string": "Formats",
+        "developer_comment": ":formats:"
+      },
+      "licences": {
+        "string": "Licences",
+        "developer_comment": ":licences:"
+      }
+    }
+  },
+  "categories": {
+    "envi": {
+      "string": "Umwelt",
+      "developer_comment": ":envi:"
+    },
+    "agri": {
+      "string": "Landwirtschaft, Fischerei, Forstwirtschaft und Nahrungsmittel",
+      "developer_comment": ":agri:"
+    },
+    "econ": {
+      "string": "Wirtschaft und Finanzen",
+      "developer_comment": ":econ:"
+    },
+    "educ": {
+      "string": "Bildung, Kultur und Sport",
+      "developer_comment": ":educ:"
+    },
+    "ener": {
+      "string": "Energie",
+      "developer_comment": ":ener:"
+    },
+    "gove": {
+      "string": "Regierung und öffentlicher Sektor",
+      "developer_comment": ":gove:"
+    },
+    "heal": {
+      "string": "Gesundheit",
+      "developer_comment": ":heal:"
+    },
+    "intr": {
+      "string": "Internationale Themen",
+      "developer_comment": ":intr:"
+    },
+    "just": {
+      "string": "Justiz, Rechtssystem und öffentliche Sicherheit",
+      "developer_comment": ":just:"
+    },
+    "regi": {
+      "string": "Regionen und Städte",
+      "developer_comment": ":regi:"
+    },
+    "soci": {
+      "string": "Bevölkerung und Gesellschaft",
+      "developer_comment": ":soci:"
+    },
+    "tech": {
+      "string": "Wissenschaft und Technologie",
+      "developer_comment": ":tech:"
+    },
+    "tran": {
+      "string": "Verkehr",
+      "developer_comment": ":tran:"
+    }
+  },
+  "datasetCategories": {
+    "noCategories": {
+      "string": "Keine Kategorien gefunden",
+      "developer_comment": ":noCategories:"
+    },
+    "foundCategories": {
+      "string": "{number} Kategorie gefunden",
+      "developer_comment": ":foundCategories:"
+    },
+    "foundCategory": {
+      "string": "{number} Kategorien gefunden",
+      "developer_comment": ":foundCategory:"
+    }
+  },
+  "datasetDetails": {
+    "about": {
+      "string": "about",
+      "developer_comment": ":about:"
+    },
+    "additionalInfo": {
+      "string": "Zusätzliche Informationen",
+      "developer_comment": "Dataset Details > Header > additionalInfo"
+    },
+    "download": {
+      "string": "Download",
+      "developer_comment": "Dataset Details > Button > download"
+    },
+    "feedback": {
+      "string": "Feedback",
+      "developer_comment": ":feedback:"
+    },
+    "edit": {
+      "string": "Edit",
+      "developer_comment": ":edit:"
+    },
+    "delete": {
+      "string": "Löschen",
+      "developer_comment": ":delete:"
+    },
+    "manage": {
+      "string": "verwalten",
+      "developer_comment": ":manage:"
+    },
+    "follow": {
+      "string": "Folgen",
+      "developer_comment": ":follow:"
+    },
+    "geoInfo": {
+      "string": "Datensatzumfang",
+      "developer_comment": "Dataset Details > Header > geoInfo"
+    },
+    "menu": {
+      "string": "Menü",
+      "developer_comment": ":menu:"
+    },
+    "openResource": {
+      "string": "Ressource öffnen",
+      "developer_comment": "Dataset Details > Button > openResource"
+    },
+    "options": {
+      "string": "Optionen",
+      "developer_comment": ":options:"
+    },
+    "preview": {
+      "string": "Vorschau",
+      "developer_comment": ":preview:"
+    },
+    "translation": {
+      "message": {
+        "string": "Titel und Beschreibung dieses Datensatzes wurden maschinell übersetzt.",
+        "developer_comment": "Dataset Details > Translation > message"
+      },
+      "noTranslation": {
+        "string": "Für die gewünschte Sprache steht keine Übersetzung zur Verfügung. Die Informationen werden in der Standardsprache angezeigt",
+        "developer_comment": "Dataset Details > Translation > noTranslation"
+      },
+      "original": {
+        "string": "Originale Sprache",
+        "developer_comment": "Dataset Details > Translation > original"
+      },
+      "link": {
+        "string": "Hier klicken um den Datensatz in seiner ursprünglichen Sprache anzuzeigen",
+        "developer_comment": "Dataset Details > Translation > link"
+      },
+      "update": {
+        "string": "Eine aktualisierte Übersetzung dieses Datensatzes ist in Arbeit.",
+        "developer_comment": "Dataset Details > Translation update"
+      }
+    },
+    "subnav": {
+      "activityStream": {
+        "string": "Aktivitätsanzeige",
+        "developer_comment": ":activityStream:"
+      },
+      "categories": {
+        "string": "Kategorien",
+        "developer_comment": ":categories:"
+      },
+      "dataset": {
+        "string": "Datensatz",
+        "developer_comment": ":dataset:"
+      },
+      "similarDatasets": {
+        "string": "Ähnliche Datensätze",
+        "developer_comment": ":similarDatasets:"
+      }
+    },
+    "share": {
+      "dataset": {
+        "string": "Teile Datensatz",
+        "developer_comment": ":dataset:"
+      },
+      "on": {
+        "string": "Teile auf",
+        "developer_comment": ":on:"
+      }
+    },
+    "unfollow": {
+      "string": "Entfolgen",
+      "developer_comment": ":unfollow:"
+    },
+    "visualisation": {
+      "string": "Visualisierung öffnen",
+      "developer_comment": "Dataset Details > Button > visualisation"
+    },
+    "geoVisualisation": {
+      "string": "Geo-Visualisierung öffnen",
+      "developer_comment": "Dataset Details > Button > geoVisualisation"
+    }
+  },
+  "datasetFacets": {
+    "title": {
+      "string": "Filter",
+      "developer_comment": ":title:"
+    },
+    "settings": {
+      "string": "Einstellungen",
+      "developer_comment": "Dataset > Facets > Filter Options > settings"
+    },
+    "operator": {
+      "string": "Operator",
+      "developer_comment": "Dataset > Facets > Filter Options > operator"
+    },
+    "and": {
+      "string": "UND",
+      "developer_comment": "Dataset > Facets > Filter Options > and"
+    },
+    "or": {
+      "string": "oder",
+      "developer_comment": "Dataset > Facets > Filter Options > or"
+    },
+    "europeanCatalogues": {
+      "string": "Europäische Kataloge",
+      "developer_comment": ":europeanCatalogues:"
+    },
+    "filter": {
+      "string": "Filter",
+      "developer_comment": "Dataset > Facets > Filter Options Title > filter"
+    },
+    "facets": {
+      "data scope": {
+        "string": "Datenraum",
+        "developer_comment": "Dataset > Facets > Header > data scope"
+      },
+      "provenance": {
+        "string": "Herkunft",
+        "developer_comment": "Dataset > Facets > Header > provenance"
+      },
+      "countries": {
+        "string": "Länder",
+        "developer_comment": "Dataset > Facets > Header > countries"
+      },
+      "catalogues": {
+        "string": "Kataloge",
+        "developer_comment": "Dataset > Facets > Header > catalogues"
+      },
+      "categories": {
+        "string": "Kategorien",
+        "developer_comment": "Dataset > Facets > Header > categories"
+      },
+      "publisher": {
+        "string": "Publisher",
+        "developer_comment": "Dataset > Facets > Header > publisher"
+      },
+      "keywords": {
+        "string": "Keywords",
+        "developer_comment": "Dataset > Facets > Header > keywords"
+      },
+      "scoring": {
+        "string": "Metadaten-Qualität",
+        "developer_comment": "Dataset > Facets > Header > scoring"
+      },
+      "formats": {
+        "string": "Formate",
+        "developer_comment": "Dataset > Facets > Header > formats"
+      },
+      "licences": {
+        "string": "Lizenzen",
+        "developer_comment": "Dataset > Facets > Header > licences"
+      },
+      "licenses": {
+        "string": "Lizenzen",
+        "developer_comment": "Dataset > Facets > Header > licenses"
+      }
+    }
+  },
+  "datasets": {
+    "searchBar": {
+      "placeholder": {
+        "string": "Suche nach Datensätze",
+        "developer_comment": "Dataset > Search Bar > placeholder"
+      }
+    },
+    "findLocation": {
+      "string": "Nach Ort filtern",
+      "developer_comment": ":findLocation:"
+    },
+    "geoBoundsMessagePre": {
+      "string": "Ihre Suche wurde eingeschränkt auf:",
+      "developer_comment": ":geoBoundsMessagePre:"
+    },
+    "geoBoundsMessageRemove": {
+      "string": "Schließen Sie diese Meldung, um die Einschränkung zu entfernen \noder benutzen Sie die Reset Funktion.",
+      "developer_comment": ":geoBoundsMessageRemove:"
+    },
+    "countMessage": {
+      "string": "Datensätze gefunden",
+      "developer_comment": ":countMessage:"
+    },
+    "countMessageSingular": {
+      "string": "Datensatz gefunden für {query}",
+      "developer_comment": ":countMessageSingular:"
+    },
+    "noResult": {
+      "string": "Keine Datensätze gefunden für {query}",
+      "developer_comment": ":noResult:"
+    },
+    "loadingMessage": {
+      "string": "Datensätze werden abgerufen...",
+      "developer_comment": "Dataset > loadingMessage"
+    },
+    "showMore": {
+      "string": "Mehr anzeigen",
+      "developer_comment": ":showMore:"
+    },
+    "datasetsFeed": {
+      "string": "Datensatz-Feed",
+      "developer_comment": "Dataset > Button > datasetsFeed"
+    },
+    "createDataset": {
+      "string": "Create Dataset",
+      "developer_comment": "Dataset > Admin Button > createDataset"
+    },
+    "saveQuery": {
+      "string": "Suchanfrage speichern",
+      "developer_comment": ":saveQuery:"
+    },
+    "meta": {
+      "translationNotComplete": {
+        "string": "Übersetzung nicht vollständig",
+        "developer_comment": ":translationNotComplete:"
+      }
+    }
+  },
+  "distributionDetails": {},
+  "distributionLicense": {
+    "notFound": {
+      "string": "Keine Lizenzinformation gefunden.",
+      "developer_comment": ":notFound:"
+    },
+    "notFoundExtended": {
+      "string": "Es wurde keine zusätzlichen Lizenzinformation gefunden, bitte überprüfen Sie die Quelle für weitere Informationen bzgl. der Lizenz.",
+      "developer_comment": ":notFoundExtended:"
+    },
+    "notProvided": {
+      "string": "Keine Lizenz angegeben",
+      "developer_comment": "License > notProvided"
+    },
+    "licensingAssistant": {
+      "string": "Lizenzassistent",
+      "developer_comment": "License > licensingAssistant"
+    },
+    "openLA": {
+      "string": "Lizenzassistent öffnen",
+      "developer_comment": ":openLA:"
+    }
+  },
+  "distributions": {
+    "footerLink": {
+      "string": "Download",
+      "developer_comment": ":footerLink:"
+    }
+  },
+  "error": {
+    "goBack": {
+      "string": "Gehe zurück",
+      "developer_comment": "Page > Error Page > Button > goBack"
+    },
+    "http401": {
+      "string": "He, du! Halt genau hier an. Eine Autorisierung ist erforderlich.",
+      "developer_comment": "Page > Error Page > Message > http401"
+    },
+    "http403": {
+      "string": "Sie sind nicht berechtigt, auf dieses Dokument zuzugreifen.",
+      "developer_comment": "Page > Error Page > Message > http403"
+    },
+    "http404": {
+      "string": "Seite nicht gefunden.",
+      "developer_comment": "Page > Error Page > Message > http404"
+    }
+  },
+  "footer": {
+    "fundedBy": {
+      "string": "Gefördert durch die Europäische Union",
+      "developer_comment": ":fundedBy:"
+    },
+    "newsletter": {
+      "string": "Newsletter",
+      "developer_comment": ":newsletter:"
+    },
+    "newsletterText": {
+      "string": "Bleiben Sie über unsere neuesten Meldungen informiert!",
+      "developer_comment": ":newsletterText:"
+    },
+    "subscribe": {
+      "string": "Abonnieren",
+      "developer_comment": ":subscribe:"
+    },
+    "followUs": {
+      "string": "Folgen Sie uns",
+      "developer_comment": ":followUs:"
+    },
+    "helpUsImprove": {
+      "string": "Verbesserungsvorschläge",
+      "developer_comment": ":helpUsImprove:"
+    },
+    "helpUsImproveText": {
+      "string": "Ihr Feedback hilft uns, die Benutzererfahrung stetig zu verbessern. Was ist Ihr Vorschlag?",
+      "developer_comment": ":helpUsImproveText:"
+    },
+    "lastUpdate": {
+      "string": "Letzte Aktualisierung",
+      "developer_comment": ":lastUpdate:"
+    },
+    "links": {
+      "newsletter": {
+        "string": "Newsletter",
+        "developer_comment": ":newsletter:"
+      },
+      "faq": {
+        "string": "FAQ",
+        "developer_comment": ":faq:"
+      },
+      "search": {
+        "string": "Suche",
+        "developer_comment": ":search:"
+      },
+      "contact": {
+        "string": "Kontakt",
+        "developer_comment": ":contact:"
+      },
+      "cookies": {
+        "string": "Cookies",
+        "developer_comment": ":cookies:"
+      },
+      "legalNotice": {
+        "string": "Rechtlicher Hinweis",
+        "developer_comment": ":legalNotice:"
+      },
+      "login": {
+        "string": "Anmelden",
+        "developer_comment": ":login:"
+      }
+    }
+  },
+  "header": {
+    "european": {
+      "string": "Europäisches",
+      "developer_comment": ":european:"
+    },
+    "dataPortal": {
+      "string": "Datenportal",
+      "developer_comment": ":dataPortal:"
+    },
+    "navigation": {
+      "data": {
+        "title": {
+          "string": "Daten",
+          "developer_comment": ":title:"
+        },
+        "datasets": {
+          "string": "Datensätze",
+          "developer_comment": "Navigation > datasets"
+        },
+        "catalogues": {
+          "string": "Kataloge",
+          "developer_comment": "Navigation > catalogues"
+        },
+        "metadataQuality": {
+          "string": "Metadaten-Qualität",
+          "developer_comment": ":metadataQuality:"
+        },
+        "licensingAssistant": {
+          "string": "Lizenzassistent",
+          "developer_comment": ":licensingAssistant:"
+        },
+        "sparqlManager": {
+          "string": "SPARQL Manager",
+          "developer_comment": ":sparqlManager:"
+        },
+        "statistics": {
+          "string": "Statistiken",
+          "developer_comment": ":statistics:"
+        }
+      },
+      "providingData": {
+        "title": {
+          "string": "Daten bereitstellen",
+          "developer_comment": ":title:"
+        },
+        "practicalGuide": {
+          "string": "Praktischer Führer",
+          "developer_comment": ":practicalGuide:"
+        },
+        "cataloguesHarvestedByUs": {
+          "string": "Kataloge, die von uns abgegriffen werden",
+          "developer_comment": ":cataloguesHarvestedByUs:"
+        },
+        "beHarvestedByUs": {
+          "string": "Ihre Daten bereitstellen",
+          "developer_comment": ":beHarvestedByUs:"
+        }
+      },
+      "resources": {
+        "title": {
+          "string": "Ressourcen",
+          "developer_comment": ":title:"
+        },
+        "elearning": {
+          "string": "E-Learning",
+          "developer_comment": ":elearning:"
+        },
+        "trainingCompanion": {
+          "string": "Trainingsbegleiter",
+          "developer_comment": ":trainingCompanion:"
+        },
+        "moreTrainingMaterial": {
+          "string": "Weiteres Trainingsmaterial",
+          "developer_comment": ":moreTrainingMaterial:"
+        },
+        "reportsAboutOpenData": {
+          "string": "Berichte über Offene Daten",
+          "developer_comment": ":reportsAboutOpenData:"
+        }
+      },
+      "usingData": {
+        "title": {
+          "string": "Daten verwenden",
+          "developer_comment": ":title:"
+        },
+        "benefitsOfUsingData": {
+          "string": "Vorteile der Verwendung von Daten",
+          "developer_comment": ":benefitsOfUsingData:"
+        },
+        "checklistForUsingData": {
+          "string": "Checkliste zur Verwendung von Daten",
+          "developer_comment": ":checklistForUsingData:"
+        },
+        "useCases": {
+          "string": "Anwendungsfälle",
+          "developer_comment": ":useCases:"
+        },
+        "tellUsYourStory": {
+          "string": "Teilen Sie Ihre Erfahrungen mit uns",
+          "developer_comment": ":tellUsYourStory:"
+        }
+      },
+      "whatWeDo": {
+        "title": {
+          "string": "Was wir anbieten",
+          "developer_comment": ":title:"
+        },
+        "ourActivities": {
+          "string": "Unsere Aktivitäten",
+          "developer_comment": ":ourActivities:"
+        },
+        "openDataMaturity": {
+          "string": "Open Data Maturity",
+          "developer_comment": ":openDataMaturity:"
+        },
+        "factsheetsAndReports": {
+          "string": "Factsheets und Berichte",
+          "developer_comment": ":factsheetsAndReports:"
+        },
+        "featuredHighlights": {
+          "string": "Topthemen",
+          "developer_comment": ":featuredHighlights:"
+        },
+        "calendar": {
+          "string": "Kalender",
+          "developer_comment": ":calendar:"
+        },
+        "news": {
+          "string": "Meldungen",
+          "developer_comment": ":news:"
+        }
+      }
+    },
+    "searchInputPlaceholder": {
+      "string": "Portalinhalte durchsuchen...",
+      "developer_comment": ":searchInputPlaceholder:"
+    },
+    "subnav": {
+      "newsletter": {
+        "string": "Newsletter",
+        "developer_comment": ":newsletter:"
+      },
+      "faq": {
+        "string": "FAQ",
+        "developer_comment": ":faq:"
+      },
+      "search": {
+        "string": "Suche",
+        "developer_comment": ":search:"
+      },
+      "contact": {
+        "string": "Kontakt",
+        "developer_comment": ":contact:"
+      },
+      "cookies": {
+        "string": "Cookies",
+        "developer_comment": ":cookies:"
+      },
+      "legalNotice": {
+        "string": "Rechtlicher Hinweis",
+        "developer_comment": ":legalNotice:"
+      },
+      "login": {
+        "string": "Anmelden",
+        "developer_comment": "Header > Admin Button > login"
+      },
+      "logout": {
+        "string": "Logout",
+        "developer_comment": "Header > Admin Button > logout"
+      }
+    }
+  },
+  "home": {
+    "msg": {
+      "string": "Sorry, this page has no content yet. Visit the Data tab to see something!",
+      "developer_comment": ":msg:"
+    }
+  },
+  "imprint": {
+    "msg": {
+      "string": "INSERT IMPRINT HERE",
+      "developer_comment": ":msg:"
+    }
+  },
+  "mapModal": {
+    "close": {
+      "string": "Schließen",
+      "developer_comment": ":close:"
+    },
+    "reset": {
+      "string": "Zurücksetzen",
+      "developer_comment": ":reset:"
+    },
+    "findDatasets": {
+      "string": "Anwenden",
+      "developer_comment": ":findDatasets:"
+    },
+    "drawRectangleMsg": {
+      "string": "Zeichne ein Rechteck zum Auswählen einer Region",
+      "developer_comment": ":drawRectangleMsg:"
+    },
+    "copyright": {
+      "string": "Map © OpenStreetMap contributors",
+      "developer_comment": ":copyright:"
+    },
+    "disclaimer": {
+      "string": "Disclaimer",
+      "developer_comment": ":disclaimer:"
+    },
+    "fullscreen": {
+      "string": "Fullscreen",
+      "developer_comment": ":fullscreen:"
+    }
+  },
+  "metadata": {
+    "accessUrl": {
+      "string": "Zugriff",
+      "developer_comment": ":accessUrl:"
+    },
+    "addDistribution": {
+      "string": "Add Distribution",
+      "developer_comment": ":addDistribution:"
+    },
+    "categories": {
+      "string": "Kategorien",
+      "developer_comment": ":categories:"
+    },
+    "chooseCategory": {
+      "string": "Choose a Category",
+      "developer_comment": ":chooseCategory:"
+    },
+    "chooseCatalogue": {
+      "string": "Choose a Catalogue",
+      "developer_comment": ":chooseCatalogue:"
+    },
+    "chooseFile": {
+      "string": "Choose a File",
+      "developer_comment": ":chooseFile:"
+    },
+    "chooseFormat": {
+      "string": "Choose a Format",
+      "developer_comment": ":chooseFormat:"
+    },
+    "chooseType": {
+      "string": "Choose a Type",
+      "developer_comment": ":chooseType:"
+    },
+    "conformsTo": {
+      "string": "Konform mit",
+      "developer_comment": "Metadata Label > conformsTo"
+    },
+    "contactPoints": {
+      "string": "Kontaktmöglichkeiten",
+      "developer_comment": "Metadata Label > contactPoints"
+    },
+    "coordinates": {
+      "string": "Koordinaten",
+      "developer_comment": "Metadata Label > coordinates"
+    },
+    "created": {
+      "string": "Erstellt",
+      "developer_comment": "Metadata Label > created"
+    },
+    "dataset": {
+      "string": "Dataset",
+      "developer_comment": ":dataset:"
+    },
+    "datasets": {
+      "string": "Datensätze",
+      "developer_comment": ":datasets:"
+    },
+    "description": {
+      "string": "Beschreibung",
+      "developer_comment": ":description:"
+    },
+    "distribution": {
+      "string": "Distribution",
+      "developer_comment": ":distribution:"
+    },
+    "distributions": {
+      "string": "Distributionen",
+      "developer_comment": "Metadata Label > distributions"
+    },
+    "documentations": {
+      "string": "Dokumentationen",
+      "developer_comment": "Metadata Label > documentations"
+    },
+    "downloadUrl": {
+      "string": "Download URL",
+      "developer_comment": ":downloadUrl:"
+    },
+    "email": {
+      "string": "E-Mail",
+      "developer_comment": "Metadata Label > email"
+    },
+    "format": {
+      "string": "Format",
+      "developer_comment": ":format:"
+    },
+    "frequency": {
+      "string": "Häufigkeit",
+      "developer_comment": "Metadata Label > frequency"
+    },
+    "homepage": {
+      "string": "Homepage",
+      "developer_comment": ":homepage:"
+    },
+    "label": {
+      "string": "Label",
+      "developer_comment": "Metadata Label > label"
+    },
+    "landingPage": {
+      "string": "Zielseite",
+      "developer_comment": "Metadata Label > landingPage"
+    },
+    "identifiers": {
+      "string": "Identifikatoren",
+      "developer_comment": "Metadata Label > identifiers"
+    },
+    "license": {
+      "string": "Lizenz",
+      "developer_comment": "Metadata Label > license"
+    },
+    "name": {
+      "string": "Name",
+      "developer_comment": "Metadata Label > name"
+    },
+    "otherIdentifiers": {
+      "string": "Andere Identifikatoren",
+      "developer_comment": "Metadata Label > otherIdentifiers"
+    },
+    "provenances": {
+      "string": "Ursprünge",
+      "developer_comment": "Metadata Label > provenances"
+    },
+    "publisher": {
+      "string": "Publisher",
+      "developer_comment": "Metadata Label > publisher"
+    },
+    "relatedResources": {
+      "string": "Zugehörige Resourcen",
+      "developer_comment": "Metadata Label > relatedResources"
+    },
+    "resource": {
+      "string": "Ressource",
+      "developer_comment": "Metadata Label > resource"
+    },
+    "review": {
+      "string": "Review",
+      "developer_comment": ":review:"
+    },
+    "sources": {
+      "string": "Quellen",
+      "developer_comment": "Metadata Label > sources"
+    },
+    "spatial": {
+      "string": "Gebiet",
+      "developer_comment": "Metadata Label > spatial"
+    },
+    "tags": {
+      "string": "Tags",
+      "developer_comment": ":tags:"
+    },
+    "title": {
+      "string": "Titel",
+      "developer_comment": "Metadata Label > title"
+    },
+    "type": {
+      "string": "Typ",
+      "developer_comment": "Metadata Label > type"
+    },
+    "updated": {
+      "string": "Aktualisiert",
+      "developer_comment": "Metadata Label > updated"
+    },
+    "upload": {
+      "string": "Upload",
+      "developer_comment": ":upload:"
+    },
+    "metadataQuality": {
+      "string": "Metadaten-Qualität",
+      "developer_comment": ":metadataQuality:"
+    }
+  },
+  "navigation": {
+    "navItems": {
+      "home": {
+        "string": "Start",
+        "developer_comment": ":home:"
+      },
+      "about": {
+        "string": "Über uns",
+        "developer_comment": ":about:"
+      },
+      "data": {
+        "string": "Daten",
+        "developer_comment": ":data:"
+      },
+      "map": {
+        "string": "Karte",
+        "developer_comment": ":map:"
+      },
+      "imprint": {
+        "string": "Impressum",
+        "developer_comment": "Navigation > imprint"
+      },
+      "privacyPolicy": {
+        "string": "Datenschutzerklärung",
+        "developer_comment": "Navigation > privacyPolicy"
+      }
+    }
+  },
+  "pagination": {
+    "previous": {
+      "string": "Previous",
+      "developer_comment": "Pagination > previous"
+    },
+    "previousPage": {
+      "string": "<",
+      "developer_comment": "Pagination > previousPage"
+    },
+    "next": {
+      "string": "Next",
+      "developer_comment": "Pagination > next"
+    },
+    "nextPage": {
+      "string": ">",
+      "developer_comment": "Pagination > nextPage"
+    },
+    "finish": {
+      "string": "Finish",
+      "developer_comment": "Pagination > finish"
+    }
+  },
+  "similarDatasets": {
+    "similarDatasets": {
+      "string": "Ähnliche Datensätze",
+      "developer_comment": ":similarDatasets:"
+    },
+    "verySimilar": {
+      "string": "Sehr ähnlich",
+      "developer_comment": ":verySimilar:"
+    },
+    "similar": {
+      "string": "Ähnlich ",
+      "developer_comment": ":similar:"
+    },
+    "lessSimilar": {
+      "string": "Weniger ähnlich",
+      "developer_comment": ":lessSimilar:"
+    },
+    "marginalSimilar": {
+      "string": "Marginal ähnlich",
+      "developer_comment": ":marginalSimilar:"
+    },
+    "notFound": {
+      "string": "Keine ähnlichen Datensätze gefunden",
+      "developer_comment": ":notFound:"
+    }
+  },
+  "sort": {
+    "sortBy": {
+      "string": "Sortieren nach",
+      "developer_comment": ":sortBy:"
+    },
+    "relevance": {
+      "string": "Relevanz",
+      "developer_comment": "Sort > Method > relevance"
+    },
+    "lastUpdated": {
+      "string": "Zuletzt aktualisiert",
+      "developer_comment": "Sort > Method > lastUpdated"
+    },
+    "lastCreated": {
+      "string": "Zuletzt Erstellt",
+      "developer_comment": "Sort > Method > lastCreated"
+    },
+    "nameAZ": {
+      "string": "Name A-Z",
+      "developer_comment": "Sort > Method > nameAZ"
+    },
+    "nameZA": {
+      "string": "Name Z-A",
+      "developer_comment": "Sort > Method > nameZA"
+    }
+  },
+  "statistics": {
+    "statistics": {
+      "string": "Statistiken",
+      "developer_comment": ":statistics:"
+    },
+    "currentState": {
+      "string": "Aktuelle Daten",
+      "developer_comment": ":currentState:"
+    },
+    "evolution": {
+      "string": "Datenentwicklung",
+      "developer_comment": ":evolution:"
+    },
+    "selectType": {
+      "string": "Bitte wählen Sie die Art der Statistik",
+      "developer_comment": ":selectType:"
+    },
+    "datasetsPerCategory": {
+      "string": "Datensätze pro Datenkategorie",
+      "developer_comment": ":datasetsPerCategory:"
+    },
+    "datasetsPerCatalogue": {
+      "string": "Datensätze pro Datenkatalog",
+      "developer_comment": ":datasetsPerCatalogue:"
+    },
+    "datasetsPerCountryAndCatalogue": {
+      "string": "Datensätze pro Land und Datenkatalog",
+      "developer_comment": ":datasetsPerCountryAndCatalogue:"
+    },
+    "datasetsPerCountry": {
+      "string": "Datensätze pro Land",
+      "developer_comment": ":datasetsPerCountry:"
+    },
+    "totalNumber": {
+      "string": "Gesamtanzahl an Datensätzen",
+      "developer_comment": ":totalNumber:"
+    },
+    "selectTimePeriod": {
+      "string": "Zeitraum wählen",
+      "developer_comment": ":selectTimePeriod:"
+    },
+    "increaseStartEnd": {
+      "string": "Anstieg von '{dataset_model}' in % zwischen {start_date} und {end_date}",
+      "developer_comment": ":increaseStartEnd:"
+    },
+    "evolutionStartEnd": {
+      "string": "Veränderung der Gesamtanzahl an Datensätzen  zwischen {start_date} und {end_date}",
+      "developer_comment": ":evolutionStartEnd:"
+    },
+    "evolutionNumber": {
+      "string": "Veränderung der Anzahl von '{dataset_model}' zwischen {start_date} und {end_date}",
+      "developer_comment": ":evolutionNumber:"
+    },
+    "numberDate": {
+      "string": "Anzahl an '{dataset_model}' am {date}",
+      "developer_comment": ":numberDate:"
+    }
+  },
+  "userQueries": {
+    "save": {
+      "string": "Suchanfrage speichern",
+      "developer_comment": ":save:"
+    },
+    "myQueries": {
+      "string": "Meine Suchanfragen",
+      "developer_comment": ":myQueries:"
+    },
+    "querySaved": {
+      "string": "Suchanfrage gespeichert",
+      "developer_comment": ":querySaved:"
+    },
+    "queryDeleted": {
+      "string": "Suchanfrage gelöscht",
+      "developer_comment": ":queryDeleted:"
+    },
+    "searchQueries": {
+      "string": "Meine Suchanfragen durchsuchen",
+      "developer_comment": ":searchQueries:"
+    },
+    "executeQuery": {
+      "string": "Suchanfrage ausführen",
+      "developer_comment": ":executeQuery:"
+    },
+    "queryFound": {
+      "string": "{number} Suchanfrage gefunden",
+      "developer_comment": ":queryFound:"
+    },
+    "queriesFound": {
+      "string": "{number} Suchanfragen gefunden",
+      "developer_comment": ":queriesFound:"
+    },
+    "noQueryFound": {
+      "string": "Keine Suchanfrage gefunden",
+      "developer_comment": ":noQueryFound:"
+    },
+    "searchAllQueries": {
+      "string": "Suchanfragen…",
+      "developer_comment": ":searchAllQueries:"
+    },
+    "areYouSure": {
+      "string": "Wollen Sie diese Suchanfrage wirklich löschen?",
+      "developer_comment": ":areYouSure:"
+    },
+    "noDescription": {
+      "string": "Diese Suchanfrage hat keine Beschreibung",
+      "developer_comment": ":noDescription:"
+    },
+    "placeholderNotes": {
+      "string": "z.B. einige Notizen zu dieser Suchanfrage",
+      "developer_comment": ":placeholderNotes:"
+    },
+    "noQueriesSaved": {
+      "string": "Sie haben keine Suchanfragen abgespeichert.",
+      "developer_comment": ":noQueriesSaved:"
+    }
+  },
+  "visualisation": {
+    "info": {
+      "string": "Wenn die Visualisierung nach wenigen Sekunden nicht erscheint, bitte hier klicken.",
+      "developer_comment": ":info:"
+    },
+    "loading": {
+      "string": "Visualisierung wird geladen...",
+      "developer_comment": ":loading:"
+    },
+    "previewAvailable": {
+      "string": "Vorschau verfügbar",
+      "developer_comment": ":previewAvailable:"
+    }
+  }
+}
