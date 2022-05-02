@@ -40,7 +40,7 @@ Key | Description | Default value
 ----|-------------|---------------
 CONFIG_APP_TITLE | | `Peacock`
 CONFIG_APP_DATA_URL | Set the API data endpoint. You can use e.g. CKAN endpoints like 'https://www.govdata.de/ckan/api/action/' and 'https://www.govdata.de/ckan/api/action/package_search?q=spending'. Sometimes CORS are misconfigured and you need an data proxy like 'https://opendata.guru/proxy/cors?url=https://www.govdata.de/ckan/api/action/' and 'https://opendata.guru/proxy/cors?url=https://opendata.jena.de/api/3/action/package_search?rows=9999'. It's also possible to use local path to data files, try '/data/ckan-lazy.json' and '/data/ckan.json'. | `https://data.europa.eu/api/hub/search/`
-CONFIG_APP_DATA_SERVICE | The Service defines the data format data url uses. Use `piveau` for EU data portal, `ckan` for CKAN API portals and `ckan-file` for local CKAN json files. | `piveau`
+CONFIG_APP_DATA_SERVICE | The Service defines the data format data url uses. Use `piveau` for EU data portal, `ckan` for CKAN API portals and `ckan-file` for local CKAN json files. Use an object for custom service. | `piveau`
 CONFIG_APP_DATA_CACHE_BUSTING | used for file data services e.g. `ckan-file` | true
 CONFIG_APP_GAZETTEER_URL | | `https://data.europa.eu/api/hub/search/gazetteer/`
 CONFIG_APP_UPLOAD_URL | | `https://www.europeandataportal.eu/data/api/`
