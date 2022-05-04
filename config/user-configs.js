@@ -128,7 +128,7 @@ if (typeof CONFIG_APP_DATA_SERVICE !== 'undefined') {
     } else if (CONFIG_APP_DATA_SERVICE === 'ckan-file') {
         glueConfig.services.datasetService = datasetCKANFileService;
         // glueConfig.services.distributionService = distributionCKANFileService;
-    } else if (typeof CONFIG_APP_DATA_SERVICE === 'object') {
+    } else if ((typeof CONFIG_APP_DATA_SERVICE === 'object') || (typeof CONFIG_APP_DATA_SERVICE === 'function')) {
         glueConfig.services.datasetService = CONFIG_APP_DATA_SERVICE;
     }
 }
