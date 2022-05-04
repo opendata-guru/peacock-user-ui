@@ -52,3 +52,5 @@
  * (c) 2019 Evan You
  * @license MIT
  */
+
+//! moment.js
