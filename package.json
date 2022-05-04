@@ -134,8 +134,8 @@
     "email": "thomas@tursics.de"
   },
   "engines": {
-    "node": ">= 10.0.0",
-    "npm": ">= 6.0.0"
+    "node": ">= 16.0.0",
+    "npm": ">= 8.0.0"
   },
   "homepage": "https://github.com/opendata-guru/peacock-user-ui#readme",
   "keywords": [
