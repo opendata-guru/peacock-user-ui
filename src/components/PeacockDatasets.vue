@@ -150,6 +150,7 @@
                        :favorite="dataset.favorite"
                        @favorite-updated="favoriteChanged(dataset.id, $event)"
                        :source="{
+                                    sourceID: dataset.catalog.id,
                                     sourceImage: getCountryFlagImg(has(dataset, 'country.id') ? dataset.country.id : 'eu'),
                                     sourceTitle: dataset.catalog.title,
                                 }"
