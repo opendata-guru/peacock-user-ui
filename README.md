@@ -52,7 +52,7 @@ CONFIG_APP_ENABLE_DATASET_SIMILARDATASETS | | false
 CONFIG_APP_ENABLE_DATASET_FEEDBACK | | false
 CONFIG_APP_ENABLE_FILTER_GAZETTEER | | false
 CONFIG_APP_ENABLE_FILTER_OPERATOR | | false
-CONFIG_APP_ENABLE_FAVORITES | | true
+CONFIG_APP_ENABLE_FAVORITES | | false
 CONFIG_APP_ROUTER_BASE | Set the path of the url. Default is an empty string, works for every url like https://some-domain.com or https://sub.domain.com . Set value to `/my-path/` for urls like `https://some-domain.com/my-path/`. | `empty`
 CONFIG_APP_ROUTER_LIB_BASE | Set the path of this library. Use the same value as in `CONFIG_APP_ROUTER_BASE` or `'https://unpkg.com/peacock-user-ui@latest/dist/'` when you using the CDN. | `empty`
 CONFIG_APP_ROUTER_REDIRECT_ROOT_TO | If you open the website without path (`'/'`) the router will redirect to a new page. Set to a default route name e.g. to `'Datasets'` or to a own router name e.g. in `CONFIG_APP_ROUTER_ROUTE_1_NAME`. | `'Datasets'`
