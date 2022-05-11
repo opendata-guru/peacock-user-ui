@@ -76,6 +76,18 @@ CONFIG_APP_LANGUAGES | Add own translation. | {}
 CONFIG_APP_LOAD_LANGUAGE_1 | Two-letter language code (ISO 639-1) of additional language. Translation will be loaded automatically, relative to `CONFIG_APP_ROUTER_LIB_BASE`. Use e.g. `de` for German. | ''
 CONFIG_APP_LOAD_LANGUAGE_URL_1 | Overwrite file location of translation file. | ''
 
+Load one of the predefined language translation:
+
+```
+CONFIG_APP_LOAD_LANGUAGE_1 = 'de';
+```
+
+Use the new language:
+
+```
+CONFIG_APP_LOCALE = 'de';
+```
+
 Append a new string to English and German translation:
 
 ```
