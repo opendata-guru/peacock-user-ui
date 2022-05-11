@@ -8,7 +8,8 @@
  */
 
 import glueConfig from '../user-config/glue-config';
-import i18n from '../user-config/i18n/i18n.json';
+import i18nImported from '../user-config/i18n/i18n.json';
+let i18n = i18nImported;
 
 import authKeycloakService from '../src/auth/authService';
 import authZeroService from '../guides/adapters/auth-zero-adapter';
@@ -160,7 +161,7 @@ glueConfig.enable.dataset.similarDatasets = typeof CONFIG_APP_ENABLE_DATASET_SIM
 glueConfig.enable.services.cacheBusting = typeof CONFIG_APP_DATA_CACHE_BUSTING !== 'undefined' ? CONFIG_APP_DATA_CACHE_BUSTING : true;
 glueConfig.enable.dataset.categories = typeof CONFIG_APP_ENABLE_DATASET_CATEGORIES !== 'undefined' ? CONFIG_APP_ENABLE_DATASET_CATEGORIES : false;
 glueConfig.enable.dataset.feedback = typeof CONFIG_APP_ENABLE_DATASET_FEEDBACK !== 'undefined' ? CONFIG_APP_ENABLE_DATASET_FEEDBACK : false;
-glueConfig.enable.favorites.enable = typeof CONFIG_APP_ENABLE_FAVORITES !== 'undefined' ? CONFIG_APP_ENABLE_FAVORITES : true;
+glueConfig.enable.favorites.enable = typeof CONFIG_APP_ENABLE_FAVORITES !== 'undefined' ? CONFIG_APP_ENABLE_FAVORITES : false;
 glueConfig.enable.filter.gazetteer = typeof CONFIG_APP_ENABLE_FILTER_GAZETTEER !== 'undefined' ? CONFIG_APP_ENABLE_FILTER_GAZETTEER : false;
 glueConfig.enable.filter.operator = typeof CONFIG_APP_ENABLE_FILTER_OPERATOR !== 'undefined' ? CONFIG_APP_ENABLE_FILTER_OPERATOR : false;
 glueConfig.keycloak.enableLogin = typeof CONFIG_APP_AUTH_ENABLE !== 'undefined' ? CONFIG_APP_AUTH_ENABLE : false;
