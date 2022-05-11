@@ -109,15 +109,15 @@ if (typeof CONFIG_APP_LOCALE !== 'undefined') {
 if (typeof CONFIG_APP_LOCALE_FALLBACK !== 'undefined') {
     glueConfig.fallbackLocale = CONFIG_APP_LOCALE_FALLBACK;
 }
-if (typeof CONFIG_APP_LANGUAGES !== 'undefined') {
-    i18n = combine(i18n, CONFIG_APP_LANGUAGES);
-}
 if ((typeof CONFIG_APP_LOAD_LANGUAGE_1 !== 'undefined') && (CONFIG_APP_LOAD_LANGUAGE_1 !== '')) {
     if ((typeof CONFIG_APP_LOAD_LANGUAGE_URL_1 !== 'undefined') && (CONFIG_APP_LOAD_LANGUAGE_URL_1 !== '')) {
         appendLanguage(CONFIG_APP_LOAD_LANGUAGE_1, CONFIG_APP_LOAD_LANGUAGE_URL_1);
     } else {
         appendLanguage(CONFIG_APP_LOAD_LANGUAGE_1, CONFIG_APP_ROUTER_LIB_BASE + 'assets/lang/' + CONFIG_APP_LOAD_LANGUAGE_1 + '.json');
     }
+}
+if (typeof CONFIG_APP_LANGUAGES !== 'undefined') {
+    i18n = combine(i18n, CONFIG_APP_LANGUAGES);
 }
 
 if (typeof CONFIG_APP_DATA_SERVICE !== 'undefined') {
