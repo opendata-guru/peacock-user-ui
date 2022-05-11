@@ -228,7 +228,7 @@
         return dateFilters.formatEU(date);
       },
       filterDateFromNow(date) {
-        return dateFilters.fromNow(date);
+        return dateFilters.fromNow(this.$i18n, date);
       },
       follow() {
         this.following = true;

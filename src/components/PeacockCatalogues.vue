@@ -354,7 +354,7 @@ export default {
       return dateFilters.formatEU(date);
     },
     filterDateFromNow(date) {
-      return dateFilters.fromNow(date);
+      return dateFilters.fromNow(this.$i18n, date);
     },
     setSortMethod(method, order, label) {
       this.sortSelectedLabel = label;
