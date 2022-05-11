@@ -912,6 +912,36 @@
       "developer_comment": ":metadataQuality:"
     }
   },
+  "moment": {
+    "oneYear": {
+      "string": "a year ago",
+      "developer_comment": "Date > Years"
+    },
+    "years": {
+      "string": "{years} years ago",
+      "developer_comment": "Date > Years"
+    },
+    "oneMonth": {
+      "string": "a month ago",
+      "developer_comment": "Date > Month"
+    },
+    "months": {
+      "string": "{months} months ago",
+      "developer_comment": "Date > Month"
+    },
+    "oneDay": {
+      "string": "a day ago",
+      "developer_comment": "Date > Day"
+    },
+    "days": {
+      "string": "{days} days ago",
+      "developer_comment": "Date > Day"
+    },
+    "today": {
+      "string": "today",
+      "developer_comment": "Date > Day"
+    }
+  },
   "navigation": {
     "navItems": {
       "home": {

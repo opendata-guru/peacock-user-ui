@@ -9,6 +9,8 @@
         : null
     "
   >
+    {{ $t('message.metadata.dataset') }}
+    {{ $t('message.moment.today') }}
     <span :class="{ 'date-incorrect': isIncorrectDate() }" class="mr-1" :title="filterDateFormatEU">{{ filterDateFromNow }}</span>
     <font-awesome-icon
       v-if="isIncorrectDate()"
@@ -32,7 +34,9 @@ export default {
       return dateFilters.formatEU(this.date);
     },
     filterDateFromNow() {
-      return dateFilters.fromNow(this.date);
+      console.log(this.$i18n.t('message.moment.today'));
+      console.log(this.$t('message.moment.today'));
+      return dateFilters.fromNow(this.$i18n, this.date);
     },
   },
   methods: {

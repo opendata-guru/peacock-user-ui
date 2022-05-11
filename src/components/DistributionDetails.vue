@@ -88,7 +88,7 @@
         return dateFilters.formatUS(date);
       },
       filterDateFromNow(date) {
-        return dateFilters.fromNow(date);
+        return dateFilters.fromNow(this.$i18n, date);
       },
     },
     filters: {

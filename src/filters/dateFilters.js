@@ -16,6 +16,40 @@ function padTo2Digits(num) {
   return num.toString().padStart(2, '0');
 }
 
+function fromNowFunc(i18n, date) {
+  const seconds = Math.round((new Date() - date) / 1000);
+  const hours = Math.round(seconds / 3600);
+  const days = Math.round(seconds / 86400);
+  const months = Math.round(seconds / 2592000);
+  const years = Math.round(seconds / 31536000);
+
+  console.log(i18n);
+  console.log(i18n.t('moment.today'));
+
+  if (days >= (1.6 * 365)) {
+    return i18n.t('moment.years', { years });
+  }
+  if (days >= (0.9 * 365)) {
+    return i18n.t('moment.oneYear');
+  }
+
+  if (days >= (1.6 * 30)) {
+    return i18n.t('moment.months', { months });
+  }
+  if (days >= (0.9 * 30)) {
+    return i18n.t('moment.oneMonth');
+  }
+
+  if (hours >= (1.6 * 24)) {
+    return i18n.t('moment.days', { days });
+  }
+  if (hours >= (0.9 * 24)) {
+    return i18n.t('moment.oneDay');
+  }
+
+  return i18n.t('moment.today');
+}
+
 const dateFilters = {
   setLocale(locale = 'en', formatOptions = {}) {
     moment.updateLocale(locale, formatOptions);
@@ -65,11 +99,16 @@ const dateFilters = {
    * @param {date} date - The given date
    * @returns {String}
    */
-  fromNow(date) {
-    if (date === undefined) return INVALID_DATE_STRING;
-    const m = moment(String(date));
-    if (m.isValid()) return m.fromNow();
-    return INVALID_DATE_STRING;
+  fromNow(i18n, date) {
+    if (date === undefined) {
+      return INVALID_DATE_STRING;
+    }
+    const d = new Date(String(date));
+    if (Number.isNaN(d)) {
+      return INVALID_DATE_STRING;
+    }
+
+    return fromNowFunc(i18n, d);
   },
 };
 
