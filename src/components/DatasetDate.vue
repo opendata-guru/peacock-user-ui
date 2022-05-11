@@ -9,7 +9,7 @@
         : null
     "
   >
-    <span :class="{ 'date-incorrect': isIncorrectDate() }" class="mr-1">{{ filterDateFormatEU }}</span>
+    <span :class="{ 'date-incorrect': isIncorrectDate() }" class="mr-1" :title="filterDateFormatEU">{{ filterDateFromNow }}</span>
     <font-awesome-icon
       v-if="isIncorrectDate()"
       class="date-incorrect-exclamation-triangle"
@@ -30,6 +30,9 @@ export default {
     },
     filterDateFormatEU() {
       return dateFilters.formatEU(this.date);
+    },
+    filterDateFromNow() {
+      return dateFilters.fromNow(this.date);
     },
   },
   methods: {
