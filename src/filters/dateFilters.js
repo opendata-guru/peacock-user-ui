@@ -12,6 +12,10 @@ import moment from 'moment';
  */
 const INVALID_DATE_STRING = '-';
 
+function padTo2Digits(num) {
+  return num.toString().padStart(2, '0');
+}
+
 const dateFilters = {
   setLocale(locale = 'en', formatOptions = {}) {
     moment.updateLocale(locale, formatOptions);
@@ -22,10 +26,19 @@ const dateFilters = {
    * @returns {String}
    */
   formatUS(date) {
-    if (date === undefined) return INVALID_DATE_STRING;
-    const m = moment(String(date));
-    if (m.isValid()) return m.format('MM/DD/YYYY HH:mm');
-    return INVALID_DATE_STRING;
+    if (date === undefined) {
+      return INVALID_DATE_STRING;
+    }
+    const d = new Date(String(date));
+    if (Number.isNaN(d)) {
+      return INVALID_DATE_STRING;
+    }
+
+    return [
+      padTo2Digits(d.getMonth() + 1),
+      padTo2Digits(d.getDate()),
+      d.getFullYear(),
+    ].join('/');
   },
   /**
    * @description Transforms the given date into a US Date Format String
@@ -33,10 +46,19 @@ const dateFilters = {
    * @returns {String}
    */
   formatEU(date) {
-    if (date === undefined) return INVALID_DATE_STRING;
-    const m = moment(String(date));
-    if (m.isValid()) return m.format('DD.MM.YYYY HH:mm');
-    return INVALID_DATE_STRING;
+    if (date === undefined) {
+      return INVALID_DATE_STRING;
+    }
+    const d = new Date(String(date));
+    if (Number.isNaN(d)) {
+      return INVALID_DATE_STRING;
+    }
+
+    return [
+      padTo2Digits(d.getDate()),
+      padTo2Digits(d.getMonth() + 1),
+      d.getFullYear(),
+    ].join('.');
   },
   /**
    * @description Returns a String representing the expired time from the given date to now.
