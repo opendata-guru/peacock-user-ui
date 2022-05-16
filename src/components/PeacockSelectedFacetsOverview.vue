@@ -15,6 +15,7 @@
 
 <script>
   import { mapGetters } from 'vuex';
+  import { getTranslationFor } from '../utils/helpers';
 
   export default {
     name: 'peacockSelectedFacetsOverview',
@@ -33,15 +34,18 @@
     computed: {
       ...mapGetters('datasets', [
         'getAvailableFacets',
+        'getLanguages',
       ]),
       showCatalogDetailsWatcher() {
         return this.$route.query.showcataloguedetails;
       },
     },
     methods: {
+      getTranslationFor,
       findFacetTitle(fieldId, facetId) {
         try {
-          return this.getAvailableFacets.find(field => field.id === fieldId).items.find(facet => facet.id === facetId).title;
+          const title = this.getAvailableFacets.find(field => field.id === fieldId).items.find(facet => facet.id === facetId).title;
+          return getTranslationFor(title, this.$i18n.locale, this.getLanguages) || title;
         } catch {
           return facetId;
         }
