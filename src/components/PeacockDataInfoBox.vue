@@ -3,7 +3,7 @@
 -->
 
 <template>
-  <div class="data-info-box card mt-3 border border-light">
+  <div class="data-info-box card mt-3 border border-light" :type="source.sourceID ? source.sourceID : ''">
     <a data-bs-toggle="collapse"
        :href="`#dist-${collapseId}`"
        v-if="collapse">
@@ -19,7 +19,7 @@
           <ul class="subtitle-list list-inline subtitle align-middle mr-1" v-if="!isEmpty(source)">
             <!-- Distributor -->
             <li class="list-inline-item small m-0 me-2">
-              <img v-if="has(source, 'sourceImage')" class="mr-1 border border-dark" :class="source.sourceID ? 'source-' + source.sourceID : ''" width="24" alt="Catalogue Flag" :src="source.sourceImage">
+              <img v-if="has(source, 'sourceImage')" class="mr-1 border border-dark catalogue-flag" width="24" :alt="$t(`message.datasetDetails.catalogueFlag`)" :src="source.sourceImage">
               <span v-if="has(source, 'sourceTitle') && !isNil(source.sourceTitle)">{{ getTranslationFor(source.sourceTitle, $i18n.locale, []) }}</span>
             </li>
             

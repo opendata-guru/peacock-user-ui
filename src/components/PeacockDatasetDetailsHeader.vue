@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="dataset-details-header" :type="getCatalog.id ? getCatalog.id : ''">
     <div class="row">
       <div class="col-12">
         <h3>{{ getTranslationFor(getTitle, $i18n.locale, getLanguages) }}</h3>
@@ -7,7 +7,7 @@
     </div>
     <div class="row mt-1 pb-3 border-bottom">
       <div class="col-6">
-        <img class="mr-1 border border-dark" width="30" alt="Catalog Flag" v-if="showCountryFlag(getCountry)" :src="getCountryFlagImg(getCountry.id)">
+        <img class="mr-1 border border-dark catalogue-flag" width="30" :alt="$t(`message.datasetDetails.catalogueFlag`)" v-if="showCountryFlag(getCountry)" :src="getCountryFlagImg(getCountry.id)">
         <span>{{ getTranslationFor(getCatalog.title, $i18n.locale, getLanguages) }}</span>
       </div>
       <div class="col-6 text-end text-break">
