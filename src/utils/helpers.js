@@ -84,6 +84,11 @@ function truncate(text, maxChars, noAppend) {
   return `${trunc}...`;
 }
 
+function stripHTML(html) {
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  return doc.body.textContent || '';
+}
+
 /**
  * normalizing the dataset id
  * @param str string to be normalized
@@ -99,5 +104,6 @@ export {
   getCountryFlagImg,
   getTranslationFor,
   truncate,
+  stripHTML,
   normalize,
 };

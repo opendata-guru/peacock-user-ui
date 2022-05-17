@@ -68,6 +68,7 @@
                         'col-12 col-md-9': bodyImg && !metadata}
                         ">
             <p class="card-text" v-if="!isNil(description)">{{ truncate(description, descriptionLength) }}</p>
+            <p class="card-text" v-if="!isNil(description)">{{ stripHTML(truncate(description, descriptionLength)) }}</p>
           </div>
           <!-- <div class="col-12 col-md-3" v-if="!isNil(metadata) && isObject(metadata)">
             <span class="formats badge badge-secondary mr-1"
@@ -123,7 +124,7 @@
   import LinkCopyBar from './LinkCopyBar';
   import DatasetDate from './DatasetDate';
   import animations from '../mixins/animations';
-  import { getTranslationFor, truncate } from '../utils/helpers';
+  import { getTranslationFor, truncate, stripHTML } from '../utils/helpers';
   import dateFilters from '../filters/dateFilters';
   import GLUE_CONFIG from '../../user-config/glue-config';
 
@@ -200,6 +201,7 @@
       isObject,
       getTranslationFor,
       truncate,
+      stripHTML,
       hasFooterLink() {
         return Boolean(this.footerLink) && Object.prototype.hasOwnProperty.call(this.footerLink, 'url');
       },
