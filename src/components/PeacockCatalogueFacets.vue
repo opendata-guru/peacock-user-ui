@@ -9,7 +9,7 @@
         <div class="row facet-field mb-3" v-if="showOperator">
           <div class="col list-group pr-0">
             <a class="list-group-item facet-header-item list-group-item-secondary">
-              <span class="facet-title text-secondary fw-bold">{{ $t('message.datasetFacets.settings') }}</span>
+              <span class="facet-title text-dark fw-bold">{{ $t('message.datasetFacets.settings') }}</span>
             </a>
             <div class="form-group list-group-item list-group-item-action d-flex justify-content-between align-items-center">
               {{ $t('message.datasetFacets.operator') }}
@@ -38,7 +38,7 @@
              v-if="field.items.length > 0 && field.title === 'Countries'">
           <div class="col list-group pr-0">
             <a class="list-group-item facet-header-item list-group-item-secondary">
-              <span class="facet-title text-secondary fw-bold">{{ $t(`message.datasetFacets.facets.${field.title.toLowerCase()}`) }}</span>
+              <span class="facet-title text-dark fw-bold">{{ $t(`message.datasetFacets.facets.${field.title.toLowerCase()}`) }}</span>
             </a>
             <button
               class="facet list-group-item list-group-item-action d-flex justify-content-between align-items-center"
@@ -48,7 +48,7 @@
               :class="{active: facetIsSelected(field.id, facet.id), 'list-group-item-secondary': facetIsSelected(field.id, facet.id)}"
               @click="facetClicked(field.id, facet.id)">
               {{facet.title}}
-              <span class="facet-count badge bg-light text-secondary border border-secondary">{{facet.count}}</span>
+              <span class="facet-count badge bg-light text-dark border border-secondary">{{facet.count}}</span>
             </button>
             <button class="btn btn-secondary" v-if="field.items.length > limits.min"
                     @click="toggleExpanded(field.title)">

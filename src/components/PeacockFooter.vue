@@ -9,7 +9,7 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <app-link v-for="(image, imageIndex) in images"
-            class="nav-link link-secondary"
+            class="nav-link link-dark"
             :to="(image.href.indexOf('http://') === 0) || (image.href.indexOf('https://') === 0) ? image.href : { path: image.href }"
             :key="imageIndex"
             >
@@ -23,7 +23,7 @@
           class="nav-item"
           :key="linkIndex"
         >
-          <app-link class="nav-link link-secondary" :to="link.web ? link.href : { path: link.href }">
+          <app-link class="nav-link link-dark" :to="link.web ? link.href : { path: link.href }">
             {{ link.title }}
           </app-link>
         </li>
