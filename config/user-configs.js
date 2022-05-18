@@ -184,55 +184,55 @@ if ((typeof CONFIG_APP_FOOTER_LOGO_TEXT !== 'undefined') || (typeof CONFIG_APP_F
 }
 
 let headerNav = [];
-if (typeof CONFIG_APP_HEADER_NAV_1_TITLE !== 'undefined') {
+if ((typeof CONFIG_APP_HEADER_NAV_1_TITLE !== 'undefined') && (CONFIG_APP_HEADER_NAV_1_TITLE !== '')) {
     headerNav.push({
         href: CONFIG_APP_HEADER_NAV_1_URL,
         title: CONFIG_APP_HEADER_NAV_1_TITLE
     });
 }
-if (typeof CONFIG_APP_HEADER_NAV_2_TITLE !== 'undefined') {
+if ((typeof CONFIG_APP_HEADER_NAV_2_TITLE !== 'undefined') && (CONFIG_APP_HEADER_NAV_2_TITLE !== '')) {
     headerNav.push({
         href: CONFIG_APP_HEADER_NAV_2_URL,
         title: CONFIG_APP_HEADER_NAV_2_TITLE
     });
 }
-if (typeof CONFIG_APP_HEADER_NAV_3_TITLE !== 'undefined') {
+if ((typeof CONFIG_APP_HEADER_NAV_3_TITLE !== 'undefined') && (CONFIG_APP_HEADER_NAV_3_TITLE !== '')) {
     headerNav.push({
         href: CONFIG_APP_HEADER_NAV_3_URL,
         title: CONFIG_APP_HEADER_NAV_3_TITLE
     });
 }
-if (typeof CONFIG_APP_HEADER_NAV_4_TITLE !== 'undefined') {
+if ((typeof CONFIG_APP_HEADER_NAV_4_TITLE !== 'undefined') && (CONFIG_APP_HEADER_NAV_4_TITLE !== '')) {
     headerNav.push({
         href: CONFIG_APP_HEADER_NAV_4_URL,
         title: CONFIG_APP_HEADER_NAV_4_TITLE
     });
 }
-if (typeof CONFIG_APP_HEADER_NAV_5_TITLE !== 'undefined') {
+if ((typeof CONFIG_APP_HEADER_NAV_5_TITLE !== 'undefined') && (CONFIG_APP_HEADER_NAV_5_TITLE !== '')) {
     headerNav.push({
         href: CONFIG_APP_HEADER_NAV_5_URL,
         title: CONFIG_APP_HEADER_NAV_5_TITLE
     });
 }
-if (typeof CONFIG_APP_HEADER_NAV_6_TITLE !== 'undefined') {
+if ((typeof CONFIG_APP_HEADER_NAV_6_TITLE !== 'undefined') && (CONFIG_APP_HEADER_NAV_6_TITLE !== '')) {
     headerNav.push({
         href: CONFIG_APP_HEADER_NAV_6_URL,
         title: CONFIG_APP_HEADER_NAV_6_TITLE
     });
 }
-if (typeof CONFIG_APP_HEADER_NAV_7_TITLE !== 'undefined') {
+if ((typeof CONFIG_APP_HEADER_NAV_7_TITLE !== 'undefined') && (CONFIG_APP_HEADER_NAV_7_TITLE !== '')) {
     headerNav.push({
         href: CONFIG_APP_HEADER_NAV_7_URL,
         title: CONFIG_APP_HEADER_NAV_7_TITLE
     });
 }
-if (typeof CONFIG_APP_HEADER_NAV_8_TITLE !== 'undefined') {
+if ((typeof CONFIG_APP_HEADER_NAV_8_TITLE !== 'undefined') && (CONFIG_APP_HEADER_NAV_8_TITLE !== '')) {
     headerNav.push({
         href: CONFIG_APP_HEADER_NAV_8_URL,
         title: CONFIG_APP_HEADER_NAV_8_TITLE
     });
 }
-if (typeof CONFIG_APP_HEADER_NAV_9_TITLE !== 'undefined') {
+if ((typeof CONFIG_APP_HEADER_NAV_9_TITLE !== 'undefined') && (CONFIG_APP_HEADER_NAV_9_TITLE !== '')) {
     headerNav.push({
         href: CONFIG_APP_HEADER_NAV_9_URL,
         title: CONFIG_APP_HEADER_NAV_9_TITLE
@@ -241,55 +241,55 @@ if (typeof CONFIG_APP_HEADER_NAV_9_TITLE !== 'undefined') {
 glueConfig.navigation.topnav.main.append = headerNav;
 
 let footerNav = [];
-if (typeof CONFIG_APP_FOOTER_NAV_1_TITLE !== 'undefined') {
+if ((typeof CONFIG_APP_FOOTER_NAV_1_TITLE !== 'undefined') && (CONFIG_APP_FOOTER_NAV_1_TITLE !== '')) {
     footerNav.push({
         href: CONFIG_APP_FOOTER_NAV_1_URL,
         title: CONFIG_APP_FOOTER_NAV_1_TITLE
     });
 }
-if (typeof CONFIG_APP_FOOTER_NAV_2_TITLE !== 'undefined') {
+if ((typeof CONFIG_APP_FOOTER_NAV_2_TITLE !== 'undefined') && (CONFIG_APP_FOOTER_NAV_2_TITLE !== '')) {
     footerNav.push({
         href: CONFIG_APP_FOOTER_NAV_2_URL,
         title: CONFIG_APP_FOOTER_NAV_2_TITLE
     });
 }
-if (typeof CONFIG_APP_FOOTER_NAV_3_TITLE !== 'undefined') {
+if ((typeof CONFIG_APP_FOOTER_NAV_3_TITLE !== 'undefined') && (CONFIG_APP_FOOTER_NAV_3_TITLE !== '')) {
     footerNav.push({
         href: CONFIG_APP_FOOTER_NAV_3_URL,
         title: CONFIG_APP_FOOTER_NAV_3_TITLE
     });
 }
-if (typeof CONFIG_APP_FOOTER_NAV_4_TITLE !== 'undefined') {
+if ((typeof CONFIG_APP_FOOTER_NAV_4_TITLE !== 'undefined') && (CONFIG_APP_FOOTER_NAV_4_TITLE !== '')) {
     footerNav.push({
         href: CONFIG_APP_FOOTER_NAV_4_URL,
         title: CONFIG_APP_FOOTER_NAV_4_TITLE
     });
 }
-if (typeof CONFIG_APP_FOOTER_NAV_5_TITLE !== 'undefined') {
+if ((typeof CONFIG_APP_FOOTER_NAV_5_TITLE !== 'undefined') && (CONFIG_APP_FOOTER_NAV_5_TITLE !== '')) {
     footerNav.push({
         href: CONFIG_APP_FOOTER_NAV_5_URL,
         title: CONFIG_APP_FOOTER_NAV_5_TITLE
     });
 }
-if (typeof CONFIG_APP_FOOTER_NAV_6_TITLE !== 'undefined') {
+if ((typeof CONFIG_APP_FOOTER_NAV_6_TITLE !== 'undefined') && (CONFIG_APP_FOOTER_NAV_6_TITLE !== '')) {
     footerNav.push({
         href: CONFIG_APP_FOOTER_NAV_6_URL,
         title: CONFIG_APP_FOOTER_NAV_6_TITLE
     });
 }
-if (typeof CONFIG_APP_FOOTER_NAV_7_TITLE !== 'undefined') {
+if ((typeof CONFIG_APP_FOOTER_NAV_7_TITLE !== 'undefined') && (CONFIG_APP_FOOTER_NAV_7_TITLE !== '')) {
     footerNav.push({
         href: CONFIG_APP_FOOTER_NAV_7_URL,
         title: CONFIG_APP_FOOTER_NAV_7_TITLE
     });
 }
-if (typeof CONFIG_APP_FOOTER_NAV_8_TITLE !== 'undefined') {
+if ((typeof CONFIG_APP_FOOTER_NAV_8_TITLE !== 'undefined') && (CONFIG_APP_FOOTER_NAV_8_TITLE !== '')) {
     footerNav.push({
         href: CONFIG_APP_FOOTER_NAV_8_URL,
         title: CONFIG_APP_FOOTER_NAV_8_TITLE
     });
 }
-if (typeof CONFIG_APP_FOOTER_NAV_9_TITLE !== 'undefined') {
+if ((typeof CONFIG_APP_FOOTER_NAV_9_TITLE !== 'undefined') && (CONFIG_APP_FOOTER_NAV_9_TITLE !== '')) {
     footerNav.push({
         href: CONFIG_APP_FOOTER_NAV_9_URL,
         title: CONFIG_APP_FOOTER_NAV_9_TITLE
