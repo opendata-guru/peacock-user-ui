@@ -34,7 +34,6 @@
     computed: {
       ...mapGetters('datasets', [
         'getAvailableFacets',
-        'getLanguages',
       ]),
       showCatalogDetailsWatcher() {
         return this.$route.query.showcataloguedetails;
@@ -45,7 +44,7 @@
       findFacetTitle(fieldId, facetId) {
         try {
           const title = this.getAvailableFacets.find(field => field.id === fieldId).items.find(facet => facet.id === facetId).title;
-          return getTranslationFor(title, this.$i18n.locale, this.getLanguages) || title;
+          return getTranslationFor(title, this.$i18n.locale, undefined) || title;
         } catch {
           return facetId;
         }
