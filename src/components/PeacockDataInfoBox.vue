@@ -67,7 +67,6 @@
           <div :class="{'col-12 col-md-7': !bodyImg && !metadata,
                         'col-12 col-md-9': bodyImg && !metadata}
                         ">
-            <p class="card-text" v-if="!isNil(description)">{{ truncate(description, descriptionLength) }}</p>
             <p class="card-text" v-if="!isNil(description)">{{ stripHTML(truncate(description, descriptionLength)) }}</p>
           </div>
           <!-- <div class="col-12 col-md-3" v-if="!isNil(metadata) && isObject(metadata)">
