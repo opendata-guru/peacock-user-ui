@@ -592,4 +592,7 @@
     left: 0;
   }
 
+  .facet-header-item {
+    word-break: break-word;
+  }
 </style>

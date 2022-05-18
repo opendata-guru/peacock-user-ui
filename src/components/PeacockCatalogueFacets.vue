@@ -300,4 +300,7 @@
     padding-left: 1.5rem !important;
   }
 
+  .facet-header-item {
+    word-break: break-word;
+  }
 </style>
