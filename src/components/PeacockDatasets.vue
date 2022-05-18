@@ -101,8 +101,8 @@
                        @keyup.enter="changeQuery(query)"
                        @click="autocompleteData.show = autocompleteData.suggestions.length > 0 && query.length != 0 ? !autocompleteData.show : false">
                 <div class="input-group-append">
-                  <button class="btn btn-sm btn-secondary" type="button" @click="changeQuery(query)">
-                    <font-awesome-icon class="fa my-1 fs-5" :icon="{ prefix: 'fas', iconName: 'search' }"></font-awesome-icon>
+                  <button class="btn btn-sm btn-secondary" type="button" @click="changeQuery(query)" :aria-label="$t('message.datasets.searchBar.button')">
+                    <font-awesome-icon class="fa my-1 fs-5" :icon="{ prefix: 'fas', iconName: 'search' }" aria-hidden="true"></font-awesome-icon>
                   </button>
                 </div>
                 <div class="suggestion-list-group" v-if="autocompleteData.show">

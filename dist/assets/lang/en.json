@@ -4,6 +4,10 @@
       "placeholder": {
         "string": "Search catalogues...",
         "developer_comment": "Catalog > Search Bar > placeholder"
+      },
+      "button": {
+        "string": "Start search",
+        "developer_comment": "Catalog > Search Bar > button"
       }
     },
     "geoBoundsMessagePre": {
@@ -348,11 +352,19 @@
       "placeholder": {
         "string": "Search datasets...",
         "developer_comment": "Dataset > Search Bar > placeholder"
+      },
+      "button": {
+        "string": "Start search",
+        "developer_comment": "Dataset > Search Bar > button"
       }
     },
     "findLocation": {
       "string": "Filter by location",
       "developer_comment": ":findLocation:"
+    },
+    "findLocationButton": {
+      "string": "Set filter",
+      "developer_comment": ":findLocation button:"
     },
     "geoBoundsMessagePre": {
       "string": "Your Search has been limited to:",

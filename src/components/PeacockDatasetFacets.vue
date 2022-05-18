@@ -17,8 +17,8 @@
                    @input="getAutocompleteSuggestions(gazetteer.searchbarText)"
                    @keyup.enter="getAutocompleteSuggestions(gazetteer.searchbarText)">
             <div class="input-group-append">
-              <button class="btn btn-secondary">
-                <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'search' }"></font-awesome-icon>
+              <button class="btn btn-secondary" :aria-label="$t('message.datasets.findLocationButton')">
+                <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'search' }" aria-hidden="true"></font-awesome-icon>
               </button>
             </div>
             <div class="suggestion-list-group">
