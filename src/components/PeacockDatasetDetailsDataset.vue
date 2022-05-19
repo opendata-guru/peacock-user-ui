@@ -119,114 +119,108 @@
       <div class="mt-1 distributions">
         <div class="row">
           <div class="col-12">
-            <h3>{{ $t('message.metadata.distributions') }} ({{ getDistributions ? getDistributions.length : 0 }})</h3>
+            <h3 class="position-relative d-inline-block pe-3">{{ $t('message.metadata.distributions') }}
+              <span class="position-absolute top-0 start-100 translate-middle fs-6 badge rounded-pill bg-secondary">
+                {{ getDistributions ? getDistributions.length : 0 }}
+              </span>
+            </h3>
           </div>
           <ul class="list list-unstyled col-12 border-top mt-3 pt-3">
-            <div v-for="distribution in getDistributions"
-                 :key="distribution.id">
-              <li class="row">
-                <span class="d-inline-block col-md-1 col-2 pr-md-1 pr-0 m-md-0 m-auto">
-                  <div class="float-md-right text-center"
-                       :type="getDistributionFormat(distribution)"
-                       :data-bs-toggle="distributionFormatTruncated(distribution) ? 'tooltip' : false"
-                       :data-bs-placement="distributionFormatTruncated(distribution) ? 'top' : false"
-                       :title="distributionFormatTruncated(distribution) ? getDistributionFormat(distribution) : false">
-                    <span class="bg-light border border-secondary text-secondary rounded-pill badge">{{ truncate(getDistributionFormat(distribution), 4, true) }}</span>
-                  </div>
-                </span>
-                <span class="col-md-11 col-10">
-                  <span class="row">
-                    <span class="d-inline-block col-md-7 col-12">
-                      <h6 class="m-0">{{ getDistributionTitle(distribution) }}</h6>
-                      <span class="mt-2 d-block text-muted text-truncate">
-                        <small>
-                          {{ getDistributionDescription(distribution) }}
-                        </small>
-                      </span>
-                      <small class="mt-2 d-block"
-                             v-if="showLicence(distribution)">
-                        <span class="font-weight-bold">
-                          <!-- TODO: Replace Licence text by icon -->
-                          {{ $t('message.metadata.license') }}:
-                        </span>
-                        <app-link :to="distribution.licence.resource"
-                                  target="_blank"
-                                  class="link-dark"
-                                  @click="$emit('trackLink', distribution.licence.resource, 'link')">
-                          {{ distribution.licence.title }}
-                        </app-link>
-                        <app-link :to="distribution.licence.resource"
-                                  target="_blank"
-                                  @click="$emit('trackLink', distribution.licence.resource, 'link')">
-                          <font-awesome-icon class="fa fs-5 align-bottom text-dark" :icon="{ prefix: 'fas', iconName: 'info-circle' }"
-                             data-bs-toggle="tooltip"
-                             data-bs-placement="top"
-                             :title="distribution.licence.description"></font-awesome-icon>
-                        </app-link>
-                        <app-link :to="distribution.licence.la_url"
-                                  target="_blank"
-                                  class="link-dark"
-                                  @click="$emit('trackLink', distribution.licence.la_url, 'link')"
-                                  v-if="showLicensingAssistant(distribution)">
-                          {{ $t('message.distributionLicense.licensingAssistant') }}
-                        </app-link>
-                        <app-link :to="distribution.licence.la_url"
-                                  target="_blank"
-                                  @click="$emit('trackLink', distribution.licence.la_url, 'link')"
-                                  v-if="showLicensingAssistant(distribution)">
-                          <font-awesome-icon class="fa fs-5 text-dark" :icon="{ prefix: 'fas', iconName: 'external-link-alt' }"></font-awesome-icon>
-                        </app-link>
-                      </small>
-                      <small class="text-muted" v-else>
-                        {{ $t('message.distributionLicense.notProvided') }}
+            <li class="row mb-3 pb-3 border-bottom" v-for="distribution in getDistributions"
+                :key="distribution.id">
+              <span class="d-inline-block col-md-1 col-2 pr-md-1 pr-0 m-md-0 m-auto">
+                <div class="float-md-right text-center"
+                      :type="getDistributionFormat(distribution)"
+                      :data-bs-toggle="distributionFormatTruncated(distribution) ? 'tooltip' : false"
+                      :data-bs-placement="distributionFormatTruncated(distribution) ? 'top' : false"
+                      :title="distributionFormatTruncated(distribution) ? getDistributionFormat(distribution) : false">
+                  <span class="bg-light border border-secondary text-dark rounded-pill badge">{{ truncate(getDistributionFormat(distribution), 4, true) }}</span>
+                </div>
+              </span>
+              <span class="col-md-11 col-10">
+                <span class="row">
+                  <span class="d-inline-block col-md-7 col-12">
+                    <h6 class="m-0">{{ getDistributionTitle(distribution) }}</h6>
+                    <span class="mt-2 d-block text-muted text-truncate">
+                      <small>
+                        {{ getDistributionDescription(distribution) }}
                       </small>
                     </span>
-                    <span class="col-md-5 col-12 mt-2 text-end">
-                      <span class="d-inline-block">
-                        <small class="pr-1">{{ filterDateFormatEU(distribution.releaseDate) }}</small>
+                    <small class="mt-2 d-block"
+                            v-if="showLicence(distribution)">
+                      <span class="font-weight-bold">
+                        <!-- TODO: Replace Licence text by icon -->
+                        {{ $t('message.metadata.license') }}:
                       </span>
-                      <app-link class="btn btn-sm btn-secondary p-0 px-2"
-                        :path="getVisualisationLink(distribution.accessUrl)"
-                        target="_blank"
-                        @click="$emit('trackLink', getVisualisationLink(distribution.accessUrl), 'link')"
-                        v-if="showVisualisationLink(distribution)">
-                        <span class="px-2">{{ $t('message.datasetDetails.visualisation') }}</span>
-                        <font-awesome-icon class="fa fs-5 float-right" :icon="{ prefix: 'fas', iconName: 'chart-bar' }"></font-awesome-icon>
+                      <app-link :to="distribution.licence.resource"
+                                target="_blank"
+                                class="link-dark"
+                                @click="$emit('trackLink', distribution.licence.resource, 'link')">
+                        {{ distribution.licence.title }}
+                        <font-awesome-icon class="fa fs-5 align-bottom text-secondary" :icon="{ prefix: 'fas', iconName: 'info-circle' }"
+                            aria-hidden="true"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            :title="distribution.licence.description"></font-awesome-icon>
                       </app-link>
-                      <app-link class="btn btn-sm btn-secondary p-0 px-2"
-                        :path="getGeoLink(distribution.format.title, distribution.id)"
-                        target="_blank"
-                        @click="$emit('trackLink', getGeoLink(distribution.format.title, distribution.id), 'link')"
-                        v-if="showGeoLink(distribution)">
-                        <span class="px-2">{{ $t('message.datasetDetails.geoVisualisation') }}</span>
-                        <font-awesome-icon class="fa fs-5 float-right" :icon="{ prefix: 'fas', iconName: 'globe-americas' }"></font-awesome-icon>
+                      <app-link :to="distribution.licence.la_url"
+                                target="_blank"
+                                class="link-dark"
+                                @click="$emit('trackLink', distribution.licence.la_url, 'link')"
+                                v-if="showLicensingAssistant(distribution)">
+                        {{ $t('message.distributionLicense.licensingAssistant') }}
+                        <font-awesome-icon class="fa fs-5 text-dark" :icon="{ prefix: 'fas', iconName: 'external-link-alt' }"
+                          aria-hidden="true"></font-awesome-icon>
                       </app-link>
-                      <app-link class="btn btn-sm btn-secondary p-0 px-2"
-                        :to="distribution.accessUrl"
+                    </small>
+                    <small class="text-muted" v-else>
+                      {{ $t('message.distributionLicense.notProvided') }}
+                    </small>
+                  </span>
+                  <span class="col-md-5 col-12 mt-2 text-end">
+                    <span class="d-inline-block">
+                      <small class="pr-1">{{ filterDateFormatEU(distribution.releaseDate) }}</small>
+                    </span>
+                    <app-link class="btn btn-sm btn-secondary py-1 px-2"
+                      :path="getVisualisationLink(distribution.accessUrl)"
+                      target="_blank"
+                      @click="$emit('trackLink', getVisualisationLink(distribution.accessUrl), 'link')"
+                      v-if="showVisualisationLink(distribution)">
+                      <span class="px-2">{{ $t('message.datasetDetails.visualisation') }}</span>
+                      <font-awesome-icon class="fa fs-6 float-right" :icon="{ prefix: 'fas', iconName: 'chart-bar' }"></font-awesome-icon>
+                    </app-link>
+                    <app-link class="btn btn-sm btn-secondary py-1 px-2"
+                      :path="getGeoLink(distribution.format.title, distribution.id)"
+                      target="_blank"
+                      @click="$emit('trackLink', getGeoLink(distribution.format.title, distribution.id), 'link')"
+                      v-if="showGeoLink(distribution)">
+                      <span class="px-2">{{ $t('message.datasetDetails.geoVisualisation') }}</span>
+                      <font-awesome-icon class="fa fs-6 float-right" :icon="{ prefix: 'fas', iconName: 'globe-americas' }"></font-awesome-icon>
+                    </app-link>
+                    <app-link class="btn btn-sm btn-secondary py-1 px-2"
+                      :to="distribution.accessUrl"
+                      target="_blank"
+                      rel="dcat:distribution noopener"
+                      matomo-track-download
+                      @after-click="trackGoto"
+                      v-if="showAccessUrl(distribution)">
+                      <span class="px-2" property="dcat:mediaType" :content="getDistributionFormat(distribution)">{{ $t('message.datasetDetails.openResource') }}</span>
+                      <font-awesome-icon class="fa fs-6" :icon="{ prefix: 'fas', iconName: 'external-link-alt' }"></font-awesome-icon>
+                    </app-link>
+                    <span v-if="showDownloadUrls(distribution)"
+                      v-for="downloadURL in distribution.downloadUrls">
+                      <app-link class="btn btn-sm btn-secondary py-1 px-2"
+                        :to="downloadURL"
                         target="_blank"
-                        rel="dcat:distribution noopener"
                         matomo-track-download
-                        @after-click="trackGoto"
-                        v-if="showAccessUrl(distribution)">
-                        <span class="px-2" property="dcat:mediaType" :content="getDistributionFormat(distribution)">{{ $t('message.datasetDetails.openResource') }}</span>
-                        <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'external-link-alt' }"></font-awesome-icon>
+                        @after-click="trackGoto">
+                        {{ $t('message.datasetDetails.download') }}
                       </app-link>
-                      <span v-if="showDownloadUrls(distribution)"
-                        v-for="downloadURL in distribution.downloadUrls">
-                        <app-link class="btn btn-sm btn-secondary p-0 px-2"
-                          :to="downloadURL"
-                          target="_blank"
-                          matomo-track-download
-                          @after-click="trackGoto">
-                          {{ $t('message.datasetDetails.download') }}
-                        </app-link>
-                      </span>
                     </span>
                   </span>
                 </span>
-              </li>
-              <hr>
-            </div>
+              </span>
+            </li>
           </ul>
         </div>
       </div>
