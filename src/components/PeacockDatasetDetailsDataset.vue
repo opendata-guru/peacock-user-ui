@@ -140,7 +140,7 @@
               <span class="col-md-11 col-10">
                 <span class="row">
                   <span class="d-inline-block col-md-7 col-12">
-                    <h6 class="m-0">{{ getDistributionTitle(distribution) }}</h6>
+                    <h4 class="m-0 fs-6">{{ getDistributionTitle(distribution) }}</h4>
                     <span class="mt-2 d-block text-muted text-truncate">
                       <small>
                         {{ getDistributionDescription(distribution) }}
