@@ -269,6 +269,10 @@
     "geoVisualisation": {
       "string": "Open Geo-Visualization",
       "developer_comment": "Dataset Details > Button > geoVisualisation"
+    },
+    "catalogueFlag": {
+      "string": "Catalogue Flag",
+      "developer_comment": "Dataset Details > Catalog Flag > alternate text"
     }
   },
   "datasetFacets": {

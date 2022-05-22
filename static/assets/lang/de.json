@@ -4,6 +4,10 @@
       "placeholder": {
         "string": "Kataloge durchsuchen",
         "developer_comment": "Catalog > Search Bar > placeholder"
+      },
+      "button": {
+        "string": "Suche starten",
+        "developer_comment": "Catalog > Search Bar > button"
       }
     },
     "geoBoundsMessagePre": {
@@ -265,6 +269,10 @@
     "geoVisualisation": {
       "string": "Geo-Visualisierung öffnen",
       "developer_comment": "Dataset Details > Button > geoVisualisation"
+    },
+    "catalogueFlag": {
+      "string": "Fahne, passend zum Katalog",
+      "developer_comment": "Dataset Details > Catalog Flag > alternate text"
     }
   },
   "datasetFacets": {
@@ -322,7 +330,7 @@
         "developer_comment": "Dataset > Facets > Header > publisher"
       },
       "keywords": {
-        "string": "Keywords",
+        "string": "Schlüsselwörter",
         "developer_comment": "Dataset > Facets > Header > keywords"
       },
       "scoring": {
@@ -348,11 +356,19 @@
       "placeholder": {
         "string": "Suche nach Datensätze",
         "developer_comment": "Dataset > Search Bar > placeholder"
+      },
+      "button": {
+        "string": "Suche starten",
+        "developer_comment": "Dataset > Search Bar > button"
       }
     },
     "findLocation": {
       "string": "Nach Ort filtern",
       "developer_comment": ":findLocation:"
+    },
+    "findLocationButton": {
+      "string": "Filter setzen",
+      "developer_comment": ":findLocation button:"
     },
     "geoBoundsMessagePre": {
       "string": "Ihre Suche wurde eingeschränkt auf:",
@@ -387,7 +403,7 @@
       "developer_comment": "Dataset > Button > datasetsFeed"
     },
     "createDataset": {
-      "string": "Create Dataset",
+      "string": "Datensatz anlegen",
       "developer_comment": "Dataset > Admin Button > createDataset"
     },
     "saveQuery": {
@@ -436,15 +452,15 @@
       "developer_comment": "Page > Error Page > Button > goBack"
     },
     "http401": {
-      "string": "He, du! Halt genau hier an. Eine Autorisierung ist erforderlich.",
+      "string": "Sie benötigen eine Berechtigung. Auch wenn die Daten offen sind, betreten Sie jetzt einen geschützten Bereich.",
       "developer_comment": "Page > Error Page > Message > http401"
     },
     "http403": {
-      "string": "Sie sind nicht berechtigt, auf dieses Dokument zuzugreifen.",
+      "string": "You do not have permission to access this document. Please change the license to something other than Copyright-BY-NC-ND-SA.",
       "developer_comment": "Page > Error Page > Message > http403"
     },
     "http404": {
-      "string": "Seite nicht gefunden.",
+      "string": "There's nothing to see here. Maybe an empty text? An invisible space? Just 0? A minus sign? A false value? Undefined? Or just a brightly colored cell.",
       "developer_comment": "Page > Error Page > Message > http404"
     }
   },
@@ -679,7 +695,7 @@
         "developer_comment": "Header > Admin Button > login"
       },
       "logout": {
-        "string": "Logout",
+        "string": "Ausloggen",
         "developer_comment": "Header > Admin Button > logout"
       }
     }
