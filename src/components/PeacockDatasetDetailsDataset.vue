@@ -485,13 +485,13 @@ export default {
       mapVisible: true,
       infoVisible: false,
       visualisationLinkFormats: [
-        'csv',
-        'xlsx',
-        'xls',
+        // 'csv',
+        // 'xlsx',
+        // 'xls',
       ],
       geoLinkFormats: {
-        wms: 'WMS',
-        geojson: 'GeoJSON',
+        // wms: 'WMS',
+        // geojson: 'GeoJSON',
       },
       maxKeywordLength: MAX_KEYWORD_LENGTH,
     };
