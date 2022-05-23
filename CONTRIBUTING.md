@@ -23,11 +23,27 @@ It will automatically accept requests from translators to join the team.
 
 ## Update translation in code
 
-TODO
-### i18n.json
+Open [Transifex language overview page](https://www.transifex.com/peacock/open-data-portal/languages/) and select your language to update.
+Choose the `i18n.json` resource and click the link `Download for use` or `Download only reviewed translations`. Copy the downloaded file to folder
 
-The i18n.json file is located at `peacock-user-ui/user-config/i18n/i18n.json` by default. It contains translations for all available languages for the vue-i18n module.
+```
+/static/assets/lang/
+```
 
+and rename it to `{language code}.json`.
+
+If you change the `en.json` you must copy the file to `/user-config/i18n/i18n.json` and change the format from STRUCTURED_JSON to FLAT_JSON.
+
+```
+"button": {
+  "string": "Start search",
+  "developer_comment": "Catalog > Search Bar > button"
+}
+
+=>
+
+"button": "Start search"
+```
 
 # Provide code
 
