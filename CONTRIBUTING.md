@@ -10,7 +10,7 @@ Thanks for contributing to this project. Feel free to:
 - [improve the documentation](https://github.com/opendata-guru/peacock-user-ui/blob/master/README.md)
 - [get in touch](https://twitter.com/tursics)
 
-# Translate
+## Translate
 
 ![transifex chart image](https://www.transifex.com/projects/p/open-data-portal/resource/i18njson/chart/image_png)
 
@@ -21,12 +21,12 @@ Have a look at [Transifex project page](https://www.transifex.com/peacock/open-d
 You can register as translator for free.
 It will automatically accept requests from translators to join the team.
 
-## Update translation in code
+### Update translation in code
 
 Open [Transifex language overview page](https://www.transifex.com/peacock/open-data-portal/languages/) and select your language to update.
 Choose the `i18n.json` resource and click the link `Download for use` or `Download only reviewed translations`. Copy the downloaded file to folder
 
-```
+```bash
 /static/assets/lang/
 ```
 
@@ -34,7 +34,7 @@ and rename it to `{language code}.json`.
 
 If you change the `en.json` you must copy the file to `/user-config/i18n/i18n.json` and change the format from STRUCTURED_JSON to FLAT_JSON.
 
-```
+```bash
 "button": {
   "string": "Start search",
   "developer_comment": "Catalog > Search Bar > button"
@@ -45,11 +45,11 @@ If you change the `en.json` you must copy the file to `/user-config/i18n/i18n.js
 "button": "Start search"
 ```
 
-# Provide code
+## Provide code
 
 You can provide bug fixes and new code. First of all, setup your environment.
 
-## Project Setup
+### Project Setup
 
 Prepare your system and [install nvm](https://github.com/nvm-sh/nvm/blob/master/README.md#installing-and-updating), the version manager for node.js.
 
@@ -65,60 +65,60 @@ v16.14.0
 Clone or download the code:
 
 ```bash
-$ git clone git@github.com:opendata-guru/peacock-user-ui.git
+git clone git@github.com:opendata-guru/peacock-user-ui.git
 ```
 
 Install NPM packages:
 
 ```bash
-$ cd peacock-user-ui
-$ npm install
+cd peacock-user-ui
+npm install
 ```
 
-# Build steps
+## Build steps
 
-## Build for Development
+### Build for Development
 
 Open a terminal and run:
 
 ```bash
-$ npm run dev
+npm run dev
 ```
 
 This will start a local webserver on Port `8084`. Open a web browser and visit `http://localhost:8084` to see the app.
 
 **Hot Module Replacement** is supported. The page will update automatically whenever files are changed and saved.
 
-## Build for Production
+### Build for Production
 
 Open a terminal and run:
 
 ```bash
-$ npm run build
+npm run build
 ```
 
 This will optimize files for production and store the bundle in
   `peacock-user-ui/dist`
 
-## Publish a new version to NPM
+### Publish a new version to NPM
 
 First of all check if you can create a production build successfully.
 
 ```bash
-$ npm run build
+npm run build
 ```
 
 Then check that all tests run without any errors and code coverage is as high as possible.
 
 ```bash
-$ npm run test
-$ npx jest --coverage
+npm run test
+npx jest --coverage
 ```
 
 Remove all known security vulnerabilities. Get the audit report:
 
 ```bash
-$ npm audit
+npm audit
 ```
 
 Open `package.json` file and increase the version number of the package:
@@ -130,12 +130,12 @@ Open `package.json` file and increase the version number of the package:
 Build the final production build:
 
 ```bash
-$ npm run build
+npm run build
 ```
 
 Follow next steps:
 
-- format `dist/js/config.js` with https://webformatter.com/javascript
+- format `dist/js/config.js` with [https://webformatter.com/javascript](JavaScript Formatter)
 - push all changes to github
 - [draft a new release](https://github.com/opendata-guru/peacock-user-ui/releases/new)
 
@@ -145,15 +145,15 @@ Publishing a new release will automatically:
 - publish a new version to [npm](https://www.npmjs.com/package/peacock-user-ui)
 - publish a new version to CDN unpkg.com
 
-# Configurations
+## Configurations
 
-## glue-config.js
+### glue-config.js
 
 The glue-config.js file is located at `peacock-user-ui/user-config/glue-config.js`. It is the main project configuration file. **But it contains default values only (and some very old values that should be removed in future).
 
 You need to rebuild the project after changing this file.
 
-## user-configs.js
+### user-configs.js
 
 The user-configs.json file is located at `peacock-user-ui/config/user-configs.js`. It contains the paths to the glue-config.js and i18n.json. So this file overwrite the settings in `glue-config.js`.
 
@@ -161,7 +161,7 @@ The `user-configs.js` checks global variables and set the values, if set, to the
 
 You need to rebuild the project after changing this file.
 
-## config.js
+### config.js
 
 The config.js file is located at `peacock-user-ui/static/js/config.js`. Use this file to customize all settings for this project.
 
@@ -169,7 +169,7 @@ You **does not need** to rebuild the project after changing this file. But you m
 
 All settings described in [README.md](README.me) file.
 
-# Write own adapter
+## Write own adapter
 
 Write your own adapter with up to 5 files. Import your adapter files in `user-configs.js` file:
 
