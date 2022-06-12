@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="selected-facets-group">
     <p v-for="fieldId in Object.keys(selectedFacets)" :key="fieldId" 
        v-if="selectedFacets[fieldId].length > 0 && ((showCatalogueDetails === (fieldId !== 'catalog')) || !showCatalogueDetails)">
       <span>

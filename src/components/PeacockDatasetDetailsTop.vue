@@ -3,8 +3,8 @@
 -->
 
 <template>
-  <div class="mt-1 mb-4">
-    <div class="row">
+  <div class="details-top mt-1 mb-4">
+    <div class="actions-row row">
       <div class="col-12 text-end">
         <datasetDetailsEditButton v-if="authenticated"></datasetDetailsEditButton>
         <datasetDetailsDeleteButton v-if="authenticated"></datasetDetailsDeleteButton>
@@ -31,12 +31,12 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="navigation-row row">
       <div class="col-12">
         <datasetDetailsNavigation></datasetDetailsNavigation>
       </div>
     </div>
-    <div class="row">
+    <div class="header-row row">
       <div class="col-12 mt-3">
         <datasetDetailsHeader></datasetDetailsHeader>
       </div>

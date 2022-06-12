@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-5" :about="`/datasets/${getID}`" typeof="dcat:Dataset">
+  <div class="dataset mb-5" :about="`/datasets/${getID}`" typeof="dcat:Dataset">
     <datasetDetailsTop></datasetDetailsTop>
     <router-view name="datasetDetailsSubpages"></router-view>
   </div>

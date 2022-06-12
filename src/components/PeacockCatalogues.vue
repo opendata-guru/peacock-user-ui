@@ -87,7 +87,7 @@
       </section>
     </div>
     <div class="row">
-      <div class="column col-12 col-md-8 offset-md-4">
+      <div class="column col-12 col-md-9 offset-md-3">
         <div class="d-flex flex-row justify-content-center">
           <!--<button class="button is-secondary scroll-top" @click="scrollTo(0)">Scroll top</button>-->
           <pagination class="mt-3"

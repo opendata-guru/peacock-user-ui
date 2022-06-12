@@ -119,15 +119,10 @@
             </div>
           </div>
         </div>
-        <div class="alert alert-secondary mt-3 d-flex flex-row">
+        <div class="count-group alert alert-secondary mt-3 d-flex flex-row">
           <div>
             {{ getLoading ? $t('message.datasets.loadingMessage'):`${getDatasetsCount}
             ${$t('message.datasets.countMessage')}`}}
-          </div>
-          <div class="text-center ml-3" v-if="getLoading">
-            <div class="spinner-border text-secondary" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
           </div>
         </div>
         <!--
@@ -141,31 +136,33 @@
         <selectedFacetsOverview
         v-if="getFacets"
         :selected-facets="getFacets"/>
-        <data-info-box class="dataset" v-if="!getLoading" v-for="dataset in getDatasets" :key="dataset.id"
-                       :link-to="`datasets/${dataset.id ? dataset.id : dataset.idName}`"
-                       :title="getTranslationFor(dataset.title, $i18n.locale, dataset.languages) || dataset.id"
-                       :description="getTranslationFor(dataset.description, $i18n.locale, dataset.languages)"
-                       :description-length="300"
-                       :body-tags="removeDuplicatesOf(dataset.distributionFormats)"
-                       :favorite="dataset.favorite"
-                       @favorite-updated="favoriteChanged(dataset.id, $event)"
-                       :source="{
-                                    sourceID: dataset.catalog.id,
-                                    sourceImage: getCountryFlagImg(has(dataset, 'country.id') ? dataset.country.id : 'eu'),
-                                    sourceTitle: dataset.catalog.title,
-                                }"
-                       :metadata="{
-                                    releaseDate: {
-                                      title: $t('message.metadata.created'),
-                                      value: dataset.releaseDate,
-                                    },
-                                    modificationDate: {
-                                      title: $t('message.metadata.updated'),
-                                      value: dataset.modificationDate,
-                                    },
-                                  }">
-        </data-info-box>
-        <div class="text-center mt-3 mb-3" v-if="getLoading">
+        <div class="items-group">
+          <data-info-box class="dataset" v-if="!getLoading" v-for="dataset in getDatasets" :key="dataset.id"
+                        :link-to="`datasets/${dataset.id ? dataset.id : dataset.idName}`"
+                        :title="getTranslationFor(dataset.title, $i18n.locale, dataset.languages) || dataset.id"
+                        :description="getTranslationFor(dataset.description, $i18n.locale, dataset.languages)"
+                        :description-length="300"
+                        :body-tags="removeDuplicatesOf(dataset.distributionFormats)"
+                        :favorite="dataset.favorite"
+                        @favorite-updated="favoriteChanged(dataset.id, $event)"
+                        :source="{
+                                      sourceID: dataset.catalog.id,
+                                      sourceImage: getCountryFlagImg(has(dataset, 'country.id') ? dataset.country.id : 'eu'),
+                                      sourceTitle: dataset.catalog.title,
+                                  }"
+                        :metadata="{
+                                      releaseDate: {
+                                        title: $t('message.metadata.created'),
+                                        value: dataset.releaseDate,
+                                      },
+                                      modificationDate: {
+                                        title: $t('message.metadata.updated'),
+                                        value: dataset.modificationDate,
+                                      },
+                                    }">
+          </data-info-box>
+        </div>
+        <div class="loading-indicator text-center mt-3 mb-3" v-if="getLoading">
           <div class="spinner-border text-secondary" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
@@ -173,7 +170,7 @@
       </section>
     </div>
     <div class="row">
-      <div class="column col-12 col-md-8 offset-md-4">
+      <div class="column col-12 col-md-9 offset-md-3">
         <div class="d-flex flex-row justify-content-center">
           <!--<button class="button is-dark scroll-top" @click="scrollTo(0)">Scroll top</button>-->
           <pagination class="mt-3"
