@@ -27,7 +27,7 @@
             <li class="list-inline-item small m-0 me-2"
                 v-for="(md, i) in metadata"
                 :key="i"
-                v-if="has(md, 'title') && !isNil(md.title) && has(md, 'value')">
+                v-if="has(md, 'title') && !isNil(md.title) && has(md, 'value') && !isNil(md.value)">
               <span>{{ md.title }}</span>
               <span>
                 <dataset-date :date="md.value"/>
