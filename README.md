@@ -160,6 +160,7 @@ CONFIG_APP_HEADER_NAV_2_URL || `'/catalogues'`
 CONFIG_APP_HEADER_NAV_2_TITLE || `'message.header.navigation.data.catalogues'`
 CONFIG_APP_HEADER_NAV_3_URL to CONFIG_APP_HEADER_NAV_9_URL || `empty`
 CONFIG_APP_HEADER_NAV_3_TITLE to CONFIG_APP_HEADER_NAV_9_TITLE || `empty`
+CONFIG_APP_ENABLE_DARK_MODE | Show button to switch dark mode and light mode. | false
 
 ## Customize pages footer
 

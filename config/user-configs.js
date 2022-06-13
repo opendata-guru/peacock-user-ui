@@ -164,6 +164,7 @@ glueConfig.enable.dataset.feedback = typeof CONFIG_APP_ENABLE_DATASET_FEEDBACK !
 glueConfig.enable.favorites.enable = typeof CONFIG_APP_ENABLE_FAVORITES !== 'undefined' ? CONFIG_APP_ENABLE_FAVORITES : false;
 glueConfig.enable.filter.gazetteer = typeof CONFIG_APP_ENABLE_FILTER_GAZETTEER !== 'undefined' ? CONFIG_APP_ENABLE_FILTER_GAZETTEER : false;
 glueConfig.enable.filter.operator = typeof CONFIG_APP_ENABLE_FILTER_OPERATOR !== 'undefined' ? CONFIG_APP_ENABLE_FILTER_OPERATOR : false;
+glueConfig.enable.system.darkMode = typeof CONFIG_APP_ENABLE_DARK_MODE !== 'undefined' ? CONFIG_APP_ENABLE_DARK_MODE : false;
 glueConfig.keycloak.enableLogin = typeof CONFIG_APP_AUTH_ENABLE !== 'undefined' ? CONFIG_APP_AUTH_ENABLE : false;
 
 if ((typeof CONFIG_APP_HEADER_LOGO_TEXT !== 'undefined') || (typeof CONFIG_APP_HEADER_LOGO_IMAGE_SRC !== 'undefined') || (typeof CONFIG_APP_HEADER_LOGO_IMAGE_DESCRIPTION !== 'undefined')) {
@@ -380,5 +381,13 @@ if (typeof CONFIG_APP_ROUTER_ROUTE_9_NAME !== 'undefined') {
     });
 }
 glueConfig.routerOptions.routes = routes;
+
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+if (prefersDarkScheme.matches) {
+    document.body.classList.toggle('dark-mode');
+} else {
+    document.body.classList.toggle('light-mode');
+}
+
 
 export { glueConfig, i18n };

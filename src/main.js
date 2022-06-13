@@ -56,11 +56,13 @@ import {
   faHeart as fasHeart,
   faInfoCircle,
   faMinus,
+  faMoon,
   faPen,
   faPlus,
   faRss,
   faShareAlt,
   faSearch,
+  faSun,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 // import main user configurations (glueConfig) and i18n configurations
@@ -123,7 +125,7 @@ sync(store, router);
 library.add(faGoogle, faGooglePlus, faGooglePlusG, faFacebook, faFacebookF, faInstagram, faTwitter, faLinkedinIn,
   faComment, faExternalLinkAlt, faPlus, faMinus, faChartBar, faGlobeAmericas, faPen,
   faArrowDown, faArrowUp, faInfoCircle, faCheckCircle, faExclamationCircle, faExclamationTriangle,
-  faShareAlt, faSearch, faExpand, farCopy, fasCopy,
+  faShareAlt, faSearch, faExpand, farCopy, fasCopy, faMoon, faSun,
   faAngleUp, faAngleDown, faCaretUp, faCaretDown, faRss, farHeart, fasHeart);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 

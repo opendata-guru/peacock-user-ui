@@ -937,6 +937,10 @@
       "privacyPolicy": {
         "string": "Privacy policy",
         "developer_comment": "Navigation > privacyPolicy"
+      },
+      "theme": {
+        "string": "Switch between day and night theme",
+        "developer_comment": "Navigation > theme"
       }
     }
   },

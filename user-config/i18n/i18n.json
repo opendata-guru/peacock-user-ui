@@ -285,7 +285,8 @@
           "data": "Data",
           "map": "Map",
           "imprint": "Imprint",
-          "privacyPolicy": "Privacy policy"
+          "privacyPolicy": "Privacy policy",
+          "theme": "Switch between day and night theme"
         }
       },
       "pagination": {

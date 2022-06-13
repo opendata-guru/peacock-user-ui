@@ -48,6 +48,12 @@
             <a v-if="!authenticated" v-on:click="login()" class="btn btn-sm btn-secondary text-light login">{{ $t('message.header.subnav.login') }}</a>
             <a v-if="authenticated" v-on:click="logout()" class="btn btn-sm btn-secondary text-light login">{{ $t('message.header.subnav.logout') }}</a>
           </span>
+          <span v-if="showThemeSwitch" class="navbar-text">
+            <button class="btn btn-sm btn-secondary" type="button" @click="changeTheme()" :aria-label="$t('message.navigation.navItems.theme')">
+              <font-awesome-icon class="moon fa my-1 fs-5" icon="fa-solid fa-moon" aria-hidden="true" />
+              <font-awesome-icon class="sun fa my-1 fs-5" icon="fa-solid fa-sun" aria-hidden="true" />
+            </button>
+          </span>
           <span v-if="showLanguageSwitch" class="navbar-text">
             <language-selector></language-selector>
           </span>
@@ -83,6 +89,7 @@ export default {
         web: (nav.href.indexOf('http://') === 0) || (nav.href.indexOf('https://') === 0),
       })),
       showLanguageSwitch: false,
+      showThemeSwitch: GLUE_CONFIG.enable.system.darkMode,
     };
   },
   computed: {
@@ -108,6 +115,21 @@ export default {
       this.authLogout();
       this.$Progress.finish();
     },
+    changeTheme() {
+      const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+      if (prefersDarkScheme.matches) {
+        document.body.classList.toggle('light-mode');
+        if (document.body.classList.contains('light-mode') === document.body.classList.contains('dark-mode')) {
+          document.body.classList.toggle('dark-mode');
+        }
+      } else {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode') === document.body.classList.contains('light-mode')) {
+          document.body.classList.toggle('light-mode');
+        }
+      }
+    },
   },
   watch: {
     isAuthenticated() {
@@ -118,4 +140,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .light-mode .sun {
+    display: none;
+  }
+  .dark-mode .moon {
+    display: none;
+  }
 </style>

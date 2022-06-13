@@ -45,6 +45,9 @@ export default {
     services: {
       cacheBusting: true,
     },
+    system: {
+      darkMode: false,
+    },
   },
   keycloak: {
     enableLogin: true,
