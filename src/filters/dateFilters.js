@@ -4,8 +4,6 @@
  * @description Contains filters to format Dates.
  */
 
-import moment from 'moment';
-
 /**
  * The String to display when the given String is a invalid date String.
  * @type {String}
@@ -23,37 +21,31 @@ function fromNowFunc(i18n, date) {
   const months = Math.round(seconds / 2592000);
   const years = Math.round(seconds / 31536000);
 
-  console.log(i18n);
-  console.log(i18n.t('moment.today'));
-
   if (days >= (1.6 * 365)) {
-    return i18n.t('moment.years', { years });
+    return i18n.t('message.moment.years', { years });
   }
   if (days >= (0.9 * 365)) {
-    return i18n.t('moment.oneYear');
+    return i18n.t('message.moment.oneYear');
   }
 
   if (days >= (1.6 * 30)) {
-    return i18n.t('moment.months', { months });
+    return i18n.t('message.moment.months', { months });
   }
   if (days >= (0.9 * 30)) {
-    return i18n.t('moment.oneMonth');
+    return i18n.t('message.moment.oneMonth');
   }
 
   if (hours >= (1.6 * 24)) {
-    return i18n.t('moment.days', { days });
+    return i18n.t('message.moment.days', { days });
   }
   if (hours >= (0.9 * 24)) {
-    return i18n.t('moment.oneDay');
+    return i18n.t('message.moment.oneDay');
   }
 
-  return i18n.t('moment.today');
+  return i18n.t('message.moment.today');
 }
 
 const dateFilters = {
-  setLocale(locale = 'en', formatOptions = {}) {
-    moment.updateLocale(locale, formatOptions);
-  },
   /**
    * @description Transforms the given date into a US Date Format String
    * @param {date} date - The given date

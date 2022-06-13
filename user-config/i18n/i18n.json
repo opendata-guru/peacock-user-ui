@@ -278,6 +278,15 @@
         "upload": "Upload",
         "metadataQuality": "Metadata Quality"
       },
+      "moment": {
+        "oneYear": "a year ago",
+        "years": "{years} years ago",
+        "oneMonth": "a month ago",
+        "months": "{months} months ago",
+        "oneDay": "a day ago",
+        "days": "{days} days ago",
+        "today": "today"
+      },
       "navigation": {
         "navItems": {
           "home": "Home",

@@ -73,16 +73,11 @@ import router from './router';
 // import vuex store
 import store from './store/index';
 import App from './App';
-// import dateFilters to set moment.js locale + formatOptions. see: https://momentjs.com/docs/#/i18n/changing-locale/
-// eslint-disable-next-line import/no-extraneous-dependencies
-import dateFilters from './filters/dateFilters';
 import RuntimeConfiguration from './utils/runtimeconfig';
 // Configured language
 const LOCALE = GLUE_CONFIG.locale;
 const FALLBACK_LOCALE = GLUE_CONFIG.fallbackLocale;
 
-// Set locale for dateFilters (moment.js)
-dateFilters.setLocale(LOCALE);
 // vue-i18n setup -- docs: https://kazupon.github.io/vue-i18n/en/started.html
 Vue.use(VueI18n);
 const i18n = new VueI18n({

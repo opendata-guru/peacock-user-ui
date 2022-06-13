@@ -116,7 +116,6 @@
     isEmpty,
     isObject,
   } from 'lodash';
-  import moment from 'moment';
 
   // import nested components
   import AppLink from './AppLink';
@@ -215,16 +214,6 @@
       },
       filterDateFormatEU(date) {
         return dateFilters.formatEU(date);
-      },
-      isIncorrectDate(date) {
-        // Falsy dates are considered as intentionally blank and are correct
-        if (!date) return false;
-
-        const m = moment(String(date));
-        if (!m.isValid()) return true;
-
-        // Dates in the future are incorrect.
-        return moment().diff(m) < 0;
       },
       onFavorites(e) {
         e.preventDefault();

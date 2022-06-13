@@ -9,8 +9,6 @@
         : null
     "
   >
-    {{ $t('message.metadata.dataset') }}
-    {{ $t('message.moment.today') }}
     <span :class="{ 'date-incorrect': isIncorrectDate() }" class="mr-1" :title="filterDateFormatEU">{{ filterDateFromNow }}</span>
     <font-awesome-icon
       v-if="isIncorrectDate()"
@@ -21,7 +19,6 @@
 </template>
 
 <script>
-import moment from 'moment';
 import dateFilters from '../filters/dateFilters';
 
 export default {
@@ -34,8 +31,6 @@ export default {
       return dateFilters.formatEU(this.date);
     },
     filterDateFromNow() {
-      console.log(this.$i18n.t('message.moment.today'));
-      console.log(this.$t('message.moment.today'));
       return dateFilters.fromNow(this.$i18n, this.date);
     },
   },
@@ -44,14 +39,22 @@ export default {
     isIncorrectDate() {
       // Falsy dates are considered as intentionally blank and are correct.
       if (!this.date) return false;
-      const m = moment(String(this.date));
-      if (!m.isValid()) {
+
+      try {
+        const t = new Date(String(this.date));
+        if (t.toISOString().slice(0, 10) !== String(this.date)) {
+          this.$root.$emit('date-incorrect');
+          return true;
+        }
+      } catch (err) {
         this.$root.$emit('date-incorrect');
         return true;
       }
 
       // Dates in the future are incorrect.
-      if (moment().diff(m) < 0) {
+      const now = new Date();
+      const date = new Date(String(this.date));
+      if (date > now) {
         this.$root.$emit('date-incorrect');
         return true;
       }
