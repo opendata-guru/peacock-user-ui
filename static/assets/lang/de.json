@@ -11,7 +11,7 @@
       }
     },
     "geoBoundsMessagePre": {
-      "string": "Your Search has been limited to:",
+      "string": "Ihre Suche wurde eingeschränkt auf:",
       "developer_comment": ":geoBoundsMessagePre:"
     },
     "geoBoundsMessageRemove": {
@@ -41,7 +41,7 @@
       "developer_comment": ":title:"
     },
     "settings": {
-      "string": "Settings",
+      "string": "Einstellungen",
       "developer_comment": ":settings:"
     },
     "operator": {
@@ -49,11 +49,11 @@
       "developer_comment": ":operator:"
     },
     "and": {
-      "string": "AND",
+      "string": "UND",
       "developer_comment": ":and:"
     },
     "or": {
-      "string": "OR",
+      "string": "ODER",
       "developer_comment": ":or:"
     },
     "europeanCatalogues": {
@@ -738,7 +738,7 @@
       "developer_comment": ":disclaimer:"
     },
     "fullscreen": {
-      "string": "Fullscreen",
+      "string": "Vollbild",
       "developer_comment": ":fullscreen:"
     }
   },
@@ -912,6 +912,36 @@
       "developer_comment": ":metadataQuality:"
     }
   },
+  "moment": {
+    "oneYear": {
+      "string": "vor einem Jahr",
+      "developer_comment": "Date > Years"
+    },
+    "years": {
+      "string": "vor {years} Jahren",
+      "developer_comment": "Date > Years"
+    },
+    "oneMonth": {
+      "string": "vor einem Monat",
+      "developer_comment": "Date > Month"
+    },
+    "months": {
+      "string": "vor {months} Monaten",
+      "developer_comment": "Date > Month"
+    },
+    "oneDay": {
+      "string": "gestern",
+      "developer_comment": "Date > Day"
+    },
+    "days": {
+      "string": "vor {days} Tagen",
+      "developer_comment": "Date > Day"
+    },
+    "today": {
+      "string": "heute",
+      "developer_comment": "Date > Day"
+    }
+  },
   "navigation": {
     "navItems": {
       "home": {
@@ -937,12 +967,16 @@
       "privacyPolicy": {
         "string": "Datenschutzerklärung",
         "developer_comment": "Navigation > privacyPolicy"
+      },
+      "theme": {
+        "string": "Zwischen Tag- und Nachtdesign wechseln",
+        "developer_comment": "Navigation > theme"
       }
     }
   },
   "pagination": {
     "previous": {
-      "string": "Previous",
+      "string": "Zurück",
       "developer_comment": "Pagination > previous"
     },
     "previousPage": {
@@ -950,7 +984,7 @@
       "developer_comment": "Pagination > previousPage"
     },
     "next": {
-      "string": "Next",
+      "string": "Weiter",
       "developer_comment": "Pagination > next"
     },
     "nextPage": {
@@ -958,7 +992,7 @@
       "developer_comment": "Pagination > nextPage"
     },
     "finish": {
-      "string": "Finish",
+      "string": "Beenden",
       "developer_comment": "Pagination > finish"
     }
   },
