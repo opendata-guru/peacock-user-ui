@@ -5,6 +5,7 @@ const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 let buildMode
 if (process.env.NODE_ENV === 'production') {
@@ -46,13 +47,6 @@ module.exports = {
             // run in multiple threads
             loader: 'thread-loader',
             options: threadLoaderOptions
-          },
-          {
-            loader: 'eslint-loader',
-            options: {
-              formatter: require('eslint-friendly-formatter'),
-              cache: true
-            },
           }
         ],
         enforce: 'pre',
@@ -109,6 +103,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new ESLintPlugin({}),
     // make sure to include the plugin for the magic
     new VueLoaderPlugin(),
     // To only pick lodash features that are needed

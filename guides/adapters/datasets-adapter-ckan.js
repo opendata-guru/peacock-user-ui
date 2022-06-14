@@ -12,7 +12,8 @@ import { getSingleResponseData, getResponseData } from './ckan-helper';
 function buildQueryString(query, facets) {
   let queryString = query;
   Object.keys(facets).forEach((field) => {
-    for (const facet of facets[field]) {
+    let facet;
+    for (facet of facets[field]) {
       queryString += ` ${field}:${facet}`;
     }
   });
@@ -41,8 +42,8 @@ export default class Datasets {
           try {
             ds = getSingleResponseData(dataset);
           } catch (error) {
-            console.warn('Error in datasets.js while checking response:', error.message);
-            console.error(error.stack);
+            console.warn('Error in datasets-adapter-ckan.js while checking response:', error.message); // eslint-disable-line no-console
+            console.error(error.stack); // eslint-disable-line no-console
           }
           resolve(ds);
         })
@@ -96,7 +97,8 @@ export default class Datasets {
               const newField = {};
               newField.title = searchFacets[field].title;
               newField.items = [];
-              for (const f of searchFacets[field].items) {
+              let f;
+              for (f of searchFacets[field].items) {
                 const facet = {};
                 facet.count = f.count;
                 facet.idName = f.name;
@@ -108,7 +110,8 @@ export default class Datasets {
           });
           // Transform Datasets Data model
           const datasets = response.data.contents ? response.data.contents.result.results : response.data.result.results;
-          for (const dataset of datasets) {
+          let dataset;
+          for (dataset of datasets) {
             /**
              * @property dataset
              * @type JSON

@@ -62,20 +62,20 @@ const state = {
 };
 
 const GETTERS = {
-  getCatalogues: state => state.catalogues,
-  getCataloguesCount: state => state.cataloguesCount,
-  getQuery: state => state.searchParameters.query,
-  getLimit: state => state.searchParameters.limit,
-  getLoading: state => state.loading,
-  getOffset: state => state.searchParameters.offset,
-  getFacets: state => state.searchParameters.facets,
-  getFacetOperator: state => state.searchParameters.facetOperator,
-  getFacetGroupOperator: state => state.searchParameters.facetGroupOperator,
-  getAvailableFacets: state => state.availableFacets,
-  getPage: state => state.page,
-  getPageCount: state => state.pageCount,
-  getService: state => state.service,
-  getSort: state => state.searchParameters.sort,
+  getCatalogues: (state) => state.catalogues,
+  getCataloguesCount: (state) => state.cataloguesCount,
+  getQuery: (state) => state.searchParameters.query,
+  getLimit: (state) => state.searchParameters.limit,
+  getLoading: (state) => state.loading,
+  getOffset: (state) => state.searchParameters.offset,
+  getFacets: (state) => state.searchParameters.facets,
+  getFacetOperator: (state) => state.searchParameters.facetOperator,
+  getFacetGroupOperator: (state) => state.searchParameters.facetGroupOperator,
+  getAvailableFacets: (state) => state.availableFacets,
+  getPage: (state) => state.page,
+  getPageCount: (state) => state.pageCount,
+  getService: (state) => state.service,
+  getSort: (state) => state.searchParameters.sort,
 };
 
 const actions = {

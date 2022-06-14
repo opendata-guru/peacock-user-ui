@@ -24,14 +24,14 @@ import VeeValidate from 'vee-validate';
 // Import Font Awesome Icons Library for vue
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
+  faFacebook,
+  faFacebookF,
   faGoogle,
   faGooglePlus,
   faGooglePlusG,
-  faFacebook,
-  faFacebookF,
   faInstagram,
-  faTwitter,
   faLinkedinIn,
+  faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import {
   faCopy as farCopy,
@@ -117,13 +117,44 @@ services(Vue.prototype.$env);
 // Sync store and router
 sync(store, router);
 
-library.add(faGoogle, faGooglePlus, faGooglePlusG, faFacebook, faFacebookF, faInstagram, faTwitter, faLinkedinIn,
-  faComment, faExternalLinkAlt, faPlus, faMinus, faChartBar, faGlobeAmericas, faPen,
-  faArrowDown, faArrowUp, faInfoCircle, faCheckCircle, faExclamationCircle, faExclamationTriangle,
-  faShareAlt, faSearch, faExpand, farCopy, fasCopy, faMoon, faSun,
-  faAngleUp, faAngleDown, faCaretUp, faCaretDown, faRss, farHeart, fasHeart);
+library.add(
+  faAngleDown,
+  faAngleUp,
+  faArrowDown,
+  faArrowUp,
+  faCaretDown,
+  faCaretUp,
+  faChartBar,
+  faCheckCircle,
+  faComment,
+  faExclamationCircle,
+  faExclamationTriangle,
+  faExpand,
+  faExternalLinkAlt,
+  faFacebook,
+  faFacebookF,
+  faGlobeAmericas,
+  faGoogle,
+  faGooglePlus,
+  faGooglePlusG,
+  faInfoCircle,
+  faInstagram,
+  faLinkedinIn,
+  faMinus,
+  faMoon,
+  faPen,
+  faPlus,
+  faRss,
+  faSearch,
+  faShareAlt,
+  faSun,
+  faTwitter,
+  farCopy,
+  farHeart,
+  fasCopy,
+  fasHeart,
+);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
-
 
 Vue.config.productionTip = false;
 /* eslint-disable no-new */

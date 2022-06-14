@@ -15,9 +15,9 @@ const state = {
 };
 
 const getters = {
-  getGeoBoundsById: state => senderId => state.geoBounds[senderId],
-  getHoldedGeoBoundsById: state => senderId => state.holdedGeoBounds[senderId],
-  getGeoBounds: state => state.geoBounds,
+  getGeoBoundsById: (state) => (senderId) => state.geoBounds[senderId],
+  getHoldedGeoBoundsById: (state) => (senderId) => state.holdedGeoBounds[senderId],
+  getGeoBounds: (state) => state.geoBounds,
 };
 
 const actions = {

@@ -37,17 +37,17 @@ const state = {
 };
 
 const getters = {
-  getAccessUrl: state => state.distribution.accessUrl,
-  getDescription: state => state.distribution.description,
-  getDownloadUrl: state => state.distribution.downloadUrl,
-  getFormat: state => state.distribution.format,
-  getId: state => state.distribution.id,
-  getLicence: state => state.distribution.licence,
-  getModificationDate: state => state.distribution.modificationDate,
-  getReleaseDate: state => state.distribution.releaseDate,
-  getTitle: state => state.distribution.title,
-  getUrlType: state => state.distribution.urlType,
-  getService: state => state.service,
+  getAccessUrl: (state) => state.distribution.accessUrl,
+  getDescription: (state) => state.distribution.description,
+  getDownloadUrl: (state) => state.distribution.downloadUrl,
+  getFormat: (state) => state.distribution.format,
+  getId: (state) => state.distribution.id,
+  getLicence: (state) => state.distribution.licence,
+  getModificationDate: (state) => state.distribution.modificationDate,
+  getReleaseDate: (state) => state.distribution.releaseDate,
+  getTitle: (state) => state.distribution.title,
+  getUrlType: (state) => state.distribution.urlType,
+  getService: (state) => state.service,
 };
 
 const actions = {

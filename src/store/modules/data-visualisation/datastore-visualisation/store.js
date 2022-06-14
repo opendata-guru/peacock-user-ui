@@ -16,9 +16,9 @@ const state = {
 };
 
 const getters = {
-  getId: state => state.datastore.id,
-  getRecords: state => state.datastore.records,
-  getService: state => state.service,
+  getId: (state) => state.datastore.id,
+  getRecords: (state) => state.datastore.records,
+  getService: (state) => state.service,
 };
 
 const actions = {

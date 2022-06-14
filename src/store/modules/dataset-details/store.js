@@ -97,38 +97,38 @@ const state = {
 };
 
 const getters = {
-  getActiveNavigationTab: state => state.activeNavigationTab,
-  getCatalog: state => state.dataset.catalog,
-  getCategories: state => state.dataset.categories,
-  getConformsTo: state => state.dataset.conformsTo,
-  getContactPoints: state => state.dataset.contactPoints,
-  getCountry: state => state.dataset.country,
-  getDescription: state => state.dataset.description,
-  getDistributions: state => state.dataset.distributions,
-  getDistributionFormats: state => state.dataset.distributionFormats,
-  getDocumentations: state => state.dataset.documentations,
-  getFrequency: state => state.dataset.frequency,
-  getIdentifiers: state => state.dataset.identifiers,
-  getID: state => state.dataset.id,
-  getIdName: state => state.dataset.idName,
-  getLandingPages: state => state.dataset.landingPages,
-  getLanguages: state => state.dataset.languages,
-  getLicences: state => state.dataset.licences,
-  getLoading: state => state.loading,
-  getModificationDate: state => state.dataset.modificationDate,
-  getOriginalLanguage: state => state.dataset.originalLanguage,
-  getOtherIdentifiers: state => state.dataset.otherIdentifiers,
-  getProvenances: state => state.dataset.provenances,
-  getPublisher: state => state.dataset.publisher,
-  getRelatedResources: state => state.dataset.relatedResources,
-  getReleaseDate: state => state.dataset.releaseDate,
-  getKeywords: state => state.dataset.keywords,
-  getService: state => state.service,
-  getSimilarDatasets: state => state.dataset.similarDatasets,
-  getSources: state => state.dataset.sources,
-  getSpatial: state => state.dataset.spatial,
-  getTranslationMetaData: state => state.dataset.translationMetaData,
-  getTitle: state => state.dataset.title,
+  getActiveNavigationTab: (state) => state.activeNavigationTab,
+  getCatalog: (state) => state.dataset.catalog,
+  getCategories: (state) => state.dataset.categories,
+  getConformsTo: (state) => state.dataset.conformsTo,
+  getContactPoints: (state) => state.dataset.contactPoints,
+  getCountry: (state) => state.dataset.country,
+  getDescription: (state) => state.dataset.description,
+  getDistributions: (state) => state.dataset.distributions,
+  getDistributionFormats: (state) => state.dataset.distributionFormats,
+  getDocumentations: (state) => state.dataset.documentations,
+  getFrequency: (state) => state.dataset.frequency,
+  getIdentifiers: (state) => state.dataset.identifiers,
+  getID: (state) => state.dataset.id,
+  getIdName: (state) => state.dataset.idName,
+  getLandingPages: (state) => state.dataset.landingPages,
+  getLanguages: (state) => state.dataset.languages,
+  getLicences: (state) => state.dataset.licences,
+  getLoading: (state) => state.loading,
+  getModificationDate: (state) => state.dataset.modificationDate,
+  getOriginalLanguage: (state) => state.dataset.originalLanguage,
+  getOtherIdentifiers: (state) => state.dataset.otherIdentifiers,
+  getProvenances: (state) => state.dataset.provenances,
+  getPublisher: (state) => state.dataset.publisher,
+  getRelatedResources: (state) => state.dataset.relatedResources,
+  getReleaseDate: (state) => state.dataset.releaseDate,
+  getKeywords: (state) => state.dataset.keywords,
+  getService: (state) => state.service,
+  getSimilarDatasets: (state) => state.dataset.similarDatasets,
+  getSources: (state) => state.dataset.sources,
+  getSpatial: (state) => state.dataset.spatial,
+  getTranslationMetaData: (state) => state.dataset.translationMetaData,
+  getTitle: (state) => state.dataset.title,
 };
 
 const actions = {
@@ -335,7 +335,7 @@ const mutations = {
       const id = payload.id;
       const description = payload.description;
       if (isArray(state.dataset.similarDatasets)) {
-        const similarDataset = state.dataset.similarDatasets.filter(el => el.id === id)[0];
+        const similarDataset = state.dataset.similarDatasets.filter((el) => el.id === id)[0];
         if (isObject(similarDataset)) Vue.set(similarDataset, 'description', description);
       }
     }
@@ -345,7 +345,7 @@ const mutations = {
       const id = payload.id;
       const title = payload.title;
       if (isArray(state.dataset.similarDatasets)) {
-        const similarDataset = state.dataset.similarDatasets.filter(el => el.id === id)[0];
+        const similarDataset = state.dataset.similarDatasets.filter((el) => el.id === id)[0];
         if (isObject(similarDataset)) Vue.set(similarDataset, 'title', title);
       }
     }

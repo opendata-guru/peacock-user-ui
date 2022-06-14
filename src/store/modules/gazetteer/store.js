@@ -13,8 +13,8 @@ const state = {
 };
 
 const getters = {
-  getSuggestions: state => state.suggestions,
-  getService: state => state.service,
+  getSuggestions: (state) => state.suggestions,
+  getService: (state) => state.service,
 };
 
 const actions = {

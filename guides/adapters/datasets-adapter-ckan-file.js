@@ -102,7 +102,7 @@ export default class Datasets {
               if (result.results.length !== result.count) {
                 reject(new Error('Missmatch counting datasets.'));
               } else {
-                resolve(result.results.map(dataset => getSingleResponseData(dataset)).concat(lazyResult));
+                resolve(result.results.map((dataset) => getSingleResponseData(dataset)).concat(lazyResult));
               }
             });
         })
@@ -121,7 +121,7 @@ export default class Datasets {
       this.loadFile()
         .then((loadedDatasets) => {
           this.datasets = loadedDatasets;
-          const dataset = this.datasets.find(data => data.id === id);
+          const dataset = this.datasets.find((data) => data.id === id);
           resolve(dataset);
         })
         .catch((error) => {

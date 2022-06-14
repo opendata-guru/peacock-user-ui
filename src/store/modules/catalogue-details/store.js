@@ -16,8 +16,8 @@ const state = {
 };
 
 const getters = {
-  getCatalogue: state => state.catalogue,
-  getCatalogueService: state => state.service,
+  getCatalogue: (state) => state.catalogue,
+  getCatalogueService: (state) => state.service,
 };
 
 const actions = {

@@ -13,8 +13,8 @@ const state = {
 };
 
 const getters = {
-  getMap: state => state.map,
-  getService: state => state.service,
+  getMap: (state) => state.map,
+  getService: (state) => state.service,
 };
 
 const actions = {

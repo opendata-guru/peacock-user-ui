@@ -7,7 +7,8 @@
 const createObjectFacet = (datasets, resData, options) => {
   const items = [];
   const countItems = {};
-  for (const dataset of datasets) {
+  let dataset;
+  for (dataset of datasets) {
     if (!countItems[dataset[options.object].id]) {
       countItems[dataset[options.object].id] = {
         count: 0,
@@ -34,8 +35,10 @@ const createObjectFacet = (datasets, resData, options) => {
 const createArrayFacet = (datasets, resData, options) => {
   const items = [];
   const countItems = {};
-  for (const dataset of datasets) {
-    for (const object of dataset[options.object]) {
+  let dataset;
+  for (dataset of datasets) {
+    let object;
+    for (object of dataset[options.object]) {
       if (!countItems[object.id]) {
         countItems[object.id] = {
           count: 0,
@@ -139,38 +142,50 @@ export const filterFacets = (datasets, facets) => {
   let data = datasets;
 
   if (facets.catalog) {
-    for (const catalog of facets.catalog) {
-      data = data.filter(dataset => String(dataset.catalog.id).toLocaleLowerCase() === catalog.toLocaleLowerCase());
+    let catalogObj;
+    for (catalogObj of facets.catalog) {
+      const catalog = catalogObj;
+      data = data.filter((dataset) => String(dataset.catalog.id).toLocaleLowerCase() === catalog.toLocaleLowerCase());
     }
   }
 
   if (facets.categories) {
-    for (const category of facets.categories) {
-      data = data.filter(dataset => dataset.categories.find(cat => String(cat.id).toLocaleLowerCase() === category.toLocaleLowerCase()));
+    let categoryObj;
+    for (categoryObj of facets.categories) {
+      const category = categoryObj;
+      data = data.filter((dataset) => dataset.categories.find((cat) => String(cat.id).toLocaleLowerCase() === category.toLocaleLowerCase()));
     }
   }
 
   if (facets.country) {
-    for (const country of facets.country) {
-      data = data.filter(dataset => String(dataset.country.id).toLocaleLowerCase() === country.toLocaleLowerCase());
+    let countryObj;
+    for (countryObj of facets.country) {
+      const country = countryObj;
+      data = data.filter((dataset) => String(dataset.country.id).toLocaleLowerCase() === country.toLocaleLowerCase());
     }
   }
 
   if (facets.format) {
-    for (const format of facets.format) {
-      data = data.filter(dataset => dataset.distributionFormats.find(form => String(form.id).toLocaleLowerCase() === format.toLocaleLowerCase()));
+    let formatObj;
+    for (formatObj of facets.format) {
+      const format = formatObj;
+      data = data.filter((dataset) => dataset.distributionFormats.find((form) => String(form.id).toLocaleLowerCase() === format.toLocaleLowerCase()));
     }
   }
 
   if (facets.keywords) {
-    for (const keyword of facets.keywords) {
-      data = data.filter(dataset => dataset.keywords.find(word => String(word.id).toLocaleLowerCase() === keyword.toLocaleLowerCase()));
+    let keywordObj;
+    for (keywordObj of facets.keywords) {
+      const keyword = keywordObj;
+      data = data.filter((dataset) => dataset.keywords.find((word) => String(word.id).toLocaleLowerCase() === keyword.toLocaleLowerCase()));
     }
   }
 
   if (facets.licence) {
-    for (const licence of facets.licence) {
-      data = data.filter(dataset => dataset.licences.find(lic => String(lic.id).toLocaleLowerCase() === licence.toLocaleLowerCase()));
+    let licenceObj;
+    for (licenceObj of facets.licence) {
+      const licence = licenceObj;
+      data = data.filter((dataset) => dataset.licences.find((lic) => String(lic.id).toLocaleLowerCase() === licence.toLocaleLowerCase()));
     }
   }
 

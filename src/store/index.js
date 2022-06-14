@@ -20,7 +20,6 @@ import upload from './modules/upload/store';
 
 Vue.use(Vuex);
 
-
 const state = {};
 
 const actions = {};
@@ -32,7 +31,7 @@ const getters = {
    * @description Returns the current route (name).
    * @param state
    */
-  getCurrentRoute: state => state.route,
+  getCurrentRoute: (state) => state.route,
 };
 
 const store = new Vuex.Store({

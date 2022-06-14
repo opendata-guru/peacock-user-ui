@@ -15,7 +15,7 @@ const RuntimeConfiguration = {
       debug: false,
       baseConfig: process.env,
     };
-    const opts = Object.assign({}, defaultOptions, options);
+    const opts = { ...defaultOptions, ...options };
 
     // Custom merge rule to ignore values that start with $VUE_APP_
     // i.e., use this.$env property when environment variable is not set

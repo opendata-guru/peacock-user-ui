@@ -29,16 +29,16 @@ const state = {
 };
 
 const getters = {
-  getStep: state => state.step,
-  getTitle: state => state.title,
-  getDescription: state => state.description,
-  getKeywords: state => state.keywords,
-  getCategory: state => state.category,
-  getDistributions: state => state.distributions,
-  getContactInfo: state => state.contact,
-  getPublisherInfo: state => state.publisher,
-  getAPIUploadData: state => state.apiUploadData,
-  getCatalogue: state => state.catalogue,
+  getStep: (state) => state.step,
+  getTitle: (state) => state.title,
+  getDescription: (state) => state.description,
+  getKeywords: (state) => state.keywords,
+  getCategory: (state) => state.category,
+  getDistributions: (state) => state.distributions,
+  getContactInfo: (state) => state.contact,
+  getPublisherInfo: (state) => state.publisher,
+  getAPIUploadData: (state) => state.apiUploadData,
+  getCatalogue: (state) => state.catalogue,
 };
 
 const actions = {

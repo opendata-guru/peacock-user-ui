@@ -80,21 +80,21 @@ const state = {
 };
 
 const GETTERS = {
-  getDatasets: state => state.datasets,
-  getDatasetsCount: state => state.datasetsCount,
-  getQuery: state => state.searchParameters.query,
-  getLimit: state => state.searchParameters.limit,
-  getLoading: state => state.loading,
-  getOffset: state => state.searchParameters.offset,
-  getFacets: state => state.searchParameters.facets,
-  getFacetOperator: state => state.searchParameters.facetOperator,
-  getFacetGroupOperator: state => state.searchParameters.facetGroupOperator,
-  getDatasetGeoBounds: state => state.searchParameters.datasetGeoBounds,
-  getAvailableFacets: state => state.availableFacets,
-  getPage: state => state.page,
-  getPageCount: state => state.pageCount,
-  getService: state => state.service,
-  getSort: state => state.searchParameters.sort,
+  getDatasets: (state) => state.datasets,
+  getDatasetsCount: (state) => state.datasetsCount,
+  getQuery: (state) => state.searchParameters.query,
+  getLimit: (state) => state.searchParameters.limit,
+  getLoading: (state) => state.loading,
+  getOffset: (state) => state.searchParameters.offset,
+  getFacets: (state) => state.searchParameters.facets,
+  getFacetOperator: (state) => state.searchParameters.facetOperator,
+  getFacetGroupOperator: (state) => state.searchParameters.facetGroupOperator,
+  getDatasetGeoBounds: (state) => state.searchParameters.datasetGeoBounds,
+  getAvailableFacets: (state) => state.availableFacets,
+  getPage: (state) => state.page,
+  getPageCount: (state) => state.pageCount,
+  getService: (state) => state.service,
+  getSort: (state) => state.searchParameters.sort,
 };
 
 const actions = {

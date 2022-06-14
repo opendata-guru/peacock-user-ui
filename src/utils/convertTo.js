@@ -214,7 +214,7 @@ function getAsCKAN(obj) {
   }));
 
   const tags = [];
-  obj.getKeywords.forEach(keyword => tags.push({
+  obj.getKeywords.forEach((keyword) => tags.push({
     display_name: keyword.title,
     id: keyword.id,
     name: keyword.title,

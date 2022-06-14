@@ -14,7 +14,8 @@ const getCommonResponseData = (dataset) => {
     description: 'CKAN does not define a catalog',
   };
   ds.categories = [];
-  for (const group of dataset.groups) {
+  let group;
+  for (group of dataset.groups) {
     ds.categories.push({
       id: group.id ? group.id : 0,
       title: group.display_name,
@@ -44,7 +45,8 @@ const getCommonResponseData = (dataset) => {
     });
   }
 
-  for (const dist of dataset.resources) {
+  let dist;
+  for (dist of dataset.resources) {
     const distribution = {};
     distribution.accessUrl = dist.access_url;
     if (dist.description) {
@@ -98,7 +100,8 @@ const getCommonResponseData = (dataset) => {
   ds.id = dataset.id;
   ds.idName = dataset.name;
   ds.keywords = [];
-  for (const tag of dataset.tags) {
+  let tag;
+  for (tag of dataset.tags) {
     ds.keywords.push({
       id: tag.id,
       title: tag.display_name,

@@ -37,8 +37,8 @@ const state = {
 };
 
 const getters = {
-  securityAuth: state => state.auth,
-  getRTPToken: state => state.rtptoken,
+  securityAuth: (state) => state.auth,
+  getRTPToken: (state) => state.rtptoken,
 };
 
 const actions = {

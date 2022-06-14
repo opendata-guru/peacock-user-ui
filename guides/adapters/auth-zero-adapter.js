@@ -139,7 +139,7 @@ export default class AuthZeroService {
    */
   logout(keycloak, redirectURL) {
     if (this.keycloak !== keycloak) {
-      console.log('Used logout() with different keycloak: ', keycloak);
+      console.log('Used logout() with different keycloak: ', keycloak); // eslint-disable-line no-console
     }
     keycloak.logout({ redirectUri: redirectURL }, this.router);
   }
@@ -150,7 +150,7 @@ export default class AuthZeroService {
    */
   isAuthenticated(keycloak) {
     if (this.keycloak !== keycloak) {
-      console.log('Used isAuthenticated() with different keycloak: ', keycloak);
+      console.log('Used isAuthenticated() with different keycloak: ', keycloak); // eslint-disable-line no-console
     }
     if (typeof this.keycloak !== 'undefined') {
       return this.keycloak.authenticated;
@@ -164,10 +164,10 @@ export default class AuthZeroService {
    */
   getHeader(keycloak) {
     if (this.keycloak !== keycloak) {
-      console.log('Used getHeader() with different keycloak: ', keycloak);
+      console.log('Used getHeader() with different keycloak: ', keycloak); // eslint-disable-line no-console
     }
     return ({
-      Authorization: 'Bearer ' + keycloak.token
+      Authorization: `Bearer ${keycloak.token}`,
     });
   }
 
@@ -177,11 +177,11 @@ export default class AuthZeroService {
    */
   getToken(keycloak) {
     this.foo = 'bar';
-    const _keyclock = keycloak;
-    _keyclock.updateToken(10)
+    const copyKeyclock = keycloak;
+    copyKeyclock.updateToken(10)
       .success(() => {
-        store.dispatch('auth/authLogin', _keyclock);
-        return _keyclock.token;
+        store.dispatch('auth/authLogin', copyKeyclock);
+        return copyKeyclock.token;
       });
   }
 

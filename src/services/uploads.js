@@ -24,13 +24,12 @@ export default class Uploads {
   upload(title, catalogue, data, token, uploadData) {
     return new Promise((resolve, reject) => {
       const endpoint = `${this.baseUrl}datasets/${title}?catalogue=${catalogue}&data=${uploadData}`;
-      axios.put(endpoint, data,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            'Content-Type': 'application/ld+json',
-          },
-        })
+      axios.put(endpoint, data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/ld+json',
+        },
+      })
         .then((response) => {
           resolve(response);
         })
@@ -72,13 +71,15 @@ export default class Uploads {
   deleteDistribution(title, catalogue, rtpToken) {
     return new Promise((resolve, reject) => {
       const endpoint = `${this.baseUrl}/datasets/${title}?catalogue=${catalogue}`;
-      axios.delete(endpoint,
+      axios.delete(
+        endpoint,
         {
           headers: {
             Authorization: `Bearer ${rtpToken}`,
             'Content-Type': 'application/ld+json',
           },
-        })
+        },
+      )
         .then((response) => {
           resolve(response);
         })

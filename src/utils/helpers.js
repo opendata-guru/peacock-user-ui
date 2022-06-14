@@ -20,10 +20,10 @@ function unique(prop, array) {
   // Filter elements in {array} that do not have a {prop} key.
   return [...new Set(array.filter(
     // Remove duplicates by creating a Set and remove items where {prop} has no value.
-    item => Object.prototype.hasOwnProperty.call(item, prop) && !!item[prop],
+    (item) => Object.prototype.hasOwnProperty.call(item, prop) && !!item[prop],
   )
     // Create a new array containing the {prop} values of each given item.
-    .map(item => item[prop]))];
+    .map((item) => item[prop]))];
 }
 
 /**
@@ -57,7 +57,8 @@ function getTranslationFor(prop, userLocale, fallbacks) {
   if (has(prop, userLocale)) return prop[userLocale];
   // Iterate over given fallback languages
   if (fallbacks) {
-    for (let lang of fallbacks) {
+    let lang;
+    for (lang of fallbacks) {
       if (lang) {
         lang = lang.toLowerCase();
         if (has(prop, lang)) return prop[lang];
