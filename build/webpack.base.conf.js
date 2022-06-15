@@ -90,6 +90,7 @@ module.exports = {
         options: {
           limit: 10000,
           name: utils.assetsPath('assets/[name].[ext]'),
+          esModule: false,
         },
       },
       {
