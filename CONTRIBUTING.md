@@ -124,7 +124,7 @@ npm audit
 Open `package.json` file and increase the version number of the package:
 
 ```bash
-"version": "1.0.#",
+"version": "1.1.#",
 ```
 
 Build the final production build:
