@@ -56,9 +56,6 @@
         </div>
         
       </div>
-    </app-link>
-
-    <app-link class="text-dark text-decoration-none" :to="{ path: linkTo, query: Object.assign({}, { locale: $route.query.locale }) }">
       <div class="card-body" :class="{'collapse': collapse}" :id="`dist-${collapseId}`">
         <div>
           <div class="col-2" v-if="bodyImg">
