@@ -386,11 +386,13 @@ if (typeof CONFIG_APP_ROUTER_ROUTE_9_NAME !== 'undefined') {
 }
 glueConfig.routerOptions.routes = routes;
 
-const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-if (prefersDarkScheme.matches) {
-    document.body.classList.toggle('dark-mode');
-} else {
-    document.body.classList.toggle('light-mode');
+if (glueConfig.enable.system.darkMode) {
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (prefersDarkScheme.matches) {
+        document.body.classList.toggle('dark-mode');
+    } else {
+        document.body.classList.toggle('light-mode');
+    }
 }
 
 

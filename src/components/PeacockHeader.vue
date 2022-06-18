@@ -140,10 +140,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .light-mode .sun {
+  .light-mode .moon {
     display: none;
   }
-  .dark-mode .moon {
+  .dark-mode .sun {
     display: none;
   }
 </style>
