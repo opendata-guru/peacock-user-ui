@@ -157,6 +157,10 @@ if (typeof CONFIG_APP_ROUTER_REDIRECT_ROOT_TO !== 'undefined') {
     glueConfig.routerOptions.redirectRootTo = CONFIG_APP_ROUTER_REDIRECT_ROOT_TO;
 }
 
+if (typeof CONFIG_APP_ROUTER_MODE !== 'undefined') {
+    glueConfig.routerOptions.mode = CONFIG_APP_ROUTER_MODE;
+}
+
 glueConfig.enable.dataset.similarDatasets = typeof CONFIG_APP_ENABLE_DATASET_SIMILARDATASETS !== 'undefined' ? CONFIG_APP_ENABLE_DATASET_SIMILARDATASETS : false;
 glueConfig.enable.services.cacheBusting = typeof CONFIG_APP_DATA_CACHE_BUSTING !== 'undefined' ? CONFIG_APP_DATA_CACHE_BUSTING : true;
 glueConfig.enable.dataset.categories = typeof CONFIG_APP_ENABLE_DATASET_CATEGORIES !== 'undefined' ? CONFIG_APP_ENABLE_DATASET_CATEGORIES : false;
