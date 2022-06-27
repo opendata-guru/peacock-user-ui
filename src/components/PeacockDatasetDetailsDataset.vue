@@ -134,7 +134,7 @@
                       :data-bs-toggle="distributionFormatTruncated(distribution) ? 'tooltip' : false"
                       :data-bs-placement="distributionFormatTruncated(distribution) ? 'top' : false"
                       :title="distributionFormatTruncated(distribution) ? getDistributionFormat(distribution) : false">
-                  <span class="bg-light border border-secondary text-dark rounded-pill badge">{{ truncate(getDistributionFormat(distribution), 4, true) }}</span>
+                  <span class="bg-light border border-secondary text-dark rounded-pill badge distribution-pill">{{ getDistributionFormat(distribution) }}</span>
                 </div>
               </span>
               <span class="col-md-11 col-10">
@@ -237,11 +237,11 @@
                     :content="keyword.title"
                     :key="i">
                 <app-link :to="getKeywordLink(keyword)">
-                  <small class="d-inline-block w-100 p-2 ml-1 rounded-pill text-center text-white bg-secondary"
+                  <small class="d-inline-block w-100 p-2 ml-1 rounded-pill keyword-pill text-center text-white bg-secondary"
                          :data-bs-toggle="keywordTruncated(keyword) ? 'tooltip' : false"
                          :data-bs-placement="keywordTruncated(keyword) ? 'top' : false"
                          :title="keywordTruncated(keyword) ? keyword.title : false">
-                    {{ truncate(keyword.title, maxKeywordLength, false) }}
+                    {{ keyword.title }}
                   </small>
                 </app-link>
               </span>
@@ -704,6 +704,12 @@ export default {
 
   .heading, .arrow, .copy-text {
     cursor: pointer;
+  }
+
+  .distribution-pill, .keyword-pill {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
   }
 
   /*** BOOTSTRAP ***/
