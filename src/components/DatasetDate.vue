@@ -3,18 +3,8 @@
     class="d-inline-block"
     data-bs-toggle="tooltip"
     data-bs-placement="top"
-    :title="
-      isIncorrectDate()
-        ? 'This date is incorrect or incomplete, please contact the data provider.'
-        : null
-    "
   >
     <span :class="{ 'date-incorrect': isIncorrectDate() }" class="mr-1" :title="filterDateFormatEU">{{ filterDateFromNow }}</span>
-    <font-awesome-icon
-      v-if="isIncorrectDate()"
-      class="date-incorrect-exclamation-triangle"
-      :icon="['fas', 'exclamation-triangle']"
-    />
   </span>
 </template>
 
