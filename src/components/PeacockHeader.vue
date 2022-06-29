@@ -62,6 +62,7 @@
 
       </div>
     </nav>
+    <div class="custom-header" v-if="customHeader" v-html="customHeader"></div>
   </header>
 </template>
 
@@ -88,6 +89,7 @@ export default {
         href: nav.href,
         web: (nav.href.indexOf('http://') === 0) || (nav.href.indexOf('https://') === 0),
       })),
+      customHeader: GLUE_CONFIG.navigation.topnav.main.customHTML,
       showLanguageSwitch: false,
       showThemeSwitch: GLUE_CONFIG.enable.system.darkMode,
     };

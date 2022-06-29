@@ -171,6 +171,9 @@ glueConfig.enable.filter.operator = typeof CONFIG_APP_ENABLE_FILTER_OPERATOR !==
 glueConfig.enable.system.darkMode = typeof CONFIG_APP_ENABLE_DARK_MODE !== 'undefined' ? CONFIG_APP_ENABLE_DARK_MODE : false;
 glueConfig.keycloak.enableLogin = typeof CONFIG_APP_AUTH_ENABLE !== 'undefined' ? CONFIG_APP_AUTH_ENABLE : false;
 
+glueConfig.navigation.topnav.main.customHTML = typeof CONFIG_APP_HEADER_CUSTOM_HTML !== 'undefined' ? CONFIG_APP_HEADER_CUSTOM_HTML : '';
+glueConfig.navigation.topnav.sub.customHTML = typeof CONFIG_APP_FOOTER_CUSTOM_HTML !== 'undefined' ? CONFIG_APP_FOOTER_CUSTOM_HTML : '';
+
 if ((typeof CONFIG_APP_HEADER_LOGO_TEXT !== 'undefined') || (typeof CONFIG_APP_HEADER_LOGO_IMAGE_SRC !== 'undefined') || (typeof CONFIG_APP_HEADER_LOGO_IMAGE_DESCRIPTION !== 'undefined')) {
     glueConfig.images.headerLogos.push({
         src: typeof CONFIG_APP_HEADER_LOGO_IMAGE_SRC !== 'undefined' ? CONFIG_APP_HEADER_LOGO_IMAGE_SRC : '',

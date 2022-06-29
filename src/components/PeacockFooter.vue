@@ -29,6 +29,7 @@
         </li>
       </ul>
     </div>
+    <div class="custom-footer" v-if="customFooter" v-html="customFooter"></div>
   </footer>
 </template>
 
@@ -51,6 +52,7 @@ export default {
         href: nav.href,
         web: (nav.href.indexOf('http://') === 0) || (nav.href.indexOf('https://') === 0),
       })),
+      customFooter: GLUE_CONFIG.navigation.topnav.sub.customHTML,
     };
   },
 };

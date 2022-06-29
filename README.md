@@ -162,6 +162,7 @@ CONFIG_APP_HEADER_NAV_2_TITLE || `'message.header.navigation.data.catalogues'`
 CONFIG_APP_HEADER_NAV_3_URL to CONFIG_APP_HEADER_NAV_9_URL || `empty`
 CONFIG_APP_HEADER_NAV_3_TITLE to CONFIG_APP_HEADER_NAV_9_TITLE || `empty`
 CONFIG_APP_ENABLE_DARK_MODE | Show button to switch dark mode and light mode. | false
+CONFIG_APP_HEADER_CUSTOM_HTML | Add a additionally custom header. HTML tags are allowed. | `empty`
 
 ## Customize pages footer
 
@@ -177,6 +178,7 @@ CONFIG_APP_FOOTER_NAV_2_URL || `'/privacypolicy'`
 CONFIG_APP_FOOTER_NAV_2_TITLE || `'message.navigation.navItems.privacyPolicy'`
 CONFIG_APP_FOOTER_NAV_3_URL to CONFIG_APP_FOOTER_NAV_9_URL || `empty`
 CONFIG_APP_FOOTER_NAV_3_TITLE to CONFIG_APP_FOOTER_NAV_9_TITLE || `empty`
+CONFIG_APP_FOOTER_CUSTOM_HTML | Add a additionally custom footer. HTML tags are allowed. | `empty`
 
 ---
 The following table and example file shortly describes the configurable values.

@@ -135,6 +135,7 @@ export default {
           },
         ],
         icons: false,
+        customHTML: '',
       },
       sub: {
         privacyPolicy: {
@@ -149,6 +150,7 @@ export default {
         },
         append: [
         ],
+        customHTML: '',
       },
     },
   },
