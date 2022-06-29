@@ -57,6 +57,8 @@ CONFIG_APP_ROUTER_BASE | Set the path of the url. Default is an empty string, wo
 CONFIG_APP_ROUTER_LIB_BASE | Set the path of this library. Use the same value as in `CONFIG_APP_ROUTER_BASE` or `'https://unpkg.com/peacock-user-ui@latest/dist/'` when you using the CDN. | `empty`
 CONFIG_APP_ROUTER_REDIRECT_ROOT_TO | If you open the website without path (`'/'`) the router will redirect to a new page. Set to a default route name e.g. to `'Datasets'` or to a own router name e.g. in `CONFIG_APP_ROUTER_ROUTE_1_NAME`. | `'Datasets'`
 CONFIG_APP_ROUTER_MODE | Use 'history' for common urls like 'domain.com/datasets'. Use 'hash' for gitlab environment and urls like 'domain.com/#/datasets'. | 'history'
+CONFIG_APP_DATASET_DISTRIBUTION_CUSTOM_HTML | Add an additionally custom distribution entry on the dataset page. HTML tags are allowed. | `empty`
+CONFIG_APP_DATASET_INFO_CUSTOM_HTML | Add a custom info div on the dataset page. HTML tags are allowed. | `empty`
 
 ## Localisation
 

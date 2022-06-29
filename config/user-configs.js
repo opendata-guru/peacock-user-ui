@@ -173,6 +173,8 @@ glueConfig.keycloak.enableLogin = typeof CONFIG_APP_AUTH_ENABLE !== 'undefined' 
 
 glueConfig.navigation.topnav.main.customHTML = typeof CONFIG_APP_HEADER_CUSTOM_HTML !== 'undefined' ? CONFIG_APP_HEADER_CUSTOM_HTML : '';
 glueConfig.navigation.topnav.sub.customHTML = typeof CONFIG_APP_FOOTER_CUSTOM_HTML !== 'undefined' ? CONFIG_APP_FOOTER_CUSTOM_HTML : '';
+glueConfig.dataset.distributions.customHTML = typeof CONFIG_APP_DATASET_DISTRIBUTION_CUSTOM_HTML !== 'undefined' ? CONFIG_APP_DATASET_DISTRIBUTION_CUSTOM_HTML : '';
+glueConfig.dataset.info.customHTML = typeof CONFIG_APP_DATASET_INFO_CUSTOM_HTML !== 'undefined' ? CONFIG_APP_DATASET_INFO_CUSTOM_HTML : '';
 
 if ((typeof CONFIG_APP_HEADER_LOGO_TEXT !== 'undefined') || (typeof CONFIG_APP_HEADER_LOGO_IMAGE_SRC !== 'undefined') || (typeof CONFIG_APP_HEADER_LOGO_IMAGE_DESCRIPTION !== 'undefined')) {
     glueConfig.images.headerLogos.push({

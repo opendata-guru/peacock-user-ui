@@ -200,9 +200,12 @@
                 </span>
               </span>
             </li>
+            <li class="row mb-3 pb-3 border-bottom" v-if="customDistribution" v-html="customDistribution"></li>
           </ul>
         </div>
       </div>
+
+      <div class="mt-1 custom-info" v-if="customInfo" v-html="customInfo"></div>
 
       <div class="mt-2 keywords"
            v-if="showKeywords(getKeywords)">
@@ -444,6 +447,7 @@ import AppLink from './AppLink';
 // import filters
 import dateFilters from '../filters/dateFilters';
 import { getTranslationFor, getCountryFlagImg, truncate } from '../utils/helpers';
+import GLUE_CONFIG from '../../user-config/glue-config';
 /* The maximum length of a keyword */
 const MAX_KEYWORD_LENGTH = 10;
 
@@ -473,6 +477,8 @@ export default {
         // geojson: 'GeoJSON',
       },
       maxKeywordLength: MAX_KEYWORD_LENGTH,
+      customDistribution: GLUE_CONFIG.dataset.distributions.customHTML,
+      customInfo: GLUE_CONFIG.dataset.info.customHTML,
     };
   },
   computed: {

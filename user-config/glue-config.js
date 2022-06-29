@@ -28,6 +28,14 @@ export default {
     matomoUrl: '',
     authToken: '',
   },
+  dataset: {
+    distributions: {
+      customHTML: '',
+    },
+    info: {
+      customHTML: '',
+    },
+  },
   enable: {
     dataset: {
       categories: true,
