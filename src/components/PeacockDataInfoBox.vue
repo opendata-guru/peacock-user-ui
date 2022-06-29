@@ -51,7 +51,7 @@
                 v-if="showDistributionFormat(tag)"
                 :key="i"
                 :type="tag.title">
-          {{ truncate(tag.title, 8, true) }}
+          {{ tag.title }}
           </span>
         </div>
         
@@ -239,6 +239,13 @@
     &:hover {
       border-color: #5c636a !important;
       cursor: pointer;
+    }
+
+    .formats.badge.rounded-pill {
+      max-width: 6rem;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 </style>
