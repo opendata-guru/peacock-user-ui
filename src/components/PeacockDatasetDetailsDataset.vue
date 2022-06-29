@@ -19,27 +19,6 @@
       <div class="mt-3 infobanner">
         <div class="row">
           <div class="col-12">
-            <!-- INCORRECT DATE BANNER -->
-            <div class="p-0 py-3 text-center text-sm-left alert alert-secondary alert-dismissible fade show"
-                 role="alert"
-                 v-if="dateIncorrect">
-              <div class="row">
-                <div class="col-1 m-auto text-center">
-                  <font-awesome-icon class="fa fs-5" :icon="{ prefix: 'fas', iconName: 'info-circle' }"></font-awesome-icon>
-                </div>
-                <div class="col-10">
-                  <p class="mb-0">This dataset's last updated date is incorrect or incomplete, please contact the data provider for further inquiries.</p>
-                </div>
-                <div class="col-1">
-                  <button class="close pt-0 btn btn-secondary"
-                          type="button"
-                          data-bs-dismiss="alert"
-                          aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-              </div>
-            </div>
             <!-- MACHINE TRANSLATED BANNER -->
             <div class="p-0 py-3 text-center text-sm-left alert alert-secondary alert-dismissible fade show"
                  role="alert"
